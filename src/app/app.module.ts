@@ -10,7 +10,12 @@ import { FooterComponent } from '../components/footer/footer';
 import { GridComponent } from '../components/grid/grid';
 import { RightSideOrderComponent } from '../components/right-side-order/right-side-order';
 import { RightSideEditComponent } from '../components/right-side-edit/right-side-edit';
-
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   declarations: [
     MyApp,
@@ -22,7 +27,15 @@ import { RightSideEditComponent } from '../components/right-side-edit/right-side
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
