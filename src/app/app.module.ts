@@ -7,16 +7,21 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FooterComponent } from '../components/footer/footer';
+import { GridComponent } from '../components/grid/grid';
+import { RightSideOrderComponent } from '../components/right-side-order/right-side-order';
+import { RightSideEditComponent } from '../components/right-side-edit/right-side-edit';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    FooterComponent
+    FooterComponent,
+    GridComponent,
+    RightSideOrderComponent,
+    RightSideEditComponent,
   ],
   imports: [
     BrowserModule,
-    FooterComponent,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -27,7 +32,7 @@ import { FooterComponent } from '../components/footer/footer';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

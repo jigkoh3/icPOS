@@ -1,0 +1,49 @@
+right-side-order {
+    .bg-layout {
+        height: -webkit-fill-available;
+        background-color: #ffffff;
+        color: #00c94a;
+        border-left: #c0c0c0 1px solid;
+        position: fixed;
+        width: 100%;
+    }
+    .btn-green {
+        background-color: #00c94a;
+        position: fixed;
+        bottom: 62px;
+        width: 34%;
+        height: 60px;
+        text-align: center;
+        padding-top: 14px;
+    }
+    .txt-no-data {
+        margin-left: 4px;
+        color: #000000;
+    }
+    .total-price {
+        position: fixed;
+        bottom: 100px;
+        width: 32%;
+        font-size: 2.4rem;
+    }
+    .btn-name {
+        color: #ffffff;
+        font-size: 2.2rem;
+    }
+    .mgt-6 {
+        margin-top: 6px;
+    }
+    .ic-print {
+        color: #c0c0c0;
+    }
+    .mgl-26 {
+        margin-left: 26px;
+    }
+    .pdl-14 {
+        padding-left: 14px !important;
+    }
+    .ic-back-home {
+        position: fixed;
+        bottom: 220px;
+    }
+}
