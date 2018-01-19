@@ -23,4 +23,23 @@ footer {
     .m-no {
         margin-top: 6px;
     }
+    .f-menu {
+        position: fixed;
+        width: 169px;
+        height: -webkit-fill-available;
+        background-color: #434a63;
+        z-index: 1000;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .l-menu {
+        position: fixed;
+        width: 169px;
+        height: -webkit-fill-available;
+        background-color: #434a63;
+        z-index: 1000;
+        text-align: center;
+        padding-top: 10px;
+        right: 0;
+    }
 }
