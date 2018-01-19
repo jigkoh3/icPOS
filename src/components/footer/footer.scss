@@ -1,0 +1,45 @@
+footer {
+    ion-footer {
+        background-color: #434a63;
+        color: #ffffff;
+        height: 60px;
+        z-index: 999;
+    }
+    .scroll-x {
+        height: 160px;
+    }
+    .scroll-row {
+        flex-wrap: inherit !important;
+    }
+    [col-2] {
+        border-right: 1px solid #ffffff;
+        height: 60px;
+        text-align: center;
+    }
+    .m-name {
+        margin-top: -10px;
+        font-size: 1.2rem;
+    }
+    .m-no {
+        margin-top: 6px;
+    }
+    .f-menu {
+        position: fixed;
+        width: 169px;
+        height: -webkit-fill-available;
+        background-color: #434a63;
+        z-index: 1000;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .l-menu {
+        position: fixed;
+        width: 169px;
+        height: -webkit-fill-available;
+        background-color: #434a63;
+        z-index: 1000;
+        text-align: center;
+        padding-top: 10px;
+        right: 0;
+    }
+}
