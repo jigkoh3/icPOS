@@ -12,6 +12,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FooterComponent {
 
+  @Input() menuSelected: String;
   @Input() items: any;
   @Output() itemSelected: EventEmitter<any> = new EventEmitter<any>();
 
@@ -20,14 +21,21 @@ export class FooterComponent {
   }
 
   clickedMore = function(){
-    alert("clickedMore");
+    let item = {
+      name: "more"
+    }
+    this.itemSelected.emit(item);
   }
 
   clickedList = function(){
-    alert("clickedList");
+    let item = {
+      name: "list"
+    }
+    this.itemSelected.emit(item);
   }
 
   selected(item){
+    //this.menuSelected = item.name;
     this.itemSelected.emit(item);
   }
 

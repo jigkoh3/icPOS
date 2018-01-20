@@ -10,7 +10,7 @@ import { LoadingProvider } from '../../providers/loading/loading';
 })
 export class HomePage {
   menuItemsSelected: Array<ItemModel>;
-  menuSelected: MenuModel;
+  menuSelected: String;
   menus: Array<MenuModel>;
   homeData: HomeModel;
 
@@ -30,7 +30,7 @@ export class HomePage {
     setTimeout(() => {
       this.menusService.getMenus().then(data =>{
         this.menus = data.menus;
-        this.menuSelected = data.menus[0];
+        this.menuSelected = data.menus[0].name;
         this.menuItemsSelected = data.menus[0].items;
         console.log(data);
         this.loading.dismiss();
@@ -42,8 +42,17 @@ export class HomePage {
 
   menuItemSelected(menu){
     //console.log(menu);
-    this.menuSelected = menu;
-    this.menuItemsSelected = menu.items;
+    this.menuSelected = menu.name;
+    if(menu.name === "more"){
+      alert("More");
+    }
+    if(menu.name === "list"){
+      alert("List");
+    }
+    if(menu.items){
+      this.menuItemsSelected = menu.items;
+    }
+    
   }
 
 }
