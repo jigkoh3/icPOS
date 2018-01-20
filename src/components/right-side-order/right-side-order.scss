@@ -7,10 +7,13 @@ right-side-order {
         position: fixed;
         width: 100%;
     }
-    .order-detail{
-        min-height: 52rem;
+    .order-detail { height: 52rem;}
+    @media screen and (min-height : 768px) and (max-height : 1024px) {
+        .order-detail { height: 54rem;}
     }
-    
+    @media screen and (min-height : 1024px){
+        .order-detail { height: 79rem;}
+    }
 
     .btn-green {
         background-color: #00c94a;
