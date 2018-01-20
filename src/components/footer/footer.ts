@@ -19,4 +19,12 @@ export class FooterComponent {
     this.text = 'Hello World';
   }
 
+  clickedMore = function(){
+    alert("clickedMore");
+  }
+
+  clickedList = function(){
+    alert("clickedList");
+  }
+
 }

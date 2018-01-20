@@ -5,6 +5,9 @@ grid {
         border: 3px solid #ffffff;
     }
     .clear-footer {height: 62px;}
+    /**
+    iPad
+    */
     @media screen and (min-height : 768px) and (max-height : 1024px) {
         .grid-col {
             min-height: 15rem;
@@ -12,6 +15,9 @@ grid {
             border: 3px solid #ffffff;
         }
     }
+    /**
+    iPad Pro
+    */
     @media screen and (min-height : 1024px){
         .grid-col {
             min-height: 20rem;
