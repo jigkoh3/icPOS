@@ -41,7 +41,7 @@ export class HomePage {
   }
 
   menuItemSelected(menu){
-    console.log(menu);
+    //console.log(menu);
     this.menuSelected = menu;
     this.menuItemsSelected = menu.items;
   }

@@ -6,7 +6,8 @@
             "items": [{
                 "type": "product",
                 "product": {
-                    "name":"ก๊วยเตี๋ยวหมู"
+                    "name":"ก๊วยเตี๋ยวหมู",
+                    "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG"
                 }
             },{
                 "type":"none"
@@ -105,7 +106,8 @@
             "items": [{
                 "type": "product",
                 "product": {
-                    "name":"ข้าวราดแกงกระหรี่"
+                    "name":"ข้าวราดแกงกระหรี่",
+                    "image":"http://ot-foodspotting-production.s3.amazonaws.com/reviews/1971639/thumb_600.jpg?1340946600"
                 }
             },{
                 "type":"none"
