@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the GridComponent component.
@@ -12,11 +12,14 @@ import { Component } from '@angular/core';
 })
 export class GridComponent {
 
-  text: string;
+  @Input() items: any;
+  @Output() itemSelected: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
-    console.log('Hello GridComponent Component');
-    this.text = 'Hello World';
+    
   }
-
+  
+  selected(item){
+    this.itemSelected.emit(item);
+  }
 }

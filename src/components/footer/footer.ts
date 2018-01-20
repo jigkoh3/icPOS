@@ -13,7 +13,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class FooterComponent {
 
   @Input() items: any;
-  @Output() selectedItem: EventEmitter<any> = new EventEmitter<any>();
+  @Output() itemSelected: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
     
@@ -28,7 +28,7 @@ export class FooterComponent {
   }
 
   selected(item){
-    this.selectedItem.emit(item);
+    this.itemSelected.emit(item);
   }
 
 }
