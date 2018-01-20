@@ -13,6 +13,8 @@ import { RightSideEditComponent } from '../components/right-side-edit/right-side
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MenuProvider } from '../providers/menu/menu';
+import { LoadingProvider } from '../providers/loading/loading';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -45,7 +47,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    MenuProvider,
+    LoadingProvider
   ]
 })
 export class AppModule { }

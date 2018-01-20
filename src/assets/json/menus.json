@@ -1,0 +1,29 @@
+{
+    "menus": [
+        {
+            "name": "ก๊วยเตี๋ยว",
+            "icon": "menu",
+            "items": []
+        },
+        {
+            "name": "ข้าวราดแกง",
+            "icon": "menu",
+            "items": []
+        },
+        {
+            "name": "เครื่องดื่ม",
+            "icon": "menu",
+            "items": []
+        },
+        {
+            "name": "ขนมหวาน",
+            "icon": "menu",
+            "items": []
+        },
+        {
+            "name": "อื่นๆ",
+            "icon": "menu",
+            "items": []
+        }
+    ]
+}

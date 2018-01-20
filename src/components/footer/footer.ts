@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the FooterComponent component.
@@ -12,11 +12,11 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
-  text: string;
+  @Input() items: any;
+  @Output() selectedItem: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
-    console.log('Hello FooterComponent Component');
-    this.text = 'Hello World';
+    
   }
 
   clickedMore = function(){
@@ -25,6 +25,10 @@ export class FooterComponent {
 
   clickedList = function(){
     alert("clickedList");
+  }
+
+  selected(item){
+    this.selectedItem.emit(item);
   }
 
 }
