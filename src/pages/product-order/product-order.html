@@ -34,7 +34,18 @@
     <ion-col col-12 *ngIf="_step.name === steps[step].name">
       <ion-row *ngIf="_step.type === 'price'">
         <ion-col>
-          price
+            <ion-list radio-group [(ngModel)]="autoManufacturers">
+
+                <ion-list-header>
+                  {{_step.name}}
+                </ion-list-header>
+              
+                <ion-item *ngFor="let option of _step.data">
+                  <ion-label>{{option.name}}</ion-label>
+                  <ion-radio value="{{option.name}}"></ion-radio>
+                </ion-item>
+              
+              </ion-list>
         </ion-col>
       </ion-row>
       <ion-row *ngIf="_step.type === 'submenu'">

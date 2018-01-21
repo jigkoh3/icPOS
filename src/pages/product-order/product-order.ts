@@ -29,7 +29,8 @@ export class ProductOrderPage {
     if (this.item.prices.length > 1) {
        steps.push({
         name: "price",
-        type: "price"
+        type: "price",
+        data: this.item.prices
       })
 
     }
