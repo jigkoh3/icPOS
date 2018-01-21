@@ -17,6 +17,8 @@ import { MenuProvider } from '../providers/menu/menu';
 import { LoadingProvider } from '../providers/loading/loading';
 import { PreloadImageComponent } from '../components/preload-image/preload-image';
 import { ItemGridComponent } from '../components/item-grid/item-grid';
+import { ProductOrderComponent } from '../components/product-order/product-order';
+import { ProductOrderPage } from '../pages/product-order/product-order';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -24,12 +26,14 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     MyApp,
     HomePage,
+    ProductOrderPage,
     FooterComponent,
     GridComponent,
     RightSideOrderComponent,
     RightSideEditComponent,
     PreloadImageComponent,
-    ItemGridComponent
+    ItemGridComponent,
+    ProductOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ProductOrderPage
   ],
   providers: [
     StatusBar,

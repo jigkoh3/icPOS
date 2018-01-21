@@ -14,12 +14,14 @@ export class GridComponent {
 
   @Input() items: any;
   @Output() itemSelected: EventEmitter<any> = new EventEmitter<any>();
-
   constructor() {
     
   }
   
   selected(item){
+    //alert(item.name);
     this.itemSelected.emit(item);
   }
+
+  
 }

@@ -13,14 +13,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ItemGridComponent {
 
   @Input() item: any;
-  @Output() itemSelected: EventEmitter<any> = new EventEmitter<any>();
-
+  
   constructor() {
     
-  }
-  
-  selected(item){
-    this.itemSelected.emit(item);
   }
 
 }

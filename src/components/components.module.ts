@@ -5,19 +5,22 @@ import { RightSideOrderComponent } from './right-side-order/right-side-order';
 import { RightSideEditComponent } from './right-side-edit/right-side-edit';
 import { PreloadImageComponent } from './preload-image/preload-image';
 import { ItemGridComponent } from './item-grid/item-grid';
+import { ProductOrderComponent } from './product-order/product-order';
 @NgModule({
 	declarations: [FooterComponent,
     GridComponent,
     RightSideOrderComponent,
     RightSideEditComponent,
     PreloadImageComponent,
-    ItemGridComponent],
+    ItemGridComponent,
+    ProductOrderComponent],
 	imports: [],
 	exports: [FooterComponent,
     GridComponent,
     RightSideOrderComponent,
     RightSideEditComponent,
     PreloadImageComponent,
-    ItemGridComponent]
+    ItemGridComponent,
+    ProductOrderComponent]
 })
 export class ComponentsModule {}

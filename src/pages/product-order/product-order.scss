@@ -1,0 +1,19 @@
+page-product-order {
+    ion-navbar{
+        height: 6rem;
+        .toolbar-title {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 2rem;
+            color: gray;
+        }
+    }
+    
+    [navbar-button]{
+        color: limegreen;
+        font-size: 2rem;
+    }
+}

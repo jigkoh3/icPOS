@@ -3,6 +3,9 @@ import { NavController } from 'ionic-angular';
 import { MenuProvider } from '../../providers/menu/menu';
 import { HomeModel, MenuModel, ItemModel } from '../../assets/models/menus.model';
 import { LoadingProvider } from '../../providers/loading/loading';
+import { ModalController } from 'ionic-angular/components/modal/modal-controller';
+import { ProductOrderComponent } from '../../components/product-order/product-order';
+import { ProductOrderPage } from '../product-order/product-order';
 
 @Component({
   selector: 'page-home',
@@ -15,6 +18,7 @@ export class HomePage {
   homeData: HomeModel;
 
   constructor(public navCtrl: NavController,
+    private modalCtrl: ModalController,
     private menusService: MenuProvider,
     private loading: LoadingProvider
   ) {
@@ -53,6 +57,30 @@ export class HomePage {
       this.menuItemsSelected = menu.items;
     }
     
+  }
+
+  itemSelected(item){
+    //alert("Item Type Selected : " + item.type);
+    switch(item.type) { 
+      case "none": { 
+         //statements; 
+         break; 
+      } 
+      case "product": { 
+         //statements; 
+         this.presentProductModal(item.product);
+         break; 
+      } 
+      default: { 
+         //statements; 
+         break; 
+      } 
+   } 
+  }
+
+  presentProductModal(item) {
+    let productModal = this.modalCtrl.create(ProductOrderPage,{item : item});
+    productModal.present();
   }
 
 }

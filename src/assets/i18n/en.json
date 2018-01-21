@@ -7,5 +7,6 @@
     "BILL": "Bill",
     "LIST": "List",
     "NO_DATA": "no data",
-    "CURENCY": "$"
+    "CURENCY": "$",
+    "NEXT" : "Next"
 }
