@@ -178,7 +178,20 @@
                     "type": "product",
                     "product": {
                         "name": "ข้าวราดแกงกระหรี่",
-                        "image": "http://ot-foodspotting-production.s3.amazonaws.com/reviews/1971639/thumb_600.jpg?1340946600"
+                        "image": "http://ot-foodspotting-production.s3.amazonaws.com/reviews/1971639/thumb_600.jpg?1340946600",
+                        "prices": [
+                            {
+                                "name": "ราคาปกติ",
+                                "type": "normal",
+                                "price": 60
+                            },
+                            {
+                                "name": "ราคาพิเศษ",
+                                "type": "normal",
+                                "price": 65
+                            }
+                        ],
+                        "submenus": []
                     }
                 },
                 {
