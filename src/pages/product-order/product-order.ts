@@ -15,14 +15,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductOrderPage {
   item: any;
-
+  step: number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.item = this.navParams.get('item');
     console.log(this.item);
   }
 
-  ionViewDidLoad() {
-    
+  next() {
+    this.step += 1;
+  }
+
+  prev() {
+    if(this.step > 0){
+      this.step -= 1;
+    }
   }
 
 }

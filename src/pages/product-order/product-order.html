@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar padding>
-    <ion-buttons start>
+    <ion-buttons start *ngIf="step > 0" (click)="prev()">
       <button ion-button icon-only navbar-button>
-        <ion-icon name="close"></ion-icon>
+        <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
     <ion-buttons end>
-        <button ion-button clear navbar-button>
+        <button ion-button clear navbar-button (click)="next()">
           {{ 'NEXT' | translate }}
         </button>
       </ion-buttons>
