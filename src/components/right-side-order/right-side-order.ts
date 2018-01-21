@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the RightSideOrderComponent component.
@@ -12,11 +12,10 @@ import { Component } from '@angular/core';
 })
 export class RightSideOrderComponent {
 
-  text: string;
+  @Input() item: any;
 
   constructor() {
-    console.log('Hello RightSideOrderComponent Component');
-    this.text = 'Hello World';
+    
   }
 
 }

@@ -1,0 +1,56 @@
+{
+    "docno": "1",
+    "servetype" : "cashier",
+    "items": [
+        {
+            "type": "product",
+            "product": {
+                "name": "ก๊วยเตี๋ยวหมู",
+                "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG",
+                "category": {
+                    "name": "ก๊วยเตี๋ยว"
+                },
+                "prices": [
+                    {
+                        "name": "ราคาปกติ",
+                        "type": "normal",
+                        "price": 60
+                    }
+                ],
+                "submenus": [
+                    {
+                        "name": "เส้น",
+                        "prices": [
+                            {
+                                "name": "วุ้นเส้น",
+                                "type": "normal",
+                                "price": 10
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ท๊อปปิ้ง",
+                        "prices": [
+                            {
+                                "name": "เกี๊ยวทอด",
+                                "type": "normal",
+                                "price": 0
+                            },
+                            {
+                                "name": "ตับ",
+                                "type": "normal",
+                                "price": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "total": 70,
+    "discount": 0,
+    "vatrate": 7,
+    "vatamount": 4.9,
+    "netamount": 65.1,
+    "status": "open"
+}

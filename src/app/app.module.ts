@@ -19,6 +19,7 @@ import { PreloadImageComponent } from '../components/preload-image/preload-image
 import { ItemGridComponent } from '../components/item-grid/item-grid';
 import { ProductOrderComponent } from '../components/product-order/product-order';
 import { ProductOrderPage } from '../pages/product-order/product-order';
+import { OrderProvider } from '../providers/order/order';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -58,7 +59,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     MenuProvider,
-    LoadingProvider
+    LoadingProvider,
+    OrderProvider
   ]
 })
 export class AppModule { }
