@@ -1,14 +1,26 @@
 <ion-content>
   <ion-row ion-fixed>
     <ion-col col-12>
-      <ion-row padding-left>
-        <ion-col col-12>
+      <ion-row padding-left padding-top>
+        <ion-col col-12 no-data *ngIf="order">
           {{'NO_DATA' | translate }}
+        </ion-col>
+        <ion-col col-12 have-data *ngIf="!order">
+          <ion-row>
+            <ion-col col-10>
+                {{'NO_DATA' | translate }}
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only clear>
+                  <ion-icon name="more"></ion-icon>
+                </button>
+            </ion-col>
+          </ion-row>
         </ion-col>
       </ion-row>
       <ion-row padding-left>
         <ion-col col-12 class="order-detail">
-
+          
         </ion-col>
       </ion-row>
       <ion-grid>

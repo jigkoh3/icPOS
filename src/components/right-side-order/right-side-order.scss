@@ -13,6 +13,14 @@ right-side-order {
             font-size: 4rem;
         }
     }
+    [no-data]{
+        color: silver;
+        font-size: 2rem;
+    }
+    [have-data]{
+        color: silver;
+        font-size: 2rem;
+    }
     .order-detail { height: 47rem;}
     /**
     iPad
