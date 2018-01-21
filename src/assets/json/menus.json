@@ -291,7 +291,19 @@
             "icon": "menu",
             "items": [
                 {
-                    "type": "none"
+                    "type": "product",
+                    "product": {
+                        "name": "โค๊ก",
+                        "image": "https://www.the-sweet-life.co.uk/images/product/full/coke500ml.jpg",
+                        "prices": [
+                            {
+                                "name": "ราคาปกติ",
+                                "type": "normal",
+                                "price": 15
+                            }
+                        ],
+                        "submenus": []
+                    }
                 },
                 {
                     "type": "none"
@@ -387,7 +399,19 @@
             "icon": "menu",
             "items": [
                 {
-                    "type": "none"
+                    "type": "product",
+                    "product": {
+                        "name": "เค๊ก",
+                        "image": "https://i8.fnp.com/images/pr/l/truffle-cake-half-kg_1.jpg",
+                        "prices": [
+                            {
+                                "name": "ราคาปกติ",
+                                "type": "normal",
+                                "price": 150
+                            }
+                        ],
+                        "submenus": []
+                    }
                 },
                 {
                     "type": "none"
