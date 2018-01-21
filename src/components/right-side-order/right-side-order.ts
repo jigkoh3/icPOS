@@ -12,10 +12,10 @@ import { Component, Input } from '@angular/core';
 })
 export class RightSideOrderComponent {
 
-  @Input() item: any;
+  @Input() items: any;
 
   constructor() {
-    
+    console.log(this.items);
   }
 
 }

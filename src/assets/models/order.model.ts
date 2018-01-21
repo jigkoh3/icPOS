@@ -18,6 +18,7 @@ export class OrderModel {
 export class OrderItemModel{
     type: String;
     product: ProductModel;
+    total: Number;
 }
 
 export class TableModel{

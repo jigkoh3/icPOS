@@ -2,13 +2,13 @@
   <ion-row ion-fixed>
     <ion-col col-12>
       <ion-row padding-left padding-top>
-        <ion-col col-12 no-data *ngIf="!item">
+        <ion-col col-12 no-data *ngIf="!items">
           {{'NO_DATA' | translate }}
         </ion-col>
-        <ion-col col-12 have-data *ngIf="item">
+        <ion-col col-12 have-data *ngIf="items">
           <ion-row>
             <ion-col col-10>
-              {{'NO_DATA' | translate }}
+              <!-- {{'NO_DATA' | translate }} -->
             </ion-col>
             <ion-col col-2>
               <button ion-button icon-only clear>
@@ -20,13 +20,55 @@
       </ion-row>
       <ion-row padding-left>
         <ion-col col-12 class="order-detail">
-          <ion-scroll scrollY="true">
-            <ion-row >
+          <!-- <ion-scroll scrollY="true">
+            <ion-row *ngFor="let item of items">
               <ion-col col-12>
-                kjk
+                {{item.product.name}}
               </ion-col>
             </ion-row>
-          </ion-scroll>
+          </ion-scroll> -->
+          <!-- {{item.items}} -->
+          <ion-list>
+            <ion-item-sliding *ngFor="let item of items">
+              <ion-item>
+                <ion-row>
+                  <ion-col col-8 item-main>
+                    {{item.product.name}}
+                  </ion-col>
+                  <ion-col col-4 item-main text-right>
+                      {{item.total}} {{'CURENCY' | translate }}
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let price of item.product.prices">
+                  <ion-col col-8 item-option>
+                    {{price.name}}
+                  </ion-col>
+                  <ion-col col-4 item-option text-right>
+                    {{price.price}} {{'CURENCY' | translate }}
+                  </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let sub of item.product.submenus">
+                  <ion-col col-12 item-option>
+                    <ion-row *ngFor="let subprice of sub.prices">
+                      <ion-col col-8 item-option>
+                          {{subprice.name}}
+                        </ion-col>
+                        <ion-col col-4 item-option text-right>
+                          {{subprice.price}} {{'CURENCY' | translate }}
+                        </ion-col>
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-item>
+              <ion-item-options>
+                <button ion-button color="danger">
+                  <ion-icon name="trash"></ion-icon>
+                  {{ "DEL" | translate }}
+                </button>
+              </ion-item-options>
+
+            </ion-item-sliding>
+          </ion-list>
         </ion-col>
       </ion-row>
       <ion-grid>

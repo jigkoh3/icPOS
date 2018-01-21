@@ -7,14 +7,14 @@ import { ModalController } from 'ionic-angular/components/modal/modal-controller
 import { ProductOrderComponent } from '../../components/product-order/product-order';
 import { ProductOrderPage } from '../product-order/product-order';
 import { OrderProvider } from '../../providers/order/order';
-import { OrderModel } from '../../assets/models/order.model';
+import { OrderModel, OrderItemModel } from '../../assets/models/order.model';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  order: OrderModel;
+  order: Array<OrderItemModel>;
   menuItemsSelected: Array<ItemModel>;
   menuSelected: String;
   menus: Array<MenuModel>;
@@ -30,8 +30,8 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this.getMenuData();
     this.getOrderData();
+    this.getMenuData();
   }
 
   getMenuData() {
@@ -51,12 +51,12 @@ export class HomePage {
   }
 
   getOrderData() {
+    //silent load order data
     this.orderService.getOrder().then(data => {
-      this.order = data;
+      this.order = data.items;
       console.log(data);
-      //this.loading.dismiss();
     }, err => {
-      //this.loading.dismiss();
+      console.log(err);
     })
   }
 

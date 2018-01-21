@@ -9,5 +9,6 @@
     "NO_DATA": "no data",
     "CURENCY": "$",
     "NEXT" : "Next",
-    "ADD" : "Add"
+    "ADD" : "Add",
+    "DEL" : "Delete"
 }
