@@ -31,7 +31,7 @@ export class HomePage {
 
   ionViewDidLoad() {
     this.getMenuData();
-    //this.getOrderData();
+    this.getOrderData();
   }
 
   getMenuData() {
@@ -51,16 +51,13 @@ export class HomePage {
   }
 
   getOrderData() {
-    this.loading.onLoading();
-    setTimeout(() => {
-      this.orderService.getOrder().then(data => {
-        this.order = data;
-        //console.log(data);
-        this.loading.dismiss();
-      }, err => {
-        this.loading.dismiss();
-      })
-    }, 1000);
+    this.orderService.getOrder().then(data => {
+      this.order = data;
+      console.log(data);
+      //this.loading.dismiss();
+    }, err => {
+      //this.loading.dismiss();
+    })
   }
 
   menuItemSelected(menu) {
