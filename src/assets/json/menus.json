@@ -3,484 +3,563 @@
         {
             "name": "ก๊วยเตี๋ยว",
             "icon": "menu",
-            "items": [{
-                "type": "product",
-                "product": {
-                    "name":"ก๊วยเตี๋ยวหมู",
-                    "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG"
+            "items": [
+                {
+                    "type": "product",
+                    "product": {
+                        "name": "ก๊วยเตี๋ยวหมู",
+                        "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG",
+                        "category": {
+                            "name": "ก๊วยเตี๋ยว"
+                        },
+                        "prices": [
+                            {
+                                "name": "ราคาปกติ",
+                                "type": "normal",
+                                "price": 60
+                            },
+                            {
+                                "name": "ราคาพิเศษ (เส้นใหญ่,เส้นเล็ก,เส้นหมี่)",
+                                "type": "normal",
+                                "price": 65
+                            },
+                            {
+                                "name": "ราคาพิเศษ (วุ้นเส้น,บะหมี่)",
+                                "type": "normal",
+                                "price": 60
+                            }
+                        ],
+                        "submenus": [
+                            {
+                                "name": "เส้น",
+                                "prices": [
+                                    {
+                                        "name": "ใหญ่",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "เล็ก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "หมี่",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "วุ้นเส้น",
+                                        "type": "normal",
+                                        "price": 10
+                                    },
+                                    {
+                                        "name": "บะหมี่",
+                                        "type": "normal",
+                                        "price": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "ท๊อปปิ้ง",
+                                "prices": [
+                                    {
+                                        "name": "เกี๊ยวทอด",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ตับ",
+                                        "type": "normal",
+                                        "price": 0
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
                 }
-            },{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }]
+            ]
         },
         {
             "name": "ข้าวราดแกง",
             "icon": "menu",
-            "items": [{
-                "type": "product",
-                "product": {
-                    "name":"ข้าวราดแกงกระหรี่",
-                    "image":"http://ot-foodspotting-production.s3.amazonaws.com/reviews/1971639/thumb_600.jpg?1340946600"
+            "items": [
+                {
+                    "type": "product",
+                    "product": {
+                        "name": "ข้าวราดแกงกระหรี่",
+                        "image": "http://ot-foodspotting-production.s3.amazonaws.com/reviews/1971639/thumb_600.jpg?1340946600"
+                    }
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
                 }
-            },{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }]
+            ]
         },
         {
             "name": "เครื่องดื่ม",
             "icon": "menu",
-            "items": [{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }]
+            "items": [
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                }
+            ]
         },
         {
             "name": "ขนมหวาน",
             "icon": "menu",
-            "items": [{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }]
+            "items": [
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                }
+            ]
         },
         {
             "name": "อื่นๆ",
             "icon": "menu",
-            "items": [{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }
-            ,{
-                "type":"none"
-            }]
+            "items": [
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                },
+                {
+                    "type": "none"
+                }
+            ]
         }
     ]
 }

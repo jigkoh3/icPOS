@@ -12,11 +12,16 @@
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-buttons end>
-        <button ion-button clear navbar-button (click)="next()">
-          {{ 'NEXT' | translate }}
-        </button>
-      </ion-buttons>
+    <ion-buttons end *ngIf="step < steps.length - 1">
+      <button ion-button clear navbar-button (click)="next()">
+        {{ 'NEXT' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="step === steps.length - 1">
+      <button ion-button clear navbar-button (click)="add()">
+        {{ 'ADD' | translate }}
+      </button>
+    </ion-buttons>
     <ion-title title>{{item.name}}</ion-title>
 
   </ion-navbar>
@@ -25,5 +30,29 @@
 
 
 <ion-content padding>
+  <ion-row *ngFor="let _step of steps">
+    <ion-col col-12 *ngIf="_step.name === steps[step].name">
+      <ion-row *ngIf="_step.type === 'price'">
+        <ion-col>
+          price
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="_step.type === 'submenu'">
+        <ion-col>
+            <ion-list radio-group [(ngModel)]="autoManufacturers">
 
+                <ion-list-header>
+                  {{_step.name}}
+                </ion-list-header>
+              
+                <ion-item *ngFor="let option of _step.data.prices">
+                  <ion-label>{{option.name}}</ion-label>
+                  <ion-radio value="{{option.name}}"></ion-radio>
+                </ion-item>
+              
+              </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
 </ion-content>

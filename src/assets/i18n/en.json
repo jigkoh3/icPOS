@@ -8,5 +8,6 @@
     "LIST": "List",
     "NO_DATA": "no data",
     "CURENCY": "$",
-    "NEXT" : "Next"
+    "NEXT" : "Next",
+    "ADD" : "Add"
 }
