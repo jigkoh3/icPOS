@@ -15,6 +15,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MenuProvider } from '../providers/menu/menu';
 import { LoadingProvider } from '../providers/loading/loading';
+import { PreloadImageComponent } from '../components/preload-image/preload-image';
+import { ItemGridComponent } from '../components/item-grid/item-grid';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -26,6 +28,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     GridComponent,
     RightSideOrderComponent,
     RightSideEditComponent,
+    PreloadImageComponent,
+    ItemGridComponent
   ],
   imports: [
     BrowserModule,

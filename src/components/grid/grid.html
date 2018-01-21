@@ -1,10 +1,6 @@
 <ion-row>
   <ion-col col-6 col-md-3 col-lg-3 class="grid-col" *ngFor="let item of items">
-    <ion-card class="card-background-page" *ngIf="item.type === 'product'">
-      <img src="{{item.product.image}}"/>
-      <div class="card-title">{{item.product.name}}</div>
-      <div class="card-subtitle"></div>
-    </ion-card>
+    <item-grid [item]="item.product" *ngIf="item.type === 'product'"></item-grid>
     <ion-row *ngIf="item.type === 'none'">
       <ion-col col-12>
         

@@ -1,0 +1,30 @@
+item-grid {
+    img {
+        object-fit: cover;
+        height: 10% !important;
+    }
+    [product-desc] {
+        text-align: left;
+        position: absolute;
+        margin-top: -47px;
+        background-color: rgba(255, 255, 255, 0.73);
+        width: calc(100%);
+        color: #2e2e2e;
+        height: 48px;
+        padding-top: 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 400 !important;
+        font-size: 100%;
+        [product-name]{
+            margin-left: 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
