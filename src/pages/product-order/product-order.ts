@@ -21,7 +21,7 @@ export class ProductOrderPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.item = this.navParams.get('item');
     this.steps = this.calculatestep();
-    console.log(this.steps);
+    //console.log(this.steps);
   }
 
   calculatestep():Array<any> {

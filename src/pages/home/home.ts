@@ -22,64 +22,69 @@ export class HomePage {
     private menusService: MenuProvider,
     private loading: LoadingProvider
   ) {
-    
+
   }
 
   ionViewDidLoad() {
     this.getData();
   }
 
-  getData(){
+  getData() {
     this.loading.onLoading();
     setTimeout(() => {
-      this.menusService.getMenus().then(data =>{
+      this.menusService.getMenus().then(data => {
         this.menus = data.menus;
         this.menuSelected = data.menus[0].name;
         this.menuItemsSelected = data.menus[0].items;
-        console.log(data);
+        //console.log(data);
         this.loading.dismiss();
-      },err=>{
+      }, err => {
         this.loading.dismiss();
       })
     }, 1000);
   }
 
-  menuItemSelected(menu){
+  menuItemSelected(menu) {
     //console.log(menu);
     this.menuSelected = menu.name;
-    if(menu.name === "more"){
+    if (menu.name === "more") {
       alert("More");
     }
-    if(menu.name === "list"){
+    if (menu.name === "list") {
       alert("List");
     }
-    if(menu.items){
+    if (menu.items) {
       this.menuItemsSelected = menu.items;
     }
-    
+
   }
 
-  itemSelected(item){
+  itemSelected(item) {
     //alert("Item Type Selected : " + item.type);
-    switch(item.type) { 
-      case "none": { 
-         //statements; 
-         break; 
-      } 
-      case "product": { 
-         //statements; 
-         this.presentProductModal(item.product);
-         break; 
-      } 
-      default: { 
-         //statements; 
-         break; 
-      } 
-   } 
+    switch (item.type) {
+      case "none": {
+        //statements; 
+        break;
+      }
+      case "product": {
+        //statements; 
+        if(item.product.prices && item.product.submenus){
+          if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
+            this.presentProductModal(item.product);
+          }
+        }
+        
+        break;
+      }
+      default: {
+        //statements; 
+        break;
+      }
+    }
   }
 
   presentProductModal(item) {
-    let productModal = this.modalCtrl.create(ProductOrderPage,{item : item});
+    let productModal = this.modalCtrl.create(ProductOrderPage, { item: item });
     productModal.present();
   }
 
