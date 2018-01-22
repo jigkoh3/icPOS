@@ -20,6 +20,9 @@ import { ItemGridComponent } from '../components/item-grid/item-grid';
 import { ProductOrderComponent } from '../components/product-order/product-order';
 import { ProductOrderPage } from '../pages/product-order/product-order';
 import { OrderProvider } from '../providers/order/order';
+import { MainMorePage } from '../pages/main-more/main-more';
+import { MoreLayoutPage } from '../pages/more-layout/more-layout';
+import { SettingsSideNavComponent } from '../components/settings-side-nav/settings-side-nav';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -34,7 +37,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     RightSideEditComponent,
     PreloadImageComponent,
     ItemGridComponent,
-    ProductOrderComponent
+    ProductOrderComponent,
+    MainMorePage,
+    MoreLayoutPage,
+    SettingsSideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   entryComponents: [
     MyApp,
     HomePage,
-    ProductOrderPage
+    ProductOrderPage,
+    MainMorePage,
+    MoreLayoutPage,
+    SettingsSideNavComponent
   ],
   providers: [
     StatusBar,

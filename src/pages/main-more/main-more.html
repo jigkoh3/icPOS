@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{'MORE' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row>
+    <ion-col col-6 col-md-4 col-lg-4 class="grid-col" (click)="selectedMenu('sellHistory','SELL_HISTORY')">
+      ประวัติการขาย
+    </ion-col>
+    <ion-col col-6 col-md-4 col-lg-4 class="grid-col" (click)="selectedMenu('report','REPORT')">
+      รายงาน
+    </ion-col>
+    <ion-col col-6 col-md-4 col-lg-4 class="grid-col" (click)="selectedMenu('stock','STOCK')">
+      สินค้าคงคลัง
+    </ion-col>
+    <ion-col col-6 col-md-4 col-lg-4 class="grid-col" (click)="selectedMenu('employee','EMPLOYEE')">
+      พนักงาน
+    </ion-col>
+    <ion-col col-6 col-md-4 col-lg-4 class="grid-col" (click)="selectedMenu('moneyManagemnet','MONEY_MANAGEMENT')">
+      จัดการเงินสด
+    </ion-col>
+    <ion-col col-6 col-md-4 col-lg-4 class="grid-col" (click)="selectedMenu('lists','LISTS')">
+      รายการ
+    </ion-col>
+    <ion-col col-6 col-md-4 col-lg-4 class="grid-col" (click)="selectedMenu('settings','SETTINGS')">
+      ตั้งค่า
+    </ion-col>
+  </ion-row>
+</ion-content>

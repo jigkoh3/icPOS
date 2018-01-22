@@ -1,0 +1,8 @@
+settings-side-nav {
+    .list-ios>.item-block:first-child {
+        border-top: none;
+    }
+    .active-item {
+        color: #32db64;
+    }
+}

@@ -1,0 +1,20 @@
+<ion-list>
+  <ion-item (click)="selectedItem('payment','PAYMENT')" [ngClass]="{'active-item' : itemSelected == 'payment'}">
+    <ion-icon name="cash"></ion-icon> การชำระเงิน
+  </ion-item>
+  <ion-item (click)="selectedItem('openBill','OPEN_BILL')" [ngClass]="{'active-item' : itemSelected == 'openBill'}">
+    <ion-icon name="checkbox"></ion-icon> เปิดบิล
+  </ion-item>
+  <ion-item (click)="selectedItem('printer','PRINTER')" [ngClass]="{'active-item' : itemSelected == 'printer'}">
+    <ion-icon name="print"></ion-icon> เครื่องพิมพ์
+  </ion-item>
+  <ion-item (click)="selectedItem('shopHistory','SHOP_HISTORY')" [ngClass]="{'active-item' : itemSelected == 'shopHistory'}">
+    <ion-icon name="home"></ion-icon> ประวัติร้าน
+  </ion-item>
+  <ion-item (click)="selectedItem('global','GLOBAL')" [ngClass]="{'active-item' : itemSelected == 'global'}">
+    <ion-icon name="globe"></ion-icon> นานาชาติ
+  </ion-item>
+  <ion-item (click)="selectedItem('more','MORE')" [ngClass]="{'active-item' : itemSelected == 'more'}">
+    <ion-icon name="more"></ion-icon> อื่นๆ
+  </ion-item>
+</ion-list>

@@ -6,6 +6,7 @@ import { RightSideEditComponent } from './right-side-edit/right-side-edit';
 import { PreloadImageComponent } from './preload-image/preload-image';
 import { ItemGridComponent } from './item-grid/item-grid';
 import { ProductOrderComponent } from './product-order/product-order';
+import { SettingsSideNavComponent } from './settings-side-nav/settings-side-nav';
 @NgModule({
 	declarations: [FooterComponent,
     GridComponent,
@@ -13,7 +14,8 @@ import { ProductOrderComponent } from './product-order/product-order';
     RightSideEditComponent,
     PreloadImageComponent,
     ItemGridComponent,
-    ProductOrderComponent],
+    ProductOrderComponent,
+    SettingsSideNavComponent],
 	imports: [],
 	exports: [FooterComponent,
     GridComponent,
@@ -21,6 +23,7 @@ import { ProductOrderComponent } from './product-order/product-order';
     RightSideEditComponent,
     PreloadImageComponent,
     ItemGridComponent,
-    ProductOrderComponent]
+    ProductOrderComponent,
+    SettingsSideNavComponent]
 })
 export class ComponentsModule {}

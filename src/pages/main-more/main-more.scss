@@ -1,0 +1,27 @@
+page-main-more {
+    .grid-col {
+        min-height: 18rem;
+        background-color: #e5eaee;
+        border: 3px solid #ffffff;
+    }
+    /**
+    iPad
+    */
+    @media screen and (min-height: 768px) and (max-height: 1024px) {
+        .grid-col {
+            min-height: 28rem;
+            background-color: #e5eaee;
+            border: 3px solid #ffffff;
+        }
+    }
+    /**
+    iPad Pro
+    */
+    @media screen and (min-height: 1024px) {
+        .grid-col {
+            min-height: 34rem;
+            background-color: #e5eaee;
+            border: 3px solid #ffffff;
+        }
+    }
+}

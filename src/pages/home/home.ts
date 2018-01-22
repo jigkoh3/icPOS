@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App } from 'ionic-angular';
 import { MenuProvider } from '../../providers/menu/menu';
 import { HomeModel, MenuModel, ItemModel } from '../../assets/models/menus.model';
 import { LoadingProvider } from '../../providers/loading/loading';
@@ -9,6 +9,7 @@ import { ProductOrderPage } from '../product-order/product-order';
 import { OrderProvider } from '../../providers/order/order';
 import { OrderModel, OrderItemModel } from '../../assets/models/order.model';
 import { ProductModel } from '../../assets/models/product.model';
+import { MainMorePage } from '../main-more/main-more';
 
 @Component({
   selector: 'page-home',
@@ -25,7 +26,8 @@ export class HomePage {
     private modalCtrl: ModalController,
     private menusService: MenuProvider,
     private orderService: OrderProvider,
-    private loading: LoadingProvider
+    private loading: LoadingProvider,
+    private app: App
   ) {
 
   }
@@ -48,7 +50,7 @@ export class HomePage {
         this.loading.dismiss();
       })
     }, 1000);
-    
+
   }
 
   getOrderData() {
@@ -65,7 +67,8 @@ export class HomePage {
     //console.log(menu);
     this.menuSelected = menu.name;
     if (menu.name === "more") {
-      alert("More");
+      // this.app.getRootNav().setRoot(MainMorePage);
+      this.navCtrl.push(MainMorePage);
     }
     if (menu.name === "list") {
       alert("List");
@@ -85,10 +88,10 @@ export class HomePage {
       }
       case "product": {
         //statements; 
-        if(item.product.prices && item.product.submenus){
+        if (item.product.prices && item.product.submenus) {
           if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
             this.presentProductModal(item.product);
-          }else{
+          } else {
             let _item = new OrderItemModel();
             _item.product = item.product;
             _item.type = "product";
@@ -97,7 +100,7 @@ export class HomePage {
             this.updateOrder(_item);
           }
         }
-        
+
         break;
       }
       default: {
@@ -107,24 +110,24 @@ export class HomePage {
     }
   }
 
-  updateOrder(item){
-    if(this.order){
+  updateOrder(item) {
+    if (this.order) {
       this.order.push(item);
-    }else{
+    } else {
       this.order = [];
       this.order.push(item);
     }
-    
+
   }
 
   presentProductModal(item) {
     let productModal = this.modalCtrl.create(ProductOrderPage, { item: item });
     productModal.onDidDismiss(data => {
       //console.log(data);
-      if(data){
+      if (data) {
         this.updateOrder(data);
       }
-      
+
     });
     productModal.present();
   }

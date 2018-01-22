@@ -1,0 +1,16 @@
+page-more-layout {
+    .head {
+        height: 56px;
+        text-align: center;
+        border-bottom: 1px solid #c0c0c0;
+    }
+    .bd-right {
+        border-right: 1px solid #c0c0c0;
+    }
+    .pd-top {
+        padding-top: 16px;
+    }
+    .height-fill {
+        height: -webkit-fill-available;
+    }
+}

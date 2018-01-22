@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-row class="head">
+    <ion-col col-5 col-md-5 col-lg-4 class="bd-right pd-top">
+      {{actionType.name | translate}}
+    </ion-col>
+    <ion-col col-7 col-md-7 col-lg-8 class="pd-top">
+      {{contentType.name | translate}}
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-5 col-md-5 col-lg-4 class="bd-right height-fill">
+      <settings-side-nav *ngIf="actionType.type == 'settings'" (settingType)="contentTypeSelected($event)"></settings-side-nav>
+      <!--add more side nav component hear-->
+    </ion-col>
+    <ion-col col-7 col-md-7 col-lg-8 class="height-fill">
+      <h1 *ngIf="contentType.type == 'payment'">Component รายการชำระเงิน</h1>
+      <!--add more content type component hear-->
+
+    </ion-col>
+  </ion-row>
+</ion-content>
