@@ -1,7 +1,7 @@
 {
     "MORE": "More",
     "MENU": "Menu",
-    "BACK_HOME": "Back home",
+    "TAKE_AWAY": "Back home",
     "TOTAL": "Total",
     "PRINT_BILL": "Print bill",
     "BILL": "Bill",
@@ -12,5 +12,6 @@
     "ADD" : "Add",
     "DEL" : "Delete",
     "SAVE" : "Save",
-    "PAYMENT" : "Payment"
+    "CHARGE" : "Charge",
+    "CURR_SALE" : "Current Sale"
 }
