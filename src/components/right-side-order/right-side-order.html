@@ -56,7 +56,7 @@
                     </ion-col>
                   </ion-row>
                   <ion-row>
-                    <ion-col col-12 item-option>
+                    <ion-col col-12 item-option *ngIf="remark">
                       ***{{item.remark}}
                     </ion-col>
                   </ion-row>
@@ -98,10 +98,10 @@
         <ion-col col-12 *ngIf="!items">
           <button ion-button full color="secondary">{{ 'BILL' | translate }}</button>
         </ion-col>
-        <ion-col col-6>
+        <ion-col col-6 *ngIf="items">
             <button ion-button full color="secondary">{{ 'SAVE' | translate }}</button>
         </ion-col>
-        <ion-col col-6>
+        <ion-col col-6 *ngIf="items">
             <button ion-button full color="secondary">{{ 'CHARGE' | translate }}</button>
           </ion-col>
       </ion-row>

@@ -34,7 +34,7 @@
     <ion-col col-12 *ngIf="_step.name === steps[step].name">
       <ion-row *ngIf="_step.type === 'price'">
         <ion-col>
-            <ion-list radio-group [(ngModel)]="autoManufacturers">
+            <ion-list radio-group [(ngModel)]="_step.result">
 
                 <ion-list-header>
                   {{_step.name}}
@@ -50,7 +50,7 @@
       </ion-row>
       <ion-row *ngIf="_step.type === 'submenu'">
         <ion-col>
-            <ion-list radio-group [(ngModel)]="autoManufacturers">
+            <ion-list radio-group [(ngModel)]="_step.result">
 
                 <ion-list-header>
                   {{_step.name}}
