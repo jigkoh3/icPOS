@@ -40,7 +40,7 @@ export class MoreLayoutPage {
         this.contentType = {};
         break;
       case 'settings':
-        this.contentType = { 'type': 'settings', 'name': 'SETTINGS' };
+        this.contentType = { 'type': 'payment', 'name': 'PAYMENT' };
         break;
       default:
         this.contentType = {};
