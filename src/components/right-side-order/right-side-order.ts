@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { OrderItemModel } from '../../assets/models/order.model';
 
 /**
  * Generated class for the RightSideOrderComponent component.
@@ -12,10 +13,28 @@ import { Component, Input } from '@angular/core';
 })
 export class RightSideOrderComponent {
 
-  @Input() items: any;
+  @Input() items: Array<OrderItemModel>;
+  @Output() removedOrderItem: EventEmitter<any> = new EventEmitter<any>();
+  @Output() clearAllOrderItem: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
-    console.log(this.items);
+    //console.log(this.items);
+  }
+
+  removeOrderItem(item){
+    let idx = this.items.indexOf(item);
+    //console.log(idx);
+    this.items.splice(idx);
+    if(this.items.length === 0){
+      this.items = null;
+    }
+    this.removedOrderItem.emit(this.items);
+  }
+
+  clearall(){
+    //console.log("object");
+    this.items = null;
+    this.clearAllOrderItem.emit(this.items);
   }
 
 }

@@ -11,7 +11,7 @@
               {{'CURR_SALE' | translate }}
             </ion-col>
             <ion-col col-2>
-              <button ion-button icon-only clear>
+              <button ion-button icon-only clear (click)="clearall()">
                 <ion-icon name="more"></ion-icon>
               </button>
             </ion-col>
@@ -32,7 +32,7 @@
                       <p *ngIf="item.qty > 1">x {{item.qty}}</p> 
                     </ion-col>
                     <ion-col col-4 item-main text-right>
-                      {{item.total}} {{'CURENCY' | translate }}
+                      {{'CURENCY' | translate }} {{item.total}}
                     </ion-col>
                   </ion-row>
                   <ion-row *ngFor="let price of item.product.prices">
@@ -40,7 +40,7 @@
                       {{price.name}}
                     </ion-col>
                     <ion-col col-4 item-option text-right>
-                      {{price.price}} {{'CURENCY' | translate }}
+                      {{'CURENCY' | translate }} {{price.price}}
                     </ion-col>
                   </ion-row>
                   <ion-row *ngFor="let sub of item.product.submenus">
@@ -50,7 +50,7 @@
                           {{subprice.name}}
                         </ion-col>
                         <ion-col col-4 item-option text-right>
-                          {{subprice.price}} {{'CURENCY' | translate }}
+                          {{'CURENCY' | translate }} {{subprice.price}}
                         </ion-col>
                       </ion-row>
                     </ion-col>
@@ -62,7 +62,7 @@
                   </ion-row>
                 </ion-item>
                 <ion-item-options>
-                  <button ion-button color="danger">
+                  <button ion-button color="danger" (click)="removeOrderItem(item)">
                     <ion-icon name="trash"></ion-icon>
                     {{ "DEL" | translate }}
                   </button>

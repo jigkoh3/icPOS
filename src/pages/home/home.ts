@@ -16,6 +16,7 @@ import { ProductModel } from '../../assets/models/product.model';
 })
 export class HomePage {
   order: Array<OrderItemModel>;
+  selecter: Array<OrderItemModel>;
   menuItemsSelected: Array<ItemModel>;
   menuSelected: String;
   menus: Array<MenuModel>;
@@ -86,6 +87,7 @@ export class HomePage {
       case "product": {
         //statements; 
         if(item.product.prices && item.product.submenus){
+          //console.log(item.product.prices);
           if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
             this.presentProductModal(item.product);
           }else{
@@ -105,6 +107,14 @@ export class HomePage {
         break;
       }
     }
+  }
+
+  removedOrderItem(order){
+    this.order = order;
+  }
+
+  clearAllOrderItem(order){
+    this.order = null;
   }
 
   updateOrder(item){
