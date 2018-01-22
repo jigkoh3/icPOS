@@ -10,5 +10,7 @@
     "CURENCY": "$",
     "NEXT" : "Next",
     "ADD" : "Add",
-    "DEL" : "Delete"
+    "DEL" : "Delete",
+    "SAVE" : "Save",
+    "PAYMENT" : "Payment"
 }
