@@ -120,8 +120,11 @@ export class HomePage {
   presentProductModal(item) {
     let productModal = this.modalCtrl.create(ProductOrderPage, { item: item });
     productModal.onDidDismiss(data => {
-      console.log(data);
-      this.updateOrder(data);
+      //console.log(data);
+      if(data){
+        this.updateOrder(data);
+      }
+      
     });
     productModal.present();
   }
