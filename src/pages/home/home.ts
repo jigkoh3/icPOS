@@ -17,6 +17,7 @@ import { MainMorePage } from '../main-more/main-more';
 })
 export class HomePage {
   order: Array<OrderItemModel>;
+  selecter: Array<OrderItemModel>;
   menuItemsSelected: Array<ItemModel>;
   menuSelected: String;
   menus: Array<MenuModel>;
@@ -88,7 +89,8 @@ export class HomePage {
       }
       case "product": {
         //statements; 
-        if (item.product.prices && item.product.submenus) {
+        if(item.product.prices && item.product.submenus){
+          //console.log(item.product.prices);
           if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
             this.presentProductModal(item.product);
           } else {
@@ -110,8 +112,16 @@ export class HomePage {
     }
   }
 
-  updateOrder(item) {
-    if (this.order) {
+  removedOrderItem(order){
+    this.order = order;
+  }
+
+  clearAllOrderItem(order){
+    this.order = null;
+  }
+
+  updateOrder(item){
+    if(this.order){
       this.order.push(item);
     } else {
       this.order = [];

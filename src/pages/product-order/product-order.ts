@@ -24,12 +24,16 @@ export class ProductOrderPage {
     this.item = this.navParams.get('item');
     this.steps = this.calculatestep();
     this.result = new OrderItemModel();
-    this.result.product = this.item;
+    this.result.product = new ProductModel();
+    this.result.product.name = this.item.name;
+    this.result.product.category = this.item.category;
+    this.result.product.description = this.item.description;
+    this.result.product.image = this.item.image;
     this.result.product.prices = [];
     this.result.product.submenus =[];
     this.result.total = 0;
     this.result.qty = 1;
-    console.log(this.result);
+    //console.log(this.result);
   }
 
   calculatestep():Array<any> {
