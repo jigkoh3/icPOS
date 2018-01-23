@@ -7,6 +7,7 @@ import { PreloadImageComponent } from './preload-image/preload-image';
 import { ItemGridComponent } from './item-grid/item-grid';
 import { ProductOrderComponent } from './product-order/product-order';
 import { SettingsSideNavComponent } from './settings-side-nav/settings-side-nav';
+import { PaymentSettingComponent } from './payment-setting/payment-setting';
 @NgModule({
 	declarations: [FooterComponent,
     GridComponent,
@@ -15,7 +16,8 @@ import { SettingsSideNavComponent } from './settings-side-nav/settings-side-nav'
     PreloadImageComponent,
     ItemGridComponent,
     ProductOrderComponent,
-    SettingsSideNavComponent],
+    SettingsSideNavComponent,
+    PaymentSettingComponent],
 	imports: [],
 	exports: [FooterComponent,
     GridComponent,
@@ -24,6 +26,7 @@ import { SettingsSideNavComponent } from './settings-side-nav/settings-side-nav'
     PreloadImageComponent,
     ItemGridComponent,
     ProductOrderComponent,
-    SettingsSideNavComponent]
+    SettingsSideNavComponent,
+    PaymentSettingComponent]
 })
 export class ComponentsModule {}
