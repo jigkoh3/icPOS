@@ -1,8 +1,8 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-toolbar>
     <ion-title>{{'MORE' | translate}}</ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 
 </ion-header>
 
@@ -39,3 +39,5 @@
     </ion-col>
   </ion-row>
 </ion-content>
+
+<footer [items]="menus" [menuSelected]="menuSelected" (itemSelected)="menuItemSelected($event)"></footer>

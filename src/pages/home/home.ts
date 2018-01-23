@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, App } from 'ionic-angular';
+import { NavController, App, NavParams } from 'ionic-angular';
 import { MenuProvider } from '../../providers/menu/menu';
 import { HomeModel, MenuModel, ItemModel } from '../../assets/models/menus.model';
 import { LoadingProvider } from '../../providers/loading/loading';
@@ -20,6 +20,7 @@ export class HomePage {
   selecter: Array<OrderItemModel>;
   menuItemsSelected: Array<ItemModel>;
   menuSelected: String;
+  refTabInHome: any = {};
   menus: Array<MenuModel>;
   homeData: HomeModel;
 
@@ -28,9 +29,10 @@ export class HomePage {
     private menusService: MenuProvider,
     private orderService: OrderProvider,
     private loading: LoadingProvider,
-    private app: App
+    private app: App,
+    public navParams: NavParams
   ) {
-
+    this.refTabInHome = this.navParams.data;
   }
 
   ionViewDidLoad() {
@@ -43,9 +45,13 @@ export class HomePage {
     setTimeout(() => {
       this.menusService.getMenus().then(data => {
         this.menus = data.menus;
-        this.menuSelected = data.menus[0].name;
-        this.menuItemsSelected = data.menus[0].items;
-        //console.log(data);
+        if (this.refTabInHome.refFooter) {
+          this.menuSelected = this.refTabInHome.menuSelected;
+          this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
+        } else {
+          this.menuSelected = data.menus[0].name;
+          this.menuItemsSelected = data.menus[0].items;
+        }
         this.loading.dismiss();
       }, err => {
         this.loading.dismiss();
@@ -89,7 +95,7 @@ export class HomePage {
       }
       case "product": {
         //statements; 
-        if(item.product.prices && item.product.submenus){
+        if (item.product.prices && item.product.submenus) {
           //console.log(item.product.prices);
           if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
             this.presentProductModal(item.product);
@@ -112,16 +118,16 @@ export class HomePage {
     }
   }
 
-  removedOrderItem(order){
+  removedOrderItem(order) {
     this.order = order;
   }
 
-  clearAllOrderItem(order){
+  clearAllOrderItem(order) {
     this.order = null;
   }
 
-  updateOrder(item){
-    if(this.order){
+  updateOrder(item) {
+    if (this.order) {
       this.order.push(item);
     } else {
       this.order = [];
