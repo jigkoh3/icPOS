@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ItemModel, MenuModel } from '../../assets/models/menus.model';
+import { MainMorePage } from '../main-more/main-more';
+import { HomePage } from '../home/home';
+import { LoadingProvider } from '../../providers/loading/loading';
+import { MenuProvider } from '../../providers/menu/menu';
 
 @IonicPage()
 @Component({
@@ -9,10 +14,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class MoreLayoutPage {
   private actionType: any = {};
   private contentType: any = {};
+  menuItemsSelected: Array<ItemModel>;
+  menuSelected: String;
+  menus: Array<MenuModel>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private menusService: MenuProvider, private loading: LoadingProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.actionType = this.navParams.data;
     this.defaultFirstMenuOfContent(this.actionType);
+    this.menus = this.navParams.get('menus');
+    this.menuSelected = 'more';
   }
 
   ionViewDidLoad() {
@@ -50,6 +60,17 @@ export class MoreLayoutPage {
 
   contentTypeSelected(e) {
     this.contentType = e;
+  }
+
+  menuItemSelected(menu) {
+    this.menuSelected = menu.name;
+    if (menu.name === "more") {
+      this.navCtrl.setRoot(MainMorePage, { menus: this.menus });
+    } else if (menu.name === "list") {
+      alert("List");
+    } else {
+      this.navCtrl.setRoot(HomePage, { menuSelected: this.menuSelected, menuItemsSelected: menu.items, refFooter: true });
+    }
   }
 
 }

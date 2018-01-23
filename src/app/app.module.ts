@@ -23,6 +23,7 @@ import { OrderProvider } from '../providers/order/order';
 import { MainMorePage } from '../pages/main-more/main-more';
 import { MoreLayoutPage } from '../pages/more-layout/more-layout';
 import { SettingsSideNavComponent } from '../components/settings-side-nav/settings-side-nav';
+import { PaymentSettingComponent } from '../components/payment-setting/payment-setting';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -40,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductOrderComponent,
     MainMorePage,
     MoreLayoutPage,
-    SettingsSideNavComponent
+    SettingsSideNavComponent,
+    PaymentSettingComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductOrderPage,
     MainMorePage,
     MoreLayoutPage,
-    SettingsSideNavComponent
+    SettingsSideNavComponent,
+    PaymentSettingComponent
   ],
   providers: [
     StatusBar,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, App } from 'ionic-angular';
+import { NavController, App, NavParams } from 'ionic-angular';
 import { MenuProvider } from '../../providers/menu/menu';
 import { HomeModel, MenuModel, ItemModel } from '../../assets/models/menus.model';
 import { LoadingProvider } from '../../providers/loading/loading';
@@ -20,6 +20,7 @@ export class HomePage {
   selecter: Array<OrderItemModel>;
   menuItemsSelected: Array<ItemModel>;
   menuSelected: String;
+  refTabInHome: any = {};
   menus: Array<MenuModel>;
   homeData: HomeModel;
 
@@ -28,9 +29,10 @@ export class HomePage {
     private menusService: MenuProvider,
     private orderService: OrderProvider,
     private loading: LoadingProvider,
-    private app: App
+    private app: App,
+    public navParams: NavParams
   ) {
-
+    this.refTabInHome = this.navParams.data;
   }
 
   ionViewDidLoad() {
@@ -43,9 +45,13 @@ export class HomePage {
     setTimeout(() => {
       this.menusService.getMenus().then(data => {
         this.menus = data.menus;
-        this.menuSelected = data.menus[0].name;
-        this.menuItemsSelected = data.menus[0].items;
-        //console.log(data);
+        if (this.refTabInHome.refFooter) {
+          this.menuSelected = this.refTabInHome.menuSelected;
+          this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
+        } else {
+          this.menuSelected = data.menus[0].name;
+          this.menuItemsSelected = data.menus[0].items;
+        }
         this.loading.dismiss();
       }, err => {
         this.loading.dismiss();
@@ -65,19 +71,14 @@ export class HomePage {
   }
 
   menuItemSelected(menu) {
-    //console.log(menu);
     this.menuSelected = menu.name;
     if (menu.name === "more") {
-      // this.app.getRootNav().setRoot(MainMorePage);
-      this.navCtrl.push(MainMorePage);
-    }
-    if (menu.name === "list") {
+      this.navCtrl.setRoot(MainMorePage, { menus: this.menus });
+    } else if (menu.name === "list") {
       alert("List");
-    }
-    if (menu.items) {
+    } else {
       this.menuItemsSelected = menu.items;
     }
-
   }
 
   itemSelected(item) {
