@@ -41,7 +41,7 @@
                 </ion-list-header>
               
                 <ion-item *ngFor="let option of _step.data">
-                  <ion-label>{{option.name}}</ion-label>
+                  <ion-label>{{option.name}} {{option.price}}</ion-label>
                   <ion-radio value="{{option.name}}"></ion-radio>
                 </ion-item>
               
@@ -57,7 +57,7 @@
                 </ion-list-header>
               
                 <ion-item *ngFor="let option of _step.data.prices">
-                  <ion-label>{{option.name}}</ion-label>
+                  <ion-label>{{option.name}} {{option.price}}</ion-label>
                   <ion-radio value="{{option.name}}"></ion-radio>
                 </ion-item>
               

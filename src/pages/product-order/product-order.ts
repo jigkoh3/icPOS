@@ -33,6 +33,10 @@ export class ProductOrderPage {
     this.result.product.submenus =[];
     this.result.total = 0;
     this.result.qty = 1;
+    if(this.item.prices.length === 1){
+      this.result.product.prices.push(this.item.prices[0]);
+      this.result.total = this.item.prices[0].price;
+    }
     //console.log(this.result);
   }
 
@@ -45,7 +49,6 @@ export class ProductOrderPage {
         data: this.item.prices,
         result:null
       })
-
     }
     this.item.submenus.forEach(function (sub) {
       steps.push({

@@ -89,7 +89,7 @@ export class HomePage {
       }
       case "product": {
         //statements; 
-        if(item.product.prices && item.product.submenus){
+        if (item.product.prices && item.product.submenus) {
           //console.log(item.product.prices);
           if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
             this.presentProductModal(item.product);
@@ -112,17 +112,67 @@ export class HomePage {
     }
   }
 
-  removedOrderItem(order){
+  removedOrderItem(order) {
     this.order = order;
   }
 
-  clearAllOrderItem(order){
+  clearAllOrderItem(order) {
     this.order = null;
   }
 
-  updateOrder(item){
-    if(this.order){
+  // Array.prototype.indexOfId = function (id) {
+  //   for (var i = 0; i < this.length; i++)
+  //     if (this[i].id === id)
+  //       return i;
+  //   return -1;
+  // }
+  isDuplicateProductItem(arrItem: Array<OrderItemModel>, item: ProductModel): Boolean {
+    let result = false;
+    arrItem.forEach(function (_item) {
+      if (_item.product.name === item.name) {
+        if (_item.product.prices && _item.product.prices.length > 0) {
+          if (_item.product.submenus && _item.product.submenus.length > 0) {
+            let i = 0;
+            _item.product.submenus.forEach(function (sub) {
+              if (item.submenus.map(function (e) { return e[i].name }).indexOf(sub.name) === -1) {
+                return false
+              }
+              i++;
+            });
+            return true;
+          }
+        } else {
+          if (_item.product.submenus && _item.product.submenus.length > 0) {
+            let i = 0;
+            _item.product.submenus.forEach(function (sub) {
+              if (item.submenus.map(function (e) { return e[i].name }).indexOf(sub.name) === -1) {
+                return false
+              }
+              i++;
+            });
+            return true;
+          }
+        }
+
+      }
+    });
+    return result;
+  }
+
+  updateOrder(item) {
+    if (this.order) {
+      //let isDup = this.isDuplicateProductItem(this.order, item.product);
+      // let isDup = this.order.filter(function (i) {
+      //   return i.product === item.product;
+      // })
+      // console.log(isDup);
+      // if(isDup && isDup.length > 0){
+
+      // }else{
+        
+      // }
       this.order.push(item);
+      
     } else {
       this.order = [];
       this.order.push(item);

@@ -20,7 +20,7 @@ export class PriceModel {
 export class SubmenuModel {
     name: String;
     prices: Array<PriceModel>;
-    isradio: Boolean;
+    type: String; // "one" , "multi", "multiqty"
     bom: BomModel;
 }
 
