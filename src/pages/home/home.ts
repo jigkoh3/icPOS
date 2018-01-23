@@ -71,19 +71,14 @@ export class HomePage {
   }
 
   menuItemSelected(menu) {
-    //console.log(menu);
     this.menuSelected = menu.name;
     if (menu.name === "more") {
-      // this.app.getRootNav().setRoot(MainMorePage);
-      this.navCtrl.push(MainMorePage);
-    }
-    if (menu.name === "list") {
+      this.navCtrl.setRoot(MainMorePage, { menus: this.menus });
+    } else if (menu.name === "list") {
       alert("List");
-    }
-    if (menu.items) {
+    } else {
       this.menuItemsSelected = menu.items;
     }
-
   }
 
   itemSelected(item) {

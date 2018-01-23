@@ -17,39 +17,27 @@ export class MainMorePage {
   menuSelected: String;
   menus: Array<MenuModel>;
   constructor(private menusService: MenuProvider, private loading: LoadingProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.menus = this.navParams.get('menus');
+    this.menuSelected = 'more';
   }
 
   ionViewDidLoad() {
-    this.getMenuData();
+
   }
 
   selectedMenu(type, name) {
-    this.navCtrl.push(MoreLayoutPage, { type: type, name: name });
-  }
-
-  getMenuData() {
-    this.loading.onLoading();
-    setTimeout(() => {
-      this.menusService.getMenus().then(data => {
-        this.menus = data.menus;
-        this.menuSelected = 'more';
-        this.loading.dismiss();
-      }, err => {
-        this.loading.dismiss();
-      })
-    }, 1000);
+    this.navCtrl.setRoot(MoreLayoutPage, { type: type, name: name, menus: this.menus });
   }
 
   menuItemSelected(menu) {
     this.menuSelected = menu.name;
     if (menu.name === "more") {
-      // this.app.getRootNav().setRoot(MainMorePage);
-      this.navCtrl.setRoot(MainMorePage);
-    }
-    if (menu.name === "list") {
+      this.navCtrl.setRoot(MainMorePage, { menus: this.menus });
+    } else if (menu.name === "list") {
       alert("List");
+    } else {
+      this.navCtrl.setRoot(HomePage, { menuSelected: this.menuSelected, menuItemsSelected: menu.items, refFooter: true });
     }
-    this.navCtrl.setRoot(HomePage, { menuSelected: this.menuSelected, menuItemsSelected: menu.items, refFooter: true });
   }
 
 }
