@@ -24,7 +24,7 @@ export class RightSideOrderComponent {
   removeOrderItem(item){
     let idx = this.items.indexOf(item);
     //console.log(idx);
-    this.items.splice(idx);
+    this.items.splice(idx,1);
     if(this.items.length === 0){
       this.items = null;
     }
