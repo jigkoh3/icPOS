@@ -1,4 +1,49 @@
-<!-- Generated template for the PaymentSettingComponent component -->
-<div>
-  PAYMENT SETTING
-</div>
+<ion-list>
+  <ion-item>
+    <ion-label>ภาษีมูลค่าเพิ่ม</ion-label>
+    <ion-toggle [(ngModel)]="vat.isVat" color="secondary" (ngModelChange)="setViewVatForm($event)"></ion-toggle>
+  </ion-item>
+  <div *ngIf="vatFromVisible">
+    <ion-item>
+      <ion-label>TAX ID</ion-label>
+      <ion-input type="text" placeholder="please fill" [(ngModel)]="vat.taxID"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>REGISTER NO</ion-label>
+      <ion-input type="text" placeholder="please fill" [(ngModel)]="vat.registerNo"></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-item>
+    <ion-label>ค่าบริการ</ion-label>
+    <ion-toggle [(ngModel)]="serviceCharge.isServiceCharge" color="secondary" (ngModelChange)="setViewServiceChargeForm($event)"></ion-toggle>
+  </ion-item>
+  <div *ngIf="serviceChargeFromVisible">
+    <ion-item>
+      <ion-label>เปอร์เซ็นต์</ion-label>
+      <ion-input type="number" placeholder="please fill" [(ngModel)]="serviceCharge.percent"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>กำหนดราคาสินค้า</ion-label>
+      <ion-select [(ngModel)]="serviceCharge.setProductPrice">
+        <ion-option value="includeServiceCharge">รวมค่าบริการในราคาสินค้า</ion-option>
+        <ion-option value="splitServiceCharge">แยกค่าบริการออกจากราคาสินค้า</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <ion-item>
+    <ion-label>ปัดเศษ</ion-label>
+    <ion-select [(ngModel)]="round">
+      <ion-option value="no">ไม่มี</ion-option>
+      <ion-option value="roundNear">ปัดเศษไปจำนวนที่ใกล้ที่สุด</ion-option>
+      <ion-option value="roundUp">ปัดเศษขึ้น</ion-option>
+      <ion-option value="roundDown">ปัดเศษลง</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <p class="center">
+    <button ion-button color="secondary" (click)="saveData()">บันทึก</button>
+  </p>
+</ion-list>

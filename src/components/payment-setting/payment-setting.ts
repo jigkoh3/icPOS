@@ -11,12 +11,33 @@ import { Component } from '@angular/core';
   templateUrl: 'payment-setting.html'
 })
 export class PaymentSettingComponent {
-
-  text: string;
+  private paymentSettingData: any = {};
+  private serviceCharge: any = {};
+  private vat: any = {};
+  private vatFromVisible: boolean;
+  private round: string;
+  private serviceChargeFromVisible: boolean;
 
   constructor() {
-    console.log('Hello PaymentSettingComponent Component');
-    this.text = 'Hello World';
+    this.serviceCharge.setProductPrice = 'includeServiceCharge';
+    this.round = 'no';
+  }
+
+  setViewVatForm(e) {
+    this.vatFromVisible = e;
+  }
+
+  setViewServiceChargeForm(e) {
+    this.serviceChargeFromVisible = e;
+  }
+
+  saveData() {
+    this.paymentSettingData = {
+      vat: this.vat,
+      serviceCharge: this.serviceCharge,
+      round: this.round
+    };
+    console.log(this.paymentSettingData);
   }
 
 }
