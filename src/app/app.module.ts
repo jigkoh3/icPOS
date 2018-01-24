@@ -24,6 +24,7 @@ import { MainMorePage } from '../pages/main-more/main-more';
 import { MoreLayoutPage } from '../pages/more-layout/more-layout';
 import { SettingsSideNavComponent } from '../components/settings-side-nav/settings-side-nav';
 import { PaymentSettingComponent } from '../components/payment-setting/payment-setting';
+import { OpenbillSettingComponent } from '../components/openbill-setting/openbill-setting';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -42,7 +43,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MainMorePage,
     MoreLayoutPage,
     SettingsSideNavComponent,
-    PaymentSettingComponent
+    PaymentSettingComponent,
+    OpenbillSettingComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MainMorePage,
     MoreLayoutPage,
     SettingsSideNavComponent,
-    PaymentSettingComponent
+    PaymentSettingComponent,
+    OpenbillSettingComponent
   ],
   providers: [
     StatusBar,

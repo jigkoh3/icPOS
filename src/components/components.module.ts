@@ -8,6 +8,7 @@ import { ItemGridComponent } from './item-grid/item-grid';
 import { ProductOrderComponent } from './product-order/product-order';
 import { SettingsSideNavComponent } from './settings-side-nav/settings-side-nav';
 import { PaymentSettingComponent } from './payment-setting/payment-setting';
+import { OpenbillSettingComponent } from './openbill-setting/openbill-setting';
 @NgModule({
 	declarations: [FooterComponent,
     GridComponent,
@@ -17,7 +18,8 @@ import { PaymentSettingComponent } from './payment-setting/payment-setting';
     ItemGridComponent,
     ProductOrderComponent,
     SettingsSideNavComponent,
-    PaymentSettingComponent],
+    PaymentSettingComponent,
+    OpenbillSettingComponent],
 	imports: [],
 	exports: [FooterComponent,
     GridComponent,
@@ -27,6 +29,7 @@ import { PaymentSettingComponent } from './payment-setting/payment-setting';
     ItemGridComponent,
     ProductOrderComponent,
     SettingsSideNavComponent,
-    PaymentSettingComponent]
+    PaymentSettingComponent,
+    OpenbillSettingComponent]
 })
 export class ComponentsModule {}

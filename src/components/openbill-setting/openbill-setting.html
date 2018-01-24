@@ -1,0 +1,27 @@
+<ion-list>
+  <ion-item>
+    <ion-label>เปิดบิล</ion-label>
+    <ion-toggle [(ngModel)]="openbillSettingData.isOpenbill" color="secondary"></ion-toggle>
+  </ion-item>
+  <div *ngIf="openbillSettingData.isOpenbill">
+    <ion-item>
+      <ion-label>จำนวนโต๊ะ</ion-label>
+      <ion-input type="number" placeholder="please fill" [(ngModel)]="openbillSettingData.tableQty"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>แสดงระยะเวลาการเปิดบิล</ion-label>
+      <ion-toggle [(ngModel)]="openbillSettingData.showTime" color="secondary"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>จำกัดเวลา (นาที)</ion-label>
+      <ion-input type="number" placeholder="please fill" [(ngModel)]="openbillSettingData.limitTime"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>เปิดการใช้งานการแจ้งเตือนสำหรับเครื่องนี้</ion-label>
+      <ion-toggle [(ngModel)]="openbillSettingData.setNotification" color="secondary"></ion-toggle>
+    </ion-item>
+  </div>
+  <p class="center">
+    <button ion-button color="secondary" (click)="saveData()">บันทึก</button>
+  </p>
+</ion-list>
