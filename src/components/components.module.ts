@@ -9,6 +9,7 @@ import { ProductOrderComponent } from './product-order/product-order';
 import { SettingsSideNavComponent } from './settings-side-nav/settings-side-nav';
 import { PaymentSettingComponent } from './payment-setting/payment-setting';
 import { OpenbillSettingComponent } from './openbill-setting/openbill-setting';
+import { PrinterSettingComponent } from './printer-setting/printer-setting';
 @NgModule({
 	declarations: [FooterComponent,
     GridComponent,
@@ -19,7 +20,8 @@ import { OpenbillSettingComponent } from './openbill-setting/openbill-setting';
     ProductOrderComponent,
     SettingsSideNavComponent,
     PaymentSettingComponent,
-    OpenbillSettingComponent],
+    OpenbillSettingComponent,
+    PrinterSettingComponent],
 	imports: [],
 	exports: [FooterComponent,
     GridComponent,
@@ -30,6 +32,7 @@ import { OpenbillSettingComponent } from './openbill-setting/openbill-setting';
     ProductOrderComponent,
     SettingsSideNavComponent,
     PaymentSettingComponent,
-    OpenbillSettingComponent]
+    OpenbillSettingComponent,
+    PrinterSettingComponent]
 })
 export class ComponentsModule {}

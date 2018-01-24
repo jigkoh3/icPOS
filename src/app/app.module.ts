@@ -25,6 +25,8 @@ import { MoreLayoutPage } from '../pages/more-layout/more-layout';
 import { SettingsSideNavComponent } from '../components/settings-side-nav/settings-side-nav';
 import { PaymentSettingComponent } from '../components/payment-setting/payment-setting';
 import { OpenbillSettingComponent } from '../components/openbill-setting/openbill-setting';
+import { PrinterSettingComponent } from '../components/printer-setting/printer-setting';
+import { SettingProvider } from '../providers/setting/setting';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -44,7 +46,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MoreLayoutPage,
     SettingsSideNavComponent,
     PaymentSettingComponent,
-    OpenbillSettingComponent
+    OpenbillSettingComponent,
+    PrinterSettingComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MoreLayoutPage,
     SettingsSideNavComponent,
     PaymentSettingComponent,
-    OpenbillSettingComponent
+    OpenbillSettingComponent,
+    PrinterSettingComponent
   ],
   providers: [
     StatusBar,
@@ -75,7 +79,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     MenuProvider,
     LoadingProvider,
-    OrderProvider
+    OrderProvider,
+    SettingProvider
   ]
 })
 export class AppModule { }

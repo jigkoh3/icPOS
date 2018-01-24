@@ -1,0 +1,13 @@
+{
+    "round": "no",
+    "serviceCharge": {
+        "isServiceCharge": true,
+        "percent": 7,
+        "setProductPrice": "includeServiceCharge"
+    },
+    "vat": {
+        "isVat": true,
+        "registerNo": "REG11111",
+        "taxID": "TAX99999"
+    }
+}
