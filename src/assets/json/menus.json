@@ -8,7 +8,7 @@
                     "type": "product",
                     "product": {
                         "name": "ก๊วยเตี๋ยวหมู",
-                        "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG",
+                        "image": "../../assets/imgs/019.png",
                         "category": {
                             "name": "ก๊วยเตี๋ยว"
                         },
