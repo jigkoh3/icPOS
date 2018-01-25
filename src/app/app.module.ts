@@ -8,7 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FooterComponent } from '../components/footer/footer';
 import { GridComponent } from '../components/grid/grid';
-import { RightSideOrderComponent } from '../components/right-side-order/right-side-order';
+import { RightSideOrderComponent, PopoverPage } from '../components/right-side-order/right-side-order';
 import { RightSideEditComponent } from '../components/right-side-edit/right-side-edit';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -47,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SettingsSideNavComponent,
     PaymentSettingComponent,
     OpenbillSettingComponent,
-    PrinterSettingComponent
+    PrinterSettingComponent,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +72,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SettingsSideNavComponent,
     PaymentSettingComponent,
     OpenbillSettingComponent,
-    PrinterSettingComponent
+    PrinterSettingComponent,
+    PopoverPage
   ],
   providers: [
     StatusBar,

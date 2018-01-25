@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { OrderItemModel } from '../../assets/models/order.model';
+import { PopoverController, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the RightSideOrderComponent component.
@@ -17,7 +18,7 @@ export class RightSideOrderComponent {
   @Output() removedOrderItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() clearAllOrderItem: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() {
+  constructor(private popoverCtrl: PopoverController) {
     //console.log(this.items);
   }
 
@@ -37,4 +38,31 @@ export class RightSideOrderComponent {
     this.clearAllOrderItem.emit(this.items);
   }
 
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+    popover.onDidDismiss(data => {
+      //console.log(data);
+      this.clearall();
+
+    });
+    popover.present({
+      ev: myEvent
+    });
+  }
+
+}
+
+@Component({
+  template: `
+    <ion-list>
+      <button ion-item (click)="close()">{{ "CLAREALL" | translate }}</button>
+    </ion-list>
+  `
+})
+export class PopoverPage {
+  constructor(public viewCtrl: ViewController) {}
+
+  close() {
+    this.viewCtrl.dismiss();
+  }
 }
