@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>เครื่องพิมพ์แคชเชียร์</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-segment [(ngModel)]="cashierPrinter" color="secondary">
+    <ion-segment-button value="wifi">
+      WIFI/LAN
+    </ion-segment-button>
+    <ion-segment-button value="bluetooth">
+      บลูทูธ
+    </ion-segment-button>
+  </ion-segment>
+  <ion-list *ngIf="cashierPrinter =='wifi'" margin>
+    <ion-item>
+      <ion-label>โหมดเครื่องพิมพ์</ion-label>
+      <ion-select [(ngModel)]="printerMode">
+        <ion-option value="58MM">โหมด 58MM</ion-option>
+        <ion-option value="80MM">โหมด 80MM</ion-option>
+        <ion-option value="STAR">STAR</ion-option>
+        <ion-option value="EPPOS">EPPOS</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>IP Address</ion-label>
+      <ion-input type="text" placeholder="192.168.1.80" [(ngModel)]="ipAddress"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>หมายเลขพอร์ต</ion-label>
+      <ion-input type="number" placeholder="9100" [(ngModel)]="port"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="cashierPrinter =='bluetooth'" margin>
+    <ion-item>
+      <ion-label>บลูทูธ</ion-label>
+      <ion-toggle [(ngModel)]="isOnBluetooth" color="secondary"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <button ion-button full color="secondary">เชื่อมต่อ</button>
+</ion-footer>
