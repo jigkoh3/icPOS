@@ -34,7 +34,7 @@
     <ion-col col-12 *ngIf="_step.name === steps[step].name">
       <ion-row *ngIf="_step.type === 'price'">
         <ion-col>
-            <ion-list radio-group [(ngModel)]="_step.result">
+          <!-- <ion-list radio-group [(ngModel)]="_step.result">
 
                 <ion-list-header>
                   {{_step.name}}
@@ -45,23 +45,43 @@
                   <ion-radio value="{{option.name}}"></ion-radio>
                 </ion-item>
               
-              </ion-list>
+              </ion-list> -->
+          <ion-row radio-group [(ngModel)]="_step.result">
+
+            <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data">
+              <ion-item>
+                <ion-label>{{option.name}} {{option.price}}</ion-label>
+                <ion-radio value="{{option.name}}"></ion-radio>
+              </ion-item>
+            </ion-col>
+
+          </ion-row>
         </ion-col>
       </ion-row>
       <ion-row *ngIf="_step.type === 'submenu'">
         <ion-col>
-            <ion-list radio-group [(ngModel)]="_step.result">
+          <!-- <ion-list radio-group [(ngModel)]="_step.result">
 
-                <ion-list-header>
-                  {{_step.name}}
-                </ion-list-header>
-              
-                <ion-item *ngFor="let option of _step.data.prices">
+            <ion-list-header>
+              {{_step.name}}
+            </ion-list-header>
+
+            <ion-item *ngFor="let option of _step.data.prices">
+              <ion-label>{{option.name}} {{option.price}}</ion-label>
+              <ion-radio value="{{option.name}}"></ion-radio>
+            </ion-item>
+
+          </ion-list> -->
+          <ion-row radio-group [(ngModel)]="_step.result">
+
+            <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data.prices">
+              <ion-item>
                   <ion-label>{{option.name}} {{option.price}}</ion-label>
                   <ion-radio value="{{option.name}}"></ion-radio>
-                </ion-item>
-              
-              </ion-list>
+              </ion-item>
+            </ion-col>
+
+          </ion-row>
         </ion-col>
       </ion-row>
     </ion-col>
