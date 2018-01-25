@@ -5,12 +5,12 @@ export class HomeModel{
 }
 
 export class MenuModel {
-    name: String;
-    icon:String;
+    name: string;
+    icon:string;
     items:Array<ItemModel>;
 }
 
 export class ItemModel{
-    type: String;
+    type: string;
     product: ProductModel;
 }

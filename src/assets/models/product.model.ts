@@ -1,31 +1,31 @@
 export class ProductModel {
-    name: String;
-    image: String;
-    bgcoler: String;
+    name: string;
+    image: string;
+    bgcoler: string;
     category: CategoryModel;
     prices: Array<PriceModel>;
     submenus: Array<SubmenuModel>
-    description: String;
+    description: string;
 }
 
 export class CategoryModel {
-    name: String;
+    name: string;
 }
 
 export class PriceModel {
-    name: String;
-    type: String;
-    price: Number;
-    isChecked: Boolean; // Submenu Type 'any' Only
-    selectedQty: Number; // Submenu Type 'qty' Only
+    name: string;
+    type: string;
+    price: number;
+    isChecked: boolean; // Submenu Type 'any' Only
+    selectedQty: number; // Submenu Type 'qty' Only
 }
 export class SubmenuModel {
-    name: String;
+    name: string;
     prices: Array<PriceModel>;
-    type: String; // "one" , "any", "qty"
+    type: string; // "one" , "any", "qty"
     bom: BomModel;
 }
 
 export class BomModel{
-    name: String;
+    name: string;
 }

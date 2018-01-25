@@ -1,38 +1,38 @@
 import { ProductModel } from "./product.model";
 
 export class OrderModel {
-    docno: String;
+    docno: string;
     docdate: Date;
-    servetype: String; // "cashier : สั่งหน้า cashier (default)", "table : สั่งที่โต๊ะ", "customer : สั่งกลับบ้าน"
+    servetype: string; // "cashier : สั่งหน้า cashier (default)", "table : สั่งที่โต๊ะ", "customer : สั่งกลับบ้าน"
     table: TableModel;
     customer: CustomerModel;
     items: Array<OrderItemModel>;
-    total: Number;
-    discount: Number;
-    vatrate: Number;
-    vatamount: Number;
-    netamount: Number;
-    status: String; // "open", "close", "cancle" 
+    total: number;
+    discount: number;
+    vatrate: number;
+    vatamount: number;
+    netamount: number;
+    status: string; // "open", "close", "cancle" 
 }
 
 export class OrderItemModel {
-    type: String;
+    type: string;
     product: ProductModel;
-    remark: String;
-    qty: Number;
-    total: Number;
+    remark: string;
+    qty: number;
+    total: number;
 }
 
 export class TableModel {
-    name: String;
+    name: string;
     zone: ZoneModel;
 }
 
 export class CustomerModel {
-    name: String;
+    name: string;
 }
 
 export class ZoneModel {
-    name: String
+    name: string
 }
 
