@@ -1,12 +1,13 @@
 <ion-list>
-    <ion-item (click)="connectionSettingModal()">
+    <ion-item (click)="cashierPrinterModal()">
         <h2>เครื่องพิมพ์แคชเชียร์
             <span class="right">
-                หยุดการเชื่อมต่อ <ion-icon name="ios-arrow-forward"></ion-icon>
+                หยุดการเชื่อมต่อ
+                <ion-icon name="ios-arrow-forward"></ion-icon>
             </span>
         </h2>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="invoidTemplateModal()">
         <h2>การปรับเปลี่ยนรูปแบบใบเสร็จ
             <span class="right">
                 <ion-icon name="ios-arrow-forward"></ion-icon>
@@ -14,3 +15,6 @@
         </h2>
     </ion-item>
 </ion-list>
+<p padding>
+    <button ion-button full color="secondary" (click)="kitchenPrinterModal()">เพิ่มเครื่องพิมพ์ในครัว</button>
+</p>

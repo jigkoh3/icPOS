@@ -12,10 +12,32 @@ export class PrinterSettingComponent {
 
   }
 
-  connectionSettingModal() {
-    let productModal = this.modalCtrl.create(PrinterSettingModalPage);
+  cashierPrinterModal() {
+    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'cashier', name: 'เครื่องพิมพ์แคชเชียร์' });
     productModal.onDidDismiss(data => {
-      console.log(data);
+      if (data) {
+        console.log(data);
+      }
+    });
+    productModal.present();
+  }
+
+  invoidTemplateModal() {
+    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'template', name: 'การปรับเปลี่ยนรูปแบบใบเสร็จ' });
+    productModal.onDidDismiss(data => {
+      if (data) {
+        console.log(data);
+      }
+    });
+    productModal.present();
+  }
+
+  kitchenPrinterModal() {
+    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'kitchen', name: 'เครื่องพิมพ์ครัว' });
+    productModal.onDidDismiss(data => {
+      if (data) {
+        console.log(data);
+      }
     });
     productModal.present();
   }
