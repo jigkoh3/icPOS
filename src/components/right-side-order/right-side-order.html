@@ -47,10 +47,10 @@
                     <ion-col col-12 item-option>
                       <ion-row *ngFor="let subprice of sub.prices">
                         <ion-col col-8 item-option>
-                          {{subprice.name}}
+                          {{subprice.name}} <span *ngIf="subprice.selectedQty"> x {{subprice.selectedQty}}</span> 
                         </ion-col>
                         <ion-col col-4 item-option text-right>
-                          {{'CURENCY' | translate }} {{subprice.price}}
+                          {{'CURENCY' | translate }} {{subprice.price * (subprice.selectedQty || 1)}}
                         </ion-col>
                       </ion-row>
                     </ion-col>

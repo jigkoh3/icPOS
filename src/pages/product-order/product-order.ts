@@ -171,7 +171,7 @@ export class ProductOrderPage {
           case "qty": {
             _step.data.prices.forEach(function (_price) {
               if (_price.selectedQty > 0) {
-                let total = _price.price;
+                let total = _price.price * _price.selectedQty;
                 _submenu.prices.push(_price);
                 _result.total += total;
               }
@@ -180,7 +180,7 @@ export class ProductOrderPage {
           }
         }
 
-        console.log(_submenu);
+        // console.log(_submenu);
         _result.product.submenus.push(_submenu);
         break;
       }
@@ -205,7 +205,7 @@ export class ProductOrderPage {
   checked(option){
     
     option.isChecked = !option.isChecked;
-    console.log(option);
+    //console.log(option);
   }
 
 }
