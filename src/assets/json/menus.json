@@ -31,6 +31,7 @@
                         ],
                         "submenus": [
                             {
+                                "type": "one",
                                 "name": "เส้น",
                                 "prices": [
                                     {
@@ -67,6 +68,7 @@
                                 ]
                             },
                             {
+                                "type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
@@ -123,6 +125,7 @@
                                 ]
                             },
                             {
+                                "type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {

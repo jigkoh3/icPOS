@@ -20,6 +20,8 @@
     "LIST": "List",
     "NO_DATA": "no data",
     "CURENCY": "$",
+    "PRICE" : "Size",
+    "PREV" : "Back",
     "NEXT" : "Next",
     "ADD" : "Add",
     "DEL" : "Delete",

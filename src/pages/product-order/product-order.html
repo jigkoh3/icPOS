@@ -9,7 +9,7 @@
   <ion-navbar padding>
     <ion-buttons start *ngIf="step > 0" (click)="prev()">
       <button ion-button icon-only navbar-button>
-        <ion-icon name="arrow-back"></ion-icon>
+        <ion-icon name="arrow-back"></ion-icon>{{ "PREV" | translate }}
       </button>
     </ion-buttons>
     <ion-buttons end *ngIf="step < steps.length - 1">
@@ -46,10 +46,13 @@
                 </ion-item>
               
               </ion-list> -->
+          <ion-item-divider text-center>
+            {{ "PRICE" | translate}}
+          </ion-item-divider>
           <ion-row radio-group [(ngModel)]="_step.result">
 
             <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data">
-              <ion-item>
+              <ion-item no-lines color="light">
                 <ion-label>{{option.name}} {{option.price}}</ion-label>
                 <ion-radio value="{{option.name}}" (ionSelect)="radioChecked()"></ion-radio>
               </ion-item>
@@ -72,16 +75,37 @@
             </ion-item>
 
           </ion-list> -->
-          <ion-row radio-group [(ngModel)]="_step.result">
-
+          <ion-item-divider text-center>
+            {{_step.name}} : {{_step.data.type}}
+          </ion-item-divider>
+          <ion-row radio-group [(ngModel)]="_step.result" *ngIf="_step.data.type==='one'">
             <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data.prices">
-              <ion-item>
-                  <ion-label>{{option.name}} {{option.price}}</ion-label>
-                  <ion-radio value="{{option.name}}" (ionSelect)="radioChecked()"></ion-radio>
+              <ion-item no-lines color="light">
+                <ion-label>{{option.name}} {{option.price}}</ion-label>
+                <ion-radio value="{{option.name}}" (ionSelect)="radioChecked()"></ion-radio>
               </ion-item>
             </ion-col>
-
           </ion-row>
+          <ion-row *ngIf="_step.data.type==='qty'">
+            <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data.prices">
+              <ion-item no-lines color="light" text-center>
+                <ion-label>{{option.name}} {{option.price}}</ion-label>
+              </ion-item>
+              <ion-item no-lines color="light">
+                <button ion-button small > - </button>
+                0
+                <button ion-button small > + </button>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="_step.data.type==='any'">
+              <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data.prices">
+                <ion-item>
+                  <ion-label>{{option.name}} {{option.price}}</ion-label>
+                  <ion-checkbox checked="isChecked" ></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
         </ion-col>
       </ion-row>
     </ion-col>
