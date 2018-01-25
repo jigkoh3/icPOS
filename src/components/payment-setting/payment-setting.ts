@@ -20,17 +20,12 @@ export class PaymentSettingComponent {
 
   init() {
     this.settingProvider.getPaymentSetting().then(data => {
-      if (data) {
-        this.paymentSettingData = data;
-        this.vat = this.paymentSettingData.vat;
-        this.vatFromVisible = this.paymentSettingData.vat.isVat;
-        this.serviceCharge = this.paymentSettingData.serviceCharge;
-        this.serviceChargeFromVisible = this.paymentSettingData.serviceCharge.isServiceCharge;
-        this.round = this.paymentSettingData.round;
-      } else {
-        this.serviceCharge.setProductPrice = 'includeServiceCharge';
-        this.round = 'no';
-      }
+      this.paymentSettingData = data;
+      this.vat = this.paymentSettingData.vat ? this.paymentSettingData.vat : { isVat: false };
+      this.vatFromVisible = this.vat.isVat;
+      this.serviceCharge = this.paymentSettingData.serviceCharge ? this.paymentSettingData.serviceCharge : { setProductPrice: 'includeServiceCharge' };
+      this.serviceChargeFromVisible = this.serviceCharge.isServiceCharge;
+      this.round = this.paymentSettingData.round ? this.paymentSettingData.round : 'no';
     }).catch(err => {
       console.log(err);
     });
