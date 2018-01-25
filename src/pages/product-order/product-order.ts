@@ -202,4 +202,10 @@ export class ProductOrderPage {
 
   }
 
+  checked(option){
+    
+    option.isChecked = !option.isChecked;
+    console.log(option);
+  }
+
 }

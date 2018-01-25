@@ -112,7 +112,7 @@
               <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data.prices">
                 <ion-item no-lines color="light" text-center>
                   <ion-label>{{option.name}} {{option.price}}</ion-label>
-                  <ion-checkbox color="secondary" checked="{{option.isChecked}}"></ion-checkbox>
+                  <ion-checkbox color="secondary" checked="{{option.isChecked}}" (ionChange)="checked(option)"></ion-checkbox>
                 </ion-item>
               </ion-col>
             </ion-row>
