@@ -1,0 +1,7 @@
+{
+    "isOpenbill": true,
+    "tableQty": 10,
+    "showTime": true,
+    "limitTime": 30,
+    "setNotification": true
+}
