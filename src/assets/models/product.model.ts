@@ -16,6 +16,8 @@ export class PriceModel {
     name: String;
     type: String;
     price: Number;
+    isChecked: Boolean; // Submenu Type 'any' Only
+    selectedQty: Number; // Submenu Type 'qty' Only
 }
 export class SubmenuModel {
     name: String;
