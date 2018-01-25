@@ -130,4 +130,13 @@ export class ProductOrderPage {
     //console.log(this.result);
   }
 
+  radioChecked(){
+    if(this.step === this.steps.length - 1){
+      this.add();
+    }else{
+      this.next();
+    }
+    
+  }
+
 }
