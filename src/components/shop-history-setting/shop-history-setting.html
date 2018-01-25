@@ -1,0 +1,61 @@
+<ion-list>
+  <ion-item>
+    <ion-label>ประเภทร้าน</ion-label>
+    <ion-select [(ngModel)]="shop.shopType">
+      <ion-option value="ร้านทั่วไป">ร้านทั่วไป</ion-option>
+      <ion-option value="ร้านหรู">ร้านหรู</ion-option>
+      <ion-option value="ร้านจานด่วน">ร้านจานด่วน</ion-option>
+      <ion-option value="บุฟเฟ่ต์">บุฟเฟ่ต์</ion-option>
+      <ion-option value="แฟรนไชส์">แฟรนไชส์</ion-option>
+      <ion-option value="รถเข็น">รถเข็น</ion-option>
+      <ion-option value="อื่นๆ">อื่นๆ</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>ประเภทสินค้า</ion-label>
+    <ion-select [(ngModel)]="shop.foodType">
+      <ion-option value="อาหารไทย">อาหารไทย</ion-option>
+      <ion-option value="อาหารญี่ปุ่น">อาหารญี่ปุ่น</ion-option>
+      <ion-option value="อาหารตะวันตก">อาหารตะวันตก</ion-option>
+      <ion-option value="อาหารจีน">อาหารจีน</ion-option>
+      <ion-option value="อาหารเกาหลี">อาหารเกาหลี</ion-option>
+      <ion-option value="ก๋วยเตี๋ยว">ก๋วยเตี๋ยว</ion-option>
+      <ion-option value="ขนมหวาน">ขนมหวาน</ion-option>
+      <ion-option value="อาหารว่าง">อาหารว่าง</ion-option>
+      <ion-option value="ฟาสต์ฟู๊ด">ฟาสต์ฟู๊ด</ion-option>
+      <ion-option value="เบเกอรี่">เบเกอรี่</ion-option>
+      <ion-option value="ร้านกาแฟ">ร้านกาแฟ</ion-option>
+      <ion-option value="อื่นๆ">อื่นๆ</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>ชื่อร้าน</ion-label>
+    <ion-input type="text" placeholder="please fill" [(ngModel)]="shop.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>โทรศัพท์</ion-label>
+    <ion-input type="text" placeholder="please fill" [(ngModel)]="shop.tel"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>ที่อยู่</ion-label>
+    <ion-input type="text" placeholder="please fill" [(ngModel)]="shop.address"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>ชื่อเจ้าของ</ion-label>
+    <ion-input type="text" placeholder="please fill" [(ngModel)]="shop.owner"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>มือถือ</ion-label>
+    <ion-input type="text" placeholder="please fill" [(ngModel)]="shop.mobile"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>อีเมล</ion-label>
+    <ion-input type="text" placeholder="please fill" [(ngModel)]="shop.email"></ion-input>
+  </ion-item>
+</ion-list>
+
+<p class="center">
+  <button ion-button color="secondary" (click)="saveData()">บันทึก</button>
+</p>

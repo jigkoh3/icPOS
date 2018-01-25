@@ -28,6 +28,7 @@ import { OpenbillSettingComponent } from '../components/openbill-setting/openbil
 import { PrinterSettingComponent } from '../components/printer-setting/printer-setting';
 import { SettingProvider } from '../providers/setting/setting';
 import { PrinterSettingModalPage } from '../pages/printer-setting-modal/printer-setting-modal';
+import { ShopHistorySettingComponent } from '../components/shop-history-setting/shop-history-setting';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -50,7 +51,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     OpenbillSettingComponent,
     PrinterSettingComponent,
     PopoverPage,
-    PrinterSettingModalPage
+    PrinterSettingModalPage,
+    ShopHistorySettingComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     OpenbillSettingComponent,
     PrinterSettingComponent,
     PopoverPage,
-    PrinterSettingModalPage
+    PrinterSettingModalPage,
+    ShopHistorySettingComponent
   ],
   providers: [
     StatusBar,

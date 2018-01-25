@@ -10,6 +10,7 @@ import { SettingsSideNavComponent } from './settings-side-nav/settings-side-nav'
 import { PaymentSettingComponent } from './payment-setting/payment-setting';
 import { OpenbillSettingComponent } from './openbill-setting/openbill-setting';
 import { PrinterSettingComponent } from './printer-setting/printer-setting';
+import { ShopHistorySettingComponent } from './shop-history-setting/shop-history-setting';
 @NgModule({
 	declarations: [FooterComponent,
     GridComponent,
@@ -21,7 +22,8 @@ import { PrinterSettingComponent } from './printer-setting/printer-setting';
     SettingsSideNavComponent,
     PaymentSettingComponent,
     OpenbillSettingComponent,
-    PrinterSettingComponent],
+    PrinterSettingComponent,
+    ShopHistorySettingComponent],
 	imports: [],
 	exports: [FooterComponent,
     GridComponent,
@@ -33,6 +35,7 @@ import { PrinterSettingComponent } from './printer-setting/printer-setting';
     SettingsSideNavComponent,
     PaymentSettingComponent,
     OpenbillSettingComponent,
-    PrinterSettingComponent]
+    PrinterSettingComponent,
+    ShopHistorySettingComponent]
 })
 export class ComponentsModule {}
