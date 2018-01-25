@@ -20,7 +20,7 @@ export class PriceModel {
 export class SubmenuModel {
     name: String;
     prices: Array<PriceModel>;
-    type: String; // "one" , "multi", "multiqty"
+    type: String; // "one" , "any", "qty"
     bom: BomModel;
 }
 
