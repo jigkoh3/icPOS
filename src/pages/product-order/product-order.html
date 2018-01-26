@@ -12,7 +12,7 @@
         <ion-icon name="arrow-back"></ion-icon>{{ "PREV" | translate }}
       </button>
     </ion-buttons>
-    <ion-buttons end *ngIf="step < steps.length - 1">
+    <ion-buttons end *ngIf="step < steps.length - 1 && steps[step].type!=='price' && steps[step].data.type!=='one'">
       <button ion-button clear navbar-button (click)="next()">
         {{ 'NEXT' | translate }}
       </button>
