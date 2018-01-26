@@ -113,6 +113,16 @@ export class ProductOrderPage {
     option.selectedQty += 1;
   }
 
+  qtyDelete(option) {
+    if (option.selectedQty > 1) {
+      option.qty -= 1;
+    }
+  }
+
+  qtyPlus(option) {
+    option.qty += 1;
+  }
+
   updateOrderItem(step) {
     let _step = this.steps[step];
     let _result = this.result;

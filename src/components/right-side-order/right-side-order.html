@@ -25,14 +25,12 @@
               <ion-item-sliding *ngFor="let item of items">
                 <ion-item>
                   <ion-row>
-                    <ion-col col-6 item-title>
-                      {{item.product.name}}
+                    <ion-col col-8 item-title>
+                      {{item.product.name}} <span *ngIf="item.qty > 1"> x{{item.qty}}</span> 
                     </ion-col>
-                    <ion-col col-2 item-title>
-                      <p *ngIf="item.qty > 1">x {{item.qty}}</p> 
-                    </ion-col>
+            
                     <ion-col col-4 item-main text-right>
-                      {{'CURENCY' | translate }} {{item.total}}
+                      {{'CURENCY' | translate }} {{item.total * (item.qty || 1)}}
                     </ion-col>
                   </ion-row>
                   <ion-row *ngFor="let price of item.product.prices">
