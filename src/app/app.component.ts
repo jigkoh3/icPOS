@@ -14,6 +14,7 @@ export class MyApp {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
+      translateService.addLangs(['en','th']);
       translateService.setDefaultLang('en');
       let language = window.localStorage.getItem('language') ? window.localStorage.getItem('language') : 'th';
       translateService.use(language);

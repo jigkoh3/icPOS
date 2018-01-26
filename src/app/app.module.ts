@@ -31,7 +31,7 @@ import { PrinterSettingModalPage } from '../pages/printer-setting-modal/printer-
 import { ShopHistorySettingComponent } from '../components/shop-history-setting/shop-history-setting';
 import { InternationalSettingComponent } from '../components/international-setting/international-setting';
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 @NgModule({
   declarations: [
