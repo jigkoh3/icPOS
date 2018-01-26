@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SettingProvider } from '../../providers/setting/setting';
 
 @Component({
   selector: 'shop-history-setting',
@@ -6,9 +7,18 @@ import { Component } from '@angular/core';
 })
 export class ShopHistorySettingComponent {
   private shop: any = {};
-  constructor() {
+  constructor(private settingProvider: SettingProvider) {
     this.shop.shopType = 'ร้านทั่วไป';
     this.shop.foodType = 'อาหารไทย';
+    this.init();
+  }
+
+  init() {
+    this.settingProvider.getShopHistorySetting().then(data => {
+      this.shop = data;
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
   saveData() {

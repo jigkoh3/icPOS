@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{settingType.name}}</ion-title>
+    <ion-title>{{settingType.name | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -14,15 +14,15 @@
         WIFI/LAN
       </ion-segment-button>
       <ion-segment-button value="bluetooth">
-        บลูทูธ
+        {{'BLUE_TOOTH' | translate}}
       </ion-segment-button>
     </ion-segment>
     <ion-list *ngIf="cashierPrinter.type =='wifi'" margin>
       <ion-item>
-        <ion-label>โหมดเครื่องพิมพ์</ion-label>
+        <ion-label>{{'PRINTER_MODE' | translate}}</ion-label>
         <ion-select [(ngModel)]="cashierPrinter.printerMode">
-          <ion-option value="58MM">โหมด 58MM</ion-option>
-          <ion-option value="80MM">โหมด 80MM</ion-option>
+          <ion-option value="58MM">{{'MODE' | translate}} 58MM</ion-option>
+          <ion-option value="80MM">{{'MODE' | translate}} 80MM</ion-option>
           <ion-option value="STAR">STAR</ion-option>
           <ion-option value="EPPOS">EPPOS</ion-option>
         </ion-select>
@@ -32,13 +32,13 @@
         <ion-input type="text" placeholder="192.168.1.80" [(ngModel)]="cashierPrinter.ipAddress"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>หมายเลขพอร์ต</ion-label>
+        <ion-label>{{'PORT' | translate}}</ion-label>
         <ion-input type="number" placeholder="9100" [(ngModel)]="cashierPrinter.port"></ion-input>
       </ion-item>
     </ion-list>
     <ion-list *ngIf="cashierPrinter.type =='bluetooth'" margin>
       <ion-item>
-        <ion-label>บลูทูธ</ion-label>
+        <ion-label>{{'BLUE_TOOTH' | translate}}</ion-label>
         <ion-toggle [(ngModel)]="cashierPrinter.isOnBluetooth" color="secondary"></ion-toggle>
       </ion-item>
     </ion-list>
@@ -49,26 +49,26 @@
       <img src="https://image.flaticon.com/icons/svg/685/685685.svg" width="124" height="124">
     </ion-item>
     <ion-item>
-      <ion-textarea rows="6" placeholder="ข้อความท้ายบิล" [(ngModel)]="billFooter"></ion-textarea>
+      <ion-textarea rows="6" placeholder="{{'BILL_FOOTER' | translate}}" [(ngModel)]="billFooter"></ion-textarea>
     </ion-item>
   </div>
 
   <div *ngIf="settingType.type =='kitchen'">
     <ion-item>
-      <ion-label>บริเวณครัว</ion-label>
-      <ion-input type="text" placeholder="บาร์น้ำ" [(ngModel)]="kitchenPrinter.kitchenArea"></ion-input>
+      <ion-label>{{'KITCHEN_AREA' | translate}}</ion-label>
+      <ion-input type="text" placeholder="{{'WATER_BAR' | translate}}" [(ngModel)]="kitchenPrinter.kitchenArea"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>โหมดเครื่องพิมพ์</ion-label>
+      <ion-label>{{'PRINTER_MODE' | translate}}</ion-label>
       <ion-select [(ngModel)]="kitchenPrinter.printerMode">
-        <ion-option value="58MM">โหมด 58MM</ion-option>
-        <ion-option value="80MM">โหมด 80MM</ion-option>
+        <ion-option value="58MM">{{'MODE' | translate}} 58MM</ion-option>
+        <ion-option value="80MM">{{'MODE' | translate}} 80MM</ion-option>
         <ion-option value="STAR">STAR</ion-option>
         <ion-option value="EPPOS">EPPOS</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>ส่งเสียงหลังพิมพ์</ion-label>
+      <ion-label>{{'SOUND' | translate}}</ion-label>
       <ion-toggle [(ngModel)]="kitchenPrinter.sound" color="secondary"></ion-toggle>
     </ion-item>
     <ion-item>
@@ -76,15 +76,15 @@
       <ion-input type="text" placeholder="192.168.1.80" [(ngModel)]="kitchenPrinter.ipAddress"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>หมายเลขพอร์ต</ion-label>
+      <ion-label>{{'PORT' | translate}}</ion-label>
       <ion-input type="number" placeholder="9100" [(ngModel)]="kitchenPrinter.port"></ion-input>
     </ion-item>
   </div>
 </ion-content>
 
 <ion-footer padding>
-  <button *ngIf="settingType.type =='cashier'" ion-button full color="secondary" (click)="connect()">เชื่อมต่อ</button>
-  <button *ngIf="settingType.type =='template'" ion-button full color="secondary" (click)="saveTemplate()">บันทึก</button>
-  <button *ngIf="settingType.type =='kitchen'" ion-button full color="secondary" (click)="saveKitchenPrinter()">เชื่อมต่อกับเครื่องพิมพ์ในครัว</button>
-  <button *ngIf="settingType.type =='kitchen'" ion-button full color="danger" (click)="deleteKitchenPrinter()">ลบเครื่องพิมพ์ในครัว</button>
+  <button *ngIf="settingType.type =='cashier'" ion-button full color="secondary" (click)="connect()">{{'CONNECT' | translate}}</button>
+  <button *ngIf="settingType.type =='template'" ion-button full color="secondary" (click)="saveTemplate()">{{'SAVE' | translate}}</button>
+  <button *ngIf="settingType.type =='kitchen'" ion-button full color="secondary" (click)="saveKitchenPrinter()">{{'CONNECT_KITCHEN_PRINTER' | translate}}</button>
+  <button *ngIf="settingType.type =='kitchen'" ion-button full color="danger" (click)="deleteKitchenPrinter()">{{'DELETE_KITCHEN_PRINTER' | translate}}</button>
 </ion-footer>

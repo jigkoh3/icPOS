@@ -13,7 +13,7 @@ export class PrinterSettingComponent {
   }
 
   cashierPrinterModal() {
-    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'cashier', name: 'เครื่องพิมพ์แคชเชียร์' });
+    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'cashier', name: 'PRINTER_CASHIER' });
     productModal.onDidDismiss(data => {
       if (data) {
         console.log(data);
@@ -23,7 +23,7 @@ export class PrinterSettingComponent {
   }
 
   invoidTemplateModal() {
-    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'template', name: 'การปรับเปลี่ยนรูปแบบใบเสร็จ' });
+    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'template', name: 'INVOID_TEMPLATE' });
     productModal.onDidDismiss(data => {
       if (data) {
         console.log(data);
@@ -33,7 +33,7 @@ export class PrinterSettingComponent {
   }
 
   kitchenPrinterModal() {
-    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'kitchen', name: 'เครื่องพิมพ์ครัว' });
+    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'kitchen', name: 'PRINTER_KITCHEN' });
     productModal.onDidDismiss(data => {
       if (data) {
         console.log(data);

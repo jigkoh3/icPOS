@@ -20,7 +20,7 @@
       <openbill-setting *ngIf="contentType.type == 'openBill'"></openbill-setting>
       <printer-setting *ngIf="contentType.type == 'printer'"></printer-setting>
       <shop-history-setting *ngIf="contentType.type == 'shopHistory'"></shop-history-setting>
-      <h1 *ngIf="contentType.type == 'global'">Component {{contentType.name | translate}}</h1>
+      <international-setting *ngIf="contentType.type == 'global'"></international-setting>
       <h1 *ngIf="contentType.type == 'more'">Component {{contentType.name | translate}}</h1>
       <!-- end section content of settings component -->
 

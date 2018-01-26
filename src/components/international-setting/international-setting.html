@@ -1,0 +1,25 @@
+<ion-list>
+  <ion-item>
+    <ion-label>{{'LANGUAGE' | translate}}</ion-label>
+    <ion-select [(ngModel)]="international.language" (ngModelChange)="changeLanguage($event)">
+      <ion-option value="th">ไทย</ion-option>
+      <ion-option value="en">English</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>{{'CURENCYS' | translate}}</ion-label>
+    <ion-select [(ngModel)]="international.curency">
+      <ion-option value="THB">THB</ion-option>
+      <ion-option value="BND">BND</ion-option>
+      <ion-option value="IDR">IDR</ion-option>
+      <ion-option value="KHR">KHR</ion-option>
+      <ion-option value="LAK">LAK</ion-option>
+      <ion-option value="MMK">MMK</ion-option>
+      <ion-option value="MYR">MYR</ion-option>
+      <ion-option value="PHP">PHP</ion-option>
+      <ion-option value="SGD">SGD</ion-option>
+      <ion-option value="USD">USD</ion-option>
+      <ion-option value="VND">VND</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
