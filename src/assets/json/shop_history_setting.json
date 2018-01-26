@@ -1,6 +1,6 @@
 {
-    "shopType": "ร้านทั่วไป",
-    "foodType": "อาหารไทย",
+    "shopType": "normal",
+    "foodType": "thai",
     "name": "KFC",
     "tel": "0961333232",
     "address": "สุขุมวิท",

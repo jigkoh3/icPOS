@@ -8,8 +8,8 @@ import { SettingProvider } from '../../providers/setting/setting';
 export class ShopHistorySettingComponent {
   private shop: any = {};
   constructor(private settingProvider: SettingProvider) {
-    this.shop.shopType = 'ร้านทั่วไป';
-    this.shop.foodType = 'อาหารไทย';
+    this.shop.shopType = 'normal';
+    this.shop.foodType = 'thai';
     this.init();
   }
 
