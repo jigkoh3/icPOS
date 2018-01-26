@@ -241,6 +241,7 @@
                         ],
                         "submenus": [
                             {
+                                "type": "one",
                                 "name": "เส้น",
                                 "prices": [
                                     {
@@ -277,6 +278,7 @@
                                 ]
                             },
                             {
+                                "type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
@@ -333,6 +335,7 @@
                                 ]
                             },
                             {
+                                "type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {
@@ -448,6 +451,7 @@
                         ],
                         "submenus": [
                             {
+                                "type": "one",
                                 "name": "เส้น",
                                 "prices": [
                                     {
@@ -484,6 +488,7 @@
                                 ]
                             },
                             {
+                                "type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
@@ -540,6 +545,7 @@
                                 ]
                             },
                             {
+                                "type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {
@@ -733,6 +739,7 @@
                         "submenus": [
                             {
                                 "name": "เนื้อสัตว์",
+                                "type": "one",
                                 "prices": [
                                     {
                                         "name": "หมู",
@@ -753,6 +760,7 @@
                             },
                             {
                                 "name": "แบบ",
+                                "type": "one",
                                 "prices": [
                                     {
                                         "name": "ชิ้น",
@@ -768,6 +776,7 @@
                             },
                             {
                                 "name": "ท๊อปปิ้ง",
+                                "type": "one",
                                 "prices": [
                                     {
                                         "name": "ไข่ดาว",
@@ -997,6 +1006,7 @@
                         "submenus": [
                             {
                                 "name": "ท๊อปปิ้ง",
+                                "type": "qty",
                                 "prices": [
                                     {
                                         "name": "ทุกอย่าง",
@@ -1174,6 +1184,7 @@
                         "submenus": [
                             {
                                 "name": "ท๊อปปิ้ง",
+                                "type": "qty",
                                 "prices": [
                                     {
                                         "name": "ทุกอย่าง",

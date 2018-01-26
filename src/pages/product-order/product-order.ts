@@ -205,7 +205,7 @@ export class ProductOrderPage {
 
   radioChecked() {
     if (this.step === this.steps.length - 1) {
-      this.add();
+      //this.add();
     } else {
       this.next();
     }
