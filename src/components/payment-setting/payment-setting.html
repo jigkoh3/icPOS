@@ -1,6 +1,6 @@
 <ion-list>
   <ion-item>
-    <ion-label>ภาษีมูลค่าเพิ่ม</ion-label>
+    <ion-label>{{'VAT' | translate}}</ion-label>
     <ion-toggle [(ngModel)]="vat.isVat" color="secondary" (ngModelChange)="setViewVatForm($event)"></ion-toggle>
   </ion-item>
   <div *ngIf="vatFromVisible">
@@ -15,35 +15,35 @@
   </div>
 
   <ion-item>
-    <ion-label>ค่าบริการ</ion-label>
+    <ion-label>{{'SERVICE_CHARGE' | translate}}</ion-label>
     <ion-toggle [(ngModel)]="serviceCharge.isServiceCharge" color="secondary" (ngModelChange)="setViewServiceChargeForm($event)"></ion-toggle>
   </ion-item>
   <div *ngIf="serviceChargeFromVisible">
     <ion-item>
-      <ion-label>เปอร์เซ็นต์</ion-label>
+      <ion-label>{{'PERCENT' | translate}}</ion-label>
       <ion-input type="number" placeholder="please fill" [(ngModel)]="serviceCharge.percent"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>กำหนดราคาสินค้า</ion-label>
+      <ion-label>{{'PRICING' | translate}}</ion-label>
       <ion-select [(ngModel)]="serviceCharge.setProductPrice">
-        <ion-option value="includeServiceCharge">รวมค่าบริการในราคาสินค้า</ion-option>
-        <ion-option value="splitServiceCharge">แยกค่าบริการออกจากราคาสินค้า</ion-option>
+        <ion-option value="includeServiceCharge">{{'INCLUDE_SERVICE_CHARGE' | translate}}</ion-option>
+        <ion-option value="splitServiceCharge">{{'SPLIT_SERVICE_CHARGE' | translate}}</ion-option>
       </ion-select>
     </ion-item>
   </div>
 
   <ion-item>
-    <ion-label>ปัดเศษ</ion-label>
+    <ion-label>{{'ROUND' | translate}}</ion-label>
     <ion-select [(ngModel)]="round">
-      <ion-option value="no">ไม่มี</ion-option>
-      <ion-option value="roundNear">ปัดเศษไปจำนวนที่ใกล้ที่สุด</ion-option>
-      <ion-option value="roundUp">ปัดเศษขึ้น</ion-option>
-      <ion-option value="roundDown">ปัดเศษลง</ion-option>
+      <ion-option value="no">{{'NO' | translate}}</ion-option>
+      <ion-option value="roundNear">{{'ROUND_NEAR' | translate}}</ion-option>
+      <ion-option value="roundUp">{{'ROUND_UP' | translate}}</ion-option>
+      <ion-option value="roundDown">{{'ROUND_DOWN' | translate}}</ion-option>
     </ion-select>
   </ion-item>
 
 
   <p class="center">
-    <button ion-button color="secondary" (click)="saveData()">บันทึก</button>
+    <button ion-button color="secondary" (click)="saveData()">{{'SAVE' | translate}}</button>
   </p>
 </ion-list>

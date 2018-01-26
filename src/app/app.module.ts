@@ -29,6 +29,7 @@ import { PrinterSettingComponent } from '../components/printer-setting/printer-s
 import { SettingProvider } from '../providers/setting/setting';
 import { PrinterSettingModalPage } from '../pages/printer-setting-modal/printer-setting-modal';
 import { ShopHistorySettingComponent } from '../components/shop-history-setting/shop-history-setting';
+import { InternationalSettingComponent } from '../components/international-setting/international-setting';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -52,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PrinterSettingComponent,
     PopoverPage,
     PrinterSettingModalPage,
-    ShopHistorySettingComponent
+    ShopHistorySettingComponent,
+    InternationalSettingComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PrinterSettingComponent,
     PopoverPage,
     PrinterSettingModalPage,
-    ShopHistorySettingComponent
+    ShopHistorySettingComponent,
+    InternationalSettingComponent
   ],
   providers: [
     StatusBar,
