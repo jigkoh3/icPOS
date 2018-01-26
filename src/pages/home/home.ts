@@ -11,6 +11,8 @@ import { OrderModel, OrderItemModel } from '../../assets/models/order.model';
 import { ProductModel } from '../../assets/models/product.model';
 import { MainMorePage } from '../main-more/main-more';
 
+import _ from 'lodash';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -33,6 +35,7 @@ export class HomePage {
     public navParams: NavParams
   ) {
     this.refTabInHome = this.navParams.data;
+    //console.log( _.sum([4, 2, 8, 6]) );
   }
 
   ionViewDidLoad() {
@@ -121,44 +124,7 @@ export class HomePage {
     this.order = null;
   }
 
-  // Array.prototype.indexOfId = function (id) {
-  //   for (var i = 0; i < this.length; i++)
-  //     if (this[i].id === id)
-  //       return i;
-  //   return -1;
-  // }
-  isDuplicateProductItem(arrItem: Array<OrderItemModel>, item: ProductModel): Boolean {
-    let result = false;
-    arrItem.forEach(function (_item) {
-      if (_item.product.name === item.name) {
-        if (_item.product.prices && _item.product.prices.length > 0) {
-          if (_item.product.submenus && _item.product.submenus.length > 0) {
-            let i = 0;
-            _item.product.submenus.forEach(function (sub) {
-              if (item.submenus.map(function (e) { return e[i].name }).indexOf(sub.name) === -1) {
-                return false
-              }
-              i++;
-            });
-            return true;
-          }
-        } else {
-          if (_item.product.submenus && _item.product.submenus.length > 0) {
-            let i = 0;
-            _item.product.submenus.forEach(function (sub) {
-              if (item.submenus.map(function (e) { return e[i].name }).indexOf(sub.name) === -1) {
-                return false
-              }
-              i++;
-            });
-            return true;
-          }
-        }
 
-      }
-    });
-    return result;
-  }
 
   updateOrder(item) {
     if (this.order) {
@@ -170,10 +136,30 @@ export class HomePage {
       // if(isDup && isDup.length > 0){
 
       // }else{
-        
+
       // }
-      this.order.push(item);
-      
+
+      // var x = _.filter(
+      //   this.order,
+      //   item.product => myObj.id < 0)
+      // );
+      var filter: Array<any> = _.filter(
+        _.omit(this.order, ['qty', 'total']),
+        _.omit(item, ['qty', 'total']));
+
+
+      if (filter && filter.length > 0) {
+        filter.forEach(function(itm){
+          itm.qty+= item.qty;
+        });
+        
+        
+      } else {
+        this.order.push(item);
+      }
+
+
+
     } else {
       this.order = [];
       this.order.push(item);
