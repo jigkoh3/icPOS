@@ -36,7 +36,6 @@ export class HomePage {
     public navParams: NavParams
   ) {
     this.refTabInHome = this.navParams.data;
-    //console.log( _.sum([4, 2, 8, 6]) );
   }
 
   ionViewDidLoad() {
