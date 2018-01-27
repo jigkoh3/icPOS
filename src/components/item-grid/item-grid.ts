@@ -13,9 +13,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ItemGridComponent {
 
   @Input() item: any;
+  @Input() isModeEdit: boolean;
+  @Output() itemDeleted: EventEmitter<any> = new EventEmitter<any>();
   
   constructor() {
     
+  }
+
+  removeItem(item){
+    this.itemDeleted.emit(item);
   }
 
 }

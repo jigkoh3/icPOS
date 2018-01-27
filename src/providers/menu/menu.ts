@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MenuModel, HomeModel, ItemModel } from '../../assets/models/menus.model';
+import { ProductModel, PriceModel, SubmenuModel } from '../../assets/models/product.model';
 
 /*
   Generated class for the MenuProvider provider.
@@ -28,6 +29,24 @@ export class MenuProvider {
         item.type = "none";
         menu.items.push(item);
       }
+      var itm = new ItemModel();
+      itm.type="product";
+      let prod = new ProductModel();
+      prod.submenus = new Array<SubmenuModel>();
+      prod.name = "ก๊วยเตี๋ยวหมู";
+      prod.image ="./assets/imgs/019.png";
+      prod.prices = [];
+      let price = new PriceModel();
+      price.name = "ธรรมดา";
+      price.price = 60;
+      prod.prices.push(price);
+      itm.product = prod;
+      // let submenus = Array<SubmenuModel>();
+      // submenus = [];
+      //item.product.submenus = Array<SubmenuModel>();
+
+      menu.items[0] = itm;
+      console.log(menu);
       home.menus = [];
       home.menus.push(menu);
       

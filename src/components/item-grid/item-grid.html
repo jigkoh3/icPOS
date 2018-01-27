@@ -1,5 +1,10 @@
-
+<div *ngIf="isModeEdit" del-btn text-right>
+    <button ion-button icon-only large clear color="danger" (click)="removeItem(item)">
+        <ion-icon name="close-circle"></ion-icon>
+    </button>
+</div>
 <preload-image [ratio]="{w:1, h:1}" [src]="item.image"></preload-image>
 <div product-desc>
   <p product-name>{{item.name}}</p>
 </div>
+

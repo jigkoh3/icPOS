@@ -1,4 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { SortablejsOptions } from 'angular-sortablejs/dist';
+import { ItemModel } from '../../assets/models/menus.model';
 
 /**
  * Generated class for the GridEditComponent component.
@@ -11,17 +13,34 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: 'grid-edit.html'
 })
 export class GridEditComponent {
-
-  @Input() items: any;
+  options: SortablejsOptions = {
+  };
+  isModeEdit:boolean=true;
+  @Input() items: Array<ItemModel>;
   @Output() itemSelected: EventEmitter<any> = new EventEmitter<any>();
+  @Output() itemDeleted: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
-    
+    this.options = {
+      chosenClass: 'xxx',
+      ghostClass: 'xxx2',
+      onEnd: (event: any) => {
+        console.log(this.items);
+      },
+      animation: 150,
+      delay: 15,
+      filter: ".js-edit"
+    };
   }
 
   selected(item){
     //alert(item.name);
     this.itemSelected.emit(item);
+  }
+
+  itemDelete(item){
+    this.items.splice(this.items.lastIndexOf(item),1);
+    this.itemDeleted.emit(this.items);
   }
 
 }

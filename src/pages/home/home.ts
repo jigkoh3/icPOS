@@ -88,6 +88,7 @@ export class HomePage {
 
   itemSelected(item) {
     //alert("Item Type Selected : " + item.type);
+    //console.log(item);
     switch (item.type) {
       case "none": {
         //statements; 
@@ -95,8 +96,9 @@ export class HomePage {
       }
       case "product": {
         //statements; 
+        // console.log(item.product);
         if (item.product.prices && item.product.submenus) {
-          //console.log(item.product.prices);
+          console.log(item.product.prices);
           if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
             this.presentProductModal(item.product);
           } else {
@@ -120,6 +122,10 @@ export class HomePage {
 
   itemPressed($event){
     this.isModeEdit = true;
+  }
+
+  itemDeleted(items){
+    this.menuItemSelected = items;
   }
 
   removedOrderItem(order) {
