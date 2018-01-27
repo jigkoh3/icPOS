@@ -27,6 +27,7 @@
     "@ngx-translate/core": "^9.1.1",
     "@ngx-translate/http-loader": "^2.0.1",
     "@types/lodash": "^4.14.96",
+    "angular-sortablejs": "^2.5.1",
     "angular2-jwt": "^0.2.3",
     "cordova-ios": "~4.5.4",
     "cordova-plugin-device": "^1.1.4",

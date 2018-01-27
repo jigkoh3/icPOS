@@ -118,6 +118,10 @@ export class HomePage {
     }
   }
 
+  itemPressed($event){
+    this.isModeEdit = true;
+  }
+
   removedOrderItem(order) {
     this.order = order;
   }
