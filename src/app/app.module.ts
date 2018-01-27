@@ -30,6 +30,8 @@ import { SettingProvider } from '../providers/setting/setting';
 import { PrinterSettingModalPage } from '../pages/printer-setting-modal/printer-setting-modal';
 import { ShopHistorySettingComponent } from '../components/shop-history-setting/shop-history-setting';
 import { InternationalSettingComponent } from '../components/international-setting/international-setting';
+import { GridEditComponent } from '../components/grid-edit/grid-edit';
+import { FooterEditComponent } from '../components/footer-edit/footer-edit';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -54,7 +56,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     PopoverPage,
     PrinterSettingModalPage,
     ShopHistorySettingComponent,
-    InternationalSettingComponent
+    InternationalSettingComponent,
+    GridEditComponent,
+    FooterEditComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +86,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     PopoverPage,
     PrinterSettingModalPage,
     ShopHistorySettingComponent,
-    InternationalSettingComponent
+    InternationalSettingComponent,
+    GridEditComponent,
+    FooterEditComponent
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,28 @@
+footer-edit {
+    ion-footer {
+        background-color: #32db64;
+        color: #ffffff;
+        height: 60px;
+        z-index: 999;
+    }
+    h4{
+        align-items: center;
+    }
+    .scroll-x {
+        height: 160px;
+        .scroll-row {
+            flex-wrap: inherit !important;  
+        }
+    }
+    .m-name {
+        margin-top: -10px;
+        font-size: 1.2rem;
+    }
+    .m-no {
+        margin-top: 6px;
+    }
+
+    .active-menu{
+        color: cornflowerblue;
+    }
+}

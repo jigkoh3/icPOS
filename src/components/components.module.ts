@@ -12,6 +12,8 @@ import { OpenbillSettingComponent } from './openbill-setting/openbill-setting';
 import { PrinterSettingComponent } from './printer-setting/printer-setting';
 import { ShopHistorySettingComponent } from './shop-history-setting/shop-history-setting';
 import { InternationalSettingComponent } from './international-setting/international-setting';
+import { GridEditComponent } from './grid-edit/grid-edit';
+import { FooterEditComponent } from './footer-edit/footer-edit';
 @NgModule({
 	declarations: [FooterComponent,
     GridComponent,
@@ -25,7 +27,9 @@ import { InternationalSettingComponent } from './international-setting/internati
     OpenbillSettingComponent,
     PrinterSettingComponent,
     ShopHistorySettingComponent,
-    InternationalSettingComponent],
+    InternationalSettingComponent,
+    GridEditComponent,
+    FooterEditComponent],
 	imports: [],
 	exports: [FooterComponent,
     GridComponent,
@@ -39,6 +43,8 @@ import { InternationalSettingComponent } from './international-setting/internati
     OpenbillSettingComponent,
     PrinterSettingComponent,
     ShopHistorySettingComponent,
-    InternationalSettingComponent]
+    InternationalSettingComponent,
+    GridEditComponent,
+    FooterEditComponent]
 })
 export class ComponentsModule {}

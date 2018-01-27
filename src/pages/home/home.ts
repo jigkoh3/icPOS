@@ -25,6 +25,7 @@ export class HomePage {
   refTabInHome: any = {};
   menus: Array<MenuModel>;
   homeData: HomeModel;
+  isModeEdit: boolean = false;
 
   constructor(public navCtrl: NavController,
     private modalCtrl: ModalController,
@@ -47,6 +48,7 @@ export class HomePage {
     this.loading.onLoading();
     setTimeout(() => {
       this.menusService.getMenus().then(data => {
+        // console.log(data);
         this.menus = data.menus;
         if (this.refTabInHome.refFooter) {
           this.menuSelected = this.refTabInHome.menuSelected;
@@ -57,6 +59,7 @@ export class HomePage {
         }
         this.loading.dismiss();
       }, err => {
+        // console.log(err);
         this.loading.dismiss();
       })
     }, 1000);
@@ -124,25 +127,32 @@ export class HomePage {
     this.order = null;
   }
 
+  itemAdded(menu){
+    this.menus.push(menu);
+  }
 
+  savedMenu(){
+    console.log("saved");
+    this.menusService.addMenu(this.menus).then(data => {
+      // console.log(data);
+      this.menus = data.menus;
+      if (this.refTabInHome.refFooter) {
+        this.menuSelected = this.refTabInHome.menuSelected;
+        this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
+      } else {
+        this.menuSelected = data.menus[0].name;
+        this.menuItemsSelected = data.menus[0].items;
+      }
+      this.isModeEdit = false;
+      this.loading.dismiss();
+    }, err => {
+      // console.log(err);
+      this.loading.dismiss();
+    })
+  }
 
   updateOrder(item) {
     if (this.order) {
-      //let isDup = this.isDuplicateProductItem(this.order, item.product);
-      // let isDup = this.order.filter(function (i) {
-      //   return i.product === item.product;
-      // })
-      // console.log(isDup);
-      // if(isDup && isDup.length > 0){
-
-      // }else{
-
-      // }
-
-      // var x = _.filter(
-      //   this.order,
-      //   item.product => myObj.id < 0)
-      // );
       var filter: Array<any> = _.filter(
         _.omit(this.order, ['qty', 'total']),
         _.omit(item, ['qty', 'total']));

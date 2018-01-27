@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the RightSideEditComponent component.
@@ -12,11 +12,14 @@ import { Component } from '@angular/core';
 })
 export class RightSideEditComponent {
 
-  text: string;
+  @Output() savedMenu: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
-    console.log('Hello RightSideEditComponent Component');
-    this.text = 'Hello World';
+   
+  }
+
+  saveClick(){
+    this.savedMenu.emit();
   }
 
 }
