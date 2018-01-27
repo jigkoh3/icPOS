@@ -1,7 +1,9 @@
 <ion-content>
-  <ion-row>
+  <ion-row height-100>
     <ion-col col-12 col-md-8 col-lg-8>
-      <grid [items]="menuItemsSelected" (itemSelected)="itemSelected($event)"></grid>
+      <ion-scroll scrollY="true" height-100>
+        <grid [items]="menuItemsSelected" (itemSelected)="itemSelected($event)"></grid>
+      </ion-scroll>
     </ion-col>
     <ion-col col-12 col-md-4 col-lg-4 fixed-content>
       <right-side-order [items]="order" (removedOrderItem)="removedOrderItem($event)" (clearAllOrderItem)="clearAllOrderItem($event)"></right-side-order>
