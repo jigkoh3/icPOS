@@ -1,6 +1,6 @@
 right-side-order {
     [ion-sum] {
-        color: green;
+        color:color($colors, secondary, base);
     }
     [ion-print]{
         color: silver;
@@ -13,7 +13,7 @@ right-side-order {
         font-size: 2rem;
     }
     [have-data]{
-        color: silver;
+        color:color($colors, secondary, base);
         font-size: 2rem;
     }
     .order-detail { 
