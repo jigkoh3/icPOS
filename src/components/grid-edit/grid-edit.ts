@@ -39,8 +39,7 @@ export class GridEditComponent {
   }
 
   itemDelete(index){
-    // this.items.splice(index,1);
-    // this.itemDeleted.emit(this.items);
+    this.itemDeleted.emit(index);
   }
 
 }

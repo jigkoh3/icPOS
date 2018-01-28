@@ -26,7 +26,7 @@ export class HomePage {
   refTabInHome: any = {};
   menus: Array<MenuModel>;
   homeData: HomeModel;
-  isModeEdit: boolean = true;
+  isModeEdit: boolean = false;
 
   constructor(public navCtrl: NavController,
     private modalCtrl: ModalController,
@@ -125,8 +125,10 @@ export class HomePage {
     this.isModeEdit = true;
   }
 
-  itemDeleted(items){
-    this.menuItemSelected = items;
+  itemDeleted(index){
+    let item = new ItemModel();
+    item.type = "none";
+    this.menuItemsSelected[index]= item;
   }
 
   removedOrderItem(order) {
@@ -160,6 +162,8 @@ export class HomePage {
       }
     }
   }
+
+  
 
   savedMenu(){
     console.log("saved");
