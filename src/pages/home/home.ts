@@ -99,7 +99,7 @@ export class HomePage {
         //statements; 
         // console.log(item.product);
         if (item.product.prices && item.product.submenus) {
-          console.log(item.product.prices);
+          // console.log(item.product.prices);
           if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
             this.presentProductModal(item.product);
           } else {
@@ -145,7 +145,7 @@ export class HomePage {
 
   itemEditSelected(index){
     let item = this.menuItemsSelected[index];
-    console.log(item.type);
+    // console.log(item.type);
     switch (item.type) {
       case "none": {
         //statements; 
@@ -166,7 +166,7 @@ export class HomePage {
   
 
   savedMenu(){
-    console.log("saved");
+    // console.log("saved");
     this.menusService.addMenu(this.menus).then(data => {
       // console.log(data);
       this.menus = data.menus;

@@ -54,9 +54,9 @@
                 </ion-select>
               </ion-item>
             </ion-col>
-            <ion-col col-8 text-right>
+            <ion-col col-8 >
               <ion-item>
-                <ion-input [(ngModel)]="item.product.prices[0].price" type="number" placeholder="ราคา"></ion-input>
+                <ion-input [(ngModel)]="item.product.prices[0].price" type="number" pattern="([0-9]{8})" placeholder="ราคา" text-right></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
