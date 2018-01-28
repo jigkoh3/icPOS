@@ -33,14 +33,14 @@ export class GridEditComponent {
     };
   }
 
-  selected(item){
+  selected(index){
     //alert(item.name);
-    this.itemSelected.emit(item);
+    this.itemSelected.emit(index);
   }
 
-  itemDelete(item){
-    this.items.splice(this.items.lastIndexOf(item),1);
-    this.itemDeleted.emit(this.items);
+  itemDelete(index){
+    // this.items.splice(index,1);
+    // this.itemDeleted.emit(this.items);
   }
 
 }

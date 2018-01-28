@@ -33,6 +33,8 @@ import { ShopHistorySettingComponent } from '../components/shop-history-setting/
 import { InternationalSettingComponent } from '../components/international-setting/international-setting';
 import { GridEditComponent } from '../components/grid-edit/grid-edit';
 import { FooterEditComponent } from '../components/footer-edit/footer-edit';
+import { AddItemMenuPage } from '../pages/add-item-menu/add-item-menu';
+import { ProductPage } from '../pages/product/product';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -59,7 +61,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ShopHistorySettingComponent,
     InternationalSettingComponent,
     GridEditComponent,
-    FooterEditComponent
+    FooterEditComponent,
+    AddItemMenuPage,
+    ProductPage
   ],
   imports: [
     BrowserModule,
@@ -90,7 +94,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ShopHistorySettingComponent,
     InternationalSettingComponent,
     GridEditComponent,
-    FooterEditComponent
+    FooterEditComponent,
+    AddItemMenuPage,
+    ProductPage
   ],
   providers: [
     StatusBar,

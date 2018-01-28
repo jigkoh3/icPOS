@@ -1,0 +1,81 @@
+<!--
+  Generated template for the AddItemMenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start *ngIf="step > 0" (click)="prev()">
+      <button ion-button icon-only navbar-button>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="step === 1">
+      <button ion-button clear navbar-button (click)="add()">
+        {{ 'ADD' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-title>{{ "ADDMENUITM" | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row *ngIf="step === 1 && item.type ==='product'">
+    <ion-col col-12>
+      <ion-row>
+        <ion-col col-4>
+
+        </ion-col>
+        <ion-col col-8>
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-input [(ngModel)]="item.product.name" type="text" placeholder="Name"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input [(ngModel)]="item.product.category" type="text" placeholder="Type"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-row>
+            <ion-col col-4>
+              <ion-item>
+                <ion-select select-option [(ngModel)]="item.product.prices[0].type" interface="popover">
+                  <ion-option value="normal">ราคาปกติ</ion-option>
+                  <ion-option value="manual">ตั้งราคาเอง</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col col-8 text-right>
+              <ion-item>
+                <ion-input [(ngModel)]="item.product.prices[0].price" type="number" placeholder="ราคา"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>
+<ion-footer *ngIf="step === 0">
+  <ion-row>
+    <ion-col col-5>
+      <button ion-button block outline color="secondary" (click)="addNewItem('product')">{{ "ADDPROD" | translate}}</button>
+
+    </ion-col>
+    <ion-col col-2>
+
+    </ion-col>
+    <ion-col col-5>
+      <button ion-button block outline color="secondary" (click)="addNewItem('discount')">{{ "ADDDISC" | translate}}</button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -12,6 +12,7 @@ import { ProductModel } from '../../assets/models/product.model';
 import { MainMorePage } from '../main-more/main-more';
 
 import _ from 'lodash';
+import { AddItemMenuPage } from '../add-item-menu/add-item-menu';
 
 @Component({
   selector: 'page-home',
@@ -25,7 +26,7 @@ export class HomePage {
   refTabInHome: any = {};
   menus: Array<MenuModel>;
   homeData: HomeModel;
-  isModeEdit: boolean = false;
+  isModeEdit: boolean = true;
 
   constructor(public navCtrl: NavController,
     private modalCtrl: ModalController,
@@ -140,6 +141,26 @@ export class HomePage {
     this.menus.push(menu);
   }
 
+  itemEditSelected(index){
+    let item = this.menuItemsSelected[index];
+    console.log(item.type);
+    switch (item.type) {
+      case "none": {
+        //statements; 
+        this.presentAddMenuItemModal(index);
+        break;
+      }
+      case "product": {
+        //statements; 
+        break;
+      }
+      default: {
+        //statements; 
+        break;
+      }
+    }
+  }
+
   savedMenu(){
     console.log("saved");
     this.menusService.addMenu(this.menus).then(data => {
@@ -196,6 +217,21 @@ export class HomePage {
 
     });
     productModal.present();
+  }
+
+  presentAddMenuItemModal(index){
+    let addItemModal = this.modalCtrl.create(AddItemMenuPage);
+    addItemModal.onDidDismiss(data => {
+      //console.log(data);
+      if (data) {
+        //this.updateOrder(data);
+        console.log(index);
+        this.menuItemsSelected[index] = data;
+        console.log(this.menuItemsSelected[index]);
+      }
+
+    });
+    addItemModal.present();
   }
 
 }

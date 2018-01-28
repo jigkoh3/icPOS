@@ -87,5 +87,8 @@
     "SAVE": "Save",
     "CHARGE": "Charge",
     "CURR_SALE": "Current sale",
-    "ADDMENU": "Add Menu"
+    "ADDMENU": "Add Menu",
+    "ADDMENUITM": "Add Item",
+    "ADDPROD": "Add Prodect",
+    "ADDDISC": "Add Discount"
 }
