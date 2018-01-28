@@ -33,6 +33,7 @@ export class AddItemMenuPage {
     let price = new PriceModel();
     price.type = "normal";
     price.name = "ราคาปกติ";
+    this.item.product.submenus = [];
     this.item.product.prices.push(price);
     this.step = 1;
   }
