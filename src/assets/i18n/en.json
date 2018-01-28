@@ -89,6 +89,10 @@
     "CURR_SALE": "Current sale",
     "ADDMENU": "Add Menu",
     "ADDMENUITM": "Add Item",
-    "ADDPROD": "Add Prodect",
-    "ADDDISC": "Add Discount"
+    "ADDPROD": "Add Product",
+    "ADDDISC": "Add Discount",
+    "NAMEPROD": "Name",
+    "CATEPROD": "Category",
+    "NORM": "Normal Price",
+    "MANL": "Manual Price"
 }

@@ -1,8 +1,8 @@
 footer-edit {
     ion-footer {
-        background-color: #32db64;
-        color: #ffffff;
-        height: 60px;
+        background-color: color($colors, secondary, base);
+        color:color($colors, footer-bar, base);
+        height: 80px;
         z-index: 999;
     }
     h4{
@@ -16,13 +16,14 @@ footer-edit {
     }
     .m-name {
         margin-top: -10px;
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
     .m-no {
         margin-top: 6px;
+        font-size: 3rem;
     }
 
     .active-menu{
-        color: cornflowerblue;
+        color:color($colors, light, base);
     }
 }

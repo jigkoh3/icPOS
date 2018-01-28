@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-buttons start *ngIf="step > 0" (click)="prev()">
+    <ion-buttons start *ngIf="step > 0" color="secondary" (click)="prev()">
       <button ion-button icon-only navbar-button>
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
     <ion-buttons end *ngIf="step === 1">
-      <button ion-button clear navbar-button (click)="add()">
+      <button ion-button clear navbar-button color="secondary" (click)="add()">
         {{ 'ADD' | translate }}
       </button>
     </ion-buttons>
@@ -34,10 +34,10 @@
           <ion-row>
             <ion-col col-12>
               <ion-item>
-                <ion-input [(ngModel)]="item.product.name" type="text" placeholder="Name"></ion-input>
+                <ion-input [(ngModel)]="item.product.name" type="text" placeholder="{{ 'NAMEPROD' | translate }}"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-input [(ngModel)]="item.product.category" type="text" placeholder="Type"></ion-input>
+                <ion-input [(ngModel)]="item.product.category" type="text" placeholder="{{ 'CATEPROD' | translate }}"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -49,8 +49,8 @@
             <ion-col col-4>
               <ion-item>
                 <ion-select select-option [(ngModel)]="item.product.prices[0].type" interface="popover">
-                  <ion-option value="normal">ราคาปกติ</ion-option>
-                  <ion-option value="manual">ตั้งราคาเอง</ion-option>
+                  <ion-option value="normal">{{ "NORM" | translate }}</ion-option>
+                  <ion-option value="manual">{{ "MANL" | translate }}</ion-option>
                 </ion-select>
               </ion-item>
             </ion-col>
