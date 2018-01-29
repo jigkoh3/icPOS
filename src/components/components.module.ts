@@ -14,6 +14,7 @@ import { ShopHistorySettingComponent } from './shop-history-setting/shop-history
 import { InternationalSettingComponent } from './international-setting/international-setting';
 import { GridEditComponent } from './grid-edit/grid-edit';
 import { FooterEditComponent } from './footer-edit/footer-edit';
+import { OtherSettingComponent } from './other-setting/other-setting';
 @NgModule({
 	declarations: [FooterComponent,
     GridComponent,
@@ -29,7 +30,8 @@ import { FooterEditComponent } from './footer-edit/footer-edit';
     ShopHistorySettingComponent,
     InternationalSettingComponent,
     GridEditComponent,
-    FooterEditComponent],
+    FooterEditComponent,
+    OtherSettingComponent],
 	imports: [],
 	exports: [FooterComponent,
     GridComponent,
@@ -45,6 +47,7 @@ import { FooterEditComponent } from './footer-edit/footer-edit';
     ShopHistorySettingComponent,
     InternationalSettingComponent,
     GridEditComponent,
-    FooterEditComponent]
+    FooterEditComponent,
+    OtherSettingComponent]
 })
 export class ComponentsModule {}

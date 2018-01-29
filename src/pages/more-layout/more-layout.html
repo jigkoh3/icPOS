@@ -10,18 +10,18 @@
 
   <ion-row>
     <ion-col col-5 col-md-5 col-lg-4 class="bd-right height-fill">
-      <!-- section more side nav component hear เพิ่ม componet menu หลักฝั่งซ้าย-->
+      <!-- section more side nav component -->
       <settings-side-nav *ngIf="actionType.type == 'settings'" (settingType)="contentTypeSelected($event)"></settings-side-nav>
-      <!-- end section more side nav component hear-->
+      <!-- end section more side nav component -->
     </ion-col>
     <ion-col col-7 col-md-7 col-lg-8 class="height-fill">
-      <!-- section content of settings component เปลี่ยน h1 เป็น component ของแต่ละเมนูย่อย-->
+      <!-- section content of settings component -->
       <payment-setting *ngIf="contentType.type == 'payment'"></payment-setting>
       <openbill-setting *ngIf="contentType.type == 'openBill'"></openbill-setting>
       <printer-setting *ngIf="contentType.type == 'printer'"></printer-setting>
       <shop-history-setting *ngIf="contentType.type == 'shopHistory'"></shop-history-setting>
       <international-setting *ngIf="contentType.type == 'global'"></international-setting>
-      <h1 *ngIf="contentType.type == 'more'">Component {{contentType.name | translate}}</h1>
+      <other-setting *ngIf="contentType.type == 'more'"></other-setting>
       <!-- end section content of settings component -->
 
     </ion-col>

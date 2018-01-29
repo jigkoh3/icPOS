@@ -35,6 +35,7 @@ import { GridEditComponent } from '../components/grid-edit/grid-edit';
 import { FooterEditComponent } from '../components/footer-edit/footer-edit';
 import { AddItemMenuPage } from '../pages/add-item-menu/add-item-menu';
 import { ProductPage } from '../pages/product/product';
+import { OtherSettingComponent } from '../components/other-setting/other-setting';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -63,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     GridEditComponent,
     FooterEditComponent,
     AddItemMenuPage,
-    ProductPage
+    ProductPage,
+    OtherSettingComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +98,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     GridEditComponent,
     FooterEditComponent,
     AddItemMenuPage,
-    ProductPage
+    ProductPage,
+    OtherSettingComponent
   ],
   providers: [
     StatusBar,
