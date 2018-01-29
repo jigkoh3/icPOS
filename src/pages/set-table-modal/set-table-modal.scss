@@ -1,0 +1,36 @@
+page-set-table-modal {
+    .table-number {
+        background-color: #488aff;
+        color: #fff;
+        position: absolute;
+        padding: 4px;
+        border-radius: 50px;
+        margin-top: 10px;
+        margin-left: 22px;
+    }
+    .center {
+        text-align: center;
+    }
+    .table-size {
+        text-align: center;
+        border: 1px solid #c0c0c0;
+        padding: 14px;
+    }
+    .margin-top {
+        margin-top: 26px;
+    }
+    .line {
+        border-bottom: 1px solid #c0c0c0;
+        text-align: center;
+    }
+    .txt-inline {
+        margin-top: -8px;
+        position: absolute;
+        background-color: #ffffff;
+        padding: 2px;
+        margin-left: -20px;
+    }
+    .active-size {
+        background-color: #c0c0c0;
+    }
+}

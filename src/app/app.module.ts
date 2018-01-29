@@ -36,6 +36,8 @@ import { FooterEditComponent } from '../components/footer-edit/footer-edit';
 import { AddItemMenuPage } from '../pages/add-item-menu/add-item-menu';
 import { ProductPage } from '../pages/product/product';
 import { OtherSettingComponent } from '../components/other-setting/other-setting';
+import { AreaManageModalPage } from '../pages/area-manage-modal/area-manage-modal';
+import { SetTableModalPage } from '../pages/set-table-modal/set-table-modal';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -65,7 +67,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterEditComponent,
     AddItemMenuPage,
     ProductPage,
-    OtherSettingComponent
+    OtherSettingComponent,
+    AreaManageModalPage,
+    SetTableModalPage
   ],
   imports: [
     BrowserModule,
@@ -99,7 +103,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterEditComponent,
     AddItemMenuPage,
     ProductPage,
-    OtherSettingComponent
+    OtherSettingComponent,
+    AreaManageModalPage,
+    SetTableModalPage
   ],
   providers: [
     StatusBar,
