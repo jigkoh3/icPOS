@@ -18,73 +18,43 @@ export class MenuProvider {
 
   }
 
-  initShop():HomeModel{
-    let home = new HomeModel();
-      let menu = new MenuModel();
-      let item = new ItemModel();
-      menu.name = "เมนู 1";
-      menu.icon = "menu";
-      menu.items = [];
-      for (let i = 0; i < 32; i++) {
-        item.type = "none";
-        menu.items.push(item);
-      }
-      var itm = new ItemModel();
-      itm.type="product";
-      let prod = new ProductModel();
-      prod.submenus = new Array<SubmenuModel>();
-      prod.name = "ก๊วยเตี๋ยวหมู";
-      prod.image ="./assets/imgs/019.png";
-      prod.prices = [];
-      let price = new PriceModel();
-      price.name = "ธรรมดา";
-      price.price = 60;
-      prod.prices.push(price);
-      itm.product = prod;
-      // let submenus = Array<SubmenuModel>();
-      // submenus = [];
-      //item.product.submenus = Array<SubmenuModel>();
 
-      menu.items[0] = itm;
-      console.log(menu);
-      home.menus = [];
-      home.menus.push(menu);
-      
-      window.localStorage.setItem(this.storageName, JSON.stringify(home));
-
-      return home;
-  }
-
-  getLocalStorage(): HomeModel {
+  getLocalStorage(): Promise<HomeModel> {
     this.local = window.localStorage.getItem(this.storageName);
     // console.log(this.local);
     if (this.local) {
       let home = JSON.parse(this.local);
-      return home;
+      return new Promise((resolve, reject) => {
+        resolve(home);
+      });
     } else {
-      return this.initShop();
+      return this.http.get('./assets/json/menus.json')
+        .toPromise()
+        .then(response => {
+          window.localStorage.setItem(this.storageName, JSON.stringify(response));
+          return response;
+        })
+        .catch(this.handleError);
     }
   }
 
   getMenus(): Promise<HomeModel> {
-    // return this.http.get('./assets/json/menus.json')
-    // .toPromise()
-    // .then(response => response as HomeModel)
-    // .catch(this.handleError);
 
-    let home = this.getLocalStorage();
-    return new Promise((resolve, reject) => {
-      resolve(home);
-    });
+    return this.getLocalStorage();
+
   }
 
-  addMenu(menus:Array<MenuModel>): Promise<HomeModel> {
-    let home = this.getLocalStorage();
-    home.menus = menus;
-    window.localStorage.setItem(this.storageName, JSON.stringify(home))
-    return new Promise((resolve, reject) => {
-      resolve(home);
-    });
+  addMenu(menus: Array<MenuModel>): Promise<HomeModel> {
+    this.local = window.localStorage.getItem(this.storageName);
+    // console.log(this.local);
+    if (this.local) {
+      let home = JSON.parse(this.local);
+      home.menus = menus;
+      window.localStorage.setItem(this.storageName, JSON.stringify(home));
+      return new Promise((resolve, reject) => {
+        resolve(home);
+      });
+    }
   }
 
   private handleError(error: any): Promise<any> {
