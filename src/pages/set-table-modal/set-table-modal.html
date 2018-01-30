@@ -22,7 +22,8 @@
     </ion-col>
   </ion-row>
   <ion-item>
-    <ion-input type="number" placeholder="{{'TABLE_NO' | translate}}" min="1" max="64" [(ngModel)]="tableNo" (ngModelChange)="validateTableNo($event)"></ion-input>
+    <ion-label floating>{{'TABLE_NO' | translate}}</ion-label>
+    <ion-input type="number" min="1" max="64" disabled="true" [(ngModel)]="tableNo" (ngModelChange)="validateTableNo($event)"></ion-input>
   </ion-item>
   <ion-row class="margin-top">
     <ion-col class="line">

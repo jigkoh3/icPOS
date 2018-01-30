@@ -18,4 +18,13 @@
       </button>
     </ion-col>
   </ion-row>
+
+  <ion-row *ngFor="let area of tablesOfArea">
+    <ion-item-divider>
+      {{area.areaName}}
+    </ion-item-divider>
+    <ion-col col-3 *ngFor="let table of area.tables">
+      โต๊ะที่ {{table.tableNo}}
+    </ion-col>
+  </ion-row>
 </ion-content>

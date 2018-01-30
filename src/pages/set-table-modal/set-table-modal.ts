@@ -10,10 +10,8 @@ export class SetTableModalPage {
   private tableNo: number;
   private sizeSelected: string = 'small';
   private shapeSelected: string = 'shape2';
-  private areaName: string;
 
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
-    this.areaName = this.navParams.get('areaName');
     this.tableNo = this.navParams.get('tableNo');
   }
 
@@ -23,10 +21,9 @@ export class SetTableModalPage {
 
   saveTable() {
     let tableData: any = {
-      areaName: this.areaName,
       tableNo: this.tableNo,
-      sizeSelected: this.sizeSelected,
-      shapeSelected: this.shapeSelected
+      size: this.sizeSelected,
+      shape: this.shapeSelected
     };
     this.viewCtrl.dismiss(tableData);
   }
