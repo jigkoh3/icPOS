@@ -8,6 +8,7 @@ import { SetTableModalPage } from '../set-table-modal/set-table-modal';
   templateUrl: 'area-manage-modal.html',
 })
 export class AreaManageModalPage {
+  private areaName: string;
 
   constructor(private modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
 
@@ -18,7 +19,7 @@ export class AreaManageModalPage {
   }
 
   openSetTableModal() {
-    let openSetTable = this.modalCtrl.create(SetTableModalPage);
+    let openSetTable = this.modalCtrl.create(SetTableModalPage, { areaName: this.areaName });
     openSetTable.onDidDismiss(data => {
       if (data) {
         console.log(data);

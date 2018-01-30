@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-row>
     <ion-col col-11 col-md-11 col-lg-11>
-      <ion-input class="txt-box" type="text" placeholder="{{'AREA_NAME' | translate}}"></ion-input>
+      <ion-input class="txt-box" type="text" placeholder="{{'AREA_NAME' | translate}}" [(ngModel)]="areaName"></ion-input>
     </ion-col>
     <ion-col col-1 col-md-1 col-lg-1>
       <button ion-button (click)="openSetTableModal()">

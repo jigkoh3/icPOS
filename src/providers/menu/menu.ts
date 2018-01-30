@@ -20,22 +20,28 @@ export class MenuProvider {
 
 
   getLocalStorage(): Promise<HomeModel> {
-    this.local = window.localStorage.getItem(this.storageName);
-    // console.log(this.local);
-    if (this.local) {
-      let home = JSON.parse(this.local);
-      return new Promise((resolve, reject) => {
-        resolve(home);
-      });
-    } else {
-      return this.http.get('./assets/json/menus.json')
-        .toPromise()
-        .then(response => {
-          window.localStorage.setItem(this.storageName, JSON.stringify(response));
-          return response;
-        })
-        .catch(this.handleError);
-    }
+    return this.http.get('./assets/json/menus.json')
+      .toPromise()
+      .then(response => {
+        window.localStorage.setItem(this.storageName, JSON.stringify(response));
+        return response;
+      })
+      .catch(this.handleError);
+    // this.local = window.localStorage.getItem(this.storageName);
+    // if (this.local) {
+    //   let home = JSON.parse(this.local);
+    //   return new Promise((resolve, reject) => {
+    //     resolve(home);
+    //   });
+    // } else {
+    //   return this.http.get('./assets/json/menus.json')
+    //     .toPromise()
+    //     .then(response => {
+    //       window.localStorage.setItem(this.storageName, JSON.stringify(response));
+    //       return response;
+    //     })
+    //     .catch(this.handleError);
+    // }
   }
 
   getMenus(): Promise<HomeModel> {

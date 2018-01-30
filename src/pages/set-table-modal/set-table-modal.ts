@@ -10,8 +10,10 @@ export class SetTableModalPage {
   private tableNo: number;
   private sizeSelected: string = 'small';
   private shapeSelected: string = 'shape2';
+  private areaName: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.areaName = this.navParams.get('areaName');
   }
 
   ionViewDidLoad() {
