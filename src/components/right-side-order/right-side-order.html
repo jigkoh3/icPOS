@@ -22,7 +22,7 @@
         <ion-col col-12 class="order-detail">
           <ion-scroll scrollY="true">
             <ion-list>
-              <ion-item-sliding *ngFor="let item of items">
+              <ion-item-sliding *ngFor="let item of items" (click)="selectingOrderItem(item)">
                 <ion-item>
                   <ion-row>
                     <ion-col col-8 item-title>

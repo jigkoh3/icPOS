@@ -20,24 +20,32 @@ export class ProductOrderPage {
   step: number = 0;
   steps = [];
   result: OrderItemModel;
+  isModeEdit = false;
   constructor(public viewCtrl: ViewController, public navParams: NavParams) {
     this.item = this.navParams.get('item');
+    this.result = this.navParams.get('result');
     this.steps = this.calculatestep();
-    this.result = new OrderItemModel();
-    this.result.product = new ProductModel();
-    this.result.product.name = this.item.name;
-    this.result.product.category = this.item.category;
-    this.result.product.description = this.item.description;
-    this.result.product.image = this.item.image;
-    this.result.product.prices = [];
-    this.result.product.submenus = [];
-    this.result.total = 0;
-    this.result.qty = 1;
-    if (this.item.prices.length === 1) {
-      this.result.product.prices.push(this.item.prices[0]);
-      this.result.total = this.item.prices[0].price;
+    if (!this.result) {
+      this.result = new OrderItemModel();
+      this.result.product = new ProductModel();
+      this.result.product.name = this.item.name;
+      this.result.product.category = this.item.category;
+      this.result.product.description = this.item.description;
+      this.result.product.image = this.item.image;
+      this.result.product.prices = [];
+      this.result.product.submenus = [];
+      this.result.total = 0;
+      this.result.qty = 1;
+      if (this.item.prices.length === 1) {
+        this.result.product.prices.push(this.item.prices[0]);
+        this.result.total = this.item.prices[0].price;
+      }
+      this.isModeEdit = false;
+    }else{
+      this.isModeEdit = true;
     }
-    //console.log(this.result);
+
+    console.log(this.isModeEdit);
   }
 
   calculatestep(): Array<any> {
@@ -149,7 +157,7 @@ export class ProductOrderPage {
         _submenu.prices = [];
 
         //Add selected Size Price
-        
+
         switch (_submenu.type) {
           case "one": {
             _step.data.prices.forEach(function (_price) {
@@ -212,8 +220,8 @@ export class ProductOrderPage {
 
   }
 
-  checked(option){
-    
+  checked(option) {
+
     option.isChecked = !option.isChecked;
     //console.log(option);
   }

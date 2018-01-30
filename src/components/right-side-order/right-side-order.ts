@@ -15,11 +15,16 @@ import { PopoverController, ViewController } from 'ionic-angular';
 export class RightSideOrderComponent {
 
   @Input() items: Array<OrderItemModel>;
+  @Output() selectedOrderItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() removedOrderItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() clearAllOrderItem: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private popoverCtrl: PopoverController) {
     //console.log(this.items);
+  }
+
+  selectingOrderItem(item){
+    this.selectedOrderItem.emit(item);
   }
 
   removeOrderItem(item){
