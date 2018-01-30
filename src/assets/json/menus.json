@@ -99,10 +99,8 @@
                                         "type": "normal",
                                         "price": 0
                                     }
-
                                     ]
                             }
-                            
                             ,
                             
                             {
@@ -265,16 +263,6 @@
                                 "name": "ราคาปกติ",
                                 "type": "normal",
                                 "price": 60
-                            },
-                            {
-                                "name": "ราคาพิเศษ (เส้นใหญ่,เส้นเล็ก,เส้นหมี่)",
-                                "type": "normal",
-                                "price": 65
-                            },
-                            {
-                                "name": "ราคาพิเศษ (วุ้นเส้น,บะหมี่)",
-                                "type": "normal",
-                                "price": 60
                             }
                         ],
                         "submenus": [
@@ -315,6 +303,53 @@
 
                                 ]
                             },
+
+                            { 
+                                "type": "one",
+                                "name": "ขนาด",
+                                "prices": [
+    
+                                {
+                                    "name": "ราคาปกติ",
+                                    "type": "normal",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "พิเศษ",
+                                    "type": "normal",
+                                    "price": 15
+                                },
+                                {
+                                    "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
+                                    "type": "normal",
+                                    "price": 10
+                                }]
+                               }
+                                ,
+                                {   "type": "one",
+                                    "name": "น้ำซุป",
+                                    "prices": [
+                                        {  
+                                                "name": "น้ำใส",
+                                                "type": "normal",
+                                                "price": 0
+                                        },
+                                        {  
+                                            "name": "ต้มยำ",
+                                            "type": "normal",
+                                            "price": 0
+                                        },
+                                        {  
+                                            "name": "แห้ง",
+                                            "type": "normal",
+                                            "price": 0
+                                        }
+    
+                                        ]
+                                }
+                                
+                                ,
+
                             {
                                 "type": "qty",
                                 "name": "ท๊อปปิ้ง",
@@ -475,16 +510,6 @@
                                 "name": "ราคาปกติ",
                                 "type": "normal",
                                 "price": 60
-                            },
-                            {
-                                "name": "ราคาพิเศษ (เส้นใหญ่,เส้นเล็ก,เส้นหมี่)",
-                                "type": "normal",
-                                "price": 65
-                            },
-                            {
-                                "name": "ราคาพิเศษ (วุ้นเส้น,บะหมี่)",
-                                "type": "normal",
-                                "price": 60
                             }
                         ],
                         "submenus": [
@@ -525,6 +550,54 @@
 
                                 ]
                             },
+
+
+                            { 
+                                "type": "one",
+                                "name": "ขนาด",
+                                "prices": [
+    
+                                {
+                                    "name": "ราคาปกติ",
+                                    "type": "normal",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "พิเศษ",
+                                    "type": "normal",
+                                    "price": 15
+                                },
+                                {
+                                    "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
+                                    "type": "normal",
+                                    "price": 10
+                                }]
+                               }
+                                ,
+                                {   "type": "one",
+                                    "name": "น้ำซุป",
+                                    "prices": [
+                                        {  
+                                                "name": "น้ำใส",
+                                                "type": "normal",
+                                                "price": 0
+                                        },
+                                        {  
+                                            "name": "ต้มยำ",
+                                            "type": "normal",
+                                            "price": 0
+                                        },
+                                        {  
+                                            "name": "แห้ง",
+                                            "type": "normal",
+                                            "price": 0
+                                        }
+    
+                                        ]
+                                }
+                                
+                                ,
+
                             {
                                 "type": "qty",
                                 "name": "ท๊อปปิ้ง",
@@ -814,7 +887,7 @@
                             },
                             {
                                 "name": "ท๊อปปิ้ง",
-                                "type": "one",
+                                "type": "qty",
                                 "prices": [
                                     {
                                         "name": "ไข่ดาว",
@@ -1043,8 +1116,8 @@
                         ],
                         "submenus": [
                             {
-                                "name": "ท๊อปปิ้ง",
-                                "type": "qty",
+                                "name": "แบบ",
+                                "type": "any",
                                 "prices": [
                                     {
                                         "name": "ทุกอย่าง",
@@ -1222,7 +1295,7 @@
                         "submenus": [
                             {
                                 "name": "ท๊อปปิ้ง",
-                                "type": "qty",
+                                "type": "any",
                                 "prices": [
                                     {
                                         "name": "ทุกอย่าง",
