@@ -24,7 +24,13 @@
       {{area.areaName}}
     </ion-item-divider>
     <ion-col col-3 *ngFor="let table of area.tables">
-      โต๊ะที่ {{table.tableNo}}
+      <p>โต๊ะที่ {{table.tableNo}}</p>
+      <p>ขนาด {{table.size}}</p>
+      <p>
+        <img *ngIf="table.shape == 'shape1'" src="https://image.flaticon.com/icons/svg/130/130983.svg" width="64" height="64">
+        <img *ngIf="table.shape == 'shape2'" src="https://image.flaticon.com/icons/svg/701/701771.svg" width="64" height="64">
+        <img *ngIf="table.shape == 'shape3'" src="https://image.flaticon.com/icons/svg/699/699013.svg" width="64" height="64">
+      </p>
     </ion-col>
   </ion-row>
 </ion-content>
