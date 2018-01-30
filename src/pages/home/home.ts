@@ -48,7 +48,7 @@ export class HomePage {
     this.loading.onLoading();
     setTimeout(() => {
       this.menusService.getMenus().then(data => {
-        // console.log(data);
+        console.log(data);
         this.menus = data.menus;
         if (this.refTabInHome.refFooter) {
           this.menuSelected = this.refTabInHome.menuSelected;

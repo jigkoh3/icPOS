@@ -1,7 +1,7 @@
 <ion-content>
   <ion-row height-100>
     <ion-col col-12 col-md-8 col-lg-8>
-      <ion-scroll scrollY="true" height-100>
+      <ion-scroll scrollY="true">
         <grid [items]="menuItemsSelected" (itemSelected)="itemSelected($event)" (itemPressed)="itemPressed($event)" *ngIf="!isModeEdit">
         </grid>
         <grid-edit [items]="menuItemsSelected" (itemSelected)="itemEditSelected($event)" (itemDeleted)="itemDeleted($event)" *ngIf="isModeEdit"></grid-edit>
