@@ -13,33 +13,33 @@ export class PrinterSettingComponent {
   }
 
   cashierPrinterModal() {
-    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'cashier', name: 'PRINTER_CASHIER' });
-    productModal.onDidDismiss(data => {
+    let printerModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'cashier', name: 'PRINTER_CASHIER' });
+    printerModal.onDidDismiss(data => {
       if (data) {
         console.log(data);
       }
     });
-    productModal.present();
+    printerModal.present();
   }
 
   invoidTemplateModal() {
-    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'template', name: 'INVOID_TEMPLATE' });
-    productModal.onDidDismiss(data => {
+    let printerModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'template', name: 'INVOID_TEMPLATE' });
+    printerModal.onDidDismiss(data => {
       if (data) {
         console.log(data);
       }
     });
-    productModal.present();
+    printerModal.present();
   }
 
   kitchenPrinterModal() {
-    let productModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'kitchen', name: 'PRINTER_KITCHEN' });
-    productModal.onDidDismiss(data => {
+    let printerModal = this.modalCtrl.create(PrinterSettingModalPage, { type: 'kitchen', name: 'PRINTER_KITCHEN' });
+    printerModal.onDidDismiss(data => {
       if (data) {
         console.log(data);
       }
     });
-    productModal.present();
+    printerModal.present();
   }
 
 }

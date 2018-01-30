@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { SettingProvider } from '../../providers/setting/setting';
+import { ModalController } from 'ionic-angular';
+import { AreaManageModalPage } from '../../pages/area-manage-modal/area-manage-modal';
 
-/**
- * Generated class for the OpenbillSettingComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'openbill-setting',
   templateUrl: 'openbill-setting.html'
@@ -15,7 +11,7 @@ export class OpenbillSettingComponent {
 
   private openbillSettingData: any = {};
 
-  constructor(private settingProvider: SettingProvider) {
+  constructor(private modalCtrl: ModalController, private settingProvider: SettingProvider) {
     this.init();
   }
 
@@ -33,6 +29,16 @@ export class OpenbillSettingComponent {
     }).catch(err => {
       console.log(err);
     });
+  }
+
+  openAreaMangeModal() {
+    let areaManageModal = this.modalCtrl.create(AreaManageModalPage);
+    areaManageModal.onDidDismiss(data => {
+      if (data) {
+        console.log(data);
+      }
+    });
+    areaManageModal.present();
   }
 
 }

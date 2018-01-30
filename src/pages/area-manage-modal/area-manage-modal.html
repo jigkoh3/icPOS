@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{'EDIT_AREA' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-11 col-md-11 col-lg-11>
+      <ion-input class="txt-box" type="text" placeholder="{{'AREA_NAME' | translate}}" [(ngModel)]="areaName"></ion-input>
+    </ion-col>
+    <ion-col col-1 col-md-1 col-lg-1>
+      <button ion-button (click)="openSetTableModal()" [disabled]="!areaName">
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>
