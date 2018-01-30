@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -12,12 +12,23 @@ export class SetTableModalPage {
   private shapeSelected: string = 'shape2';
   private areaName: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     this.areaName = this.navParams.get('areaName');
+    this.tableNo = this.navParams.get('tableNo');
   }
 
   ionViewDidLoad() {
 
+  }
+
+  saveTable() {
+    let tableData: any = {
+      areaName: this.areaName,
+      tableNo: this.tableNo,
+      sizeSelected: this.sizeSelected,
+      shapeSelected: this.shapeSelected
+    };
+    this.viewCtrl.dismiss(tableData);
   }
 
   validateTableNo(e) {

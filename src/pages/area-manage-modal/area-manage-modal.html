@@ -13,7 +13,7 @@
       <ion-input class="txt-box" type="text" placeholder="{{'AREA_NAME' | translate}}" [(ngModel)]="areaName"></ion-input>
     </ion-col>
     <ion-col col-1 col-md-1 col-lg-1>
-      <button ion-button (click)="openSetTableModal()">
+      <button ion-button (click)="openSetTableModal()" [disabled]="!areaName">
         <ion-icon name="ios-add-circle-outline"></ion-icon>
       </button>
     </ion-col>

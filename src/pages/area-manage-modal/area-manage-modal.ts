@@ -9,6 +9,7 @@ import { SetTableModalPage } from '../set-table-modal/set-table-modal';
 })
 export class AreaManageModalPage {
   private areaName: string;
+  private tables: Array<any> = [];
 
   constructor(private modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
 
@@ -19,10 +20,11 @@ export class AreaManageModalPage {
   }
 
   openSetTableModal() {
-    let openSetTable = this.modalCtrl.create(SetTableModalPage, { areaName: this.areaName });
+    let openSetTable = this.modalCtrl.create(SetTableModalPage, { areaName: this.areaName, tableNo: this.tables.length <= 0 ? 1 : this.tables.length + 1 });
     openSetTable.onDidDismiss(data => {
       if (data) {
-        console.log(data);
+        this.tables.push(data);
+        console.log(this.tables);
       }
     });
     openSetTable.present();
