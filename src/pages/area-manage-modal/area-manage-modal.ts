@@ -72,4 +72,26 @@ export class AreaManageModalPage {
     openSetTable.present();
   }
 
+  deleteArea(areaName) {
+    for (let i = 0; i < this.tablesOfArea.length; i++) {
+      if (areaName == this.tablesOfArea[i].areaName) {
+        this.tablesOfArea.splice(i, 1);
+        break;
+      }
+    }
+  }
+
+  deleteTable(areaName, tableNo) {
+    for (let i = 0; i < this.tablesOfArea.length; i++) {
+      if (areaName == this.tablesOfArea[i].areaName) {
+        for (let j = 0; j < this.tablesOfArea[i].tables.length; j++) {
+          if (tableNo == this.tablesOfArea[i].tables[j].tableNo) {
+            this.tablesOfArea[i].tables.splice(j, 1);
+            break;
+          }
+        }
+      }
+    }
+  }
+
 }

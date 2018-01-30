@@ -3,4 +3,17 @@ page-area-manage-modal {
         border: 1px solid #c0c0c0;
         padding: 2px;
     }
+    .center {
+        text-align: center;
+    }
+    .bin {
+        position: absolute;
+        right: 10px;
+        color: red;
+    }
+    .bin-2 {
+        position: absolute;
+        right: 26px;
+        color: red;
+    }
 }

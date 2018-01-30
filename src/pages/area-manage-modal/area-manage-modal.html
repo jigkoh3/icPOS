@@ -22,9 +22,16 @@
   <ion-row *ngFor="let area of tablesOfArea">
     <ion-item-divider>
       {{area.areaName}}
+      <span class="bin">
+        <ion-icon name="trash" (click)="deleteArea(area.areaName)"></ion-icon>
+      </span>
     </ion-item-divider>
-    <ion-col col-3 *ngFor="let table of area.tables">
-      <p>โต๊ะที่ {{table.tableNo}}</p>
+    <ion-col col-3 class="center" *ngFor="let table of area.tables">
+      <p>โต๊ะที่ {{table.tableNo}}
+        <span class="bin-2">
+          <ion-icon name="trash" (click)="deleteTable(area.areaName,table.tableNo)"></ion-icon>
+        </span>
+      </p>
       <p>ขนาด {{table.size}}</p>
       <p>
         <img *ngIf="table.shape == 'shape1'" src="https://image.flaticon.com/icons/svg/130/130983.svg" width="64" height="64">
