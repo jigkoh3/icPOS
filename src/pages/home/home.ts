@@ -101,7 +101,7 @@ export class HomePage {
         if (item.product.prices && item.product.submenus) {
           // console.log(item.product.prices);
           if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
-            this.presentProductModal(item.product);
+            this.presentProductModal(item.product, null);
           } else {
             let _item = new OrderItemModel();
             _item.product = item.product;
@@ -163,7 +163,10 @@ export class HomePage {
     }
   }
 
-  
+  selectedOrderItem(item){
+    console.log(item);
+    // this.presentProductModal(item.product, item);
+  }
 
   savedMenu(){
     // console.log("saved");
@@ -211,8 +214,8 @@ export class HomePage {
 
   }
 
-  presentProductModal(item) {
-    let productModal = this.modalCtrl.create(ProductOrderPage, { item: item });
+  presentProductModal(item, result) {
+    let productModal = this.modalCtrl.create(ProductOrderPage, { item: item, result: result });
     productModal.onDidDismiss(data => {
       //console.log(data);
       if (data) {

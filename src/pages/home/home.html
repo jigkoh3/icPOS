@@ -2,15 +2,18 @@
   <ion-row height-100>
     <ion-col col-12 col-md-8 col-lg-8>
       <ion-scroll scrollY="true" height-100>
-        <grid [items]="menuItemsSelected" (itemSelected)="itemSelected($event)" (itemPressed)="itemPressed($event)" *ngIf="!isModeEdit"></grid>
+        <grid [items]="menuItemsSelected" (itemSelected)="itemSelected($event)" (itemPressed)="itemPressed($event)" *ngIf="!isModeEdit">
+        </grid>
         <grid-edit [items]="menuItemsSelected" (itemSelected)="itemEditSelected($event)" (itemDeleted)="itemDeleted($event)" *ngIf="isModeEdit"></grid-edit>
       </ion-scroll>
     </ion-col>
     <ion-col col-12 col-md-4 col-lg-4>
-      <right-side-order [items]="order" (removedOrderItem)="removedOrderItem($event)" (clearAllOrderItem)="clearAllOrderItem($event)" *ngIf="!isModeEdit"></right-side-order>
-      <right-side-edit *ngIf="isModeEdit" (savedMenu) = "savedMenu()"></right-side-edit>
+      <right-side-order [items]="order" (removedOrderItem)="removedOrderItem($event)" (clearAllOrderItem)="clearAllOrderItem($event)"
+        (selectedOrderItem)="selectedOrderItem($event)" *ngIf="!isModeEdit"></right-side-order>
+      <right-side-edit *ngIf="isModeEdit" (savedMenu)="savedMenu()"></right-side-edit>
     </ion-col>
   </ion-row>
 </ion-content>
 <footer [items]="menus" [menuSelected]="menuSelected" (itemSelected)="menuItemSelected($event)" *ngIf="!isModeEdit"></footer>
-<footer-edit [items]="menus" [menuSelected]="menuSelected" (itemSelected)="menuItemSelected($event)" (itemAdded)="itemAdded($event)" *ngIf="isModeEdit"></footer-edit>
+<footer-edit [items]="menus" [menuSelected]="menuSelected" (itemSelected)="menuItemSelected($event)" (itemAdded)="itemAdded($event)"
+  *ngIf="isModeEdit"></footer-edit>

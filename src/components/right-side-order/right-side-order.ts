@@ -24,6 +24,7 @@ export class RightSideOrderComponent {
   }
 
   selectingOrderItem(item){
+    console.log(item);
     this.selectedOrderItem.emit(item);
   }
 
