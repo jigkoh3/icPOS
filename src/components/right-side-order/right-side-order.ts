@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { OrderItemModel } from '../../assets/models/order.model';
 import { PopoverController, ViewController } from 'ionic-angular';
 
+import _ from 'lodash';
 /**
  * Generated class for the RightSideOrderComponent component.
  *
@@ -13,7 +14,7 @@ import { PopoverController, ViewController } from 'ionic-angular';
   templateUrl: 'right-side-order.html'
 })
 export class RightSideOrderComponent {
-
+  total: number = 0;
   @Input() items: Array<OrderItemModel>;
   @Output() selectedOrderItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() removedOrderItem: EventEmitter<any> = new EventEmitter<any>();
@@ -21,24 +22,33 @@ export class RightSideOrderComponent {
 
   constructor(private popoverCtrl: PopoverController) {
     //console.log(this.items);
+    //this.total = _.sumBy(this.items, function (o) { return o.total; })
   }
 
-  selectingOrderItem(item){
+  ngDoCheck() {
+    if (this.items) {
+      //console.log(this.items);
+      this.total = _.sumBy(this.items, function (o) { return o.total * o.qty; })
+      //console.log(this.total);
+    }
+  }
+
+  selectingOrderItem(item) {
     console.log(item);
     this.selectedOrderItem.emit(item);
   }
 
-  removeOrderItem(item){
+  removeOrderItem(item) {
     let idx = this.items.indexOf(item);
     //console.log(idx);
-    this.items.splice(idx,1);
-    if(this.items.length === 0){
+    this.items.splice(idx, 1);
+    if (this.items.length === 0) {
       this.items = null;
     }
     this.removedOrderItem.emit(this.items);
   }
 
-  clearall(){
+  clearall() {
     //console.log("object");
     this.items = null;
     this.clearAllOrderItem.emit(this.items);
@@ -66,7 +76,7 @@ export class RightSideOrderComponent {
   `
 })
 export class PopoverPage {
-  constructor(public viewCtrl: ViewController) {}
+  constructor(public viewCtrl: ViewController) { }
 
   close() {
     this.viewCtrl.dismiss();
