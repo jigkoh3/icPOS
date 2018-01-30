@@ -21,11 +21,11 @@
       <ion-toggle [(ngModel)]="openbillSettingData.setNotification" color="secondary"></ion-toggle>
     </ion-item>
     <ion-item>
-      <ion-label>จัดวางโต๊ะ</ion-label>
+      <ion-label>{{'SET_TABLE' | translate}}</ion-label>
       <ion-toggle [(ngModel)]="openbillSettingData.setTable" color="secondary"></ion-toggle>
     </ion-item>
     <ion-item *ngIf="openbillSettingData.setTable" (click)="openAreaMangeModal()">
-      <h2>สร้างพื้นที่ใหม่
+      <h2>{{'CREATE_AREA' | translate}}
         <span class="right">
           <ion-icon name="ios-arrow-forward"></ion-icon>
         </span>

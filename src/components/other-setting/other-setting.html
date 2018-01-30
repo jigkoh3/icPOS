@@ -1,17 +1,17 @@
 <ion-list>
   <ion-item>
-    <ion-label>เปิดหน้าจอค้างไว้</ion-label>
+    <ion-label>{{'OPEN_SCREEN' | translate}}</ion-label>
     <ion-toggle [(ngModel)]="openScreen" color="secondary" (ngModelChange)="setOpenScreen($event)"></ion-toggle>
   </ion-item>
   <ion-item (click)="policy()">
-    <h2>เงื่อนไขการให้บริการ
+    <h2>{{'POLICY' | translate}}
       <span class="right">
         <ion-icon name="ios-arrow-forward"></ion-icon>
       </span>
     </h2>
   </ion-item>
   <ion-item (click)="pivacy()">
-    <h2>นโยบายความเป็นส่วนตัว
+    <h2>{{'PIVACY' | translate}}
       <span class="right">
         <ion-icon name="ios-arrow-forward"></ion-icon>
       </span>
