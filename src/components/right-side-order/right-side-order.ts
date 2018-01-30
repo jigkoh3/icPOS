@@ -30,6 +30,8 @@ export class RightSideOrderComponent {
       //console.log(this.items);
       this.total = _.sumBy(this.items, function (o) { return o.total * o.qty; })
       //console.log(this.total);
+    }else{
+      this.total = 0;
     }
   }
 
