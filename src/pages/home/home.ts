@@ -13,6 +13,8 @@ import { MainMorePage } from '../main-more/main-more';
 
 import _ from 'lodash';
 import { AddItemMenuPage } from '../add-item-menu/add-item-menu';
+import { ToTablePage } from '../to-table/to-table';
+import { TakeAwayPage } from '../take-away/take-away';
 
 @Component({
   selector: 'page-home',
@@ -25,8 +27,8 @@ export class HomePage {
   menuSelected: String;
   refTabInHome: any = {};
   menus: Array<MenuModel>;
-  homeData: HomeModel;
   isModeEdit: boolean = false;
+  takeAway:boolean=true;
 
   constructor(public navCtrl: NavController,
     private modalCtrl: ModalController,
@@ -36,12 +38,26 @@ export class HomePage {
     private app: App,
     public navParams: NavParams
   ) {
+
     this.refTabInHome = this.navParams.data;
+    this.order = orderService.order;
+    if (!menusService.homeData) {
+      this.getMenuData();
+    } else {
+      this.menus = menusService.homeData.menus;
+      if (this.refTabInHome.refFooter) {
+        this.menuSelected = this.refTabInHome.menuSelected;
+        this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
+      } else {
+        this.menuSelected = menusService.homeData.menus[0].name;
+        this.menuItemsSelected = menusService.homeData.menus[0].items;
+      }
+    }
   }
 
+
   ionViewDidLoad() {
-    //this.getOrderData();
-    this.getMenuData();
+
   }
 
   getMenuData() {
@@ -64,16 +80,6 @@ export class HomePage {
       })
     }, 1000);
 
-  }
-
-  getOrderData() {
-    //silent load order data
-    this.orderService.getOrder().then(data => {
-      this.order = data.items;
-      console.log(data);
-    }, err => {
-      console.log(err);
-    })
   }
 
   menuItemSelected(menu) {
@@ -121,14 +127,14 @@ export class HomePage {
     }
   }
 
-  itemPressed($event){
+  itemPressed($event) {
     this.isModeEdit = true;
   }
 
-  itemDeleted(index){
+  itemDeleted(index) {
     let item = new ItemModel();
     item.type = "none";
-    this.menuItemsSelected[index]= item;
+    this.menuItemsSelected[index] = item;
   }
 
   removedOrderItem(order) {
@@ -136,14 +142,15 @@ export class HomePage {
   }
 
   clearAllOrderItem(order) {
-    this.order = null;
+    this.order = [];
+    this.orderService.order = [];
   }
 
-  itemAdded(menu){
+  itemAdded(menu) {
     this.menus.push(menu);
   }
 
-  itemEditSelected(index){
+  itemEditSelected(index) {
     let item = this.menuItemsSelected[index];
     // console.log(item.type);
     switch (item.type) {
@@ -163,12 +170,12 @@ export class HomePage {
     }
   }
 
-  selectedOrderItem(item){
+  selectedOrderItem(item) {
     console.log(item);
     this.presentProductModal(item.product, item);
   }
 
-  savedMenu(){
+  savedMenu() {
     // console.log("saved");
     this.menusService.addMenu(this.menus).then(data => {
       // console.log(data);
@@ -196,11 +203,11 @@ export class HomePage {
 
 
       if (filter && filter.length > 0) {
-        filter.forEach(function(itm){
-          itm.qty+= item.qty;
+        filter.forEach(function (itm) {
+          itm.qty += item.qty;
         });
-        
-        
+
+
       } else {
         this.order.push(item);
       }
@@ -212,6 +219,47 @@ export class HomePage {
       this.order.push(item);
     }
 
+  }
+
+  takeAwayChanged(takeAway){
+    this.takeAway = takeAway;
+  }
+
+  orderSaved(orders){
+    console.log(orders);
+    if(this.takeAway){
+      this.presentTakeAwayModal(orders);
+    }else{
+      //alert("เลือกโต๊ะ")
+      this.presentToTableModal(orders);
+    }
+  }
+
+  orderPaid(orders){
+    console.log(orders);
+  }
+
+  presentToTableModal(orders) {
+    let toTableModal = this.modalCtrl.create(ToTablePage, { orders: orders});
+    toTableModal.onDidDismiss(data => {
+      //console.log(data);
+      if (data) {
+        //this.updateOrder(data);
+      }
+
+    });
+    toTableModal.present();
+  }
+  presentTakeAwayModal(orders) {
+    let takeAwayModal = this.modalCtrl.create(TakeAwayPage, { orders: orders});
+    takeAwayModal.onDidDismiss(data => {
+      //console.log(data);
+      if (data) {
+        //this.updateOrder(data);
+      }
+
+    });
+    takeAwayModal.present();
   }
 
   presentProductModal(item, result) {
@@ -226,7 +274,7 @@ export class HomePage {
     productModal.present();
   }
 
-  presentAddMenuItemModal(index){
+  presentAddMenuItemModal(index) {
     let addItemModal = this.modalCtrl.create(AddItemMenuPage);
     addItemModal.onDidDismiss(data => {
       //console.log(data);

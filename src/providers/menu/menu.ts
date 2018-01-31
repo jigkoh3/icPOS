@@ -14,6 +14,7 @@ export class MenuProvider {
   local: any;
   storageName = "0638265946";
   online: boolean = false;
+  public homeData: HomeModel;
   constructor(public http: HttpClient) {
 
   }
@@ -23,25 +24,11 @@ export class MenuProvider {
     return this.http.get('./assets/json/menus.json')
       .toPromise()
       .then(response => {
+        this.homeData = response as HomeModel;
         window.localStorage.setItem(this.storageName, JSON.stringify(response));
-        return response;
+        return this.homeData;
       })
       .catch(this.handleError);
-    // this.local = window.localStorage.getItem(this.storageName);
-    // if (this.local) {
-    //   let home = JSON.parse(this.local);
-    //   return new Promise((resolve, reject) => {
-    //     resolve(home);
-    //   });
-    // } else {
-    //   return this.http.get('./assets/json/menus.json')
-    //     .toPromise()
-    //     .then(response => {
-    //       window.localStorage.setItem(this.storageName, JSON.stringify(response));
-    //       return response;
-    //     })
-    //     .catch(this.handleError);
-    // }
   }
 
   getMenus(): Promise<HomeModel> {
@@ -54,11 +41,11 @@ export class MenuProvider {
     this.local = window.localStorage.getItem(this.storageName);
     // console.log(this.local);
     if (this.local) {
-      let home = JSON.parse(this.local);
-      home.menus = menus;
-      window.localStorage.setItem(this.storageName, JSON.stringify(home));
+      this.homeData = JSON.parse(this.local);
+      this.homeData.menus = menus;
+      window.localStorage.setItem(this.storageName, JSON.stringify(this.homeData));
       return new Promise((resolve, reject) => {
-        resolve(home);
+        resolve(this.homeData);
       });
     }
   }

@@ -38,6 +38,8 @@ import { ProductPage } from '../pages/product/product';
 import { OtherSettingComponent } from '../components/other-setting/other-setting';
 import { AreaManageModalPage } from '../pages/area-manage-modal/area-manage-modal';
 import { SetTableModalPage } from '../pages/set-table-modal/set-table-modal';
+import { ToTablePage } from '../pages/to-table/to-table';
+import { TakeAwayPage } from '../pages/take-away/take-away';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -69,7 +71,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductPage,
     OtherSettingComponent,
     AreaManageModalPage,
-    SetTableModalPage
+    SetTableModalPage,
+    ToTablePage,
+    TakeAwayPage
   ],
   imports: [
     BrowserModule,
@@ -105,7 +109,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductPage,
     OtherSettingComponent,
     AreaManageModalPage,
-    SetTableModalPage
+    SetTableModalPage,
+    ToTablePage,
+    TakeAwayPage
   ],
   providers: [
     StatusBar,

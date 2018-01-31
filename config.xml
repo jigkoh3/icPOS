@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.casn.pos" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.casn.pos" version="0.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>iPOS</name>
-    <description>MObile POS app.</description>
+    <description>Mobile POS app.</description>
     <author email="theerasak.t@cyberadvancesystems.com" href="http://cyberadvancesystems.com/">CASN Team</author>
     <content src="index.html" />
     <access origin="*" />

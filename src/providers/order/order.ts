@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { OrderModel } from '../../assets/models/order.model';
+import { OrderModel, OrderItemModel } from '../../assets/models/order.model';
 
 /*
   Generated class for the OrderProvider provider.
@@ -10,9 +10,9 @@ import { OrderModel } from '../../assets/models/order.model';
 */
 @Injectable()
 export class OrderProvider {
-
+  public order: Array<OrderItemModel>;
   constructor(public http: HttpClient) {
-    
+    this.order = [];
   }
 
   getOrder():Promise<OrderModel>{

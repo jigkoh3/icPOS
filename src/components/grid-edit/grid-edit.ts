@@ -25,7 +25,7 @@ export class GridEditComponent {
       chosenClass: 'xxx',
       ghostClass: 'xxx2',
       onEnd: (event: any) => {
-        console.log(this.items);
+        //console.log(this.items);
       },
       animation: 150,
       delay: 15,

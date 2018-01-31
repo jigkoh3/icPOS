@@ -1,10 +1,10 @@
 <ion-row>
     <ion-col col-12>
       <ion-row padding-left padding-top>
-        <ion-col col-12 no-data *ngIf="!items">
+        <!-- <ion-col col-12 no-data *ngIf="!items">
           {{'NO_DATA' | translate }}
-        </ion-col>
-        <ion-col col-12 have-data *ngIf="items">
+        </ion-col> -->
+        <ion-col col-12 have-data>
           <ion-row>
             <ion-col col-10>
               {{'CURR_SALE' | translate }}
@@ -75,7 +75,7 @@
       <ion-grid>
         <ion-item>
           <ion-label>{{'TAKE_AWAY' | translate }}</ion-label>
-          <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+          <ion-checkbox color="secondary" [(ngModel)]="takeAway" (ionChange)="updateTakeAway()"></ion-checkbox>
         </ion-item>
       </ion-grid>
       <ion-row padding-left>
@@ -92,14 +92,14 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12 *ngIf="!items">
+        <!-- <ion-col col-12 *ngIf="!items">
           <button ion-button full color="secondary">{{ 'BILL' | translate }}</button>
+        </ion-col> -->
+        <ion-col col-6>
+            <button ion-button [disabled]="!items || items.length === 0" full color="secondary" (click)="orderSaving()">{{ 'SAVE' | translate }}</button>
         </ion-col>
-        <ion-col col-6 *ngIf="items">
-            <button ion-button full color="secondary">{{ 'SAVE' | translate }}</button>
-        </ion-col>
-        <ion-col col-6 *ngIf="items">
-            <button ion-button full color="secondary">{{ 'CHARGE' | translate }}</button>
+        <ion-col col-6>
+            <button ion-button [disabled]="!items || items.length === 0" full color="secondary" (click)="orderPaying()">{{ 'CHARGE' | translate }}</button>
           </ion-col>
       </ion-row>
     </ion-col>

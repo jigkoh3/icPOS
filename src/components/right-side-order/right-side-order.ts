@@ -16,9 +16,13 @@ import _ from 'lodash';
 export class RightSideOrderComponent {
   total: number = 0;
   @Input() items: Array<OrderItemModel>;
+  @Input() takeAway: any;
   @Output() selectedOrderItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() removedOrderItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() clearAllOrderItem: EventEmitter<any> = new EventEmitter<any>();
+  @Output() orderSaved: EventEmitter<any> = new EventEmitter<any>();
+  @Output() orderPaid: EventEmitter<any> = new EventEmitter<any>();
+  @Output() takeAwayChanged: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private popoverCtrl: PopoverController) {
     //console.log(this.items);
@@ -54,6 +58,19 @@ export class RightSideOrderComponent {
     //console.log("object");
     this.items = null;
     this.clearAllOrderItem.emit(this.items);
+  }
+
+  updateTakeAway(){
+    // console.log(this.takeAway);
+    this.takeAwayChanged.emit(this.takeAway);
+  }
+
+  orderSaving(){
+    this.orderSaved.emit(this.items);
+  }
+
+  orderPaying(){
+    this.orderPaid.emit(this.items);
   }
 
   presentPopover(myEvent) {
