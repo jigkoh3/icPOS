@@ -12,8 +12,369 @@
                         "category": {
                             "name": "ก๋วยเตี๋ยว"
                         },
-                        "prices": [
+                        "prices": 
+                        [
+                            {
+                                "name": "ราคาปกติ",
+                                "type": "normal",
+                                "price": 50
+                            }
+                        ]
+                        ,
+                        "submenus": [
+                            {
+                                "type": "one",
+                                "name": "เส้น",
+                                "prices": [
+                                    {
+                                        "name": "ใหญ่",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "เล็ก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "หมี่",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "วุ้นเส้น",
+                                        "type": "normal",
+                                        "price": 10
+                                    },
+                                    {
+                                        "name": "บะหมี่",
+                                        "type": "normal",
+                                        "price": 10
+                                    }
 
+                                ]
+                            },
+
+                           { 
+                            "type": "one",
+                            "name": "น้ำซุป",
+                            "prices": [
+                            {  
+                                "name": "น้ำใส",
+                                "type": "normal",
+                                "price": 0
+                            },
+                            {  
+                                "name": "ต้มยำ",
+                                "type": "normal",
+                                "price": 0
+                            },
+                            {  
+                                "name": "แห้ง",
+                                "type": "normal",
+                                "price": 0
+                            }
+                            ]
+                           }
+                            ,
+                            {   "type": "one",
+                                "name": "ขนาด",
+                                "prices": [
+                                    {
+                                        "name": "ราคาปกติ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "พิเศษ",
+                                        "type": "normal",
+                                        "price": 15
+                                    },
+                                    {
+                                        "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
+                                        "type": "normal",
+                                        "price": 10
+                                    }
+                                    ]
+                            }
+                            ,
+                            
+                            {
+                                "type": "qty",
+                                "name": "ท๊อปปิ้ง",
+                                "prices": [
+                                    {
+                                        "name": "เกี๊ยวกรอบ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "หมูชิ้น",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "หมูสับ",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "ตับ",
+                                        "type": "normal",
+                                        "price": 5
+                                    },                                    
+                                    {
+                                        "name": "ลูกชิ้นกลม",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "ลูกชิ้นกุ้ง",
+                                        "type": "normal",
+                                        "price": 10
+                                    },
+                                    {
+                                        "name": "ปลาเส้น",
+                                        "type": "normal",
+                                        "price": 5
+                                    }
+                                    
+                                ]
+                            },
+                            {
+                                "type": "any",
+                                "name": "อื่นๆ",
+                                "prices": [
+                                    {
+                                        "name": "ไม่ชูรส",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ผัก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่กระเทียม",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ถั่ว",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่พริก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เกี๊ยวกรอบ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่หมูชิ้น",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่หมูสับ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ตับ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ลูกชิ้นกลม",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ลูกชิ้นกุ้ง",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ปลาเส้น",
+                                        "type": "normal",
+                                        "price": 0
+                                    }
+                                    
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "product",
+                    "product": {
+                        "name": "ก๋วยเตี๋ยวไก่",
+                        "image": "https://www.pim.in.th/images/all-one-dish-food/chicken-noodle-soup/chicken-noodle-soup-16.jpg",
+                        "category": {
+                            "name": "ก๊วยเตี๋ยว"
+                        },
+                        "prices": 
+                           [ {
+                                "name": "ราคาปกติ",
+                                "type": "normal",
+                                "price": 50
+                            }]
+                        ,
+                        "submenus": [
+                            {
+                                "type": "one",
+                                "name": "เส้น",
+                                "prices": [
+                                    {
+                                        "name": "ใหญ่",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "เล็ก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "หมี่",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "วุ้นเส้น",
+                                        "type": "normal",
+                                        "price": 10
+                                    },
+                                    {
+                                        "name": "บะหมี่",
+                                        "type": "normal",
+                                        "price": 10
+                                    }
+
+                                ]
+                            },
+
+                            { 
+                                "type": "one",
+                                "name": "น้ำซุป",
+                                "prices": [
+                                {  
+                                        "name": "น้ำใส",
+                                        "type": "normal",
+                                        "price": 0
+                                },
+                                {  
+                                    "name": "ต้มยำ",
+                                    "type": "normal",
+                                    "price": 0
+                                },
+                                {  
+                                    "name": "แห้ง",
+                                    "type": "normal",
+                                    "price": 0
+                                }
+
+                                ]
+                               }
+                                ,
+                                {   "type": "one",
+                                    "name": "ขนาด",
+                                    "prices": [
+
+
+                                        {
+                                            "name": "ราคาปกติ",
+                                            "type": "normal",
+                                            "price": 0
+                                        },
+                                        {
+                                            "name": "พิเศษ",
+                                            "type": "normal",
+                                            "price": 15
+                                        },
+                                        {
+                                            "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
+                                            "type": "normal",
+                                            "price": 10
+                                        }
+    
+                                        ]
+                                }
+                                
+                                ,
+
+                            {
+                                "type": "qty",
+                                "name": "ท๊อปปิ้ง",
+                                "prices": [
+                                    {
+                                        "name": "เกี๊ยวกรอบ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "เนื้อไก่",
+                                        "type": "normal",
+                                        "price": 5
+                                    }
+                                    
+                                ]
+                            },
+                            {
+                                "type": "any",
+                                "name": "อื่นๆ",
+                                "prices": [
+                                    {
+                                        "name": "ไม่ชูรส",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ผัก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่กระเทียม",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ถั่ว",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่พริก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เกี๊ยวกรอบ",
+                                        "type": "normal",
+                                        "price": 0
+                                    }
+                                    
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "product",
+                    "product": {
+                        "name": "เย็นตาโฟ",
+                        "image": "http://www.chingcancook.com/detail_photo/01_20151231155549GURI.jpg",
+                        "category": {
+                            "name": "ก๊วยเตี๋ยว"
+                        },
+                        "prices": [
                             {
                                 "name": "ราคาปกติ",
                                 "type": "normal",
@@ -49,55 +410,291 @@
                                         "name": "บะหมี่",
                                         "type": "normal",
                                         "price": 10
-                                    },
-                                    {
-                                        "name": "เกาหลา",
-                                        "type": "normal",
-                                        "price": 10
                                     }
 
                                 ]
                             },
 
-                           { 
-                            "type": "one",
-                            "name": "ขนาด",
-                            "prices": [
 
+                            { 
+                                "type": "one",
+                                "name": "น้ำซุป",
+                                "prices": [
+
+                                    {  
+                                        "name": "น้ำใส",
+                                        "type": "normal",
+                                        "price": 0
+                                },
+                                {  
+                                    "name": "ต้มยำ",
+                                    "type": "normal",
+                                    "price": 0
+                                },
+                                {  
+                                    "name": "แห้ง",
+                                    "type": "normal",
+                                    "price": 0
+                                }
+    
+                                ]
+                               }
+                                ,
+                                {   "type": "one",
+                                    "name": "ขนาด",
+                                    "prices": [
+                                        {
+                                            "name": "ราคาปกติ",
+                                            "type": "normal",
+                                            "price": 0
+                                        },
+                                        {
+                                            "name": "พิเศษ",
+                                            "type": "normal",
+                                            "price": 15
+                                        },
+                                        {
+                                            "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
+                                            "type": "normal",
+                                            "price": 10
+                                        }
+    
+                                        ]
+                                }
+                                
+                                ,
+
+                            {
+                                "type": "qty",
+                                "name": "ท๊อปปิ้ง",
+                                "prices": [
+                                    {
+                                        "name": "เกี๊ยวกรอบ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+
+                                    {
+                                        "name": "ลูกชิ้นกลม",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "ลูกชิ้นกุ้ง",
+                                        "type": "normal",
+                                        "price": 10
+                                    },
+                                    {
+                                        "name": "ปลาเส้น",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "ปลาหมึก",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "แมงกระพรุน",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "เลือดหมู",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "เต้าหูทอด",
+                                        "type": "normal",
+                                        "price": 5
+                                    }
+                                    
+                                ]
+                            },
+                            {
+                                "type": "any",
+                                "name": "อื่นๆ",
+                                "prices": [
+                                    {
+                                        "name": "ไม่ชูรส",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ผัก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่กระเทียม",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ถั่ว",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่พริก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เกี๊ยวกรอบ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                
+                                    {
+                                        "name": "ไม่ลูกชิ้นกลม",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ลูกชิ้นกุ้ง",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ปลาเส้น",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ปลาหมึก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่แมงกระพรุน",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เลือดหมู",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เต้าหู้ทอด",
+                                        "type": "normal",
+                                        "price": 0
+                                    }
+
+                                    
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+        
+                    "type": "product",
+                    "product": {
+                        "name": "เย็นตาโฟผัดแห้ง",
+                        "image": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/c65.0.480.480/17267772_1915773941986399_8734891954443124736_n.jpg",
+                        "prices": [
                             {
                                 "name": "ราคาปกติ",
                                 "type": "normal",
+                                "price": 80
+                            } ]
+                            ,
+                        "submenus": [
+                            {
+                            "type": "one",
+                            "name": "เส้น",
+                            "prices": [
+                                {
+                                    "name": "ใหญ่",
+                                    "type": "normal",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "เล็ก",
+                                    "type": "normal",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "หมี่",
+                                    "type": "normal",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "วุ้นเส้น",
+                                    "type": "normal",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "บะหมี่",
+                                    "type": "normal",
+                                    "price": 0
+                                }
+                            ]
+                          }
+                        ]
+                    }
+                },
+                {
+                    
+                    "type": "product",
+                    "product": {
+                        "name": "เกาเหลาหมู",
+                        "image": "https://img.wongnai.com/p/1920x0/2014/12/28/8c0cbad9c880406dac2e4cb2870b877d.jpg",
+                        "category": {
+                            "name": "ก๋วยเตี๋ยว"
+                        },
+                        "prices": 
+                        [
+                            {
+                                "name": "ราคาปกติ",
+                                "type": "normal",
+                                "price": 65
+                            }
+                        ]
+                        ,
+                        "submenus": [
+                           { 
+                            "type": "one",
+                            "name": "น้ำซุป",
+                            "prices": [
+                            {  
+                                "name": "น้ำใส",
+                                "type": "normal",
                                 "price": 0
                             },
-                            {
-                                "name": "พิเศษ",
+                            {  
+                                "name": "ต้มยำ",
                                 "type": "normal",
-                                "price": 15
+                                "price": 0
                             },
-                            {
-                                "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
+                            {  
+                                "name": "แห้ง",
                                 "type": "normal",
-                                "price": 10
-                            }]
+                                "price": 0
+                            }
+                            ]
                            }
                             ,
                             {   "type": "one",
-                                "name": "น้ำซุป",
+                                "name": "ขนาด",
                                 "prices": [
-                                    {  
-                                            "name": "น้ำใส",
-                                            "type": "normal",
-                                            "price": 0
-                                    },
-                                    {  
-                                        "name": "ต้มยำ",
+                                    {
+                                        "name": "ราคาปกติ",
                                         "type": "normal",
                                         "price": 0
                                     },
-                                    {  
-                                        "name": "แห้ง",
+                                    {
+                                        "name": "พิเศษ",
                                         "type": "normal",
-                                        "price": 0
+                                        "price": 15
+                                    },
+                                    {
+                                        "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
+                                        "type": "normal",
+                                        "price": 10
                                     }
                                     ]
                             }
@@ -113,11 +710,6 @@
                                         "price": 0
                                     },
                                     {
-                                        "name": "ตับ",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
                                         "name": "หมูชิ้น",
                                         "type": "normal",
                                         "price": 5
@@ -128,10 +720,10 @@
                                         "price": 5
                                     },
                                     {
-                                        "name": "เนื้อไก่",
+                                        "name": "ตับ",
                                         "type": "normal",
                                         "price": 5
-                                    },
+                                    },                                    
                                     {
                                         "name": "ลูกชิ้นกลม",
                                         "type": "normal",
@@ -144,16 +736,6 @@
                                     },
                                     {
                                         "name": "ปลาเส้น",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "ปลาหมึก",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "แมงกระพรุน",
                                         "type": "normal",
                                         "price": 5
                                     }
@@ -190,17 +772,7 @@
                                         "price": 0
                                     },
                                     {
-                                        "name": "ไม่เลือด",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
                                         "name": "ไม่เกี๊ยวกรอบ",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่ตับ",
                                         "type": "normal",
                                         "price": 0
                                     },
@@ -215,7 +787,7 @@
                                         "price": 0
                                     },
                                     {
-                                        "name": "ไม่เนื้อไก่",
+                                        "name": "ไม่ตับ",
                                         "type": "normal",
                                         "price": 0
                                     },
@@ -233,116 +805,73 @@
                                         "name": "ไม่ปลาเส้น",
                                         "type": "normal",
                                         "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่ปลาหมึก",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่แมงกระพรุน",
-                                        "type": "normal",
-                                        "price": 0
                                     }
                                     
                                 ]
                             }
                         ]
                     }
+                
                 },
                 {
+                  
                     "type": "product",
                     "product": {
-                        "name": "ก๋วยเตี๋ยวไก่",
-                        "image": "https://www.pim.in.th/images/all-one-dish-food/chicken-noodle-soup/chicken-noodle-soup-16.jpg",
+                        "name": "เกาเหลาไก่",
+                        "image": "http://img.painaidii.com/images/20111120_3_1321775213_817935.jpg",
                         "category": {
                             "name": "ก๊วยเตี๋ยว"
                         },
-                        "prices": [
-                            {
+                        "prices": 
+                           [ {
                                 "name": "ราคาปกติ",
                                 "type": "normal",
-                                "price": 60
-                            }
-                        ],
+                                "price": 50
+                            }]
+                        ,
                         "submenus": [
-                            {
-                                "type": "one",
-                                "name": "เส้น",
-                                "prices": [
-                                    {
-                                        "name": "ใหญ่",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "เล็ก",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "หมี่",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "วุ้นเส้น",
-                                        "type": "normal",
-                                        "price": 10
-                                    },
-                                    {
-                                        "name": "บะหมี่",
-                                        "type": "normal",
-                                        "price": 10
-                                    },
-                                    {
-                                        "name": "เกาหลา",
-                                        "type": "normal",
-                                        "price": 10
-                                    }
-
-                                ]
-                            },
-
                             { 
                                 "type": "one",
-                                "name": "ขนาด",
+                                "name": "น้ำซุป",
                                 "prices": [
-    
-                                {
-                                    "name": "ราคาปกติ",
+                                {  
+                                        "name": "น้ำใส",
+                                        "type": "normal",
+                                        "price": 0
+                                },
+                                {  
+                                    "name": "ต้มยำ",
                                     "type": "normal",
                                     "price": 0
                                 },
-                                {
-                                    "name": "พิเศษ",
+                                {  
+                                    "name": "แห้ง",
                                     "type": "normal",
-                                    "price": 15
-                                },
-                                {
-                                    "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                                    "type": "normal",
-                                    "price": 10
-                                }]
+                                    "price": 0
+                                }
+
+                                ]
                                }
                                 ,
                                 {   "type": "one",
-                                    "name": "น้ำซุป",
+                                    "name": "ขนาด",
                                     "prices": [
-                                        {  
-                                                "name": "น้ำใส",
-                                                "type": "normal",
-                                                "price": 0
-                                        },
-                                        {  
-                                            "name": "ต้มยำ",
+
+
+                                        {
+                                            "name": "ราคาปกติ",
                                             "type": "normal",
                                             "price": 0
                                         },
-                                        {  
-                                            "name": "แห้ง",
+                                        {
+                                            "name": "พิเศษ",
                                             "type": "normal",
-                                            "price": 0
+                                            "price": 15
+                                        },
+                                        {
+                                            "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
+                                            "type": "normal",
+                                            "price": 10
                                         }
     
                                         ]
@@ -360,47 +889,7 @@
                                         "price": 0
                                     },
                                     {
-                                        "name": "ตับ",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "หมูชิ้น",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "หมูสับ",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
                                         "name": "เนื้อไก่",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "ลูกชิ้นกลม",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "ลูกชิ้นกุ้ง",
-                                        "type": "normal",
-                                        "price": 10
-                                    },
-                                    {
-                                        "name": "ปลาเส้น",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "ปลาหมึก",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "แมงกระพรุน",
                                         "type": "normal",
                                         "price": 5
                                     }
@@ -437,57 +926,7 @@
                                         "price": 0
                                     },
                                     {
-                                        "name": "ไม่เลือด",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
                                         "name": "ไม่เกี๊ยวกรอบ",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่ตับ",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่หมูชิ้น",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่หมูสับ",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่เนื้อไก่",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่ลูกชิ้นกลม",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่ลูกชิ้นกุ้ง",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่ปลาเส้น",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่ปลาหมึก",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่แมงกระพรุน",
                                         "type": "normal",
                                         "price": 0
                                     }
@@ -496,12 +935,13 @@
                             }
                         ]
                     }
+
                 },
                 {
                     "type": "product",
                     "product": {
-                        "name": "เย็นตาโฟ",
-                        "image": "http://www.chingcancook.com/detail_photo/01_20151231155549GURI.jpg",
+                        "name": "เกาเหลาโฟ",
+                        "image": "https://pbs.twimg.com/media/C0M-jLMUUAAJl88.jpg",
                         "category": {
                             "name": "ก๊วยเตี๋ยว"
                         },
@@ -509,88 +949,52 @@
                             {
                                 "name": "ราคาปกติ",
                                 "type": "normal",
-                                "price": 60
+                                "price": 50
                             }
                         ],
                         "submenus": [
                             {
+                               
                                 "type": "one",
-                                "name": "เส้น",
+                                "name": "น้ำซุป",
                                 "prices": [
-                                    {
-                                        "name": "ใหญ่",
+
+                                    {  
+                                        "name": "น้ำใส",
                                         "type": "normal",
                                         "price": 0
-                                    },
-                                    {
-                                        "name": "เล็ก",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "หมี่",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "วุ้นเส้น",
-                                        "type": "normal",
-                                        "price": 10
-                                    },
-                                    {
-                                        "name": "บะหมี่",
-                                        "type": "normal",
-                                        "price": 10
-                                    },
-                                    {
-                                        "name": "เกาหลา",
-                                        "type": "normal",
-                                        "price": 10
-                                    }
-
-                                ]
-                            },
-
-
-                            { 
-                                "type": "one",
-                                "name": "ขนาด",
-                                "prices": [
-    
-                                {
-                                    "name": "ราคาปกติ",
+                                },
+                                {  
+                                    "name": "ต้มยำ",
                                     "type": "normal",
                                     "price": 0
                                 },
-                                {
-                                    "name": "พิเศษ",
+                                {  
+                                    "name": "แห้ง",
                                     "type": "normal",
-                                    "price": 15
-                                },
-                                {
-                                    "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                                    "type": "normal",
-                                    "price": 10
-                                }]
+                                    "price": 0
+                                }
+    
+                                ]
                                }
                                 ,
                                 {   "type": "one",
-                                    "name": "น้ำซุป",
+                                    "name": "ขนาด",
                                     "prices": [
-                                        {  
-                                                "name": "น้ำใส",
-                                                "type": "normal",
-                                                "price": 0
-                                        },
-                                        {  
-                                            "name": "ต้มยำ",
+                                        {
+                                            "name": "ราคาปกติ",
                                             "type": "normal",
                                             "price": 0
                                         },
-                                        {  
-                                            "name": "แห้ง",
+                                        {
+                                            "name": "พิเศษ",
                                             "type": "normal",
-                                            "price": 0
+                                            "price": 15
+                                        },
+                                        {
+                                            "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
+                                            "type": "normal",
+                                            "price": 10
                                         }
     
                                         ]
@@ -607,26 +1011,7 @@
                                         "type": "normal",
                                         "price": 0
                                     },
-                                    {
-                                        "name": "ตับ",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "หมูชิ้น",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "หมูสับ",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
-                                    {
-                                        "name": "เนื้อไก่",
-                                        "type": "normal",
-                                        "price": 5
-                                    },
+
                                     {
                                         "name": "ลูกชิ้นกลม",
                                         "type": "normal",
@@ -649,6 +1034,16 @@
                                     },
                                     {
                                         "name": "แมงกระพรุน",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "เลือดหมู",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "เต้าหูทอด",
                                         "type": "normal",
                                         "price": 5
                                     }
@@ -685,35 +1080,11 @@
                                         "price": 0
                                     },
                                     {
-                                        "name": "ไม่เลือด",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
                                         "name": "ไม่เกี๊ยวกรอบ",
                                         "type": "normal",
                                         "price": 0
                                     },
-                                    {
-                                        "name": "ไม่ตับ",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่หมูชิ้น",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่หมูสับ",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
-                                    {
-                                        "name": "ไม่เนื้อไก่",
-                                        "type": "normal",
-                                        "price": 0
-                                    },
+                                
                                     {
                                         "name": "ไม่ลูกชิ้นกลม",
                                         "type": "normal",
@@ -738,7 +1109,216 @@
                                         "name": "ไม่แมงกระพรุน",
                                         "type": "normal",
                                         "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เลือดหมู",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เต้าหู้ทอด",
+                                        "type": "normal",
+                                        "price": 0
                                     }
+
+                                    
+                                ]
+                            }
+                        ]
+                    }
+
+                },
+                {
+                   
+                    "type": "product",
+                    "product": {
+                        "name": "เย็นตาโฟหม้อไฟ",
+                        "image": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/sh0.08/e35/c67.0.946.946/21910937_877105542439364_5522205246794760192_n.jpg",
+                        "category": {
+                            "name": "ก๊วยเตี๋ยว"
+                        },
+                        "prices": [
+                            {
+                                "name": "ราคาปกติ",
+                                "type": "normal",
+                                "price": 180
+                            }
+                        ],
+                        "submenus": [
+                       
+
+                            { 
+                                "type": "one",
+                                "name": "น้ำซุป",
+                                "prices": [
+
+                                    {  
+                                        "name": "น้ำใส",
+                                        "type": "normal",
+                                        "price": 0
+                                },
+                                {  
+                                    "name": "ต้มยำ",
+                                    "type": "normal",
+                                    "price": 0
+                                }
+    
+                                ]
+                               }
+                            ,
+
+                            {
+                                "type": "qty",
+                                "name": "ท๊อปปิ้ง",
+                                "prices": [
+                                    {
+                                        "name": "เกี๊ยวกรอบ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+
+                                    {
+                                        "name": "ลูกชิ้นกลม",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "ลูกชิ้นกุ้ง",
+                                        "type": "normal",
+                                        "price": 10
+                                    },
+                                    {
+                                        "name": "ปลาเส้น",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "ปลาหมึก",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "แมงกระพรุน",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "เลือดหมู",
+                                        "type": "normal",
+                                        "price": 5
+                                    },
+                                    {
+                                        "name": "เต้าหูทอด",
+                                        "type": "normal",
+                                        "price": 5
+                                    }
+                                    
+                                ]
+                            },
+                          {
+                            "type": "qty",
+                            "name": "เส้นลวก",
+                            "prices": [
+                                {
+                                    "name": "ใหญ่ลวก",
+                                    "type": "normal",
+                                    "price": 20
+                                },
+                                {
+                                    "name": "เล็กลวก",
+                                    "type": "normal",
+                                    "price": 20
+                                },
+                                {
+                                    "name": "หมี่ลวก",
+                                    "type": "normal",
+                                    "price": 20
+                                },
+                                {
+                                    "name": "วุ้นเส้นลวก",
+                                    "type": "normal",
+                                    "price": 20
+                                },
+                                {
+                                    "name": "บะหมี่ลวก",
+                                    "type": "normal",
+                                    "price": 20
+                                }]
+                            }
+
+                            ,
+
+                            {
+                                "type": "any",
+                                "name": "อื่นๆ",
+                                "prices": [
+                                    {
+                                        "name": "ไม่ชูรส",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ผัก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่กระเทียม",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ถั่ว",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่พริก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เกี๊ยวกรอบ",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                
+                                    {
+                                        "name": "ไม่ลูกชิ้นกลม",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ลูกชิ้นกุ้ง",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ปลาเส้น",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่ปลาหมึก",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่แมงกระพรุน",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เลือดหมู",
+                                        "type": "normal",
+                                        "price": 0
+                                    },
+                                    {
+                                        "name": "ไม่เต้าหู้ทอด",
+                                        "type": "normal",
+                                        "price": 0
+                                    }
+
                                     
                                 ]
                             }
@@ -746,22 +1326,19 @@
                     }
                 },
                 {
-                    "type": "none"
-                },
-                {
-                    "type": "none"
-                },
-                {
-                    "type": "none"
-                },
-                {
-                    "type": "none"
-                },
-                {
-                    "type": "none"
-                },
-                {
-                    "type": "none"
+                    "type": "product",
+                    "product": {
+                        "name": "ข้าวเปล่า",
+                        "image": "http://my.haijai.com/article/food/20140801_health-food_2.jpg",
+                        "prices": [
+                            {
+                                "name": "ราคาปกติ",
+                                "type": "normal",
+                                "price": 10
+                            }
+                        ],
+                        "submenus": []
+                    }
                 },
                 {
                     "type": "none"
