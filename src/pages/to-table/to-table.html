@@ -19,15 +19,7 @@
 
 
 <ion-content padding>
-  <ion-segment [(ngModel)]="secment">
-    <ion-segment-button value="bill">
-      Bill
-    </ion-segment-button>
-    <ion-segment-button value="bill">
-      Take A Way
-    </ion-segment-button>
-    <ion-segment-button value="table">
-      Table
-    </ion-segment-button>
-  </ion-segment>
+  <div *ngFor="let item of tables | groupBy:'zone'">
+    Zone {{ item.key.name }} has {{ item.value.length }} table(s)
+  </div>
 </ion-content>

@@ -41,6 +41,7 @@ import { SetTableModalPage } from '../pages/set-table-modal/set-table-modal';
 import { ToTablePage } from '../pages/to-table/to-table';
 import { TakeAwayPage } from '../pages/take-away/take-away';
 import { OpenRoundPage } from '../pages/open-round/open-round';
+import { GroupByPipe } from '../pipes/group-by/group-by';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -75,7 +76,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SetTableModalPage,
     ToTablePage,
     TakeAwayPage,
-    OpenRoundPage
+    OpenRoundPage,
+    GroupByPipe
   ],
   imports: [
     BrowserModule,

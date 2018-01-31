@@ -34,7 +34,7 @@ export class OrderItemModel {
 
 export class TableModel {
     name: string;
-    zone: ZoneModel;
+    zone: string;
 }
 
 export class CustomerModel {
