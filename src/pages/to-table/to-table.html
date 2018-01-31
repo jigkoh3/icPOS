@@ -20,6 +20,6 @@
 
 <ion-content padding>
   <div *ngFor="let item of tables | groupBy:'zone'">
-    Zone {{ item.key.name }} has {{ item.value.length }} table(s)
+    Zone {{ item.key }} has {{ item.value.length }} table(s)
   </div>
 </ion-content>
