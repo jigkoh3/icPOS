@@ -15,6 +15,7 @@ import _ from 'lodash';
 import { AddItemMenuPage } from '../add-item-menu/add-item-menu';
 import { ToTablePage } from '../to-table/to-table';
 import { TakeAwayPage } from '../take-away/take-away';
+import { OpenRoundPage } from '../open-round/open-round';
 
 @Component({
   selector: 'page-home',
@@ -28,7 +29,7 @@ export class HomePage {
   refTabInHome: any = {};
   menus: Array<MenuModel>;
   isModeEdit: boolean = false;
-  takeAway:boolean=true;
+  takeAway: boolean = true;
 
   constructor(public navCtrl: NavController,
     private modalCtrl: ModalController,
@@ -40,7 +41,7 @@ export class HomePage {
   ) {
 
     this.refTabInHome = this.navParams.data;
-    this.order = orderService.order;
+    this.order = this.orderService.order;
     if (!menusService.homeData) {
       this.getMenuData();
     } else {
@@ -104,19 +105,53 @@ export class HomePage {
       case "product": {
         //statements; 
         // console.log(item.product);
-        if (item.product.prices && item.product.submenus) {
-          // console.log(item.product.prices);
-          if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
-            this.presentProductModal(item.product, null);
-          } else {
-            let _item = new OrderItemModel();
-            _item.product = item.product;
-            _item.type = "product";
-            _item.qty = 1;
-            _item.total = item.product.prices[0].price;
-            this.updateOrder(_item);
+
+        //check round
+        if (this.orderService.round) {
+          if (item.product.prices && item.product.submenus) {
+            // console.log(item.product.prices);
+            if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
+              this.presentProductModal(item.product, null);
+            } else {
+              let _item = new OrderItemModel();
+              _item.product = item.product;
+              _item.type = "product";
+              _item.qty = 1;
+              _item.total = item.product.prices[0].price;
+              this.updateOrder(_item);
+            }
           }
+        } else {
+          // alert("เปิดรอบการขาย");
+          let openRoundModal = this.modalCtrl.create(OpenRoundPage);
+          openRoundModal.onDidDismiss(data => {
+            //console.log(data);
+            if (data || true) {
+              //this.updateOrder(data);
+              this.orderService.openRound(2000).then(rnd => {
+                if (item.product.prices && item.product.submenus) {
+                  // console.log(item.product.prices);
+                  if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
+                    this.presentProductModal(item.product, null);
+                  } else {
+                    let _item = new OrderItemModel();
+                    _item.product = item.product;
+                    _item.type = "product";
+                    _item.qty = 1;
+                    _item.total = item.product.prices[0].price;
+                    this.updateOrder(_item);
+                  }
+                }
+              })
+            }
+
+
+
+          });
+          openRoundModal.present();
         }
+
+
 
         break;
       }
@@ -221,26 +256,26 @@ export class HomePage {
 
   }
 
-  takeAwayChanged(takeAway){
+  takeAwayChanged(takeAway) {
     this.takeAway = takeAway;
   }
 
-  orderSaved(orders){
+  orderSaved(orders) {
     console.log(orders);
-    if(this.takeAway){
+    if (this.takeAway) {
       this.presentTakeAwayModal(orders);
-    }else{
+    } else {
       //alert("เลือกโต๊ะ")
       this.presentToTableModal(orders);
     }
   }
 
-  orderPaid(orders){
+  orderPaid(orders) {
     console.log(orders);
   }
 
   presentToTableModal(orders) {
-    let toTableModal = this.modalCtrl.create(ToTablePage, { orders: orders});
+    let toTableModal = this.modalCtrl.create(ToTablePage, { orders: orders });
     toTableModal.onDidDismiss(data => {
       //console.log(data);
       if (data) {
@@ -251,7 +286,7 @@ export class HomePage {
     toTableModal.present();
   }
   presentTakeAwayModal(orders) {
-    let takeAwayModal = this.modalCtrl.create(TakeAwayPage, { orders: orders});
+    let takeAwayModal = this.modalCtrl.create(TakeAwayPage, { orders: orders });
     takeAwayModal.onDidDismiss(data => {
       //console.log(data);
       if (data) {

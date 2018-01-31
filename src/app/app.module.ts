@@ -40,6 +40,7 @@ import { AreaManageModalPage } from '../pages/area-manage-modal/area-manage-moda
 import { SetTableModalPage } from '../pages/set-table-modal/set-table-modal';
 import { ToTablePage } from '../pages/to-table/to-table';
 import { TakeAwayPage } from '../pages/take-away/take-away';
+import { OpenRoundPage } from '../pages/open-round/open-round';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -73,7 +74,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AreaManageModalPage,
     SetTableModalPage,
     ToTablePage,
-    TakeAwayPage
+    TakeAwayPage,
+    OpenRoundPage
   ],
   imports: [
     BrowserModule,
@@ -111,7 +113,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AreaManageModalPage,
     SetTableModalPage,
     ToTablePage,
-    TakeAwayPage
+    TakeAwayPage,
+    OpenRoundPage
   ],
   providers: [
     StatusBar,

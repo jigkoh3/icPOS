@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { OrderModel, OrderItemModel } from '../../assets/models/order.model';
+import { OrderModel, OrderItemModel, RoundModel } from '../../assets/models/order.model';
 
 /*
   Generated class for the OrderProvider provider.
@@ -11,15 +11,24 @@ import { OrderModel, OrderItemModel } from '../../assets/models/order.model';
 @Injectable()
 export class OrderProvider {
   public order: Array<OrderItemModel>;
+  public round: RoundModel;
   constructor(public http: HttpClient) {
     this.order = [];
   }
 
-  getOrder():Promise<OrderModel>{
-    return this.http.get('./assets/json/order.json')
-    .toPromise()
-    .then(response => response as OrderModel)
-    .catch(this.handleError);
+  // getOrder():Promise<OrderModel>{
+  //   return this.http.get('./assets/json/order.json')
+  //   .toPromise()
+  //   .then(response => response as OrderModel)
+  //   .catch(this.handleError);
+  // }
+
+  openRound(startmoney:number):Promise<RoundModel>{
+    let date=new Date();
+    this.round = new RoundModel();
+    this.round.name = date.getDate().toString()+"-"+(date.getMonth()).toString()+"-"+date.getFullYear().toString()+" "+date.getHours()+":"+date.getMinutes();
+    this.round.startmoney = startmoney;
+    return Promise.resolve(this.round);
   }
 
   private handleError(error: any): Promise<any> {
