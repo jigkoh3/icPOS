@@ -7,6 +7,11 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons end>
+      <button ion-button clear navbar-button (click)="takeAway()">
+        {{ 'SAVE' | translate }}
+      </button>
+    </ion-buttons>
     <ion-title>takeAway</ion-title>
   </ion-navbar>
 
@@ -16,12 +21,12 @@
 <ion-content padding>
   <ion-row>
     <ion-col col-12>
-        <ion-item>
-          <ion-input type="text" placeholder="ชื่อ" ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-textarea  type="text" placeholder="เพิ่มโน๊ต" ></ion-textarea>
-        </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="ชื่อ" [(ngModel)]="_takeAway.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea type="text" placeholder="เพิ่มโน๊ต" [(ngModel)]="_takeAway.note"></ion-textarea>
+      </ion-item>
     </ion-col>
   </ion-row>
 </ion-content>

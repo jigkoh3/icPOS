@@ -31,6 +31,11 @@ export class OrderProvider {
     return Promise.resolve(this.round);
   }
 
+  createBill(order:OrderModel):Promise<OrderModel>{
+    this.order = [];
+    return Promise.resolve(order);
+  }
+
   private handleError(error: any): Promise<any> {
     // this.log.errorService('An error occurred', error);
     return Promise.reject(error.message || error);

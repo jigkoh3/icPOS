@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { TableModel, ZoneModel } from '../../assets/models/order.model';
 
 /**
  * Generated class for the ToTablePage page.
@@ -14,12 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'to-table.html',
 })
 export class ToTablePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  _takeAtable: TableModel = new TableModel();
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ToTablePage');
+    //console.log('ionViewDidLoad ToTablePage');
   }
-
+  takeAtable(){
+    this._takeAtable.name = "โต๊ะ 1";
+    let zone = new ZoneModel();
+    zone.name = "โซนด้านหน้า"
+    this._takeAtable.zone = zone;
+    this.viewCtrl.dismiss(this._takeAtable);
+  }
 }

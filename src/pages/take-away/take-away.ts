@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { CustomerModel } from '../../assets/models/order.model';
 
 /**
  * Generated class for the TakeAwayPage page.
@@ -14,12 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'take-away.html',
 })
 export class TakeAwayPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  _takeAway: CustomerModel = new CustomerModel();
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TakeAwayPage');
+    //console.log('ionViewDidLoad TakeAwayPage');
+  }
+
+  takeAway(){
+    this.viewCtrl.dismiss(this._takeAway);
   }
 
 }

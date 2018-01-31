@@ -7,6 +7,11 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons end>
+      <button ion-button clear navbar-button (click)="takeAtable()">
+        {{ 'SAVE' | translate }}
+      </button>
+    </ion-buttons>
     <ion-title>toTable</ion-title>
   </ion-navbar>
 
@@ -14,15 +19,15 @@
 
 
 <ion-content padding>
-    <ion-segment [(ngModel)]="secment">
-      <ion-segment-button value="bill">
-        Bill
-      </ion-segment-button>
-      <ion-segment-button value="bill">
-        Take A Way
-      </ion-segment-button>
-      <ion-segment-button value="table">
-        Table
-      </ion-segment-button>
-    </ion-segment>
+  <ion-segment [(ngModel)]="secment">
+    <ion-segment-button value="bill">
+      Bill
+    </ion-segment-button>
+    <ion-segment-button value="bill">
+      Take A Way
+    </ion-segment-button>
+    <ion-segment-button value="table">
+      Table
+    </ion-segment-button>
+  </ion-segment>
 </ion-content>

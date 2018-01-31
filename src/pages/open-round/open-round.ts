@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the OpenRoundPage page.
@@ -14,12 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'open-round.html',
 })
 export class OpenRoundPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  startmoney:number=2000;
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OpenRoundPage');
+    //console.log('ionViewDidLoad OpenRoundPage');
+  }
+
+  openRound(){
+    this.viewCtrl.dismiss(this.startmoney);
   }
 
 }

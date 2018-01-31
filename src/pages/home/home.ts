@@ -126,9 +126,10 @@ export class HomePage {
           let openRoundModal = this.modalCtrl.create(OpenRoundPage);
           openRoundModal.onDidDismiss(data => {
             //console.log(data);
-            if (data || true) {
+            if (data) {
               //this.updateOrder(data);
-              this.orderService.openRound(2000).then(rnd => {
+              this.orderService.openRound(data).then(rnd => {
+                console.log(rnd);
                 if (item.product.prices && item.product.submenus) {
                   // console.log(item.product.prices);
                   if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
@@ -280,6 +281,16 @@ export class HomePage {
       //console.log(data);
       if (data) {
         //this.updateOrder(data);
+        let bill: OrderModel = new OrderModel();
+        bill.servetype = "takeatable";
+        bill.table = data;
+        bill.items = this.order;
+        this.order = [];
+        this.orderService.createBill(bill).then(data=>{
+          console.log(data);
+        }).catch(err=>{
+
+        });
       }
 
     });
@@ -291,6 +302,16 @@ export class HomePage {
       //console.log(data);
       if (data) {
         //this.updateOrder(data);
+        let bill: OrderModel = new OrderModel();
+        bill.servetype = "takeaway";
+        bill.customer = data;
+        bill.items = this.order;
+        this.order = [];
+        this.orderService.createBill(bill).then(data=>{
+          console.log(data);
+        }).catch(err=>{
+
+        });
       }
 
     });
