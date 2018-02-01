@@ -5,6 +5,7 @@ import { MainMorePage } from '../main-more/main-more';
 import { HomePage } from '../home/home';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { MenuProvider } from '../../providers/menu/menu';
+import { ListOfBillPage } from '../list-of-bill/list-of-bill';
 
 @IonicPage()
 @Component({
@@ -67,7 +68,7 @@ export class MoreLayoutPage {
     if (menu.name === "more") {
       this.navCtrl.setRoot(MainMorePage, { menus: this.menus });
     } else if (menu.name === "list") {
-      alert("List");
+      this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
     } else {
       this.navCtrl.setRoot(HomePage, { menuSelected: this.menuSelected, menuItemsSelected: menu.items, refFooter: true });
     }

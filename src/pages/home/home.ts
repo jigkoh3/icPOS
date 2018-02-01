@@ -16,6 +16,7 @@ import { AddItemMenuPage } from '../add-item-menu/add-item-menu';
 import { ToTablePage } from '../to-table/to-table';
 import { TakeAwayPage } from '../take-away/take-away';
 import { OpenRoundPage } from '../open-round/open-round';
+import { ListOfBillPage } from '../list-of-bill/list-of-bill';
 
 @Component({
   selector: 'page-home',
@@ -88,7 +89,7 @@ export class HomePage {
     if (menu.name === "more") {
       this.navCtrl.setRoot(MainMorePage, { menus: this.menus });
     } else if (menu.name === "list") {
-      alert("List");
+      this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
     } else {
       this.menuItemsSelected = menu.items;
     }

@@ -9,18 +9,18 @@ footer {
         align-items: center;
     }
     .scroll-x {
-        height: 160px;
+        height: 160px !important;
         .scroll-row {
             flex-wrap: inherit !important;  
         }
     }
     .m-name {
-        margin-top: -10px;
-        font-size: 2rem;
+        margin-top: -10px !important;
+        font-size: 2rem !important;
     }
     .m-no {
-        margin-top: 6px;
-        font-size: 3rem;
+        margin-top: 6px !important;
+        font-size: 3rem !important;
     }
 
     .active-menu{

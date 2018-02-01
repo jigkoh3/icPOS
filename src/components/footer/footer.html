@@ -1,9 +1,10 @@
 <ion-footer>
   <ion-row text-center>
-    <ion-col col-4 col-md-2 col-lg-2 (click)="clickedMore()" [ngClass]="{'active-menu' : menuSelected == 'more'}">
-      <h4 class="m-no"><ion-icon name="more" ></ion-icon></h4>
-      <h6 class="m-name">{{'MORE' | translate }}</h6>
-    </ion-col>
+      <ion-col col-4 col-md-2 col-lg-2 (click)="clickedList()" [ngClass]="{'active-menu' : menuSelected == 'list'}">
+          <h4 class="m-no"><ion-icon name="logo-usd"></ion-icon></h4>
+          <h6 class="m-name">{{'BILL' | translate }}</h6>
+        </ion-col>
+    
     <ion-col col-4 col-md-8 col-lg-8>
       <ion-scroll scrollX="true" class="scroll-x">
         <ion-row class="scroll-row">
@@ -17,9 +18,9 @@
         </ion-row>
       </ion-scroll>
     </ion-col>
-    <ion-col col-4 col-md-2 col-lg-2 (click)="clickedList()" [ngClass]="{'active-menu' : menuSelected == 'list'}">
-      <h4 class="m-no"><ion-icon name="menu"></ion-icon></h4>
-      <h6 class="m-name">{{'LIST' | translate }}</h6>
-    </ion-col>
+    <ion-col col-4 col-md-2 col-lg-2 (click)="clickedMore()" [ngClass]="{'active-menu' : menuSelected == 'more'}">
+        <h4 class="m-no"><ion-icon name="more" ></ion-icon></h4>
+        <h6 class="m-name">{{'MORE' | translate }}</h6>
+      </ion-col>
   </ion-row>
 </ion-footer>

@@ -1,6 +1,10 @@
 {
     "docno": "1",
-    "servetype" : "cashier",
+    "servetype" : "takeatable",
+    "table":{
+        "name":"",
+        "zone":"โซนด้านหน้า"
+    },
     "items": [
         {
             "type": "product",

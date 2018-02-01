@@ -1,0 +1,21 @@
+page-list-of-bill {
+    .col {
+        padding: 0px;
+    }
+    ion-card{
+        height: 20rem;
+        ion-card-header{
+            font-size: 2rem !important;
+            background-color: blue;
+            color: #fff !important;
+            height: 5rem;
+        }
+        ion-card-content{
+            [ion-button]{
+                font-size: 5rem !important;
+            }
+            font-size: 2rem !important;
+            color: color($colors, dark, base);
+        }
+    }
+}

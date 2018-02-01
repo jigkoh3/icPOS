@@ -8,6 +8,14 @@ export class ProductModel {
     description: string;
 }
 
+export class DiscountModel{
+    name:string;
+    type:string; // "DISC" or "ITMDISC"
+    ratetype:string; //"PERC" or "FIX"
+    percent:number;
+    fixamount:number;
+}
+
 export class CategoryModel {
     name: string;
 }

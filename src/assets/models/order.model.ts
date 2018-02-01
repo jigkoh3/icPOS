@@ -30,6 +30,7 @@ export class OrderItemModel {
     remark: string;
     qty: number;
     total: number;
+    status: string;
 }
 
 export class TableModel {

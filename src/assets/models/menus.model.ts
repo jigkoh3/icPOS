@@ -1,4 +1,4 @@
-import { ProductModel } from "./product.model";
+import { ProductModel, DiscountModel } from "./product.model";
 
 export class HomeModel{
     menus: Array<MenuModel>;
@@ -13,4 +13,5 @@ export class MenuModel {
 export class ItemModel{
     type: string;
     product: ProductModel;
+    discount: DiscountModel;
 }
