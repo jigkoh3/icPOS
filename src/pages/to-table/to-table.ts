@@ -29,25 +29,11 @@ export class ToTablePage {
     }
   }
 
-  getTables() {
-
-    // for(let z=0;z<2;z++){
-
-    //   for(let i=0;i<20;i++){
-    //     let table = new TableModel();
-    //     table.name = "โต๊ะ " + i;
-    //     table.zone = "โซน " + z;;
-    //     this.tables.push(table);
-    //   }
-    // }
-
-  }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad ToTablePage');
   }
   takeAtable(table) {
-    
     this.viewCtrl.dismiss(table);
   }
 }
