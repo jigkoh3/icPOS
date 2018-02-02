@@ -9,9 +9,10 @@ import { ListOfBillPage } from '../pages/list-of-bill/list-of-bill';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = ListOfBillPage;
+  rootPage: any = HomePage;
 
   constructor(private events: Events, private translateService: TranslateService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    this.rootPage = ListOfBillPage;
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();

@@ -5,47 +5,59 @@
         <ion-card-header>
           <ion-row>
             <ion-col col-6>
-              <h4>เพิ่มบิล</h4>
+              เพิ่มบิล
             </ion-col>
-            
+
           </ion-row>
         </ion-card-header>
         <ion-card-content text-center>
-          <button ion-button icon-only clear color="light" (tap)="countPlus(option)">
+          <button ion-button add-button icon-only clear color="glay" (tap)="gotoHome()">
             <ion-icon name="ios-add-circle-outline"></ion-icon>
           </button>
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col col-6 col-md-4 col-lg-4>
+    <ion-col col-6 col-md-4 col-lg-4 *ngFor="let bill of bills">
       <ion-card>
         <ion-card-header>
           <ion-row>
             <ion-col col-6>
-              <h4>พื้นที่ในร้าน - 003</h4>
+              {{bill.table.zone}} - {{bill.table.name}}
             </ion-col>
             <ion-col col-6 text-right>
               <ion-icon name="md-person"></ion-icon>
-              1
+              {{1}}
             </ion-col>
           </ion-row>
         </ion-card-header>
         <ion-card-content padding>
-          <ion-row>
-            <ion-col col-12>
+
+          <ion-row detail-content>
+            <ion-col col-12 *ngIf="bill.servetype === 'takeatable'">
               <ion-icon name="restaurant"></ion-icon>
               ทานที่ร้าน
             </ion-col>
+            <ion-col col-12 *ngIf="bill.servetype === 'takeaway'">
+              <ion-icon name="restaurant"></ion-icon>
+              สั่งกลับบ้าน
+            </ion-col>
+            <ion-col col-12>
+              <ion-icon name="logo-usd"></ion-icon>
+              {{bill.total}}
+            </ion-col>
           </ion-row>
           <ion-row>
-              <ion-col col-12>
-                <ion-icon name="logo-usd"></ion-icon>
-                40
-              </ion-col>
-            </ion-row>
+            <ion-col col-6 text-center>
+              <button ion-button clear >ชำระเงิน</button>
+            </ion-col>
+            <ion-col col-6 text-center>
+              <button ion-button clear (click)="gotoHome(bill)" >ดูบิล</button>
+            </ion-col>
+          </ion-row>
         </ion-card-content>
       </ion-card>
     </ion-col>
+
   </ion-row>
 </ion-content>
 <footer [items]="menus" [menuSelected]="menuSelected" (itemSelected)="menuItemSelected($event)"></footer>

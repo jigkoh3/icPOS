@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MenuModel } from '../../assets/models/menus.model';
 import { MainMorePage } from '../main-more/main-more';
 import { HomePage } from '../home/home';
+import { LoadingProvider } from '../../providers/loading/loading';
+import { MenuProvider } from '../../providers/menu/menu';
+import { OrderModel } from '../../assets/models/order.model';
+import { OrderProvider } from '../../providers/order/order';
 
 /**
  * Generated class for the ListOfBillPage page.
@@ -19,13 +23,50 @@ import { HomePage } from '../home/home';
 export class ListOfBillPage {
   menus: Array<MenuModel>;
   menuSelected: String;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.menus = this.navParams.get('menus');
+  bills: Array<OrderModel>;
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private menusService: MenuProvider,
+    private orderService: OrderProvider,
+    private loading: LoadingProvider,) {
+    //this.menus = this.navParams.get('menus');
+    //this.getMenuData();
     this.menuSelected = 'list';
+    if (!this.menusService.homeData) {
+      this.getMenuData();
+    } else {
+      this.menus = menusService.homeData.menus;
+      this.bills = menusService.homeData.bills;
+    }
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad ListOfBillPage');
+  }
+
+  gotoHome(bill:OrderModel){
+    if(bill){
+      console.log(bill);
+      this.orderService.order = bill.items;
+    }
+    
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  getMenuData() {
+    this.loading.onLoading();
+    setTimeout(() => {
+      this.menusService.getMenus().then(data => {
+        // console.log(data);
+        this.menus = data.menus;
+        this.bills = data.bills;
+        this.loading.dismiss();
+      }, err => {
+        // console.log(err);
+        this.loading.dismiss();
+      })
+    }, 1000);
+
   }
 
   menuItemSelected(menu) {
