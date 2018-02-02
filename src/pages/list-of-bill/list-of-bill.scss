@@ -3,7 +3,6 @@ page-list-of-bill {
         padding: 0px;
     }
     ion-card{
-        height: 20rem;
         ion-card-header{
             font-size: 2rem !important;
             background-color: blue;
@@ -12,10 +11,17 @@ page-list-of-bill {
         }
         ion-card-content{
             [ion-button]{
+                font-size: 2rem !important;
+            }
+            [add-button]{
                 font-size: 5rem !important;
             }
+            [detail-content]{
+                height:7rem;
+            }
+            height: 15rem;
             font-size: 2rem !important;
-            color: color($colors, dark, base);
+            color: color($colors, glay, base);
         }
     }
 }

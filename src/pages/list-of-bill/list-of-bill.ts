@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MenuModel } from '../../assets/models/menus.model';
 import { MainMorePage } from '../main-more/main-more';
 import { HomePage } from '../home/home';
+import { LoadingProvider } from '../../providers/loading/loading';
+import { MenuProvider } from '../../providers/menu/menu';
 
 /**
  * Generated class for the ListOfBillPage page.
@@ -19,13 +21,32 @@ import { HomePage } from '../home/home';
 export class ListOfBillPage {
   menus: Array<MenuModel>;
   menuSelected: String;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.menus = this.navParams.get('menus');
-    this.menuSelected = 'list';
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private menusService: MenuProvider,
+    private loading: LoadingProvider,) {
+    //this.menus = this.navParams.get('menus');
+    this.getMenuData();
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad ListOfBillPage');
+  }
+
+  getMenuData() {
+    this.loading.onLoading();
+    setTimeout(() => {
+      this.menusService.getMenus().then(data => {
+        // console.log(data);
+        this.menus = data.menus;
+        this.menuSelected = 'list';
+        this.loading.dismiss();
+      }, err => {
+        // console.log(err);
+        this.loading.dismiss();
+      })
+    }, 1000);
+
   }
 
   menuItemSelected(menu) {
