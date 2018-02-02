@@ -30,7 +30,7 @@ export class HomePage {
   refTabInHome: any = {};
   menus: Array<MenuModel>;
   isModeEdit: boolean = false;
-  takeAway: boolean = true;
+  takeAway: boolean = false;
 
   constructor(public navCtrl: NavController,
     private modalCtrl: ModalController,

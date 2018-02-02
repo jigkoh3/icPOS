@@ -6,6 +6,7 @@ import { HomePage } from '../home/home';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { MenuProvider } from '../../providers/menu/menu';
 import { OrderModel } from '../../assets/models/order.model';
+import { OrderProvider } from '../../providers/order/order';
 
 /**
  * Generated class for the ListOfBillPage page.
@@ -26,6 +27,7 @@ export class ListOfBillPage {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private menusService: MenuProvider,
+    private orderService: OrderProvider,
     private loading: LoadingProvider,) {
     //this.menus = this.navParams.get('menus');
     this.getMenuData();
@@ -40,6 +42,15 @@ export class ListOfBillPage {
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad ListOfBillPage');
+  }
+
+  gotoHome(bill:OrderModel){
+    if(bill){
+      console.log(bill);
+      this.orderService.order = bill.items;
+    }
+    
+    this.navCtrl.setRoot(HomePage);
   }
 
   getMenuData() {
