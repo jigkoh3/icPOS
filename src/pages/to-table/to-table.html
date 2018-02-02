@@ -14,10 +14,14 @@
 
 
 <ion-content padding>
-  <div *ngFor="let item of tables | groupBy:'zone'">
-    <!-- Zone {{ item.key }} has {{ item.value.length }} table(s) -->
-    {{item.key}}
-    <ion-row>
+  
+  <ion-segment mode="md" [(ngModel)]="zone">
+    <ion-segment-button value="{{item.key}}" *ngFor="let item of tables | groupBy:'zone'">
+      {{ item.key }}
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="zone" *ngFor="let item of tables | groupBy:'zone'">
+    <ion-row *ngSwitchCase="item.key">
       <ion-col col-3 *ngFor="let table of item.value">
         <button ion-button block (click)="takeAtable(table)">โต๊ะ {{table.name}}</button>
       </ion-col>

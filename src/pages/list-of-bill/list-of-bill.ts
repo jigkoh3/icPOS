@@ -5,7 +5,7 @@ import { MainMorePage } from '../main-more/main-more';
 import { HomePage } from '../home/home';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { MenuProvider } from '../../providers/menu/menu';
-import { OrderModel } from '../../assets/models/order.model';
+import { OrderModel, TableModel } from '../../assets/models/order.model';
 import { OrderProvider } from '../../providers/order/order';
 
 /**
@@ -24,6 +24,8 @@ export class ListOfBillPage {
   menus: Array<MenuModel>;
   menuSelected: String;
   bills: Array<OrderModel>;
+  tables: Array<TableModel> = [];
+  zone:string;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private menusService: MenuProvider,
@@ -32,11 +34,13 @@ export class ListOfBillPage {
     //this.menus = this.navParams.get('menus');
     //this.getMenuData();
     this.menuSelected = 'list';
+    this.zone = "bills";
     if (!this.menusService.homeData) {
       this.getMenuData();
     } else {
       this.menus = menusService.homeData.menus;
       this.bills = menusService.homeData.bills;
+      this.tables = menusService.homeData.tables;
     }
   }
 
@@ -60,6 +64,7 @@ export class ListOfBillPage {
         // console.log(data);
         this.menus = data.menus;
         this.bills = data.bills;
+        this.tables = data.tables;
         this.loading.dismiss();
       }, err => {
         // console.log(err);

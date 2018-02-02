@@ -18,11 +18,15 @@ import { MenuProvider } from '../../providers/menu/menu';
 export class ToTablePage {
   _takeAtable: TableModel = new TableModel();
   tables: Array<TableModel> = [];
+  zone:string;
   constructor(public viewCtrl: ViewController,
     public navCtrl: NavController,
     public navParams: NavParams,
     private menuService: MenuProvider) {
     this.tables = menuService.homeData.tables;
+    if(this.tables && this.tables.length > 0){
+      this.zone = this.tables[0].zone;
+    }
   }
 
   getTables() {
