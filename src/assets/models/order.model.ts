@@ -3,10 +3,10 @@ import { ProductModel } from "./product.model";
 export class OrderModel {
     billno: string;
     opendate: Date;
-    paiddate:Date;
+    paiddate: Date;
     cancledate: Date;
     round: string;
-    cancleremark:string;
+    cancleremark: string;
     servetype: string; // "takeatable : สั่งที่โต๊ะ", "takeaway : สั่งกลับบ้าน"
     table: TableModel;
     customer: CustomerModel;
@@ -19,7 +19,7 @@ export class OrderModel {
     status: string; // "open", "paid", "cancle" 
 }
 
-export class RoundModel{
+export class RoundModel {
     name: string; // formate dd-mm-yyyy hh:mm Example: 31-01-2018
     startmoney: number;
 }
@@ -34,7 +34,7 @@ export class OrderItemModel {
 }
 
 export class TableModel {
-    name: string;
+    name: string; 
     zone: string;
 }
 
