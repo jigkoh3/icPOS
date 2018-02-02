@@ -34,18 +34,24 @@ export class ListOfBillPage {
     //this.menus = this.navParams.get('menus');
     //this.getMenuData();
     this.menuSelected = 'list';
-    this.zone = "bills";
+    
     if (!this.menusService.homeData) {
       this.getMenuData();
     } else {
       this.menus = menusService.homeData.menus;
       this.bills = menusService.homeData.bills;
       this.tables = menusService.homeData.tables;
+      this.zone = "all";
     }
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad ListOfBillPage');
+  }
+
+  selecttab(key){
+    console.log(key);
+    this.zone=key;
   }
 
   gotoHome(bill:OrderModel){
@@ -65,6 +71,7 @@ export class ListOfBillPage {
         this.menus = data.menus;
         this.bills = data.bills;
         this.tables = data.tables;
+        this.zone = "all";
         this.loading.dismiss();
       }, err => {
         // console.log(err);
