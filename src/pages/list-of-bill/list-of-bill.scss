@@ -24,4 +24,16 @@ page-list-of-bill {
             color: color($colors, glay, base);
         }
     }
+    ion-content{
+        ion-segment{
+            ion-segment-button{
+                font-size: 2rem !important;
+            }
+        }
+    }
+
+    [table-button]{
+        height: 10rem;
+    }
+    
 }

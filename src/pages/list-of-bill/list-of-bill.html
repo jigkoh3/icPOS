@@ -7,9 +7,7 @@
       {{ item.key }}
     </ion-segment-button>
   </ion-segment>
-  {{zone}}
-  <div [ngSwitch]="zone">
-    <ion-row *ngSwitchCase="all">
+  <ion-row *ngIf="zone==='all'" >
       <ion-col col-6 col-md-4 col-lg-4>
         <ion-card>
           <ion-card-header>
@@ -71,11 +69,10 @@
         </ion-card>
       </ion-col>
     </ion-row>
-  </div>
   <div [ngSwitch]="zone" *ngFor="let item of tables | groupBy:'zone'">
     <ion-row *ngSwitchCase="item.key">
-      <ion-col col-3 *ngFor="let table of item.value">
-        <button ion-button block (click)="takeAtable(table)">โต๊ะ {{table.name}}</button>
+      <ion-col col-3 *ngFor="let table of item.value" padding>
+        <button ion-button table-button block outline (click)="takeAtable(table)">โต๊ะ {{table.name}}</button>
       </ion-col>
     </ion-row>
   </div>
