@@ -287,8 +287,8 @@ export class HomePage {
         bill.table = data;
         bill.items = this.order;
         this.order = [];
-        this.orderService.createBill(bill).then(data=>{
-          console.log(data);
+        this.menusService.createBill(bill).then(data=>{
+          this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
         }).catch(err=>{
 
         });
@@ -308,8 +308,8 @@ export class HomePage {
         bill.customer = data;
         bill.items = this.order;
         this.order = [];
-        this.orderService.createBill(bill).then(data=>{
-          console.log(data);
+        this.menusService.createBill(bill).then(data=>{
+          this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
         }).catch(err=>{
 
         });

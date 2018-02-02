@@ -7,12 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-buttons end>
-      <button ion-button clear navbar-button (click)="takeAtable()">
-        {{ 'SAVE' | translate }}
-      </button>
-    </ion-buttons>
-    <ion-title>toTable</ion-title>
+    <ion-title>เลือกโต๊ะ</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -20,6 +15,12 @@
 
 <ion-content padding>
   <div *ngFor="let item of tables | groupBy:'zone'">
-    Zone {{ item.key }} has {{ item.value.length }} table(s)
+    <!-- Zone {{ item.key }} has {{ item.value.length }} table(s) -->
+    {{item.key}}
+    <ion-row>
+      <ion-col col-3 *ngFor="let table of item.value">
+        <button ion-button block (click)="takeAtable(table)">โต๊ะ {{table.name}}</button>
+      </ion-col>
+    </ion-row>
   </div>
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { TableModel, ZoneModel } from '../../assets/models/order.model';
+import { MenuProvider } from '../../providers/menu/menu';
 
 /**
  * Generated class for the ToTablePage page.
@@ -16,32 +17,33 @@ import { TableModel, ZoneModel } from '../../assets/models/order.model';
 })
 export class ToTablePage {
   _takeAtable: TableModel = new TableModel();
-  tables:Array<TableModel> = [];
-  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams) {
-    this.getTables();
+  tables: Array<TableModel> = [];
+  constructor(public viewCtrl: ViewController,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private menuService: MenuProvider) {
+    this.tables = menuService.homeData.tables;
   }
 
-  getTables(){
-    for(let z=0;z<2;z++){
-      
-      for(let i=0;i<20;i++){
-        let table = new TableModel();
-        table.name = "โต๊ะ " + i;
-        table.zone = "โซน " + z;;
-        this.tables.push(table);
-      }
-    }
-    
+  getTables() {
+
+    // for(let z=0;z<2;z++){
+
+    //   for(let i=0;i<20;i++){
+    //     let table = new TableModel();
+    //     table.name = "โต๊ะ " + i;
+    //     table.zone = "โซน " + z;;
+    //     this.tables.push(table);
+    //   }
+    // }
+
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad ToTablePage');
   }
-  takeAtable(){
-    this._takeAtable.name = "โต๊ะ 1";
-    let zone = new ZoneModel();
-    zone.name = "โซนด้านหน้า"
-    this._takeAtable.zone = "โซนด้านหน้า";
-    this.viewCtrl.dismiss(this._takeAtable);
+  takeAtable(table) {
+    
+    this.viewCtrl.dismiss(table);
   }
 }

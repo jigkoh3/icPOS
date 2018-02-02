@@ -30,14 +30,14 @@ export class ListOfBillPage {
     private orderService: OrderProvider,
     private loading: LoadingProvider,) {
     //this.menus = this.navParams.get('menus');
-    this.getMenuData();
+    //this.getMenuData();
     this.menuSelected = 'list';
-    // if (!menusService.homeData) {
-    //   this.getMenuData();
-    // } else {
-    //   this.menus = menusService.homeData.menus;
-    //   this.bills = menusService.homeData.bills;
-    // }
+    if (!this.menusService.homeData) {
+      this.getMenuData();
+    } else {
+      this.menus = menusService.homeData.menus;
+      this.bills = menusService.homeData.bills;
+    }
   }
 
   ionViewDidLoad() {
