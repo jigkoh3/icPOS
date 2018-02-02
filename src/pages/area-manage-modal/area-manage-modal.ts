@@ -81,12 +81,24 @@ export class AreaManageModalPage {
     }
   }
 
+  sortTableNo(areaName) {
+    for (let i = 0; i < this.tablesOfArea.length; i++) {
+      if (this.tablesOfArea[i].areaName == areaName) {
+        this.tablesOfArea[i].tables.forEach((element, i) => {
+          element.tableNo = i + 1;
+        });
+        break;
+      }
+    }
+  }
+
   deleteTable(areaName, tableNo) {
     for (let i = 0; i < this.tablesOfArea.length; i++) {
       if (areaName == this.tablesOfArea[i].areaName) {
         for (let j = 0; j < this.tablesOfArea[i].tables.length; j++) {
           if (tableNo == this.tablesOfArea[i].tables[j].tableNo) {
             this.tablesOfArea[i].tables.splice(j, 1);
+            this.sortTableNo(areaName);
             break;
           }
         }
