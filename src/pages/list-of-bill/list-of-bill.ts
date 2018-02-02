@@ -5,6 +5,7 @@ import { MainMorePage } from '../main-more/main-more';
 import { HomePage } from '../home/home';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { MenuProvider } from '../../providers/menu/menu';
+import { OrderModel } from '../../assets/models/order.model';
 
 /**
  * Generated class for the ListOfBillPage page.
@@ -21,12 +22,20 @@ import { MenuProvider } from '../../providers/menu/menu';
 export class ListOfBillPage {
   menus: Array<MenuModel>;
   menuSelected: String;
+  bills: Array<OrderModel>;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private menusService: MenuProvider,
     private loading: LoadingProvider,) {
     //this.menus = this.navParams.get('menus');
     this.getMenuData();
+    this.menuSelected = 'list';
+    // if (!menusService.homeData) {
+    //   this.getMenuData();
+    // } else {
+    //   this.menus = menusService.homeData.menus;
+    //   this.bills = menusService.homeData.bills;
+    // }
   }
 
   ionViewDidLoad() {
@@ -39,7 +48,7 @@ export class ListOfBillPage {
       this.menusService.getMenus().then(data => {
         // console.log(data);
         this.menus = data.menus;
-        this.menuSelected = 'list';
+        this.bills = data.bills;
         this.loading.dismiss();
       }, err => {
         // console.log(err);
