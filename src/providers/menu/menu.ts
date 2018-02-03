@@ -23,7 +23,13 @@ export class MenuProvider {
 
 
   getLocalStorage(): Promise<HomeModel> {
-    return this.http.get('./assets/json/menus.json')
+    this.local = window.localStorage.getItem(this.storageName);
+    // console.log(this.local);
+    if (this.local) {
+      this.homeData = JSON.parse(this.local);
+      return Promise.resolve(this.homeData);
+    }else{
+      return this.http.get('./assets/json/menus.json')
       .toPromise()
       .then(response => {
         this.homeData = response as HomeModel;
@@ -31,6 +37,8 @@ export class MenuProvider {
         return this.homeData;
       })
       .catch(this.handleError);
+    }
+    
   }
 
   getMenus(): Promise<HomeModel> {
