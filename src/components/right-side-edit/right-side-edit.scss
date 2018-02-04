@@ -12,4 +12,38 @@ right-side-edit {
     //     will-change: scroll-position;
     //     contain: size style layout;
     // }
+    ion-list {
+        display: block;
+        list-style-type: none;
+        border-bottom: gray;
+        min-height: 5rem;
+        
+        ion-item{
+            font-size: 2rem !important;
+            button{
+                ion-icon{
+                    font-size: 3rem !important;
+                }
+                font-size: 2rem !important;
+            }
+            
+        }
+    }
+
+    [item-footer]{
+        height: 30rem;
+    }
+
+    [icon-green]{
+        color: rgb(144, 245, 28);
+    }
+    [icon-red]{
+        color: red;
+    }
+    [icon-orange]{
+        color: orange;
+    }
+
+    
+    
 }

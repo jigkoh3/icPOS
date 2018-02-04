@@ -1,5 +1,54 @@
 page-add-item-menu {
     [select-option]{
         min-width: 100% !important;
-      }
+    }
+    img {
+        object-fit: cover;
+        height: 90% !important;
+    }
+    .image-radius {
+        border-radius: 100%;
+    }
+    [image-box]{
+        background-color: silver;
+        height: 12.5rem !important;
+        width: 12.5rem !important;
+    }
+    .item{
+        height: 6rem;
+    }
+    [submenu]{
+        height: 17rem;
+    }
+    ion-scroll{
+        min-width: 100%;
+        min-height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 1;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        //-webkit-overflow-scrolling: touch;
+        will-change: scroll-position;
+        contain: size style layout;
+    }
+    [list-form] {
+        margin: 0;
+        padding: 0;
+        display: block;
+        list-style-type: none;
+        border-left-style: outset;
+        border-right-style: inset;
+        padding: 0rem;
+        border-width: 0.2rem;
+        //border-bottom-style: inset;
+        //border-top-style: inset;
+        // border-left-color: blue;
+        //border-top-left-radius: 1rem;
+        //border-bottom-right-radius: 1rem;
+    }
 }

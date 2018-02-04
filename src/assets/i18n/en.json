@@ -105,8 +105,13 @@
     "ADDMENUITM": "Add Item",
     "ADDPROD": "Add Product",
     "ADDDISC": "Add Discount",
+    "ADDTYPE" : "เพิ่ม-แก้ไขประเภท",
+    "ADDTBL" : "เพิ่มตาราง",
     "NAMEPROD": "Name",
     "CATEPROD": "Category",
     "NORM": "Normal Price",
-    "MANL": "Manual Price"
+    "MANL": "Manual Price",
+    "AE": "Add or Edit",
+    "ADDLST" : "Add List",
+    "EDTCMP": ""
 }

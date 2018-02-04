@@ -12,7 +12,7 @@ export class MyApp {
   rootPage: any = HomePage;
 
   constructor(private events: Events, private translateService: TranslateService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    this.rootPage = ListOfBillPage;
+    //this.rootPage = ListOfBillPage;
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();

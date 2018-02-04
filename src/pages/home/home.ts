@@ -29,7 +29,7 @@ export class HomePage {
   menuSelected: String;
   refTabInHome: any = {};
   menus: Array<MenuModel>;
-  isModeEdit: boolean = false;
+  isModeEdit: boolean = true;
   takeAway: boolean = false;
 
   constructor(public navCtrl: NavController,
@@ -198,6 +198,7 @@ export class HomePage {
       }
       case "product": {
         //statements; 
+        this.presentEditMenuItemModal(index);
         break;
       }
       default: {
@@ -332,7 +333,28 @@ export class HomePage {
   }
 
   presentAddMenuItemModal(index) {
-    let addItemModal = this.modalCtrl.create(AddItemMenuPage);
+    let opts: any = {
+      enableBackdropDismiss: false
+    }
+    let addItemModal = this.modalCtrl.create(AddItemMenuPage, null, opts);
+    addItemModal.onDidDismiss(data => {
+      //console.log(data);
+      if (data) {
+        //this.updateOrder(data);
+        console.log(index);
+        this.menuItemsSelected[index] = data;
+        console.log(this.menuItemsSelected[index]);
+      }
+
+    });
+    addItemModal.present();
+  }
+
+  presentEditMenuItemModal(index) {
+    let opts: any = {
+      enableBackdropDismiss: false
+    }
+    let addItemModal = this.modalCtrl.create(AddItemMenuPage, {item : this.menuItemsSelected[index]}, opts);
     addItemModal.onDidDismiss(data => {
       //console.log(data);
       if (data) {

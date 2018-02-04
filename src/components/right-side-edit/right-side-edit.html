@@ -1,5 +1,37 @@
+<ion-list >
+  <ion-item text-center>
+    {{"AE" | translate}}
+  </ion-item>
+  <ion-item text-left>
+    <button ion-button icon-left outline clear >
+      <ion-icon name="list-box" icon-green></ion-icon>
+      {{"ADDPROD" | translate}}
+    </button>
+  </ion-item>
+  <ion-item text-left>
+    <button ion-button icon-left outline clear >
+      <ion-icon name="pricetags" icon-red></ion-icon>
+      {{"ADDDISC" | translate}}
+    </button>
+  </ion-item>
+  <ion-item text-left>
+    <button ion-button icon-left outline clear >
+      <ion-icon name="bookmark" ></ion-icon>
+      {{"ADDTYPE" | translate}}
+    </button>
+  </ion-item>
+  <ion-item text-left>
+    <button ion-button icon-left outline clear >
+      <ion-icon name="apps" icon-orange></ion-icon>
+      {{"ADDTBL" | translate}}
+    </button>
+  </ion-item>
+  <ion-item text-left item-footer>
+    
+  </ion-item>
+</ion-list>
 <ion-row>
-  <ion-col col-12>
-    <button ion-button block (click)="saveClick()" color="secondary">save</button>
+  <ion-col col-12 padding-left padding-right>
+    <button ion-button block outline (click)="saveClick()" color="secondary">{{ "EDTCMP" | translate}}</button>
   </ion-col>
 </ion-row>

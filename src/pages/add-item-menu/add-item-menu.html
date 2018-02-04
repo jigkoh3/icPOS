@@ -4,16 +4,46 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
 
-  <ion-navbar>
-    <ion-buttons start *ngIf="step > 0" color="secondary" (click)="prev()">
+<ion-header *ngIf="!isEdit">
+
+  <ion-navbar padding-left padding-right>
+    <ion-buttons start *ngIf="step === 0" (click)="dismiss()">
+      <button ion-button icon-only navbar-button>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons start *ngIf="step > 0" (click)="prev()">
       <button ion-button icon-only navbar-button>
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
     <ion-buttons end *ngIf="step === 1">
-      <button ion-button clear navbar-button color="secondary" (click)="add()">
+      <button ion-button clear navbar-button [disabled]="!(item.type ==='product' && item.product.name && item.product.prices.length >= 1 && item.product.prices[0].price)"
+        (click)="add()">
+        {{ 'ADD' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-title>{{ "ADDMENUITM" | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-header *ngIf="isEdit">
+
+  <ion-navbar padding-left padding-right>
+    <ion-buttons start *ngIf="step === 0" (click)="dismiss()">
+      <button ion-button icon-only navbar-button>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons start *ngIf="step > 0" (click)="prev()">
+      <button ion-button icon-only navbar-button>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="step === 0">
+      <button ion-button clear navbar-button [disabled]="!(item.type ==='product' && item.product.name && item.product.prices.length >= 1 && item.product.prices[0].price)"
+        (click)="add()">
         {{ 'ADD' | translate }}
       </button>
     </ion-buttons>
@@ -22,60 +52,156 @@
 
 </ion-header>
 
+<ion-content *ngIf="!isEdit">
+  <ion-searchbar *ngIf="step === 0"></ion-searchbar>
 
-<ion-content padding>
-  <ion-row *ngIf="step === 1 && item.type ==='product'">
+  <ion-list *ngIf="step === 0">
+    <ion-item *ngFor="let product  of products">
+      <ion-thumbnail item-left>
+        <img [src]="product.image">
+      </ion-thumbnail>
+      <h2>{{product.name}}</h2>
+      <p>{{product.prices[0].price}}</p>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-row *ngIf="step === 1 && item.type ==='product'" padding>
     <ion-col col-12>
-      <ion-row>
-        <ion-col col-4>
 
+      <ion-row>
+        <ion-col col-3 image-box>
+          <preload-image [ratio]="{w:1, h:1}" [src]="item.image"></preload-image>
         </ion-col>
-        <ion-col col-8>
-          <ion-row>
-            <ion-col col-12>
-              <ion-item>
-                <ion-input [(ngModel)]="item.product.name" type="text" placeholder="{{ 'NAMEPROD' | translate }}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input [(ngModel)]="item.product.category" type="text" placeholder="{{ 'CATEPROD' | translate }}"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
+        <ion-col col-9>
+          <ion-list list-form>
+            <ion-item>
+              <ion-input [(ngModel)]="item.product.name" type="text" placeholder="{{ 'NAMEPROD' | translate }}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input [(ngModel)]="item.product.category.name" type="text" placeholder="{{ 'CATEPROD' | translate }}"></ion-input>
+            </ion-item>
+          </ion-list>
+
+
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-row>
-            <ion-col col-4>
-              <ion-item>
-                <ion-select select-option [(ngModel)]="item.product.prices[0].type" interface="popover">
-                  <ion-option value="normal">{{ "NORM" | translate }}</ion-option>
-                  <ion-option value="manual">{{ "MANL" | translate }}</ion-option>
-                </ion-select>
-              </ion-item>
-            </ion-col>
-            <ion-col col-8 >
-              <ion-item>
-                <ion-input [(ngModel)]="item.product.prices[0].price" type="number" pattern="([0-9]{8})" placeholder="ราคา" text-right></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
+          <ion-list list-form>
+            <ion-item>
+              <div item-left>
+                <ion-item>
+                  <ion-select select-option [(ngModel)]="item.product.prices[0].type" interface="popover">
+                    <ion-option value="normal">{{ "NORM" | translate }}</ion-option>
+                    <ion-option value="manual">{{ "MANL" | translate }}</ion-option>
+                  </ion-select>
+                </ion-item>
+              </div>
+              <ion-input [(ngModel)]="item.product.prices[0].price" type="number" pattern="([0-9]{8})" placeholder="ราคา" text-right></ion-input>
+            </ion-item>
+            <button ion-item>
+              เพิ่มราคา
+            </button>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-list list-form>
+            <button ion-item>
+              เมนูย่อย
+            </button>
+            <ion-item *ngFor="let submenu of item.product.submenus">
+              {{submenu.name}}
+            </ion-item>
+          </ion-list>
         </ion-col>
       </ion-row>
     </ion-col>
   </ion-row>
 </ion-content>
-<ion-footer *ngIf="step === 0">
+<ion-footer *ngIf="step === 0 && !isEdit">
   <ion-row>
-    <ion-col col-5>
+    <ion-col col-5 padding-left>
       <button ion-button block outline color="secondary" (click)="addNewItem('product')">{{ "ADDPROD" | translate}}</button>
 
     </ion-col>
     <ion-col col-2>
 
     </ion-col>
-    <ion-col col-5>
+    <ion-col col-5 padding-right>
       <button ion-button block outline color="secondary" (click)="addNewItem('discount')">{{ "ADDDISC" | translate}}</button>
     </ion-col>
   </ion-row>
 </ion-footer>
+
+<ion-content *ngIf="isEdit">
+  <ion-row *ngIf="item.type ==='product'" padding>
+    <ion-col col-12>
+      <ion-row>
+        <ion-col col-3 image-box>
+          <preload-image [ratio]="{w:1, h:1}" [src]="item.product.image"></preload-image>
+        </ion-col>
+        <ion-col col-9>
+          <ion-list list-form>
+            <ion-item>
+              <ion-input [(ngModel)]="item.product.name" type="text" placeholder="{{ 'NAMEPROD' | translate }}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input [(ngModel)]="item.product.category.name" type="text" placeholder="{{ 'CATEPROD' | translate }}"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-list list-form>
+            <ion-item>
+              <div item-left>
+                <ion-item>
+                  <ion-select select-option [(ngModel)]="item.product.prices[0].type" interface="popover">
+                    <ion-option value="normal">{{ "NORM" | translate }}</ion-option>
+                    <ion-option value="manual">{{ "MANL" | translate }}</ion-option>
+                  </ion-select>
+                </ion-item>
+              </div>
+              <ion-input [(ngModel)]="item.product.prices[0].price" type="number" pattern="([0-9]{8})" placeholder="ราคา" text-right></ion-input>
+            </ion-item>
+            <button ion-item>
+                {{item.product.prices.length === 1 ? 'เพิ่มราคา' : item.product.prices.length + ' ราคา'}}
+            </button>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-list list-form>
+            <button ion-item>
+              เมนูย่อย
+            </button>
+            <ion-item submenu>
+              <ion-scroll scrollY="true">
+                <ion-item *ngFor="let submenu of item.product.submenus">
+                  {{submenu.name}}
+                </ion-item>
+              </ion-scroll>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>
