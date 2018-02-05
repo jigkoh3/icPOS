@@ -21,10 +21,10 @@ export class EditMenuModalPage {
 
   loadIconService() {
     this.iconList = [{
-      name: 'icecream',
+      name: 'ice-cream',
       icon: 'ice-cream'
     }, {
-      name: 'apple',
+      name: 'logo-apple',
       icon: 'logo-apple'
     }, {
       name: 'baseball',
