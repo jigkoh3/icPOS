@@ -1,7 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 import { EditMenuModalPage } from '../../pages/edit-menu-modal/edit-menu-modal';
-import { CreateDiscountModalPage } from '../../pages/create-discount-modal/create-discount-modal';
 
 @Component({
   selector: 'right-side-edit',
@@ -20,10 +19,10 @@ export class RightSideEditComponent {
     let opts: any = {
       enableBackdropDismiss: false
     };
-    let createDiscountModal = this.modalCtrl.create(CreateDiscountModalPage, {}, opts);
+    let createDiscountModal = this.modalCtrl.create('', {}, opts);
     createDiscountModal.onDidDismiss(data => {
       if (data) {
-        console.log(data);
+        
       }
     });
     createDiscountModal.present();
