@@ -18,6 +18,8 @@ export class DiscountModalPage {
 
   ionViewDidLoad() {
     this.discount.type = 'DISC';
+    this.discount.ratetype = 'PERC';
+    this.discount.percent = 0;
   }
 
   changePercentType(e) {
@@ -41,7 +43,7 @@ export class DiscountModalPage {
   }
 
   saveDiscount() {
-    console.log(this.discount);
+    this.viewCtrl.dismiss(this.discount);
   }
 
 }

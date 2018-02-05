@@ -23,7 +23,7 @@ export class RightSideEditComponent {
     let createDiscountModal = this.modalCtrl.create(DiscountModalPage, {}, opts);
     createDiscountModal.onDidDismiss(data => {
       if (data) {
-        
+        console.log(data);
       }
     });
     createDiscountModal.present();
