@@ -51,5 +51,19 @@
         </ion-item>
       </ion-col>
     </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>ราคา</ion-label>
+          <ion-checkbox color="secondary" [(ngModel)]="ratetypeFix" (ngModelChange)="changeFixType($event)"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+      <ion-col *ngIf="ratetypeFix">
+        <ion-item>
+          <ion-input type="number" placeholder="$0.00" [(ngModel)]="fixamount"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
