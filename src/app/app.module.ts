@@ -45,6 +45,7 @@ import { GroupByPipe } from '../pipes/group-by/group-by';
 import { ListOfBillPage } from '../pages/list-of-bill/list-of-bill';
 import { PaymentPage } from '../pages/payment/payment';
 import { EditMenuModalPage } from '../pages/edit-menu-modal/edit-menu-modal';
+import { CreateDiscountModalPage } from '../pages/create-discount-modal/create-discount-modal';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -83,7 +84,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     GroupByPipe,
     ListOfBillPage,
     PaymentPage,
-    EditMenuModalPage
+    EditMenuModalPage,
+    CreateDiscountModalPage
   ],
   imports: [
     BrowserModule,
@@ -125,7 +127,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     OpenRoundPage,
     ListOfBillPage,
     PaymentPage,
-    EditMenuModalPage
+    EditMenuModalPage,
+    CreateDiscountModalPage
   ],
   providers: [
     StatusBar,
