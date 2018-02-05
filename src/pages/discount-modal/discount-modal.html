@@ -47,7 +47,7 @@
       </ion-col>
       <ion-col *ngIf="ratetypePercent">
         <ion-item>
-          <ion-input type="number" placeholder="0%" [(ngModel)]="percent"></ion-input>
+          <ion-input type="number" placeholder="0%" [(ngModel)]="discount.percent"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -61,7 +61,7 @@
       </ion-col>
       <ion-col *ngIf="ratetypeFix">
         <ion-item>
-          <ion-input type="number" placeholder="$0.00" [(ngModel)]="fixamount"></ion-input>
+          <ion-input type="number" placeholder="$0.00" [(ngModel)]="discount.fixamount"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>

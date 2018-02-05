@@ -12,7 +12,7 @@ export class DiscountModalPage {
   private ratetypeFix: boolean = false;
   private percent: number;
   private fixamount: number;
-  
+
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -23,6 +23,8 @@ export class DiscountModalPage {
   changePercentType(e) {
     if (e == this.ratetypeFix) {
       this.ratetypeFix = false;
+      this.discount.fixamount = null;
+      this.discount.ratetype = 'PERC';      
     }
   }
 
@@ -33,6 +35,8 @@ export class DiscountModalPage {
   changeFixType(e) {
     if (e == this.ratetypePercent) {
       this.ratetypePercent = false;
+      this.discount.percent = null;
+      this.discount.ratetype = 'FIX';
     }
   }
 
