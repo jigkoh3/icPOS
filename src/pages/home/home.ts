@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, App, NavParams } from 'ionic-angular';
+import { NavController, App, NavParams, Events } from 'ionic-angular';
 import { MenuProvider } from '../../providers/menu/menu';
 import { HomeModel, MenuModel, ItemModel } from '../../assets/models/menus.model';
 import { LoadingProvider } from '../../providers/loading/loading';
@@ -30,7 +30,7 @@ export class HomePage {
   menuSelected: String;
   refTabInHome: any = {};
   menus: Array<MenuModel>;
-  isModeEdit: boolean = false;
+  isModeEdit: boolean = true;
   takeAway: boolean = false;
 
   constructor(public navCtrl: NavController,
@@ -214,24 +214,24 @@ export class HomePage {
     this.presentProductModal(item.product, item);
   }
 
-  savedMenu() {
-    // console.log("saved");
-    this.menusService.addMenu(this.menus).then(data => {
-      // console.log(data);
-      this.menus = data.menus;
-      if (this.refTabInHome.refFooter) {
-        this.menuSelected = this.refTabInHome.menuSelected;
-        this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
-      } else {
-        this.menuSelected = data.menus[0].name;
-        this.menuItemsSelected = data.menus[0].items;
-      }
-      this.isModeEdit = false;
-      this.loading.dismiss();
-    }, err => {
-      // console.log(err);
-      this.loading.dismiss();
-    })
+  savedMenu(e) {
+      this.menus.push(e);
+      this.menusService.addMenu(this.menus).then(data => {
+        console.log(data);
+        this.menus = data.menus;
+        if (this.refTabInHome.refFooter) {
+          this.menuSelected = this.refTabInHome.menuSelected;
+          this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
+        } else {
+          this.menuSelected = data.menus[0].name;
+          this.menuItemsSelected = data.menus[0].items;
+        }
+        this.isModeEdit = false;
+        this.loading.dismiss();
+      }, err => {
+        this.loading.dismiss();
+        console.log(err);
+      });
   }
 
   updateOrder(item) {
@@ -279,7 +279,7 @@ export class HomePage {
     this.presentToPaidModal(orders);
   }
 
-  presentToPaidModal(orders){
+  presentToPaidModal(orders) {
     let opts: any = {
       enableBackdropDismiss: false
     }
@@ -315,9 +315,9 @@ export class HomePage {
         bill.table = data;
         bill.items = this.order;
         this.order = [];
-        this.menusService.createBill(bill).then(data=>{
+        this.menusService.createBill(bill).then(data => {
           this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
-        }).catch(err=>{
+        }).catch(err => {
 
         });
       }
@@ -336,9 +336,9 @@ export class HomePage {
         bill.customer = data;
         bill.items = this.order;
         this.order = [];
-        this.menusService.createBill(bill).then(data=>{
+        this.menusService.createBill(bill).then(data => {
           this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
-        }).catch(err=>{
+        }).catch(err => {
 
         });
       }
@@ -381,7 +381,7 @@ export class HomePage {
     let opts: any = {
       enableBackdropDismiss: false
     }
-    let addItemModal = this.modalCtrl.create(AddItemMenuPage, {item : this.menuItemsSelected[index]}, opts);
+    let addItemModal = this.modalCtrl.create(AddItemMenuPage, { item: this.menuItemsSelected[index] }, opts);
     addItemModal.onDidDismiss(data => {
       //console.log(data);
       if (data) {

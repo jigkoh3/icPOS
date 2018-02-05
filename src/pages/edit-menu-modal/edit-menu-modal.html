@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="closeModal()">
+        X
+      </button>
+    </ion-buttons>
+    <ion-title>แก้ไขเมนู</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="saveMenu()" [disabled]="!menu.name && !menu.iconSelected">
+        {{'SAVE' | translate}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-12 col-lg-12>
+        <ion-item>
+          <ion-label>ชื่อเมนู</ion-label>
+          <ion-input type="text" [(ngModel)]="menu.name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 col-md-4 col-lg-2 *ngFor="let item of iconList" [ngClass]="{'active-menu-selected' : iconSelected == item.name}" (click)="selectIcon(item.name)">
+        <ion-icon name="{{item.icon}}"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

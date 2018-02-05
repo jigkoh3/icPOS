@@ -1,0 +1,13 @@
+page-edit-menu-modal {
+    @media (min-width: 992px) {
+        [col-lg-2] {
+            text-align: center !important;
+            height: 80px !important;
+            font-size: 3.2em !important;
+        }
+    }
+    .active-menu-selected {
+        border: 2px solid green;
+        color: green;
+    }
+}
