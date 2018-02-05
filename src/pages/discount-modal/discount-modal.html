@@ -1,0 +1,70 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="closeModal()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>สร้างส่วนลด</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="saveDiscount()" [disabled]="!discount.name">
+        {{'SAVE' | translate}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 col-md-3 col-lg-3 class="box-val">
+        <span *ngIf="ratetypePercent">{{discount.percent ? discount.percent: 0}} %</span>
+        <span *ngIf="ratetypeFix">$ {{ discount.fixamount ? discount.fixamount : 0}}</span>
+      </ion-col>
+      <ion-col col-9 col-md-9 col-lg-9>
+        <ion-item>
+          <ion-label>ประเภทส่วนลด</ion-label>
+          <ion-select [(ngModel)]="discount.type">
+            <ion-option value="DISC">ส่วนลด</ion-option>
+            <ion-option value="ITMDISC">ส่วนลดตามประเภทรายการ</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>ชื่อส่วนลด</ion-label>
+          <ion-input type="text" [(ngModel)]="discount.name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>เปอร์เซ็นต์</ion-label>
+          <ion-checkbox color="secondary" [(ngModel)]="ratetypePercent" (ngModelChange)="changePercentType($event)"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+      <ion-col *ngIf="ratetypePercent">
+        <ion-item>
+          <ion-input type="number" placeholder="0%" [(ngModel)]="discount.percent"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>ราคา</ion-label>
+          <ion-checkbox color="secondary" [(ngModel)]="ratetypeFix" (ngModelChange)="changeFixType($event)"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+      <ion-col *ngIf="ratetypeFix">
+        <ion-item>
+          <ion-input type="number" placeholder="$0.00" [(ngModel)]="discount.fixamount"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
