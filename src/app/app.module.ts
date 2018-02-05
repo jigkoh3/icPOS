@@ -43,6 +43,7 @@ import { TakeAwayPage } from '../pages/take-away/take-away';
 import { OpenRoundPage } from '../pages/open-round/open-round';
 import { GroupByPipe } from '../pipes/group-by/group-by';
 import { ListOfBillPage } from '../pages/list-of-bill/list-of-bill';
+import { PaymentPage } from '../pages/payment/payment';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -79,7 +80,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TakeAwayPage,
     OpenRoundPage,
     GroupByPipe,
-    ListOfBillPage
+    ListOfBillPage,
+    PaymentPage
   ],
   imports: [
     BrowserModule,
@@ -119,7 +121,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToTablePage,
     TakeAwayPage,
     OpenRoundPage,
-    ListOfBillPage
+    ListOfBillPage,
+    PaymentPage
   ],
   providers: [
     StatusBar,

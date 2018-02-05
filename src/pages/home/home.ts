@@ -17,6 +17,7 @@ import { ToTablePage } from '../to-table/to-table';
 import { TakeAwayPage } from '../take-away/take-away';
 import { OpenRoundPage } from '../open-round/open-round';
 import { ListOfBillPage } from '../list-of-bill/list-of-bill';
+import { PaymentPage } from '../payment/payment';
 
 @Component({
   selector: 'page-home',
@@ -29,7 +30,7 @@ export class HomePage {
   menuSelected: String;
   refTabInHome: any = {};
   menus: Array<MenuModel>;
-  isModeEdit: boolean = true;
+  isModeEdit: boolean = false;
   takeAway: boolean = false;
 
   constructor(public navCtrl: NavController,
@@ -264,7 +265,7 @@ export class HomePage {
   }
 
   orderSaved(orders) {
-    console.log(orders);
+    // console.log(orders);
     if (this.takeAway) {
       this.presentTakeAwayModal(orders);
     } else {
@@ -274,7 +275,33 @@ export class HomePage {
   }
 
   orderPaid(orders) {
-    console.log(orders);
+    // console.log(orders);
+    this.presentToPaidModal(orders);
+  }
+
+  presentToPaidModal(orders){
+    let opts: any = {
+      enableBackdropDismiss: false
+    }
+    let toPaidModal = this.modalCtrl.create(PaymentPage, { orders: orders }, opts);
+    toPaidModal.onDidDismiss(data => {
+      //console.log(data);
+      if (data) {
+        //this.updateOrder(data);
+        // let bill: OrderModel = new OrderModel();
+        // bill.servetype = "takeatable";
+        // bill.table = data;
+        // bill.items = this.order;
+        // this.order = [];
+        // this.menusService.createBill(bill).then(data=>{
+        //   this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
+        // }).catch(err=>{
+
+        // });
+      }
+
+    });
+    toPaidModal.present();
   }
 
   presentToTableModal(orders) {
