@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 col-md-3 col-lg-3>
+      </ion-col>
+      <ion-col col-6 col-md-6 col-lg-6>
+        <ion-segment mode="md" [(ngModel)]="loginType">
+          <ion-segment-button value="owner">
+            เข้าสู่ระบบสำหรับเจ้าของร้าน
+          </ion-segment-button>
+          <ion-segment-button value="manager">
+            เข้าสู่ระบบสำหรับพนักงาน
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+      <ion-col col-3 col-md-3 col-lg-3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="loginType == 'owner'">
+      <ion-col col-3 col-md-3 col-lg-3>
+      </ion-col>
+      <ion-col col-6 col-md-6 col-lg-6>
+        <ion-item>
+          <ion-label>TH +66</ion-label>
+          <ion-input type="text" placeholder="หมายเลขโทรศัพท์มือถือ"></ion-input>
+        </ion-item>
+        <button ion-button full>เข้าสู่ระบบ</button>
+      </ion-col>
+      <ion-col col-3 col-md-3 col-lg-3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="loginType == 'manager'">
+      <ion-col col-3 col-md-3 col-lg-3>
+      </ion-col>
+      <ion-col col-6 col-md-6 col-lg-6>
+        <ion-item>
+          <ion-label>ชื่อผู้ใช้</ion-label>
+          <ion-input type="text" placeholder="ชื่อผู้ใช้ (A-Z และ 0-9 เท่านั้น)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>รหัสผ่าน</ion-label>
+          <ion-input type="text" placeholder="●●●●●"></ion-input>
+        </ion-item>
+        <button ion-button full>เข้าสู่ระบบ</button>
+      </ion-col>
+      <ion-col col-3 col-md-3 col-lg-3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

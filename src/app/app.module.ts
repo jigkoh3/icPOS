@@ -46,6 +46,9 @@ import { ListOfBillPage } from '../pages/list-of-bill/list-of-bill';
 import { PaymentPage } from '../pages/payment/payment';
 import { EditMenuModalPage } from '../pages/edit-menu-modal/edit-menu-modal';
 import { DiscountModalPage } from '../pages/discount-modal/discount-modal';
+import { PreLoginPage } from '../pages/pre-login/pre-login';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -85,7 +88,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ListOfBillPage,
     PaymentPage,
     EditMenuModalPage,
-    DiscountModalPage
+    DiscountModalPage,
+    PreLoginPage,
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -128,7 +134,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ListOfBillPage,
     PaymentPage,
     EditMenuModalPage,
-    DiscountModalPage
+    DiscountModalPage,
+    PreLoginPage,
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
