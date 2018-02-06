@@ -49,6 +49,7 @@ import { DiscountModalPage } from '../pages/discount-modal/discount-modal';
 import { PreLoginPage } from '../pages/pre-login/pre-login';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { AuthProvider } from '../providers/auth';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -143,6 +144,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AuthProvider,
     MenuProvider,
     LoadingProvider,
     OrderProvider,

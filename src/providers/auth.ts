@@ -5,10 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AuthProvider {
-  API_URL: string = '';
-
-  // temporary solution
-  _credentials: any = {};
+  API_URL: string = 'https://ic-pos-service.herokuapp.com';
 
   constructor(
     public http: HttpClient
@@ -38,9 +35,8 @@ export class AuthProvider {
       .catch(this.handleError);
   }
 
-  signup(credentials) {
-    this._credentials = credentials;
-    return this.http.post(this.API_URL + "/api/auth/signup", credentials)
+  signup(credential) {
+    return this.http.post(this.API_URL + "/api/auth/ownersignup", credential)
       .toPromise()
       .then(response => this.registerSuccess(response))
       .catch(this.handleError);
