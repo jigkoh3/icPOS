@@ -1,19 +1,22 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <ion-col col-3 col-md-3 col-lg-3>
+      <ion-col col-1 col-md-1 col-lg-3>
       </ion-col>
-      <ion-col col-6 col-md-6 col-lg-6>
+      <ion-col col-10 col-md-10 col-lg-6 class="top">
+        <div class="center">
+            <img src="https://image.flaticon.com/icons/svg/138/138204.svg" alt="image" width="104" height="104">
+        </div>
         <button ion-button full color="secondary" (click)="gotoLogin()">
-          <ion-icon md="ios-log-in-outline"></ion-icon>
+          <ion-icon name="ios-log-in-outline"></ion-icon>
           เข้าสู่ระบบ
         </button>
-        <button ion-button full outline color="secondary" (click)="gotoRegister()">
-          <ion-icon md="person"></ion-icon>
+        <button ion-button full color="secondary" (click)="gotoRegister()">
+          <ion-icon name="person"></ion-icon>
           สร้างบัญชี
         </button>
       </ion-col>
-      <ion-col col-3 col-md-3 col-lg-3>
+      <ion-col col-1 col-md-1 col-lg-3>
       </ion-col>
     </ion-row>
   </ion-grid>

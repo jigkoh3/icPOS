@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth';
+import { HomePage } from '../home/home';
 
 
 @IonicPage()
@@ -12,19 +14,27 @@ export class LoginPage {
   private mobile: string;
   private loginType: string = 'owner';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
 
   }
 
-  ownerLogin() {
-    console.log(this.mobile);
+  ownerLogin(username, password) {
+    let credential = {
+      username: this.mobile,
+      password: this.mobile
+    };
+    this.auth.login(credential).then(data => {
+      this.navCtrl.setRoot(HomePage);
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
   employeeLogin() {
-    console.log(this.credential);
+
   }
 
 }
