@@ -1,3 +1,5 @@
+import { AuthProvider } from './../providers/auth';
+import { HomePage } from './../pages/home/home';
 import { Component } from '@angular/core';
 import { Platform, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -9,9 +11,9 @@ import { PreLoginPage } from '../pages/pre-login/pre-login';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = PreLoginPage;
+  rootPage: any = ListOfBillPage;
 
-  constructor(private events: Events, private translateService: TranslateService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(private events: Events, private translateService: TranslateService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthProvider) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
@@ -23,6 +25,15 @@ export class MyApp {
         translateService.use(data);
         window.localStorage.setItem('language', data);
       });
+    });
+    this.auth.authenticated().then((data) => {
+      if (data) {
+        this.rootPage = ListOfBillPage;
+      } else {
+        this.rootPage = PreLoginPage;
+      }
+    }).catch((err) => {
+      this.rootPage = PreLoginPage;
     });
   }
 }

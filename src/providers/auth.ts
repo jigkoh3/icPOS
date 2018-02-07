@@ -24,7 +24,7 @@ export class AuthProvider {
   authenticated(): Promise<any> {
     return new Promise((resolve, reject) => {
       let token = window.localStorage.getItem('token');
-      resolve(tokenNotExpired('Bearer', token));
+      resolve(tokenNotExpired(null, token));
     });
   }
 
