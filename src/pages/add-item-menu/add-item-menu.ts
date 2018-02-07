@@ -43,12 +43,12 @@ export class AddItemMenuPage {
 
   addNewItem(type) {
     this.item = new ItemModel();
-    this.item.type = type;
+    this.item._type = type;
     this.item.product = new ProductModel();
     this.item.product.category = new CategoryModel();
     this.item.product.prices = [];
     let price = new PriceModel();
-    price.type = "normal";
+    price._type = "normal";
     price.name = "ราคาปกติ";
     this.item.product.submenus = [];
     this.item.product.prices.push(price);

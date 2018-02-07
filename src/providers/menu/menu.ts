@@ -1,3 +1,4 @@
+import { AuthProvider } from './../auth';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MenuModel, HomeModel, ItemModel } from '../../assets/models/menus.model';
@@ -17,28 +18,37 @@ export class MenuProvider {
   storageName = "0638265946";
   online: boolean = false;
   public homeData: HomeModel;
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private auth: AuthProvider) {
 
   }
 
 
   getLocalStorage(): Promise<HomeModel> {
-    this.local = window.localStorage.getItem(this.storageName);
-    // console.log(this.local);
-    if (this.local) {
-      this.homeData = JSON.parse(this.local);
-      return Promise.resolve(this.homeData);
-    }else{
-      return this.http.get('./assets/json/menus.json')
+    // this.local = window.localStorage.getItem(this.storageName);
+    // // console.log(this.local);
+    // if (this.local) {
+    //   this.homeData = JSON.parse(this.local);
+    //   return Promise.resolve(this.homeData);
+    // }else{
+    //   return this.http.get('./assets/json/menus.json')
+    //   .toPromise()
+    //   .then(response => {
+    //     this.homeData = response as HomeModel;
+    //     window.localStorage.setItem(this.storageName, JSON.stringify(response));
+    //     return this.homeData;
+    //   })
+    //   .catch(this.handleError);
+    // }
+    let hearder = this.auth.setHeader();
+    return this.http.get(this.auth.API_URL + '/api/homes/:0001', { headers: hearder })
       .toPromise()
       .then(response => {
         this.homeData = response as HomeModel;
-        window.localStorage.setItem(this.storageName, JSON.stringify(response));
+        // window.localStorage.setItem(this.storageName, JSON.stringify(response));
         return this.homeData;
       })
       .catch(this.handleError);
-    }
-    
+
   }
 
   getMenus(): Promise<HomeModel> {
@@ -60,7 +70,7 @@ export class MenuProvider {
     }
   }
 
-  createBill(data: OrderModel):Promise<HomeModel>{
+  createBill(data: OrderModel): Promise<HomeModel> {
     data.total = _.sumBy(data.items, function (o) { return o.total * o.qty; })
     this.homeData.bills.push(data);
     window.localStorage.setItem(this.storageName, JSON.stringify(this.homeData));

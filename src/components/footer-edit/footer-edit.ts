@@ -36,7 +36,7 @@ export class FooterEditComponent {
     menu.icon = "menu";
     menu.items = [];
     for (let i = 0; i < 32; i++) {
-      item.type = "none";
+      item._type = "none";
       menu.items.push(item);
     }
     this.itemAdded.emit(menu);

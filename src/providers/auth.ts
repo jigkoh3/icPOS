@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AuthProvider {
-  API_URL: string = 'https://ic-pos-service.herokuapp.com';
+  public API_URL: string = 'https://ic-pos-service.herokuapp.com';
 
   constructor(
     public http: HttpClient

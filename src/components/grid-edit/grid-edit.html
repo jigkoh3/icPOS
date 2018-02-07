@@ -1,7 +1,7 @@
 <ion-row [sortablejs]="items" [sortablejsOptions]="options">
   <ion-col col-6 col-md-3 col-lg-3 class="grid-col" *ngFor="let item of items; let i='index'">
-    <item-grid [item]="item.product" [isModeEdit]="isModeEdit" (click)="selected(i)" (itemDeleted)="itemDelete(i)" *ngIf="item.type === 'product'"></item-grid>
-    <ion-row *ngIf="item.type === 'none'" (click)="selected(i)">
+    <item-grid [item]="item.product" [isModeEdit]="isModeEdit" (click)="selected(i)" (itemDeleted)="itemDelete(i)" *ngIf="item._type === 'product'"></item-grid>
+    <ion-row *ngIf="item._type === 'none'" (click)="selected(i)">
       <ion-col col-12 text-center none-item>
         <ion-icon name="add"></ion-icon>
       </ion-col>

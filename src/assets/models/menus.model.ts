@@ -16,7 +16,7 @@ export class MenuModel {
 }
 
 export class ItemModel {
-    type: string;
+    _type: string;
     product: ProductModel;
     discount: DiscountModel;
 }

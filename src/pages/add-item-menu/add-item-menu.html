@@ -19,7 +19,7 @@
       </button>
     </ion-buttons>
     <ion-buttons end *ngIf="step === 1">
-      <button ion-button clear navbar-button [disabled]="!(item.type ==='product' && item.product.name && item.product.prices.length >= 1 && item.product.prices[0].price)"
+      <button ion-button clear navbar-button [disabled]="!(item._type ==='product' && item.product.name && item.product.prices.length >= 1 && item.product.prices[0].price)"
         (click)="add()">
         {{ 'ADD' | translate }}
       </button>
@@ -42,7 +42,7 @@
       </button>
     </ion-buttons>
     <ion-buttons end *ngIf="step === 0">
-      <button ion-button clear navbar-button [disabled]="!(item.type ==='product' && item.product.name && item.product.prices.length >= 1 && item.product.prices[0].price)"
+      <button ion-button clear navbar-button [disabled]="!(item._type ==='product' && item.product.name && item.product.prices.length >= 1 && item.product.prices[0].price)"
         (click)="add()">
         {{ 'ADD' | translate }}
       </button>
@@ -66,7 +66,7 @@
   </ion-list>
 
 
-  <ion-row *ngIf="step === 1 && item.type ==='product'" padding>
+  <ion-row *ngIf="step === 1 && item._type ==='product'" padding>
     <ion-col col-12>
 
       <ion-row>
@@ -93,7 +93,7 @@
             <ion-item>
               <div item-left>
                 <ion-item>
-                  <ion-select select-option [(ngModel)]="item.product.prices[0].type" interface="popover">
+                  <ion-select select-option [(ngModel)]="item.product.prices[0]._type" interface="popover">
                     <ion-option value="normal">{{ "NORM" | translate }}</ion-option>
                     <ion-option value="manual">{{ "MANL" | translate }}</ion-option>
                   </ion-select>
@@ -143,7 +143,7 @@
 </ion-footer>
 
 <ion-content *ngIf="isEdit">
-  <ion-row *ngIf="item.type ==='product'" padding>
+  <ion-row *ngIf="item._type ==='product'" padding>
     <ion-col col-12>
       <ion-row>
         <ion-col col-3 image-box>

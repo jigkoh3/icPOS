@@ -8,12 +8,12 @@ export class ProductModel {
     description: string;
 }
 
-export class DiscountModel{
-    name:string;
-    type:string; // "DISC" or "ITMDISC"
-    ratetype:string; //"PERC" or "FIX"
-    percent:number;
-    fixamount:number;
+export class DiscountModel {
+    name: string;
+    _type: string; // "DISC" or "ITMDISC"
+    ratetype: string; //"PERC" or "FIX"
+    percent: number;
+    fixamount: number;
 }
 
 export class CategoryModel {
@@ -22,7 +22,7 @@ export class CategoryModel {
 
 export class PriceModel {
     name: string;
-    type: string;
+    _type: string;
     price: number;
     isChecked: boolean; // Submenu Type 'any' Only
     selectedQty: number; // Submenu Type 'qty' Only
@@ -30,10 +30,10 @@ export class PriceModel {
 export class SubmenuModel {
     name: string;
     prices: Array<PriceModel>;
-    type: string; // "one" , "any", "qty"
+    _type: string; // "one" , "any", "qty"
     bom: BomModel;
 }
 
-export class BomModel{
+export class BomModel {
     name: string;
 }
