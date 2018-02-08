@@ -4,14 +4,9 @@ import { Injectable } from '@angular/core';
 import { MenuModel, HomeModel, ItemModel } from '../../assets/models/menus.model';
 import { ProductModel, PriceModel, SubmenuModel } from '../../assets/models/product.model';
 import { OrderModel } from '../../assets/models/order.model';
-
 import _ from 'lodash';
-/*
-  Generated class for the MenuProvider provider.
+import { Constants } from '../../app/app.contants';
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class MenuProvider {
   local: any;
@@ -22,44 +17,24 @@ export class MenuProvider {
 
   }
 
-
-  getLocalStorage(): Promise<HomeModel> {
-    // this.local = window.localStorage.getItem(this.storageName);
-    // // console.log(this.local);
-    // if (this.local) {
-    //   this.homeData = JSON.parse(this.local);
-    //   return Promise.resolve(this.homeData);
-    // }else{
-    //   return this.http.get('./assets/json/menus.json')
-    //   .toPromise()
-    //   .then(response => {
-    //     this.homeData = response as HomeModel;
-    //     window.localStorage.setItem(this.storageName, JSON.stringify(response));
-    //     return this.homeData;
-    //   })
-    //   .catch(this.handleError);
-    // }
+  getLocalStorage(shopno): Promise<HomeModel> {
     let hearder = this.auth.setHeader();
-    return this.http.get(this.auth.API_URL + '/api/homes/:0001', { headers: hearder })
+    return this.http.get(Constants.API_URL + '/api/homes/' + shopno, { headers: hearder })
       .toPromise()
       .then(response => {
         this.homeData = response as HomeModel;
-        // window.localStorage.setItem(this.storageName, JSON.stringify(response));
         return this.homeData;
       })
       .catch(this.handleError);
-
   }
 
-  getMenus(): Promise<HomeModel> {
-
-    return this.getLocalStorage();
+  getMenus(shopno): Promise<HomeModel> {
+    return this.getLocalStorage(shopno);
 
   }
 
   addMenu(menus: Array<MenuModel>): Promise<HomeModel> {
     this.local = window.localStorage.getItem(this.storageName);
-    // console.log(this.local);
     if (this.local) {
       this.homeData = JSON.parse(this.local);
       this.homeData.menus = menus;
@@ -78,7 +53,6 @@ export class MenuProvider {
   }
 
   private handleError(error: any): Promise<any> {
-    // this.log.errorService('An error occurred', error);
     return Promise.reject(error.message || error);
   }
 

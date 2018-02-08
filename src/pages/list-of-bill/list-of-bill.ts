@@ -25,16 +25,16 @@ export class ListOfBillPage {
   menuSelected: String;
   bills: Array<OrderModel>;
   tables: Array<TableModel> = [];
-  zone:string;
-  constructor(public navCtrl: NavController, 
+  zone: string;
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private menusService: MenuProvider,
     private orderService: OrderProvider,
-    private loading: LoadingProvider,) {
+    private loading: LoadingProvider, ) {
     //this.menus = this.navParams.get('menus');
     //this.getMenuData();
     this.menuSelected = 'list';
-    
+
     if (!this.menusService.homeData) {
       this.getMenuData();
     } else {
@@ -49,24 +49,24 @@ export class ListOfBillPage {
     //console.log('ionViewDidLoad ListOfBillPage');
   }
 
-  selecttab(key){
+  selecttab(key) {
     console.log(key);
-    this.zone=key;
+    this.zone = key;
   }
 
-  gotoHome(bill:OrderModel){
-    if(bill){
+  gotoHome(bill: OrderModel) {
+    if (bill) {
       console.log(bill);
       this.orderService.order = bill.items;
     }
-    
+
     this.navCtrl.setRoot(HomePage);
   }
 
   getMenuData() {
     this.loading.onLoading();
     setTimeout(() => {
-      this.menusService.getMenus().then(data => {
+      this.menusService.getMenus('001').then(data => {
         // console.log(data);
         this.menus = data.menus;
         this.bills = data.bills;

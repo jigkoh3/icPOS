@@ -32,6 +32,7 @@ export class HomePage {
   menus: Array<MenuModel>;
   isModeEdit: boolean = false;
   takeAway: boolean = false;
+  private shopno: string;
 
   constructor(public navCtrl: NavController,
     private modalCtrl: ModalController,
@@ -58,7 +59,6 @@ export class HomePage {
     }
   }
 
-
   ionViewDidLoad() {
 
   }
@@ -66,8 +66,7 @@ export class HomePage {
   getMenuData() {
     this.loading.onLoading();
     setTimeout(() => {
-      this.menusService.getMenus().then(data => {
-        // console.log(data);
+      this.menusService.getMenus('001').then(data => {
         this.menus = data.menus;
         if (this.refTabInHome.refFooter) {
           this.menuSelected = this.refTabInHome.menuSelected;
@@ -78,7 +77,6 @@ export class HomePage {
         }
         this.loading.dismiss();
       }, err => {
-        // console.log(err);
         this.loading.dismiss();
       })
     }, 1000);
@@ -97,21 +95,14 @@ export class HomePage {
   }
 
   itemSelected(item) {
-    //alert("Item Type Selected : " + item.type);
-    //console.log(item);
     switch (item.type) {
       case "none": {
-        //statements; 
         break;
       }
       case "product": {
-        //statements; 
-        // console.log(item.product);
-
         //check round
         if (this.orderService.round) {
           if (item.product.prices && item.product.submenus) {
-            // console.log(item.product.prices);
             if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
               this.presentProductModal(item.product, null);
             } else {
@@ -147,15 +138,9 @@ export class HomePage {
                 }
               })
             }
-
-
-
           });
           openRoundModal.present();
         }
-
-
-
         break;
       }
       default: {
@@ -171,7 +156,7 @@ export class HomePage {
 
   itemDeleted(index) {
     let item = new ItemModel();
-    item.type = "none";
+    item._type = "none";
     this.menuItemsSelected[index] = item;
   }
 
@@ -191,7 +176,7 @@ export class HomePage {
   itemEditSelected(index) {
     let item = this.menuItemsSelected[index];
     // console.log(item.type);
-    switch (item.type) {
+    switch (item._type) {
       case "none": {
         //statements; 
         this.presentAddMenuItemModal(index);
@@ -215,23 +200,23 @@ export class HomePage {
   }
 
   savedMenu(e) {
-      this.menus.push(e);
-      this.menusService.addMenu(this.menus).then(data => {
-        console.log(data);
-        this.menus = data.menus;
-        if (this.refTabInHome.refFooter) {
-          this.menuSelected = this.refTabInHome.menuSelected;
-          this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
-        } else {
-          this.menuSelected = data.menus[0].name;
-          this.menuItemsSelected = data.menus[0].items;
-        }
-        this.isModeEdit = false;
-        this.loading.dismiss();
-      }, err => {
-        this.loading.dismiss();
-        console.log(err);
-      });
+    this.menus.push(e);
+    this.menusService.addMenu(this.menus).then(data => {
+      console.log(data);
+      this.menus = data.menus;
+      if (this.refTabInHome.refFooter) {
+        this.menuSelected = this.refTabInHome.menuSelected;
+        this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
+      } else {
+        this.menuSelected = data.menus[0].name;
+        this.menuItemsSelected = data.menus[0].items;
+      }
+      this.isModeEdit = false;
+      this.loading.dismiss();
+    }, err => {
+      this.loading.dismiss();
+      console.log(err);
+    });
   }
 
   updateOrder(item) {

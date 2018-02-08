@@ -12,6 +12,7 @@
     <ion-col col-5 col-md-5 col-lg-4 class="bd-right height-fill">
       <!-- section more side nav component -->
       <settings-side-nav *ngIf="actionType.type == 'settings'" (settingType)="contentTypeSelected($event)"></settings-side-nav>
+      <employee-side-nav *ngIf="actionType.type == 'employee'"></employee-side-nav>
       <!-- end section more side nav component -->
     </ion-col>
     <ion-col col-7 col-md-7 col-lg-8 class="height-fill">

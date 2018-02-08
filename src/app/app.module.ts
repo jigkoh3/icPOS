@@ -50,6 +50,7 @@ import { PreLoginPage } from '../pages/pre-login/pre-login';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { AuthProvider } from '../providers/auth';
+import { EmployeeSideNavComponent } from '../components/employee-side-nav/employee-side-nav';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -94,7 +95,8 @@ const API_URL = 'https://ic-pos-service.herokuapp.com';
     DiscountModalPage,
     PreLoginPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    EmployeeSideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -140,7 +142,8 @@ const API_URL = 'https://ic-pos-service.herokuapp.com';
     DiscountModalPage,
     PreLoginPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    EmployeeSideNavComponent
   ],
   providers: [
     StatusBar,

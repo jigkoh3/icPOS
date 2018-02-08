@@ -42,7 +42,7 @@ export class MoreLayoutPage {
         this.contentType = {};
         break;
       case 'employee':
-        this.contentType = {};
+      this.contentType = { 'type': 'employee', 'name': 'EMPLOYEE' };
         break;
       case 'moneyManagemnet':
         this.contentType = {};

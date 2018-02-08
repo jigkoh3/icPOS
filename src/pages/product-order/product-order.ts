@@ -60,7 +60,7 @@ export class ProductOrderPage {
     }
     this.item.submenus.forEach(function (sub) {
       let _sub: any;
-      switch (sub.type) {
+      switch (sub._type) {
         case "qty": {
           //statements;
           sub.prices.forEach(function (price) {
@@ -153,12 +153,12 @@ export class ProductOrderPage {
 
         let _submenu = new SubmenuModel();
         _submenu.name = _step.data.name;
-        _submenu.type = _step.data.type;
+        _submenu._type = _step.data.type;
         _submenu.prices = [];
 
         //Add selected Size Price
 
-        switch (_submenu.type) {
+        switch (_submenu._type) {
           case "one": {
             _step.data.prices.forEach(function (_price) {
               if (_price.name === _step.result) {
