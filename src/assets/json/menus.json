@@ -5,7 +5,7 @@
             "icon": "menu",
             "items": [
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ก๋วยเตี๋ยวหมู",
                         "image": "http://www.infinitecreation.co.th/pa/g1/5.jpg",
@@ -15,187 +15,187 @@
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 50
                             }
                         ],
                         "submenus": [
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "เส้น",
                                 "prices": [
                                     {
                                         "name": "ใหญ่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "เล็ก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "หมี่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "วุ้นเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     },
                                     {
                                         "name": "บะหมี่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
                             },
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "น้ำซุป",
                                 "prices": [
                                     {
                                         "name": "น้ำใส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ต้มยำ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "แห้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
                             },
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "ขนาด",
                                 "prices": [
                                     {
                                         "name": "ราคาปกติ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "พิเศษ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 15
                                     },
                                     {
                                         "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
                             },
                             {
-                                "type": "qty",
+                                "_type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
                                         "name": "เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "หมูชิ้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "หมูสับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ตับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     },
                                     {
                                         "name": "ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     }
                                 ]
                             },
                             {
-                                "type": "any",
+                                "_type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {
                                         "name": "ไม่ชูรส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ผัก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่กระเทียม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ถั่ว",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่พริก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่หมูชิ้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่หมูสับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ตับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -204,7 +204,7 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ก๋วยเตี๋ยวไก่",
                         "image": "http://www.infinitecreation.co.th/pa/g1/1.jpg",
@@ -214,132 +214,132 @@
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 50
                             }
                         ],
                         "submenus": [
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "เส้น",
                                 "prices": [
                                     {
                                         "name": "ใหญ่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "เล็ก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "หมี่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "วุ้นเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     },
                                     {
                                         "name": "บะหมี่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
                             },
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "น้ำซุป",
                                 "prices": [
                                     {
                                         "name": "น้ำใส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ต้มยำ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "แห้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
                             },
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "ขนาด",
                                 "prices": [
                                     {
                                         "name": "ราคาปกติ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "พิเศษ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 15
                                     },
                                     {
                                         "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
                             },
                             {
-                                "type": "qty",
+                                "_type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
                                         "name": "เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "เนื้อไก่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     }
                                 ]
                             },
                             {
-                                "type": "any",
+                                "_type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {
                                         "name": "ไม่ชูรส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ผัก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่กระเทียม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ถั่ว",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่พริก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -348,7 +348,7 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "เย็นตาโฟ",
                         "image": "http://www.infinitecreation.co.th/pa/g1/10.jpg",
@@ -358,197 +358,197 @@
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 50
                             }
                         ],
                         "submenus": [
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "เส้น",
                                 "prices": [
                                     {
                                         "name": "ใหญ่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "เล็ก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "หมี่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "วุ้นเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     },
                                     {
                                         "name": "บะหมี่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
                             },
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "น้ำซุป",
                                 "prices": [
                                     {
                                         "name": "น้ำใส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ต้มยำ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "แห้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
                             },
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "ขนาด",
                                 "prices": [
                                     {
                                         "name": "ราคาปกติ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "พิเศษ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 15
                                     },
                                     {
                                         "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
                             },
                             {
-                                "type": "qty",
+                                "_type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
                                         "name": "เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     },
                                     {
                                         "name": "ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ปลาหมึก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "แมงกระพรุน",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "เลือดหมู",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "เต้าหูทอด",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     }
                                 ]
                             },
                             {
-                                "type": "any",
+                                "_type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {
                                         "name": "ไม่ชูรส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ผัก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่กระเทียม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ถั่ว",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่พริก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ปลาหมึก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่แมงกระพรุน",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เลือดหมู",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เต้าหู้ทอด",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -557,45 +557,45 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "เย็นตาโฟผัดแห้ง",
                         "image": "http://www.infinitecreation.co.th/pa/g1/9.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 80
                             }
                         ],
                         "submenus": [
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "เส้น",
                                 "prices": [
                                     {
                                         "name": "ใหญ่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "เล็ก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "หมี่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "วุ้นเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "บะหมี่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -604,7 +604,7 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "เกาเหลาหมู",
                         "image": "https://img.wongnai.com/p/1920x0/2014/12/28/8c0cbad9c880406dac2e4cb2870b877d.jpg",
@@ -614,156 +614,156 @@
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 65
                             }
                         ],
                         "submenus": [
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "น้ำซุป",
                                 "prices": [
                                     {
                                         "name": "น้ำใส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ต้มยำ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "แห้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
                             },
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "ขนาด",
                                 "prices": [
                                     {
                                         "name": "ราคาปกติ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "พิเศษ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 15
                                     },
                                     {
                                         "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
                             },
                             {
-                                "type": "qty",
+                                "_type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
                                         "name": "เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "หมูชิ้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "หมูสับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ตับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     },
                                     {
                                         "name": "ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     }
                                 ]
                             },
                             {
-                                "type": "any",
+                                "_type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {
                                         "name": "ไม่ชูรส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ผัก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่กระเทียม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ถั่ว",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่พริก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่หมูชิ้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่หมูสับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ตับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -772,7 +772,7 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "เกาเหลาไก่",
                         "image": "http://img.painaidii.com/images/20111120_3_1321775213_817935.jpg",
@@ -782,101 +782,101 @@
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 50
                             }
                         ],
                         "submenus": [
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "น้ำซุป",
                                 "prices": [
                                     {
                                         "name": "น้ำใส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ต้มยำ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "แห้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
                             },
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "ขนาด",
                                 "prices": [
                                     {
                                         "name": "ราคาปกติ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "พิเศษ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 15
                                     },
                                     {
                                         "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
                             },
                             {
-                                "type": "qty",
+                                "_type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
                                         "name": "เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "เนื้อไก่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     }
                                 ]
                             },
                             {
-                                "type": "any",
+                                "_type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {
                                         "name": "ไม่ชูรส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ผัก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่กระเทียม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ถั่ว",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่พริก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -885,7 +885,7 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "เกาเหลาโฟ",
                         "image": "https://pbs.twimg.com/media/C0M-jLMUUAAJl88.jpg",
@@ -895,166 +895,166 @@
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 50
                             }
                         ],
                         "submenus": [
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "น้ำซุป",
                                 "prices": [
                                     {
                                         "name": "น้ำใส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ต้มยำ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "แห้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
                             },
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "ขนาด",
                                 "prices": [
                                     {
                                         "name": "ราคาปกติ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "พิเศษ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 15
                                     },
                                     {
                                         "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
                             },
                             {
-                                "type": "qty",
+                                "_type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
                                         "name": "เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     },
                                     {
                                         "name": "ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ปลาหมึก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "แมงกระพรุน",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "เลือดหมู",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "เต้าหูทอด",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     }
                                 ]
                             },
                             {
-                                "type": "any",
+                                "_type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {
                                         "name": "ไม่ชูรส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ผัก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่กระเทียม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ถั่ว",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่พริก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ปลาหมึก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่แมงกระพรุน",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เลือดหมู",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เต้าหู้ทอด",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -1063,7 +1063,7 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "เย็นตาโฟหม้อไฟ",
                         "image": "http://www.infinitecreation.co.th/pa/g1/11.jpg",
@@ -1073,171 +1073,171 @@
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 180
                             }
                         ],
                         "submenus": [
                             {
-                                "type": "one",
+                                "_type": "one",
                                 "name": "น้ำซุป",
                                 "prices": [
                                     {
                                         "name": "น้ำใส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ต้มยำ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
                             },
                             {
-                                "type": "qty",
+                                "_type": "qty",
                                 "name": "ท๊อปปิ้ง",
                                 "prices": [
                                     {
                                         "name": "เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     },
                                     {
                                         "name": "ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "ปลาหมึก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "แมงกระพรุน",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "เลือดหมู",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     },
                                     {
                                         "name": "เต้าหูทอด",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 5
                                     }
                                 ]
                             },
                             {
-                                "type": "qty",
+                                "_type": "qty",
                                 "name": "เส้นลวก",
                                 "prices": [
                                     {
                                         "name": "ใหญ่ลวก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 20
                                     },
                                     {
                                         "name": "เล็กลวก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 20
                                     },
                                     {
                                         "name": "หมี่ลวก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 20
                                     },
                                     {
                                         "name": "วุ้นเส้นลวก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 20
                                     },
                                     {
                                         "name": "บะหมี่ลวก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 20
                                     }
                                 ]
                             },
                             {
-                                "type": "any",
+                                "_type": "any",
                                 "name": "อื่นๆ",
                                 "prices": [
                                     {
                                         "name": "ไม่ชูรส",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ผัก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่กระเทียม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ถั่ว",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่พริก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เกี๊ยวกรอบ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่ปลาหมึก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่แมงกระพรุน",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เลือดหมู",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไม่เต้าหู้ทอด",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -1246,14 +1246,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ข้าวเปล่า",
                         "image": "http://my.haijai.com/article/food/20140801_health-food_2.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 10
                             }
                         ],
@@ -1261,70 +1261,70 @@
                     }
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 }
             ]
         },
@@ -1333,67 +1333,67 @@
             "icon": "menu",
             "items": [
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ข้าวผัดกระเพรา",
                         "image": "http://www.infinitecreation.co.th/pa/g2/5.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 60
                             }
                         ],
                         "submenus": [
                             {
                                 "name": "เนื้อสัตว์",
-                                "type": "one",
+                                "_type": "one",
                                 "prices": [
                                     {
                                         "name": "หมู",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ไก่",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ใส้กรอก",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
                             },
                             {
                                 "name": "แบบ",
-                                "type": "one",
+                                "_type": "one",
                                 "prices": [
                                     {
                                         "name": "ชิ้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "สับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
                             },
                             {
                                 "name": "ท๊อปปิ้ง",
-                                "type": "qty",
+                                "_type": "qty",
                                 "prices": [
                                     {
                                         "name": "ไข่ดาว",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     },
                                     {
                                         "name": "ไข่เจียว",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
@@ -1402,14 +1402,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ข้าวไข่เจียวหมูสับ",
                         "image": "http://www.infinitecreation.co.th/pa/g2/8.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 60
                             }
                         ],
@@ -1417,14 +1417,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ข้าวคลุกกระปิ",
                         "image": "http://www.infinitecreation.co.th/pa/g2/9.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 80
                             }
                         ],
@@ -1432,14 +1432,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ผัดหมี่ฮกเกี้ยน",
                         "image": "http://www.infinitecreation.co.th/pa/g2/17.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 80
                             }
                         ],
@@ -1447,14 +1447,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "โกยซีหมี่",
                         "image": "http://www.infinitecreation.co.th/pa/g2/3.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 80
                             }
                         ],
@@ -1462,14 +1462,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ข้าวมันไก่",
                         "image": "http://www.infinitecreation.co.th/pa/g2/11.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 95
                             }
                         ],
@@ -1477,14 +1477,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ข้าวมันไก่ พิเศษ",
                         "image": "http://www.infinitecreation.co.th/pa/g2/12.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 120
                             }
                         ],
@@ -1492,14 +1492,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ไก่ตอมสับ",
                         "image": "http://www.infinitecreation.co.th/pa/g2/4.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 100
                             }
                         ],
@@ -1507,91 +1507,91 @@
                     }
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 }
             ]
         },
@@ -1600,40 +1600,40 @@
             "icon": "menu",
             "items": [
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ลูกชิ้นลวก",
                         "image": "http://www.infinitecreation.co.th/pa/g2/18.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 70
                             }
                         ],
                         "submenus": [
                             {
                                 "name": "แบบ",
-                                "type": "any",
+                                "_type": "any",
                                 "prices": [
                                     {
                                         "name": "ทุกอย่าง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ลูกชิ้นปลากลม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ลูกชิ้นกุ้ง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ปลาเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -1642,14 +1642,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ใส้กรอกย่าง",
                         "image": "http://www.infinitecreation.co.th/pa/g2/19.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 40
                             }
                         ],
@@ -1657,14 +1657,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "เกี๊ยวทอดกรอบ(7 แผ่น)",
                         "image": "http://www.infinitecreation.co.th/pa/g2/2.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -1672,14 +1672,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "กุ๊ยช่าย",
                         "image": "http://www.infinitecreation.co.th/pa/g2/1.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 45
                             }
                         ],
@@ -1687,88 +1687,88 @@
                     }
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 }
             ]
         },
@@ -1777,40 +1777,40 @@
             "icon": "menu",
             "items": [
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ขนมปังน้ำแดง",
                         "image": "http://www.infinitecreation.co.th/pa/g4/1.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 25
                             }
                         ],
                         "submenus": [
                             {
                                 "name": "ท๊อปปิ้ง",
-                                "type": "any",
+                                "_type": "any",
                                 "prices": [
                                     {
                                         "name": "ทุกอย่าง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ขนมปัง",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ลูกชิด",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "นม",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]
@@ -1819,14 +1819,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ขนมถ้วย",
                         "image": "http://www.infinitecreation.co.th/pa/g4/4.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 35
                             }
                         ],
@@ -1834,14 +1834,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ขนมตะโก้",
                         "image": "http://www.infinitecreation.co.th/pa/g4/3.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 25
                             }
                         ],
@@ -1849,14 +1849,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ขนมมัน",
                         "image": "http://www.infinitecreation.co.th/pa/g4/9.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 25
                             }
                         ],
@@ -1864,14 +1864,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ถั่วแปบ",
                         "image": "http://www.infinitecreation.co.th/pa/g4/6.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 25
                             }
                         ],
@@ -1879,14 +1879,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ขนมกล้วย",
                         "image": "http://www.infinitecreation.co.th/pa/g4/5.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 25
                             }
                         ],
@@ -1894,14 +1894,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ขนมเปียกปูน",
                         "image": "http://www.infinitecreation.co.th/pa/g4/7.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 25
                             }
                         ],
@@ -1909,14 +1909,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ขนมต้ม",
                         "image": "http://www.infinitecreation.co.th/pa/g4/2.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 25
                             }
                         ],
@@ -1924,14 +1924,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "วุ้นกระทิสด",
                         "image": "http://www.infinitecreation.co.th/pa/g4/10.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 35
                             }
                         ],
@@ -1939,14 +1939,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ลอดช่องวัดเจษ",
                         "image": "http://www.infinitecreation.co.th/pa/g4/11.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 45
                             }
                         ],
@@ -1954,70 +1954,70 @@
                     }
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 }
             ]
         },
@@ -2026,14 +2026,14 @@
             "icon": "menu",
             "items": [
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "โค๊ก",
                         "image": "http://www.infinitecreation.co.th/pa/g3/1.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2042,14 +2042,14 @@
                 },
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "แฟนต้าน้ำเขียว",
                         "image": "http://www.infinitecreation.co.th/pa/g3/2.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2058,14 +2058,14 @@
                 },
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "แฟนต้าน้ำแดง",
                         "image": "http://www.infinitecreation.co.th/pa/g3/3.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2074,14 +2074,14 @@
                 },
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "แฟนต้าน้ำส้ม",
                         "image": "http://www.infinitecreation.co.th/pa/g3/4.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2091,14 +2091,14 @@
 
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "สไปร์",
                         "image": "http://www.infinitecreation.co.th/pa/g3/5.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2107,14 +2107,14 @@
                 },
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "น้ำเก็กฮวย",
                         "image": "http://www.infinitecreation.co.th/pa/g3/6.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2124,14 +2124,14 @@
 
                
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ชาดำเย็น",
                         "image": "http://www.infinitecreation.co.th/pa/g3/7.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2140,14 +2140,14 @@
                 },
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "น้ำกระเจี๊ยบ",
                         "image": "http://www.infinitecreation.co.th/pa/g3/8.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2156,14 +2156,14 @@
                 },
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "น้ำลำไยไม่เนื้อ",
                         "image": "http://www.infinitecreation.co.th/pa/g3/9.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2172,14 +2172,14 @@
                 },
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "น้ำลำไย",
                         "image": "http://www.infinitecreation.co.th/pa/g3/10.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2188,14 +2188,14 @@
                 },
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "โอเลี้ยง",
                         "image": "http://www.infinitecreation.co.th/pa/g3/11.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2203,14 +2203,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "น้ำมะพร้าว",
                         "image": "http://www.infinitecreation.co.th/pa/g3/13.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 50
                             }
                         ],
@@ -2218,14 +2218,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "น้าเปล่าน้ำทิพย์",
                         "image": "http://www.infinitecreation.co.th/pa/g3/12.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 10
                             }
                         ],
@@ -2233,67 +2233,67 @@
                     }
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 }
             ]
         },
@@ -2302,14 +2302,14 @@
             "icon": "ice-cream",
             "items": [
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ช็อกโกแลตชิพ",
                         "image": "http://www.infinitecreation.co.th/pa/g5/4.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2317,14 +2317,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "KITKAT (ถ้วย)",
                         "image": "http://www.infinitecreation.co.th/pa/g5/3.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2332,14 +2332,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "MILO",
                         "image": "http://cdn1.tops.co.th/productimages/zpimage/8850453016217.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2348,14 +2348,14 @@
                 },
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "MILO แท่ง",
                         "image": "http://www.infinitecreation.co.th/pa/g5/9.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2366,14 +2366,14 @@
                 
 
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "KITKAT (โคน)",
                         "image": "http://www.infinitecreation.co.th/pa/g5/2.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 40
                             }
                         ],
@@ -2381,14 +2381,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "EXTREME รสช็อกโกแลต",
                         "image": "https://secure.ap-tescoassets.com/assets/TH/242/8850453018242/ShotType1_328x328.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 40
                             }
                         ],
@@ -2396,14 +2396,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "EXTREME รสสตอเบอรี่",
                         "image": "http://www.infinitecreation.co.th/pa/g5/1.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 40
                             }
                         ],
@@ -2411,14 +2411,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ช็อกป๊อบ รสช็อกโกแลต",
                         "image": "http://www.infinitecreation.co.th/pa/g5/5.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2426,14 +2426,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ช็อกป๊อบ รสวนิลา",
                         "image": "http://www.infinitecreation.co.th/pa/g5/6.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2441,14 +2441,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "แตงโม",
                         "image": "http://www.infinitecreation.co.th/pa/g5/7.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 20
                             }
                         ],
@@ -2456,14 +2456,14 @@
                     }
                 },
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ผีเสื้อ",
                         "image": "http://www.infinitecreation.co.th/pa/g5/8.jpg",
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 50
                             }
                         ],
@@ -2471,67 +2471,67 @@
                     }
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 },
                 {
-                    "type": "none"
+                    "_type": "none"
                 }
             ]
         }
@@ -2546,187 +2546,187 @@
             "prices": [
                 {
                     "name": "ราคาปกติ",
-                    "type": "normal",
+                    "_type": "normal",
                     "price": 50
                 }
             ],
             "submenus": [
                 {
-                    "type": "one",
+                    "_type": "one",
                     "name": "เส้น",
                     "prices": [
                         {
                             "name": "ใหญ่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "เล็ก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "หมี่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "วุ้นเส้น",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         },
                         {
                             "name": "บะหมี่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         }
                     ]
                 },
                 {
-                    "type": "one",
+                    "_type": "one",
                     "name": "น้ำซุป",
                     "prices": [
                         {
                             "name": "น้ำใส",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ต้มยำ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "แห้ง",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         }
                     ]
                 },
                 {
-                    "type": "one",
+                    "_type": "one",
                     "name": "ขนาด",
                     "prices": [
                         {
                             "name": "ราคาปกติ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "พิเศษ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 15
                         },
                         {
                             "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         }
                     ]
                 },
                 {
-                    "type": "qty",
+                    "_type": "qty",
                     "name": "ท๊อปปิ้ง",
                     "prices": [
                         {
                             "name": "เกี๊ยวกรอบ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "หมูชิ้น",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         },
                         {
                             "name": "หมูสับ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         },
                         {
                             "name": "ตับ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         },
                         {
                             "name": "ลูกชิ้นกลม",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         },
                         {
                             "name": "ลูกชิ้นกุ้ง",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         },
                         {
                             "name": "ปลาเส้น",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         }
                     ]
                 },
                 {
-                    "type": "any",
+                    "_type": "any",
                     "name": "อื่นๆ",
                     "prices": [
                         {
                             "name": "ไม่ชูรส",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ผัก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่กระเทียม",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ถั่ว",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่พริก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่เกี๊ยวกรอบ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่หมูชิ้น",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่หมูสับ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ตับ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ลูกชิ้นกลม",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ลูกชิ้นกุ้ง",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ปลาเส้น",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         }
                     ]
@@ -2742,132 +2742,132 @@
             "prices": [
                 {
                     "name": "ราคาปกติ",
-                    "type": "normal",
+                    "_type": "normal",
                     "price": 50
                 }
             ],
             "submenus": [
                 {
-                    "type": "one",
+                    "_type": "one",
                     "name": "เส้น",
                     "prices": [
                         {
                             "name": "ใหญ่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "เล็ก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "หมี่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "วุ้นเส้น",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         },
                         {
                             "name": "บะหมี่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         }
                     ]
                 },
                 {
-                    "type": "one",
+                    "_type": "one",
                     "name": "น้ำซุป",
                     "prices": [
                         {
                             "name": "น้ำใส",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ต้มยำ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "แห้ง",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         }
                     ]
                 },
                 {
-                    "type": "one",
+                    "_type": "one",
                     "name": "ขนาด",
                     "prices": [
                         {
                             "name": "ราคาปกติ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "พิเศษ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 15
                         },
                         {
                             "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         }
                     ]
                 },
                 {
-                    "type": "qty",
+                    "_type": "qty",
                     "name": "ท๊อปปิ้ง",
                     "prices": [
                         {
                             "name": "เกี๊ยวกรอบ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "เนื้อไก่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         }
                     ]
                 },
                 {
-                    "type": "any",
+                    "_type": "any",
                     "name": "อื่นๆ",
                     "prices": [
                         {
                             "name": "ไม่ชูรส",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ผัก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่กระเทียม",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ถั่ว",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่พริก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่เกี๊ยวกรอบ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         }
                     ]
@@ -2883,197 +2883,197 @@
             "prices": [
                 {
                     "name": "ราคาปกติ",
-                    "type": "normal",
+                    "_type": "normal",
                     "price": 50
                 }
             ],
             "submenus": [
                 {
-                    "type": "one",
+                    "_type": "one",
                     "name": "เส้น",
                     "prices": [
                         {
                             "name": "ใหญ่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "เล็ก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "หมี่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "วุ้นเส้น",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         },
                         {
                             "name": "บะหมี่",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         }
                     ]
                 },
                 {
-                    "type": "one",
+                    "_type": "one",
                     "name": "น้ำซุป",
                     "prices": [
                         {
                             "name": "น้ำใส",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ต้มยำ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "แห้ง",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         }
                     ]
                 },
                 {
-                    "type": "one",
+                    "_type": "one",
                     "name": "ขนาด",
                     "prices": [
                         {
                             "name": "ราคาปกติ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "พิเศษ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 15
                         },
                         {
                             "name": "พิเศษ (วุ้นเส้น,บะหมี่)",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         }
                     ]
                 },
                 {
-                    "type": "qty",
+                    "_type": "qty",
                     "name": "ท๊อปปิ้ง",
                     "prices": [
                         {
                             "name": "เกี๊ยวกรอบ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ลูกชิ้นกลม",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         },
                         {
                             "name": "ลูกชิ้นกุ้ง",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 10
                         },
                         {
                             "name": "ปลาเส้น",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         },
                         {
                             "name": "ปลาหมึก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         },
                         {
                             "name": "แมงกระพรุน",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         },
                         {
                             "name": "เลือดหมู",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         },
                         {
                             "name": "เต้าหูทอด",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 5
                         }
                     ]
                 },
                 {
-                    "type": "any",
+                    "_type": "any",
                     "name": "อื่นๆ",
                     "prices": [
                         {
                             "name": "ไม่ชูรส",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ผัก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่กระเทียม",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ถั่ว",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่พริก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่เกี๊ยวกรอบ",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ลูกชิ้นกลม",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ลูกชิ้นกุ้ง",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ปลาเส้น",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่ปลาหมึก",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่แมงกระพรุน",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่เลือดหมู",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         },
                         {
                             "name": "ไม่เต้าหู้ทอด",
-                            "type": "normal",
+                            "_type": "normal",
                             "price": 0
                         }
                     ]
@@ -3086,7 +3086,7 @@
             "prices": [
                 {
                     "name": "ราคาปกติ",
-                    "type": "normal",
+                    "_type": "normal",
                     "price": 45
                 }
             ],
@@ -3104,7 +3104,7 @@
             },
             "items": [
                 {
-                    "type": "product",
+                    "_type": "product",
                     "product": {
                         "name": "ก๊วยเตี๋ยวหมู",
                         "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG",
@@ -3114,7 +3114,7 @@
                         "prices": [
                             {
                                 "name": "ราคาปกติ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 60
                             }
                         ],
@@ -3124,7 +3124,7 @@
                                 "prices": [
                                     {
                                         "name": "วุ้นเส้น",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 10
                                     }
                                 ]
@@ -3134,12 +3134,12 @@
                                 "prices": [
                                     {
                                         "name": "เกี๊ยวทอด",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     },
                                     {
                                         "name": "ตับ",
-                                        "type": "normal",
+                                        "_type": "normal",
                                         "price": 0
                                     }
                                 ]

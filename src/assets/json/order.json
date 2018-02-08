@@ -7,7 +7,7 @@
     },
     "items": [
         {
-            "type": "product",
+            "_type": "product",
             "product": {
                 "name": "ก๊วยเตี๋ยวหมู",
                 "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG",
@@ -17,7 +17,7 @@
                 "prices": [
                     {
                         "name": "ราคาปกติ",
-                        "type": "normal",
+                        "_type": "normal",
                         "price": 60
                     }
                 ],
@@ -27,7 +27,7 @@
                         "prices": [
                             {
                                 "name": "วุ้นเส้น",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 10
                             }
                         ]
@@ -37,12 +37,12 @@
                         "prices": [
                             {
                                 "name": "เกี๊ยวทอด",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             },
                             {
                                 "name": "ตับ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             }
                         ]
@@ -54,7 +54,7 @@
             "total": 70
         },
         {
-            "type": "product",
+            "_type": "product",
             "product": {
                 "name": "ก๊วยเตี๋ยวหมู",
                 "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG",
@@ -64,7 +64,7 @@
                 "prices": [
                     {
                         "name": "ราคาปกติ",
-                        "type": "normal",
+                        "_type": "normal",
                         "price": 60
                     }
                 ],
@@ -74,7 +74,7 @@
                         "prices": [
                             {
                                 "name": "วุ้นเส้น",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 10
                             }
                         ]
@@ -84,12 +84,12 @@
                         "prices": [
                             {
                                 "name": "เกี๊ยวทอด",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             },
                             {
                                 "name": "ตับ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             }
                         ]
@@ -101,7 +101,7 @@
             "total": 70
         },
         {
-            "type": "product",
+            "_type": "product",
             "product": {
                 "name": "ก๊วยเตี๋ยวหมู",
                 "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG",
@@ -111,7 +111,7 @@
                 "prices": [
                     {
                         "name": "ราคาปกติ",
-                        "type": "normal",
+                        "_type": "normal",
                         "price": 60
                     }
                 ],
@@ -121,7 +121,7 @@
                         "prices": [
                             {
                                 "name": "วุ้นเส้น",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 10
                             }
                         ]
@@ -131,12 +131,12 @@
                         "prices": [
                             {
                                 "name": "เกี๊ยวทอด",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             },
                             {
                                 "name": "ตับ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             }
                         ]
@@ -147,7 +147,7 @@
             "remark": "ไม่เผ็ด ไม่ใส่ผงชูรส",
             "total": 70
         },{
-            "type": "product",
+            "_type": "product",
             "product": {
                 "name": "ก๊วยเตี๋ยวหมู",
                 "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG",
@@ -157,7 +157,7 @@
                 "prices": [
                     {
                         "name": "ราคาปกติ",
-                        "type": "normal",
+                        "_type": "normal",
                         "price": 60
                     }
                 ],
@@ -167,7 +167,7 @@
                         "prices": [
                             {
                                 "name": "วุ้นเส้น",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 10
                             }
                         ]
@@ -177,12 +177,12 @@
                         "prices": [
                             {
                                 "name": "เกี๊ยวทอด",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             },
                             {
                                 "name": "ตับ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             }
                         ]
@@ -193,7 +193,7 @@
             "remark": "ไม่เผ็ด ไม่ใส่ผงชูรส",
             "total": 70
         },{
-            "type": "product",
+            "_type": "product",
             "product": {
                 "name": "ก๊วยเตี๋ยวหมู",
                 "image": "http://ja.files-media.com/image/1/30/img_43784_tmp_QSz0W_600x600.JPG",
@@ -203,7 +203,7 @@
                 "prices": [
                     {
                         "name": "ราคาปกติ",
-                        "type": "normal",
+                        "_type": "normal",
                         "price": 60
                     }
                 ],
@@ -213,7 +213,7 @@
                         "prices": [
                             {
                                 "name": "วุ้นเส้น",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 10
                             }
                         ]
@@ -223,12 +223,12 @@
                         "prices": [
                             {
                                 "name": "เกี๊ยวทอด",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             },
                             {
                                 "name": "ตับ",
-                                "type": "normal",
+                                "_type": "normal",
                                 "price": 0
                             }
                         ]

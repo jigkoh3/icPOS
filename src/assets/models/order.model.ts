@@ -25,7 +25,7 @@ export class RoundModel {
 }
 
 export class OrderItemModel {
-    type: string;
+    _type: string;
     product: ProductModel;
     remark: string;
     qty: number;
