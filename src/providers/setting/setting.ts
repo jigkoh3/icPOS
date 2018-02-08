@@ -3,12 +3,22 @@ import { Injectable } from '@angular/core';
 import { PaymentSettingModel } from '../../assets/models/payment_setting.model';
 import { OpenbillSettingModel } from '../../assets/models/openbill_setting.model';
 import { ShopHistoryModel } from '../../assets/models/shop_history_setting.model';
+import { Constants } from '../../app/app.contants';
+import { AuthProvider } from '../auth';
 
 @Injectable()
 export class SettingProvider {
+    private hearder: any;
 
-    constructor(public http: HttpClient) {
+    constructor(public http: HttpClient, private auth: AuthProvider) {
+        this.hearder = this.auth.setHeader();
+    }
 
+    createEmployee(data): Promise<any> {
+        return this.http.post(Constants.API_URL + '/api/users', data, { headers: this.hearder })
+            .toPromise()
+            .then(response => response)
+            .catch(this.handleError);
     }
 
     getPaymentSetting(): Promise<PaymentSettingModel> {

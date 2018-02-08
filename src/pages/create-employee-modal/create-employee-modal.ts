@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CreateEmployeeModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,12 +7,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'create-employee-modal.html',
 })
 export class CreateEmployeeModalPage {
+  private userUnderOwner: any = {};
+  private roles: string = 'manager';
+  private confPassword: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CreateEmployeeModalPage');
+
+  }
+
+  closeModal() {
+    this.viewCtrl.dismiss();
+  }
+
+  saveEmployee() {
+    let mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,10})");
+    if (mediumRegex.test(this.userUnderOwner.username)) {
+      if (this.userUnderOwner.password && this.confPassword) {
+        if (this.userUnderOwner.password === this.confPassword) {
+          let roles: Array<any> = [];
+          roles.push(this.roles);
+          this.userUnderOwner.roles = roles;
+          this.viewCtrl.dismiss(this.userUnderOwner);
+        } else {
+          alert('รหัสผ่านไม่ตรงกัน');
+        }
+      } else {
+        alert('กรุณากรอกรหัสผ่านและยืนยันรหัสผ่าน');
+      }
+    } else {
+      alert('ชื่อผู้ใช้ A-Z และ 0-9 เท่านั้น และต้องมีตังอักษรและตัวเลขอย่างน้อย 6-10 ตัว');
+    }
   }
 
 }
