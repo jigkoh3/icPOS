@@ -26,7 +26,7 @@
       <!-- end section content of settings component -->
 
       <!-- section employee-detail component -->
-      <employee-detail [employee]="employee"></employee-detail>
+      <employee-detail [employee]="employee" *ngIf="contentType.type == 'employee'"></employee-detail>
       <!-- end section employee-detail component -->
 
     </ion-col>

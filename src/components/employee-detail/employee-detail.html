@@ -1,3 +1,10 @@
-<div>
-  {{employee._id}}
-</div>
+<ion-list>
+  <ion-item>
+    <h2>ชื่อ - นามสกุล</h2>
+    <h2 item-end>{{employee.displayName}}</h2>
+  </ion-item>
+  <ion-item>
+    <h2>หน้าที่</h2>
+    <h2 item-end *ngIf="employee.roles">{{employee.roles[0]}}</h2>
+  </ion-item>
+</ion-list>

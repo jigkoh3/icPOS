@@ -66,7 +66,7 @@ export class HomePage {
   getMenuData() {
     this.loading.onLoading();
     setTimeout(() => {
-      this.menusService.getMenus('001').then(data => {
+      this.menusService.getMenus('owner').then(data => {
         this.menus = data.menus;
         if (this.refTabInHome.refFooter) {
           this.menuSelected = this.refTabInHome.menuSelected;
