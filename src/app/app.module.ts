@@ -53,6 +53,7 @@ import { AuthProvider } from '../providers/auth';
 import { EmployeeSideNavComponent } from '../components/employee-side-nav/employee-side-nav';
 import { CreateEmployeeModalPage } from '../pages/create-employee-modal/create-employee-modal';
 import { EmployeeDetailComponent } from '../components/employee-detail/employee-detail';
+import { HandleError } from '../providers/handleError';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -156,6 +157,7 @@ const API_URL = 'https://ic-pos-service.herokuapp.com';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthProvider,
+    HandleError,
     MenuProvider,
     LoadingProvider,
     OrderProvider,

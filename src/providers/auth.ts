@@ -3,12 +3,17 @@ import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 import 'rxjs/add/operator/toPromise';
 import { Constants } from '../app/app.contants';
+import { HandleError } from './handleError';
+import { ToastController } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class AuthProvider {
-
   constructor(
-    public http: HttpClient
+    public http: HttpClient,
+    private toastCtrl: ToastController,
+    private translateService: TranslateService,
+    private hdle: HandleError
   ) {
 
   }
@@ -39,7 +44,10 @@ export class AuthProvider {
     return this.http.post(Constants.API_URL + "/api/auth/ownersignup", credential)
       .toPromise()
       .then(response => this.registerSuccess(response))
-      .catch(this.handleError);
+      .catch(err => {
+        console.log(err.error.message);
+        this.hdle.get(err.error.message);
+      });
   }
 
   logout() {
