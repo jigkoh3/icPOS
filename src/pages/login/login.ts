@@ -35,7 +35,11 @@ export class LoginPage {
   }
 
   employeeLogin() {
-
+    this.auth.login(this.credential).then(data => {
+      this.navCtrl.setRoot(ListOfBillPage);
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
 }
