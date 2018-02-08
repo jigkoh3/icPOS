@@ -16,6 +16,7 @@ import { GridEditComponent } from './grid-edit/grid-edit';
 import { FooterEditComponent } from './footer-edit/footer-edit';
 import { OtherSettingComponent } from './other-setting/other-setting';
 import { EmployeeSideNavComponent } from './employee-side-nav/employee-side-nav';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail';
 @NgModule({
 	declarations: [FooterComponent,
     GridComponent,
@@ -33,7 +34,8 @@ import { EmployeeSideNavComponent } from './employee-side-nav/employee-side-nav'
     GridEditComponent,
     FooterEditComponent,
     OtherSettingComponent,
-    EmployeeSideNavComponent],
+    EmployeeSideNavComponent,
+    EmployeeDetailComponent],
 	imports: [],
 	exports: [FooterComponent,
     GridComponent,
@@ -51,6 +53,7 @@ import { EmployeeSideNavComponent } from './employee-side-nav/employee-side-nav'
     GridEditComponent,
     FooterEditComponent,
     OtherSettingComponent,
-    EmployeeSideNavComponent]
+    EmployeeSideNavComponent,
+    EmployeeDetailComponent]
 })
 export class ComponentsModule {}

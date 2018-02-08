@@ -41,7 +41,7 @@ export class ProductOrderPage {
         this.result.total = this.item.prices[0].price;
       }
       this.isModeEdit = false;
-    }else{
+    } else {
       this.isModeEdit = true;
     }
 
@@ -53,7 +53,7 @@ export class ProductOrderPage {
     if (this.item.prices.length > 1) {
       steps.push({
         name: "price",
-        type: "price",
+        _type: "price",
         data: this.item.prices,
         result: null
       })
@@ -82,12 +82,12 @@ export class ProductOrderPage {
       }
       steps.push({
         name: sub.name,
-        type: "submenu",
+        _type: "submenu",
         data: sub,
         result: null
       })
     });
-
+    console.log(steps);
     return steps;
   }
 
@@ -135,7 +135,7 @@ export class ProductOrderPage {
     let _step = this.steps[step];
     let _result = this.result;
 
-    switch (_step.type) {
+    switch (_step._type) {
       case "price": {
         //statements; 
         _result.product.prices = [];
@@ -153,7 +153,7 @@ export class ProductOrderPage {
 
         let _submenu = new SubmenuModel();
         _submenu.name = _step.data.name;
-        _submenu._type = _step.data.type;
+        _submenu._type = _step.data._type;
         _submenu.prices = [];
 
         //Add selected Size Price

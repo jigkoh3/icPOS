@@ -18,6 +18,7 @@ export class MoreLayoutPage {
   menuItemsSelected: Array<ItemModel>;
   menuSelected: String;
   menus: Array<MenuModel>;
+  private employee: any = {};
 
   constructor(private menusService: MenuProvider, private loading: LoadingProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.actionType = this.navParams.data;
@@ -61,6 +62,12 @@ export class MoreLayoutPage {
 
   contentTypeSelected(e) {
     this.contentType = e;
+  }
+
+  employeeSelected(e) {
+    console.log(e);
+    this.employee = e;
+    this.contentType.name = this.employee.displayName;
   }
 
   menuItemSelected(menu) {

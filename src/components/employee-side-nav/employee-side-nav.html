@@ -3,4 +3,12 @@
     <ion-icon name="add-circle"></ion-icon>
     เพิ่มพนักงานใหม่
   </button>
+
+  <ion-item *ngFor="let item of empList" [ngClass]="{'active-item' : empSelected == item._id}" (click)="selectEmp(item)">
+    <ion-avatar item-start>
+      <ion-icon name="md-person"></ion-icon>
+    </ion-avatar>
+    <h2>{{item.displayName}}</h2>
+    <p>{{item.roles[0]}}</p>
+  </ion-item>
 </ion-list>

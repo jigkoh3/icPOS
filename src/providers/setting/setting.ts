@@ -14,6 +14,13 @@ export class SettingProvider {
         this.hearder = this.auth.setHeader();
     }
 
+    getEmployees(): Promise<any> {
+        return this.http.get(Constants.API_URL + '/api/users', { headers: this.hearder })
+            .toPromise()
+            .then(response => response)
+            .catch(this.handleError);
+    }
+
     createEmployee(data): Promise<any> {
         return this.http.post(Constants.API_URL + '/api/users', data, { headers: this.hearder })
             .toPromise()

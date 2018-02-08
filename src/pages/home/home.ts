@@ -66,7 +66,7 @@ export class HomePage {
   getMenuData() {
     this.loading.onLoading();
     setTimeout(() => {
-      this.menusService.getMenus('001').then(data => {
+      this.menusService.getMenus('owner').then(data => {
         this.menus = data.menus;
         if (this.refTabInHome.refFooter) {
           this.menuSelected = this.refTabInHome.menuSelected;
@@ -95,12 +95,13 @@ export class HomePage {
   }
 
   itemSelected(item) {
-    switch (item.type) {
+    switch (item._type) {
       case "none": {
         break;
       }
       case "product": {
         //check round
+        console.log(this.orderService.round);
         if (this.orderService.round) {
           if (item.product.prices && item.product.submenus) {
             if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
@@ -108,7 +109,7 @@ export class HomePage {
             } else {
               let _item = new OrderItemModel();
               _item.product = item.product;
-              _item.type = "product";
+              _item._type = "product";
               _item.qty = 1;
               _item.total = item.product.prices[0].price;
               this.updateOrder(_item);
@@ -130,7 +131,7 @@ export class HomePage {
                   } else {
                     let _item = new OrderItemModel();
                     _item.product = item.product;
-                    _item.type = "product";
+                    _item._type = "product";
                     _item.qty = 1;
                     _item.total = item.product.prices[0].price;
                     this.updateOrder(_item);
