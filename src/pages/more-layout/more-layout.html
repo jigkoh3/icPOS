@@ -12,7 +12,7 @@
     <ion-col col-5 col-md-5 col-lg-4 class="bd-right height-fill">
       <!-- section more side nav component -->
       <settings-side-nav *ngIf="actionType.type == 'settings'" (settingType)="contentTypeSelected($event)"></settings-side-nav>
-      <employee-side-nav *ngIf="actionType.type == 'employee'"></employee-side-nav>
+      <employee-side-nav *ngIf="actionType.type == 'employee'" (employeeSelected)="employeeSelected($event)"></employee-side-nav>
       <!-- end section more side nav component -->
     </ion-col>
     <ion-col col-7 col-md-7 col-lg-8 class="height-fill">
@@ -24,6 +24,10 @@
       <international-setting *ngIf="contentType.type == 'global'"></international-setting>
       <other-setting *ngIf="contentType.type == 'more'"></other-setting>
       <!-- end section content of settings component -->
+
+      <!-- section employee-detail component -->
+      <employee-detail [employee]="employee"></employee-detail>
+      <!-- end section employee-detail component -->
 
     </ion-col>
   </ion-row>
