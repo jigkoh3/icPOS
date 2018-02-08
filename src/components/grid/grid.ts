@@ -16,17 +16,17 @@ export class GridComponent {
   @Output() itemSelected: EventEmitter<any> = new EventEmitter<any>();
   @Output() itemPressed: EventEmitter<any> = new EventEmitter<any>();
   constructor() {
-    
+
   }
-  
-  selected(item){
-    //alert(item.name);
+
+  selected(item) {
+    console.log(item);
     this.itemSelected.emit(item);
   }
 
-  pressEvent(item){
+  pressEvent(item) {
     this.itemPressed.emit(item);
   }
 
-  
+
 }

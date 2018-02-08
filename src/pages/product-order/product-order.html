@@ -6,7 +6,7 @@
         <ion-icon name="arrow-back"></ion-icon>{{ "PREV" | translate }}
       </button>
     </ion-buttons>
-    <ion-buttons end *ngIf="step < steps.length - 1 && steps[step].type!=='price' && steps[step].data.type!=='one'">
+    <ion-buttons end *ngIf="step < steps.length - 1 && steps[step]._type!=='price' && steps[step].data._type!=='one'">
       <button ion-button clear navbar-button (click)="next()">
         {{ 'NEXT' | translate }}
       </button>
@@ -26,7 +26,7 @@
 <ion-content padding *ngIf="!isModeEdit">
   <ion-row *ngFor="let _step of steps">
     <ion-col col-12 *ngIf="_step.name === steps[step].name">
-      <ion-row *ngIf="_step.type === 'price'">
+      <ion-row *ngIf="_step._type === 'price'">
         <ion-col>
           <!-- <ion-list radio-group [(ngModel)]="_step.result">
 
@@ -55,7 +55,7 @@
           </ion-row>
         </ion-col>
       </ion-row>
-      <ion-row *ngIf="_step.type === 'submenu'">
+      <ion-row *ngIf="_step._type === 'submenu'">
         <ion-col>
           <!-- <ion-list radio-group [(ngModel)]="_step.result">
 
@@ -72,7 +72,7 @@
           <ion-item-divider text-center>
             {{_step.name}}
           </ion-item-divider>
-          <ion-row radio-group [(ngModel)]="_step.result" *ngIf="_step.data.type==='one'">
+          <ion-row radio-group [(ngModel)]="_step.result" *ngIf="_step.data._type==='one'">
             <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data.prices">
               <ion-item no-lines color="light">
                 <ion-label>{{option.name}} {{option.price}}</ion-label>
@@ -80,7 +80,7 @@
               </ion-item>
             </ion-col>
           </ion-row>
-          <ion-row *ngIf="_step.data.type==='qty'">
+          <ion-row *ngIf="_step.data._type==='qty'">
             <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data.prices">
               <ion-item no-lines color="light" text-center>
                 <ion-label>{{option.name}}</ion-label>
@@ -102,7 +102,7 @@
 
             </ion-col>
           </ion-row>
-          <ion-row *ngIf="_step.data.type==='any'">
+          <ion-row *ngIf="_step.data._type==='any'">
             <ion-col col-6 col-md-4 col-lg-4 *ngFor="let option of _step.data.prices">
               <ion-item no-lines color="light" text-center>
                 <ion-label>{{option.name}} {{option.price}}</ion-label>
