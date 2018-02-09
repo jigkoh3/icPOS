@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
 import { ListOfBillPage } from '../list-of-bill/list-of-bill';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 @IonicPage()
 @Component({
@@ -12,16 +13,23 @@ import { ListOfBillPage } from '../list-of-bill/list-of-bill';
 export class RegisterPage {
   private mobile: string;
 
-  constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private auth: AuthProvider, 
+    private navCtrl: NavController, 
+    private navParams: NavParams, 
+    private loading: LoadingProvider) {
   }
 
   ionViewDidLoad() {
   }
 
   register() {
+    this.loading.onLoading();
     this.auth.signup({ username: this.mobile }).then(data => {
       this.navCtrl.setRoot(ListOfBillPage);
-    }).catch(err => { });
+      this.loading.dismiss();
+    }).catch(err => { 
+      this.loading.dismiss();
+    });
   }
 
 }

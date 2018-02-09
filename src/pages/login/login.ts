@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
 import { ListOfBillPage } from '../list-of-bill/list-of-bill';
+import { LoadingProvider } from '../../providers/loading/loading';
 //import { MessageProvider } from '../../providers/message';
 
 
@@ -16,7 +17,11 @@ export class LoginPage {
   private mobile: string;
   private loginType: string = 'owner';
 
-  constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private auth: AuthProvider, 
+    private navCtrl: NavController, 
+    private navParams: NavParams,
+    private loading: LoadingProvider
+  ) {
   }
 
   ionViewDidLoad() {
@@ -28,18 +33,22 @@ export class LoginPage {
       username: this.mobile,
       password: this.mobile
     };
+    this.loading.onLoading();
     this.auth.login(credential).then(data => {
+      this.loading.dismiss();
       this.navCtrl.setRoot(ListOfBillPage);
     }).catch(err => {
-      console.log(err);
+      this.loading.dismiss();
     });
   }
 
   employeeLogin() {
+    this.loading.onLoading();
     this.auth.login(this.credential).then(data => {
+      this.loading.dismiss();
       this.navCtrl.setRoot(ListOfBillPage);
     }).catch(err => {
-      console.log(err);
+      this.loading.dismiss();
     });
   }
 
