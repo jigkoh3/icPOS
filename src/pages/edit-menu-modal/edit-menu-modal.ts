@@ -21,23 +21,41 @@ export class EditMenuModalPage {
 
   loadIconService() {
     this.iconList = [{
-      name: 'ice-cream',
-      icon: 'ice-cream'
+      name: 'food',
+      icon: 'ai-food'
     }, {
-      name: 'logo-apple',
-      icon: 'logo-apple'
+      name: 'cake',
+      icon: 'ai-cake'
     }, {
-      name: 'baseball',
-      icon: 'baseball'
+      name: 'coffee',
+      icon: 'ai-coffee'
     }, {
-      name: 'beer',
-      icon: 'beer'
+      name: 'icecream',
+      icon: 'ai-icecream'
     }, {
-      name: 'cafe',
-      icon: 'cafe'
+      name: 'water',
+      icon: 'ai-water'
     }, {
-      name: 'football',
-      icon: 'football'
+      name: 'tea',
+      icon: 'ai-tea'
+    }, {
+      name: 'bread',
+      icon: 'ai-bread'
+    }, {
+      name: 'frenchfries',
+      icon: 'ai-frenchfries'
+    }, {
+      name: 'cheese',
+      icon: 'ai-cheese'
+    }, {
+      name: 'hamberger',
+      icon: 'ai-hamberger'
+    }, {
+      name: 'soup',
+      icon: 'ai-soup'
+    }, {
+      name: 'salad',
+      icon: 'ai-salad'
     }];
   }
 

@@ -18,7 +18,7 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
+  font-weight: bold;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,15 +35,15 @@
   }
 }
 
-@include makeIcon(menu1,'\e900');
-@include makeIcon(menu2,'\e90b');
-@include makeIcon(menu3,'\e90a');
-@include makeIcon(menu4,'\e909');
-@include makeIcon(menu5,'\e908');
-@include makeIcon(menu6,'\e907');
-@include makeIcon(menu7,'\e906');
-@include makeIcon(menu8,'\e905');
-@include makeIcon(menu9,'\e904');
-@include makeIcon(menu10,'\e903');
-@include makeIcon(menu11,'\e902');
-@include makeIcon(menu12,'\e901');
+@include makeIcon(food,'\e900');
+@include makeIcon(cake,'\e90b');
+@include makeIcon(coffee,'\e90a');
+@include makeIcon(icecream,'\e909');
+@include makeIcon(water,'\e908');
+@include makeIcon(tea,'\e907');
+@include makeIcon(bread,'\e906');
+@include makeIcon(frenchfries,'\e905');
+@include makeIcon(cheese,'\e904');
+@include makeIcon(hamberger,'\e903');
+@include makeIcon(soup,'\e902');
+@include makeIcon(salad,'\e901');
