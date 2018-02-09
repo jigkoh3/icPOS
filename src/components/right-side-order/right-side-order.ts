@@ -15,29 +15,33 @@ import _ from 'lodash';
 })
 export class RightSideOrderComponent {
   total: number = 0;
+  takeAway: any = false;
   @Input() order: OrderModel;
-  @Input() takeAway: any;
   @Output() selectedOrderItem: EventEmitter<any> = new EventEmitter<any>();
-  @Output() removedOrderItem: EventEmitter<any> = new EventEmitter<any>();
-  @Output() clearAllOrderItem: EventEmitter<any> = new EventEmitter<any>();
+  // @Output() removedOrderItem: EventEmitter<any> = new EventEmitter<any>();
+  // @Output() clearAllOrderItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() orderSaved: EventEmitter<any> = new EventEmitter<any>();
   @Output() orderPaid: EventEmitter<any> = new EventEmitter<any>();
-  @Output() takeAwayChanged: EventEmitter<any> = new EventEmitter<any>();
+  // @Output() takeAwayChanged: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private popoverCtrl: PopoverController) {
-    console.log(this.order);
+    //console.log(this.items);
+    //this.total = _.sumBy(this.items, function (o) { return o.total; })
   }
 
   ngDoCheck() {
+    console.log(this.order);
+    this.takeAway = this.order.servetype === "takeaway";
     if (this.order && this.order.items) {
+      //console.log(this.items);
       this.order.total = _.sumBy(this.order.items, function (o) { return o.total * o.qty; })
+      //console.log(this.total);
     }else{
       this.order.total = 0;
     }
   }
 
   selectingOrderItem(item) {
-    console.log(item);
     this.selectedOrderItem.emit(item);
   }
 
@@ -48,18 +52,20 @@ export class RightSideOrderComponent {
     if (this.order.items.length === 0) {
       this.order.items = [];
     }
-    this.removedOrderItem.emit(this.order.items);
+    //this.removedOrderItem.emit(this.order.items);
   }
 
   clearall() {
     //console.log("object");
-    this.order.items = null;
-    this.clearAllOrderItem.emit(this.order.items);
+    this.order.items = [];
+    //this.clearAllOrderItem.emit(this.order.items);
   }
 
   updateTakeAway(){
     // console.log(this.takeAway);
-    this.takeAwayChanged.emit(this.takeAway);
+    //this.takeAwayChanged.emit(this.takeAway);
+    this.order.servetype = this.takeAway ? "takeaway" : "takeatable";
+    console.log(this.order.servetype);
   }
 
   orderSaving(){
