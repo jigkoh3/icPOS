@@ -8,7 +8,7 @@
       </ion-scroll>
     </ion-col>
     <ion-col col-12 col-md-4 col-lg-4>
-      <right-side-order [items]="order" [(takeAway)]="takeAway" (takeAwayChanged)="takeAwayChanged($event)" (removedOrderItem)="removedOrderItem($event)" (clearAllOrderItem)="clearAllOrderItem($event)" (orderSaved)="orderSaved($event)" (orderPaid)="orderPaid($event)"
+      <right-side-order [order]="order" [(takeAway)]="takeAway" (takeAwayChanged)="takeAwayChanged($event)" (removedOrderItem)="removedOrderItem($event)" (clearAllOrderItem)="clearAllOrderItem($event)" (orderSaved)="orderSaved($event)" (orderPaid)="orderPaid($event)"
         (selectedOrderItem)="selectedOrderItem($event)" *ngIf="!isModeEdit"></right-side-order>
       <right-side-edit *ngIf="isModeEdit" (savedMenu)="savedMenu($event)"></right-side-edit>
     </ion-col>

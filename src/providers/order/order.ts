@@ -10,18 +10,13 @@ import { OrderModel, OrderItemModel, RoundModel } from '../../assets/models/orde
 */
 @Injectable()
 export class OrderProvider {
-  public order: Array<OrderItemModel>;
+  public order: OrderModel;
   public round: RoundModel;
+  
   constructor(public http: HttpClient) {
-    this.order = [];
+    this.order = new OrderModel();
+    this.order.items = [];
   }
-
-  // getOrder():Promise<OrderModel>{
-  //   return this.http.get('./assets/json/order.json')
-  //   .toPromise()
-  //   .then(response => response as OrderModel)
-  //   .catch(this.handleError);
-  // }
 
   openRound(startmoney:number):Promise<RoundModel>{
     let date=new Date();
@@ -32,8 +27,9 @@ export class OrderProvider {
   }
 
   createBill(order:OrderModel):Promise<OrderModel>{
-    this.order = [];
-    return Promise.resolve(order);
+    this.order = new OrderModel();
+    this.order.items = [];
+    return Promise.resolve(this.order);
   }
 
   private handleError(error: any): Promise<any> {

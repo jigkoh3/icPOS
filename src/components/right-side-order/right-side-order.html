@@ -20,8 +20,8 @@
       <ion-row padding-left>
         <ion-col col-12 class="order-detail">
           <ion-scroll scrollY="true">
-            <ion-list>
-              <ion-item-sliding *ngFor="let item of items" (click)="selectingOrderItem(item)">
+            <!-- <ion-list>
+              <ion-item-sliding *ngFor="let item of order.items" (click)="selectingOrderItem(item)">
                 <ion-item>
                   <ion-row>
                     <ion-col col-8 item-title>
@@ -40,7 +40,7 @@
                       {{'CURENCY' | translate }} {{price.price}}
                     </ion-col>
                   </ion-row>
-                  <ion-row *ngFor="let sub of item.product.submenus">
+                  <ion-row *ngFor="let sub of order.item.product.submenus">
                     <ion-col col-12 item-option>
                       <ion-row *ngFor="let subprice of sub.prices">
                         <ion-col col-8 item-option>
@@ -66,9 +66,8 @@
                 </ion-item-options>
 
               </ion-item-sliding>
-            </ion-list>
+            </ion-list> -->
           </ion-scroll>
-          <!-- {{item.items}} -->
 
         </ion-col>
       </ion-row>
@@ -96,10 +95,10 @@
           <button ion-button full color="secondary">{{ 'BILL' | translate }}</button>
         </ion-col> -->
         <ion-col col-6>
-            <button ion-button [disabled]="!items || items.length === 0" full color="secondary" (click)="orderSaving()">{{ 'SAVE' | translate }}</button>
+            <button ion-button [disabled]="!order.items || order.items.length === 0" full color="secondary" (click)="orderSaving()">{{ 'SAVE' | translate }}</button>
         </ion-col>
         <ion-col col-6>
-            <button ion-button [disabled]="!items || items.length === 0" full color="secondary" (click)="orderPaying()">{{ 'CHARGE' | translate }}</button>
+            <button ion-button [disabled]="!order.items || order.items.length === 0" full color="secondary" (click)="orderPaying()">{{ 'CHARGE' | translate }}</button>
           </ion-col>
       </ion-row>
     </ion-col>

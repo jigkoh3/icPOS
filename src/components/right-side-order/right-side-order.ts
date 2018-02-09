@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { OrderItemModel } from '../../assets/models/order.model';
+import { OrderItemModel, OrderModel } from '../../assets/models/order.model';
 import { PopoverController, ViewController } from 'ionic-angular';
 
 import _ from 'lodash';
@@ -15,7 +15,7 @@ import _ from 'lodash';
 })
 export class RightSideOrderComponent {
   total: number = 0;
-  @Input() items: Array<OrderItemModel>;
+  @Input() order: OrderModel;
   @Input() takeAway: any;
   @Output() selectedOrderItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() removedOrderItem: EventEmitter<any> = new EventEmitter<any>();
@@ -30,12 +30,12 @@ export class RightSideOrderComponent {
   }
 
   ngDoCheck() {
-    if (this.items) {
+    if (this.order && this.order.items) {
       //console.log(this.items);
-      this.total = _.sumBy(this.items, function (o) { return o.total * o.qty; })
+      this.order.total = _.sumBy(this.order.items, function (o) { return o.total * o.qty; })
       //console.log(this.total);
     }else{
-      this.total = 0;
+      this.order.total = 0;
     }
   }
 
@@ -45,19 +45,19 @@ export class RightSideOrderComponent {
   }
 
   removeOrderItem(item) {
-    let idx = this.items.indexOf(item);
+    let idx = this.order.items.indexOf(item);
     //console.log(idx);
-    this.items.splice(idx, 1);
-    if (this.items.length === 0) {
-      this.items = null;
+    this.order.items.splice(idx, 1);
+    if (this.order.items.length === 0) {
+      this.order.items = [];
     }
-    this.removedOrderItem.emit(this.items);
+    this.removedOrderItem.emit(this.order.items);
   }
 
   clearall() {
     //console.log("object");
-    this.items = null;
-    this.clearAllOrderItem.emit(this.items);
+    this.order.items = null;
+    this.clearAllOrderItem.emit(this.order.items);
   }
 
   updateTakeAway(){
@@ -66,11 +66,11 @@ export class RightSideOrderComponent {
   }
 
   orderSaving(){
-    this.orderSaved.emit(this.items);
+    this.orderSaved.emit(this.order.items);
   }
 
   orderPaying(){
-    this.orderPaid.emit(this.items);
+    this.orderPaid.emit(this.order.items);
   }
 
   presentPopover(myEvent) {

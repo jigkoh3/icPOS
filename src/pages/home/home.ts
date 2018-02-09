@@ -24,14 +24,21 @@ import { PaymentPage } from '../payment/payment';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  order: Array<OrderItemModel>;
-  selecter: Array<OrderItemModel>;
-  menuItemsSelected: Array<ItemModel>;
-  menuSelected: String;
-  refTabInHome: any = {};
-  menus: Array<MenuModel>;
   isModeEdit: boolean = false;
-  takeAway: boolean = false;
+  //Grid & Grid Edit @Input
+  menuItemsSelected: Array<ItemModel>;
+  //Footer & Footer Edit @Input
+  menuSelected: String;
+  menus: Array<MenuModel>;
+
+  //Left Order
+  order: OrderModel;
+
+
+  // refTabInHome: any = {};
+
+
+  // takeAway: boolean = false;
   private shopno: string;
 
   constructor(public navCtrl: NavController,
@@ -43,19 +50,13 @@ export class HomePage {
     public navParams: NavParams
   ) {
 
-    this.refTabInHome = this.navParams.data;
     this.order = this.orderService.order;
     if (!menusService.homeData) {
       this.getMenuData();
     } else {
       this.menus = menusService.homeData.menus;
-      if (this.refTabInHome.refFooter) {
-        this.menuSelected = this.refTabInHome.menuSelected;
-        this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
-      } else {
-        this.menuSelected = menusService.homeData.menus[0].name;
-        this.menuItemsSelected = menusService.homeData.menus[0].items;
-      }
+      this.menuSelected = menusService.homeData.menus[0].name;
+      this.menuItemsSelected = menusService.homeData.menus[0].items;
     }
   }
 
@@ -68,13 +69,8 @@ export class HomePage {
     setTimeout(() => {
       this.menusService.getMenus('owner').then(data => {
         this.menus = data.menus;
-        if (this.refTabInHome.refFooter) {
-          this.menuSelected = this.refTabInHome.menuSelected;
-          this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
-        } else {
-          this.menuSelected = data.menus[0].name;
-          this.menuItemsSelected = data.menus[0].items;
-        }
+        this.menuSelected = data.menus[0].name;
+        this.menuItemsSelected = data.menus[0].items;
         this.loading.dismiss();
       }, err => {
         this.loading.dismiss();
@@ -83,6 +79,10 @@ export class HomePage {
 
   }
 
+  /**
+   * Footer Event Emiter
+   * @param menu is @Output emit from Footer
+   */
   menuItemSelected(menu) {
     this.menuSelected = menu.name;
     if (menu.name === "more") {
@@ -94,6 +94,17 @@ export class HomePage {
     }
   }
 
+  /**
+ * Press on menu for edit
+ */
+  itemPressed() {
+    this.isModeEdit = true;
+  }
+
+  /**
+   * Left Grid Event of selecting menu item to order
+   * @param item is @Output from Left Grid Menu from menu item
+   */
   itemSelected(item) {
     switch (item._type) {
       case "none": {
@@ -151,23 +162,32 @@ export class HomePage {
     }
   }
 
-  itemPressed($event) {
-    this.isModeEdit = true;
-  }
 
+  /**
+   * Deleting menu item (Edit mode only)
+   * @param index is position index of deleting menu item
+   */
   itemDeleted(index) {
     let item = new ItemModel();
     item._type = "none";
     this.menuItemsSelected[index] = item;
   }
 
+  /**
+   * Update Order from remove at order item
+   * @param order is Current Order
+   */
   removedOrderItem(order) {
     this.order = order;
   }
 
+  /**
+   * Update Order from remove all order item
+   * @param order is Current Order
+   */
   clearAllOrderItem(order) {
-    this.order = [];
-    this.orderService.order = [];
+    // this.order = [];
+    // this.orderService.order = [];
   }
 
   itemAdded(menu) {
@@ -205,13 +225,8 @@ export class HomePage {
     this.menusService.addMenu(this.menus).then(data => {
       console.log(data);
       this.menus = data.menus;
-      if (this.refTabInHome.refFooter) {
-        this.menuSelected = this.refTabInHome.menuSelected;
-        this.menuItemsSelected = this.refTabInHome.menuItemsSelected;
-      } else {
-        this.menuSelected = data.menus[0].name;
-        this.menuItemsSelected = data.menus[0].items;
-      }
+      this.menuSelected = data.menus[0].name;
+      this.menuItemsSelected = data.menus[0].items;
       this.isModeEdit = false;
       this.loading.dismiss();
     }, err => {
@@ -221,9 +236,9 @@ export class HomePage {
   }
 
   updateOrder(item) {
-    if (this.order) {
+    if (this.order.items) {
       var filter: Array<any> = _.filter(
-        _.omit(this.order, ['qty', 'total']),
+        _.omit(this.order.items, ['qty', 'total']),
         _.omit(item, ['qty', 'total']));
 
 
@@ -234,30 +249,30 @@ export class HomePage {
 
 
       } else {
-        this.order.push(item);
+        this.order.items.push(item);
       }
 
 
 
     } else {
-      this.order = [];
-      this.order.push(item);
+      // this.order = [];
+      // this.order.push(item);
     }
 
   }
 
   takeAwayChanged(takeAway) {
-    this.takeAway = takeAway;
+    //this.takeAway = takeAway;
   }
 
   orderSaved(orders) {
     // console.log(orders);
-    if (this.takeAway) {
-      this.presentTakeAwayModal(orders);
-    } else {
-      //alert("เลือกโต๊ะ")
-      this.presentToTableModal(orders);
-    }
+    // if (this.takeAway) {
+    //   this.presentTakeAwayModal(orders);
+    // } else {
+    //   //alert("เลือกโต๊ะ")
+    //   this.presentToTableModal(orders);
+    // }
   }
 
   orderPaid(orders) {
@@ -296,16 +311,16 @@ export class HomePage {
       //console.log(data);
       if (data) {
         //this.updateOrder(data);
-        let bill: OrderModel = new OrderModel();
-        bill.servetype = "takeatable";
-        bill.table = data;
-        bill.items = this.order;
-        this.order = [];
-        this.menusService.createBill(bill).then(data => {
-          this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
-        }).catch(err => {
+        // let bill: OrderModel = new OrderModel();
+        // bill.servetype = "takeatable";
+        // bill.table = data;
+        // bill.items = this.order.i;
+        // this.order = [];
+        // this.menusService.createBill(bill).then(data => {
+        //   this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
+        // }).catch(err => {
 
-        });
+        // });
       }
 
     });
@@ -317,16 +332,16 @@ export class HomePage {
       //console.log(data);
       if (data) {
         //this.updateOrder(data);
-        let bill: OrderModel = new OrderModel();
-        bill.servetype = "takeaway";
-        bill.customer = data;
-        bill.items = this.order;
-        this.order = [];
-        this.menusService.createBill(bill).then(data => {
-          this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
-        }).catch(err => {
+        // let bill: OrderModel = new OrderModel();
+        // bill.servetype = "takeaway";
+        // bill.customer = data;
+        // bill.items = this.order;
+        // this.order = [];
+        // this.menusService.createBill(bill).then(data => {
+        //   this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
+        // }).catch(err => {
 
-        });
+        // });
       }
 
     });
