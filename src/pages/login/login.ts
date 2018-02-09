@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth';
 import { HomePage } from '../home/home';
 import { ListOfBillPage } from '../list-of-bill/list-of-bill';
-import { MessageProvider } from '../../providers/message';
+//import { MessageProvider } from '../../providers/message';
 
 
 @IonicPage()
@@ -16,7 +16,7 @@ export class LoginPage {
   private mobile: string;
   private loginType: string = 'owner';
 
-  constructor(private msg: MessageProvider, private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

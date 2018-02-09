@@ -58,7 +58,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-const API_URL = 'https://ic-pos-service.herokuapp.com';
 @NgModule({
   declarations: [
     MyApp,
