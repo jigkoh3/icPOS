@@ -61,7 +61,7 @@ export class ListOfBillPage {
   gotoHome(bill: OrderModel) {
     if (bill) {
       console.log(bill);
-      this.orderService.order = bill.items;
+      this.orderService.order = bill;
     }
 
     this.navCtrl.setRoot(HomePage);

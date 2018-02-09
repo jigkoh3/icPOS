@@ -1,106 +1,104 @@
 <ion-row>
-    <ion-col col-12>
-      <ion-row padding-left padding-top>
-        <!-- <ion-col col-12 no-data *ngIf="!items">
-          {{'NO_DATA' | translate }}
-        </ion-col> -->
-        <ion-col col-12 have-data>
-          <ion-row>
-            <ion-col col-10>
-              {{'CURR_SALE' | translate }}
-            </ion-col>
-            <ion-col col-2>
-              <button ion-button icon-only clear (click)="presentPopover($event)">
-                <ion-icon name="more"></ion-icon>
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-      <ion-row padding-left>
-        <ion-col col-12 class="order-detail">
-          <ion-scroll scrollY="true">
-            <!-- <ion-list>
-              <ion-item-sliding *ngFor="let item of order.items" (click)="selectingOrderItem(item)">
-                <ion-item>
-                  <ion-row>
-                    <ion-col col-8 item-title>
-                      {{item.product.name}} <span *ngIf="item.qty > 1"> x{{item.qty}}</span> 
-                    </ion-col>
-            
-                    <ion-col col-4 item-main text-right>
-                      {{'CURENCY' | translate }} {{item.total * (item.qty || 1)}}
-                    </ion-col>
-                  </ion-row>
-                  <ion-row *ngFor="let price of item.product.prices">
-                    <ion-col col-8 item-option>
-                      {{price.name}}
-                    </ion-col>
-                    <ion-col col-4 item-option text-right>
-                      {{'CURENCY' | translate }} {{price.price}}
-                    </ion-col>
-                  </ion-row>
-                  <ion-row *ngFor="let sub of order.item.product.submenus">
-                    <ion-col col-12 item-option>
-                      <ion-row *ngFor="let subprice of sub.prices">
-                        <ion-col col-8 item-option>
-                          {{subprice.name}} <span *ngIf="subprice.selectedQty"> x {{subprice.selectedQty}}</span> 
-                        </ion-col>
-                        <ion-col col-4 item-option text-right>
-                          {{'CURENCY' | translate }} {{subprice.price * (subprice.selectedQty || 1)}}
-                        </ion-col>
-                      </ion-row>
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col col-12 item-option *ngIf="remark">
-                      ***{{item.remark}}
-                    </ion-col>
-                  </ion-row>
-                </ion-item>
-                <ion-item-options>
-                  <button ion-button color="danger" (click)="removeOrderItem(item)">
-                    <ion-icon name="trash"></ion-icon>
-                    {{ "DEL" | translate }}
-                  </button>
-                </ion-item-options>
+  <ion-col col-12>
+    <ion-row padding-left padding-top>
+      <ion-col col-12 have-data>
+        <ion-row>
+          <ion-col col-10>
+            {{'CURR_SALE' | translate }}
+          </ion-col>
+          <ion-col col-2>
+            <button ion-button icon-only clear (click)="presentPopover($event)">
+              <ion-icon name="more"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row padding-left>
+      <ion-col col-12 class="order-detail">
+        <ion-scroll scrollY="true">
+          <ion-list>
+            <ion-item-sliding *ngFor="let item of order.items" (click)="selectingOrderItem(item)">
+              <ion-item>
+                <ion-row>
+                  <ion-col col-8 item-title>
+                    {{item.product.name}}
+                    <span *ngIf="item.qty > 1"> x{{item.qty}}</span>
+                  </ion-col>
 
-              </ion-item-sliding>
-            </ion-list> -->
-          </ion-scroll>
+                  <ion-col col-4 item-main text-right>
+                    {{'CURENCY' | translate }} {{item.total * (item.qty || 1)}}
+                  </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let price of item.product.prices">
+                  <ion-col col-8 item-option>
+                    {{price.name}}
+                  </ion-col>
+                  <ion-col col-4 item-option text-right>
+                    {{'CURENCY' | translate }} {{price.price}}
+                  </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let sub of item.product.submenus">
+                  <ion-col col-12 item-option>
+                    <ion-row *ngFor="let subprice of sub.prices">
+                      <ion-col col-8 item-option>
+                        {{subprice.name}}
+                        <span *ngIf="subprice.selectedQty"> x {{subprice.selectedQty}}</span>
+                      </ion-col>
+                      <ion-col col-4 item-option text-right>
+                        {{'CURENCY' | translate }} {{subprice.price * (subprice.selectedQty || 1)}}
+                      </ion-col>
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-12 item-option *ngIf="remark">
+                    ***{{item.remark}}
+                  </ion-col>
+                </ion-row>
+              </ion-item>
+              <ion-item-options>
+                <button ion-button color="danger" (click)="removeOrderItem(item)">
+                  <ion-icon name="trash"></ion-icon>
+                  {{ "DEL" | translate }}
+                </button>
+              </ion-item-options>
 
-        </ion-col>
-      </ion-row>
-      <ion-grid>
-        <ion-item>
-          <ion-label>{{'TAKE_AWAY' | translate }}</ion-label>
-          <ion-checkbox color="secondary" [(ngModel)]="takeAway" (ionChange)="updateTakeAway()"></ion-checkbox>
-        </ion-item>
-      </ion-grid>
-      <ion-row padding-left>
-        <ion-col col-3 ion-sum text-left color="secondary">
-          <p>{{'TOTAL' | translate }}</p>
-          <h2>{{'CURENCY' | translate }} {{total}}</h2>
-        </ion-col>
-        <ion-col col-6>
+            </ion-item-sliding>
+          </ion-list>
+        </ion-scroll>
 
-        </ion-col>
-        <ion-col col-3 ion-print text-center>
-          <ion-icon name="md-print"></ion-icon>
-          <p>{{'PRINT_BILL' | translate }}</p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <!-- <ion-col col-12 *ngIf="!items">
+      </ion-col>
+    </ion-row>
+    <ion-grid>
+      <ion-item>
+        <ion-label>{{'TAKE_AWAY' | translate }}</ion-label>
+        <ion-checkbox color="secondary" [(ngModel)]="takeAway" (ionChange)="updateTakeAway()"></ion-checkbox>
+      </ion-item>
+    </ion-grid>
+    <ion-row padding-left>
+      <ion-col col-3 ion-sum text-left color="secondary">
+        <p>{{'TOTAL' | translate }}</p>
+        <h2>{{'CURENCY' | translate }} {{total}}</h2>
+      </ion-col>
+      <ion-col col-6>
+
+      </ion-col>
+      <ion-col col-3 ion-print text-center>
+        <ion-icon name="md-print"></ion-icon>
+        <p>{{'PRINT_BILL' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <!-- <ion-col col-12 *ngIf="!items">
           <button ion-button full color="secondary">{{ 'BILL' | translate }}</button>
         </ion-col> -->
-        <ion-col col-6>
-            <button ion-button [disabled]="!order.items || order.items.length === 0" full color="secondary" (click)="orderSaving()">{{ 'SAVE' | translate }}</button>
-        </ion-col>
-        <ion-col col-6>
-            <button ion-button [disabled]="!order.items || order.items.length === 0" full color="secondary" (click)="orderPaying()">{{ 'CHARGE' | translate }}</button>
-          </ion-col>
-      </ion-row>
-    </ion-col>
-  </ion-row>
-  
+      <ion-col col-6>
+        <button ion-button [disabled]="!order.items || order.items.length === 0" full color="secondary" (click)="orderSaving()">{{ 'SAVE' | translate }}</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button [disabled]="!order.items || order.items.length === 0" full color="secondary" (click)="orderPaying()">{{ 'CHARGE' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+</ion-row>

@@ -16,6 +16,7 @@ export class OrderProvider {
   constructor(public http: HttpClient) {
     this.order = new OrderModel();
     this.order.items = [];
+   
   }
 
   openRound(startmoney:number):Promise<RoundModel>{

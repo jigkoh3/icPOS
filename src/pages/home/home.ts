@@ -51,6 +51,7 @@ export class HomePage {
   ) {
 
     this.order = this.orderService.order;
+    console.log(this.order);
     if (!menusService.homeData) {
       this.getMenuData();
     } else {
@@ -111,8 +112,7 @@ export class HomePage {
         break;
       }
       case "product": {
-        //check round
-        console.log(this.orderService.round);
+        // 1. check รอบการขาย
         if (this.orderService.round) {
           if (item.product.prices && item.product.submenus) {
             if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
@@ -130,11 +130,8 @@ export class HomePage {
           // alert("เปิดรอบการขาย");
           let openRoundModal = this.modalCtrl.create(OpenRoundPage);
           openRoundModal.onDidDismiss(data => {
-            //console.log(data);
             if (data) {
-              //this.updateOrder(data);
               this.orderService.openRound(data).then(rnd => {
-                console.log(rnd);
                 if (item.product.prices && item.product.submenus) {
                   // console.log(item.product.prices);
                   if (item.product.prices.length > 1 || item.product.submenus.length > 0) {
@@ -236,6 +233,7 @@ export class HomePage {
   }
 
   updateOrder(item) {
+    //console.log(item);
     if (this.order.items) {
       var filter: Array<any> = _.filter(
         _.omit(this.order.items, ['qty', 'total']),
@@ -249,16 +247,15 @@ export class HomePage {
 
 
       } else {
+        console.log("first order items");
         this.order.items.push(item);
       }
 
-
-
     } else {
       // this.order = [];
-      // this.order.push(item);
+      this.order.items.push(item);
     }
-
+    console.log(this.order);
   }
 
   takeAwayChanged(takeAway) {

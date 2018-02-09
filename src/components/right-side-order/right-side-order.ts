@@ -25,15 +25,12 @@ export class RightSideOrderComponent {
   @Output() takeAwayChanged: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private popoverCtrl: PopoverController) {
-    //console.log(this.items);
-    //this.total = _.sumBy(this.items, function (o) { return o.total; })
+    console.log(this.order);
   }
 
   ngDoCheck() {
     if (this.order && this.order.items) {
-      //console.log(this.items);
       this.order.total = _.sumBy(this.order.items, function (o) { return o.total * o.qty; })
-      //console.log(this.total);
     }else{
       this.order.total = 0;
     }

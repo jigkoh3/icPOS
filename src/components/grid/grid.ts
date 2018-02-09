@@ -20,7 +20,6 @@ export class GridComponent {
   }
 
   selected(item) {
-    console.log(item);
     this.itemSelected.emit(item);
   }
 
