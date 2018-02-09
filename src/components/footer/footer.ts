@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ViewController, PopoverController } from 'ionic-angular';
 
 /**
  * Generated class for the FooterComponent component.
@@ -16,7 +17,7 @@ export class FooterComponent {
   @Input() items: any;
   @Output() itemSelected: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() {
+  constructor(private popoverCtrl: PopoverController) {
     
   }
 
@@ -39,4 +40,9 @@ export class FooterComponent {
     this.itemSelected.emit(item);
   }
 
+  
+
 }
+
+
+

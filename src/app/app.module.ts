@@ -49,7 +49,7 @@ import { DiscountModalPage } from '../pages/discount-modal/discount-modal';
 import { PreLoginPage } from '../pages/pre-login/pre-login';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
-import { AuthProvider } from '../providers/auth';
+import { AuthProvider } from '../providers/auth/auth';
 import { EmployeeSideNavComponent } from '../components/employee-side-nav/employee-side-nav';
 import { CreateEmployeeModalPage } from '../pages/create-employee-modal/create-employee-modal';
 import { EmployeeDetailComponent } from '../components/employee-detail/employee-detail';

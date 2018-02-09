@@ -1,4 +1,4 @@
-import { AuthProvider } from './../auth';
+import { AuthProvider } from '../auth/auth';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MenuModel, HomeModel, ItemModel } from '../../assets/models/menus.model';
@@ -18,7 +18,7 @@ export class MenuProvider {
   }
 
   getLocalStorage(shopno): Promise<HomeModel> {
-    let hearder = this.auth.setHeader();
+    let hearder = Constants.Header;
     return this.http.get(Constants.API_URL + '/api/homes/' + shopno, { headers: hearder })
       .toPromise()
       .then(response => {

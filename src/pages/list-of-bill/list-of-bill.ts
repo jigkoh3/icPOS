@@ -7,6 +7,7 @@ import { LoadingProvider } from '../../providers/loading/loading';
 import { MenuProvider } from '../../providers/menu/menu';
 import { OrderModel, TableModel } from '../../assets/models/order.model';
 import { OrderProvider } from '../../providers/order/order';
+import { AuthProvider } from '../../providers/auth/auth';
 
 /**
  * Generated class for the ListOfBillPage page.
@@ -28,21 +29,24 @@ export class ListOfBillPage {
   zone: string;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
+    private auth: AuthProvider,
     private menusService: MenuProvider,
     private orderService: OrderProvider,
-    private loading: LoadingProvider, ) {
-    //this.menus = this.navParams.get('menus');
-    //this.getMenuData();
+    private loading: LoadingProvider) {
     this.menuSelected = 'list';
+    this.auth.authenticated().then((data) => {
+      if (data) {
+        if (!this.menusService.homeData) {
+          this.getMenuData();
+        } else {
+          this.menus = menusService.homeData.menus;
+          this.bills = menusService.homeData.bills;
+          this.tables = menusService.homeData.tables;
+          this.zone = "all";
+        }
+      }
+    });
 
-    if (!this.menusService.homeData) {
-      this.getMenuData();
-    } else {
-      this.menus = menusService.homeData.menus;
-      this.bills = menusService.homeData.bills;
-      this.tables = menusService.homeData.tables;
-      this.zone = "all";
-    }
   }
 
   ionViewDidLoad() {

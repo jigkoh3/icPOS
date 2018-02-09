@@ -4,14 +4,14 @@ import { PaymentSettingModel } from '../../assets/models/payment_setting.model';
 import { OpenbillSettingModel } from '../../assets/models/openbill_setting.model';
 import { ShopHistoryModel } from '../../assets/models/shop_history_setting.model';
 import { Constants } from '../../app/app.contants';
-import { AuthProvider } from '../auth';
+import { AuthProvider } from '../auth/auth';
 
 @Injectable()
 export class SettingProvider {
     private hearder: any;
 
-    constructor(public http: HttpClient, private auth: AuthProvider) {
-        this.hearder = this.auth.setHeader();
+    constructor(public http: HttpClient,private auth: AuthProvider) {
+        this.hearder = Constants.Header;
     }
 
     getEmployees(): Promise<any> {

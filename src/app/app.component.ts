@@ -1,4 +1,4 @@
-import { AuthProvider } from './../providers/auth';
+import { AuthProvider } from './../providers/auth/auth';
 import { HomePage } from './../pages/home/home';
 import { Component } from '@angular/core';
 import { Platform, Events } from 'ionic-angular';
