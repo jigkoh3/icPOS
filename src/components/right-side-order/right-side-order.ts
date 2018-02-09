@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { OrderItemModel, OrderModel } from '../../assets/models/order.model';
+import { OrderModel } from '../../assets/models/order.model';
 import { PopoverController, ViewController } from 'ionic-angular';
 
 import _ from 'lodash';
@@ -18,24 +18,18 @@ export class RightSideOrderComponent {
   takeAway: any = false;
   @Input() order: OrderModel;
   @Output() selectedOrderItem: EventEmitter<any> = new EventEmitter<any>();
-  // @Output() removedOrderItem: EventEmitter<any> = new EventEmitter<any>();
-  // @Output() clearAllOrderItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() orderSaved: EventEmitter<any> = new EventEmitter<any>();
   @Output() orderPaid: EventEmitter<any> = new EventEmitter<any>();
-  // @Output() takeAwayChanged: EventEmitter<any> = new EventEmitter<any>();
-
+ 
   constructor(private popoverCtrl: PopoverController) {
-    //console.log(this.items);
-    //this.total = _.sumBy(this.items, function (o) { return o.total; })
+    
   }
 
   ngDoCheck() {
     console.log(this.order);
     this.takeAway = this.order.servetype === "takeaway";
     if (this.order && this.order.items) {
-      //console.log(this.items);
       this.order.total = _.sumBy(this.order.items, function (o) { return o.total * o.qty; })
-      //console.log(this.total);
     }else{
       this.order.total = 0;
     }
@@ -47,23 +41,17 @@ export class RightSideOrderComponent {
 
   removeOrderItem(item) {
     let idx = this.order.items.indexOf(item);
-    //console.log(idx);
     this.order.items.splice(idx, 1);
     if (this.order.items.length === 0) {
       this.order.items = [];
     }
-    //this.removedOrderItem.emit(this.order.items);
   }
 
   clearall() {
-    //console.log("object");
     this.order.items = [];
-    //this.clearAllOrderItem.emit(this.order.items);
   }
 
   updateTakeAway(){
-    // console.log(this.takeAway);
-    //this.takeAwayChanged.emit(this.takeAway);
     this.order.servetype = this.takeAway ? "takeaway" : "takeatable";
     console.log(this.order.servetype);
   }
@@ -79,9 +67,7 @@ export class RightSideOrderComponent {
   presentPopover(myEvent) {
     let popover = this.popoverCtrl.create(PopoverPage);
     popover.onDidDismiss(data => {
-      //console.log(data);
       this.clearall();
-
     });
     popover.present({
       ev: myEvent
