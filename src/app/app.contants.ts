@@ -1,7 +1,7 @@
 import { HttpHeaders } from "@angular/common/http";
 
 export class Constants {
-    public static get API_URL(): string { return 'https://ic-pos-service-test.herokuapp.com'; };
+    public static get API_URL(): string { return 'https://ic-pos-service-dev.herokuapp.com'; };
     public static get Header() {
         let header = new HttpHeaders()
         header = header.append('Content-Type', 'application/json');
