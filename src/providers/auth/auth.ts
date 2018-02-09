@@ -5,11 +5,13 @@ import 'rxjs/add/operator/toPromise';
 import { Constants } from '../../app/app.contants';
 import { ToastController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
+import { HandleError } from '../handleError';
 
 @Injectable()
 export class AuthProvider {
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private handleErr: HandleError
   ) {
 
   }
@@ -25,14 +27,14 @@ export class AuthProvider {
     return this.http.post(Constants.API_URL + "/api/auth/signin", credentials)
       .toPromise()
       .then(response => this.loginSuccess(response))
-      .catch(this.handleError);
+      .catch(err => this.handleError(err));
   }
 
   signup(credential) {
     return this.http.post(Constants.API_URL + "/api/auth/ownersignup", credential)
       .toPromise()
       .then(response => this.registerSuccess(response))
-      .catch(this.handleError);
+      .catch(err => this.handleError(err));
   }
 
   logout() {
@@ -51,7 +53,9 @@ export class AuthProvider {
     return res;
   }
 
+
   private handleError(error: any): Promise<any> {
+    this.handleErr.notifyError(error.error);
     return Promise.reject(error.error || error);
   }
 

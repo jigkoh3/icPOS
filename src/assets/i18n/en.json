@@ -114,5 +114,6 @@
     "MANL": "Manual Price",
     "AE": "Add or Edit",
     "ADDLST" : "Add List",
-    "EDTCMP": ""
+    "EDTCMP": "",
+    "EMAIL_ALREADY_EXISTS": "มีเบอร์โทรนี้ในระบบแล้ว ไม่สามารถใช้ได้"
 }

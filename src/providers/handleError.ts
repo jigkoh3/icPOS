@@ -6,18 +6,18 @@ import { ToastController } from 'ionic-angular';
 export class HandleError {
 
     constructor(private toastCtrl: ToastController, private translateService: TranslateService) {
-        
+
     }
 
-    public get(msg: string) {
-        let key = msg.replace(' ', '_');
+    public notifyError(error) {
+        let key = error.message.split(" ").join("_");
         key = key.toUpperCase();
         console.log(key);
         this.translateService.get(key).subscribe(value => {
             let toast = this.toastCtrl.create({
                 message: value,
                 duration: 3000,
-                position: 'middle'
+                position: 'top'
             });
             toast.present();
         });
