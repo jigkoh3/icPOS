@@ -33,12 +33,6 @@ export class HomePage {
 
   //Left Order
   order: OrderModel;
-
-
-  // refTabInHome: any = {};
-
-
-  // takeAway: boolean = false;
   private shopno: string;
 
   constructor(public navCtrl: NavController,
@@ -51,7 +45,7 @@ export class HomePage {
   ) {
 
     this.order = this.orderService.order;
-    console.log(this.order);
+    //console.log(this.order);
     if (!menusService.homeData) {
       this.getMenuData();
     } else {
@@ -64,7 +58,9 @@ export class HomePage {
   ionViewDidLoad() {
 
   }
-
+  /** 
+   * Read Data from page
+  */
   getMenuData() {
     this.loading.onLoading();
     setTimeout(() => {
@@ -101,6 +97,64 @@ export class HomePage {
   itemPressed() {
     this.isModeEdit = true;
   }
+  /**
+   * Add Menu Item
+   * @param menu is menu item for add to menutable
+   */
+  itemAdded(menu) {
+    this.menus.push(menu);
+  }
+  /**
+   * Add Menu Item
+   * @param menu is menu item for add to menutable
+   */
+  itemEditSelected(index) {
+    let item = this.menuItemsSelected[index];
+    // console.log(item.type);
+    switch (item._type) {
+      case "none": {
+        //statements; 
+        this.presentAddMenuItemModal(index);
+        break;
+      }
+      case "product": {
+        //statements; 
+        this.presentEditMenuItemModal(index);
+        break;
+      }
+      default: {
+        //statements; 
+        break;
+      }
+    }
+  }
+  /**
+   * Deleting menu item (Edit mode only)
+   * @param index is position index of deleting menu item
+   */
+  itemDeleted(index) {
+    let item = new ItemModel();
+    item._type = "none";
+    this.menuItemsSelected[index] = item;
+  }
+/**
+ * Save
+ * @param e is table menu items example ของหวาน
+ */
+  savedMenu(e) {
+    this.menus.push(e);
+    this.menusService.addMenu(this.menus).then(data => {
+      console.log(data);
+      this.menus = data.menus;
+      this.menuSelected = data.menus[0].name;
+      this.menuItemsSelected = data.menus[0].items;
+      this.isModeEdit = false;
+      this.loading.dismiss();
+    }, err => {
+      this.loading.dismiss();
+      console.log(err);
+    });
+  }
 
   /**
    * Left Grid Event of selecting menu item to order
@@ -128,7 +182,10 @@ export class HomePage {
           }
         } else {
           // alert("เปิดรอบการขาย");
-          let openRoundModal = this.modalCtrl.create(OpenRoundPage);
+          let opts: any = {
+            enableBackdropDismiss: false
+          }
+          let openRoundModal = this.modalCtrl.create(OpenRoundPage, null, opts);
           openRoundModal.onDidDismiss(data => {
             if (data) {
               this.orderService.openRound(data).then(rnd => {
@@ -159,79 +216,19 @@ export class HomePage {
     }
   }
 
-
-  /**
-   * Deleting menu item (Edit mode only)
-   * @param index is position index of deleting menu item
-   */
-  itemDeleted(index) {
-    let item = new ItemModel();
-    item._type = "none";
-    this.menuItemsSelected[index] = item;
-  }
-
-  /**
-   * Update Order from remove at order item
-   * @param order is Current Order
-   */
-  removedOrderItem(order) {
-    this.order = order;
-  }
-
-  /**
-   * Update Order from remove all order item
-   * @param order is Current Order
-   */
-  clearAllOrderItem(order) {
-    // this.order = [];
-    // this.orderService.order = [];
-  }
-
-  itemAdded(menu) {
-    this.menus.push(menu);
-  }
-
-  itemEditSelected(index) {
-    let item = this.menuItemsSelected[index];
-    // console.log(item.type);
-    switch (item._type) {
-      case "none": {
-        //statements; 
-        this.presentAddMenuItemModal(index);
-        break;
-      }
-      case "product": {
-        //statements; 
-        this.presentEditMenuItemModal(index);
-        break;
-      }
-      default: {
-        //statements; 
-        break;
-      }
-    }
-  }
-
+/**
+ * Editing Order Item
+ * @param item is editing order item
+ */
   selectedOrderItem(item) {
     console.log(item);
     this.presentProductModal(item.product, item);
   }
 
-  savedMenu(e) {
-    this.menus.push(e);
-    this.menusService.addMenu(this.menus).then(data => {
-      console.log(data);
-      this.menus = data.menus;
-      this.menuSelected = data.menus[0].name;
-      this.menuItemsSelected = data.menus[0].items;
-      this.isModeEdit = false;
-      this.loading.dismiss();
-    }, err => {
-      this.loading.dismiss();
-      console.log(err);
-    });
-  }
-
+/**
+ * Update Order Items
+ * @param item is order item add to order
+ */
   updateOrder(item) {
     //console.log(item);
     if (this.order.items) {
@@ -257,12 +254,11 @@ export class HomePage {
     }
     console.log(this.order);
   }
-
-  takeAwayChanged(takeAway) {
-    //this.takeAway = takeAway;
-  }
-
-  orderSaved(orders) {
+/**
+ * Save Bill
+ * @param order
+ */
+  orderSaved(order) {
     // console.log(orders);
     // if (this.takeAway) {
     //   this.presentTakeAwayModal(orders);
@@ -271,12 +267,92 @@ export class HomePage {
     //   this.presentToTableModal(orders);
     // }
   }
-
+/**
+ * Paid Bill
+ * @param order
+ */
   orderPaid(orders) {
     // console.log(orders);
     this.presentToPaidModal(orders);
   }
 
+
+  /**
+   * Modal of Adding Order Item (Add,Edit)
+   * @param item 
+   * @param result 
+   */
+  presentProductModal(item, result) {
+    let opts: any = {
+      enableBackdropDismiss: false
+    }
+    let productModal = this.modalCtrl.create(ProductOrderPage, { item: item, result: result }, opts);
+    productModal.onDidDismiss(data => {
+      //console.log(data);
+      if (data) {
+        this.updateOrder(data);
+      }
+
+    });
+    productModal.present();
+  }
+
+  /**
+   * Modal of Save To Table
+   * @param orders 
+   */
+  presentToTableModal(orders) {
+    let toTableModal = this.modalCtrl.create(ToTablePage, { orders: orders });
+    toTableModal.onDidDismiss(data => {
+      //console.log(data);
+      if (data) {
+        //this.updateOrder(data);
+        // let bill: OrderModel = new OrderModel();
+        // bill.servetype = "takeatable";
+        // bill.table = data;
+        // bill.items = this.order.i;
+        // this.order = [];
+        // this.menusService.createBill(bill).then(data => {
+        //   this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
+        // }).catch(err => {
+
+        // });
+      }
+
+    });
+    toTableModal.present();
+  }
+
+  /**
+   * Modal of Save To Away
+   * @param orders 
+   */
+  presentTakeAwayModal(orders) {
+    let takeAwayModal = this.modalCtrl.create(TakeAwayPage, { orders: orders });
+    takeAwayModal.onDidDismiss(data => {
+      //console.log(data);
+      if (data) {
+        //this.updateOrder(data);
+        // let bill: OrderModel = new OrderModel();
+        // bill.servetype = "takeaway";
+        // bill.customer = data;
+        // bill.items = this.order;
+        // this.order = [];
+        // this.menusService.createBill(bill).then(data => {
+        //   this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
+        // }).catch(err => {
+
+        // });
+      }
+
+    });
+    takeAwayModal.present();
+  }
+
+  /**
+   * Modal of Paying Bill
+   * @param orders 
+   */
   presentToPaidModal(orders) {
     let opts: any = {
       enableBackdropDismiss: false
@@ -302,61 +378,11 @@ export class HomePage {
     toPaidModal.present();
   }
 
-  presentToTableModal(orders) {
-    let toTableModal = this.modalCtrl.create(ToTablePage, { orders: orders });
-    toTableModal.onDidDismiss(data => {
-      //console.log(data);
-      if (data) {
-        //this.updateOrder(data);
-        // let bill: OrderModel = new OrderModel();
-        // bill.servetype = "takeatable";
-        // bill.table = data;
-        // bill.items = this.order.i;
-        // this.order = [];
-        // this.menusService.createBill(bill).then(data => {
-        //   this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
-        // }).catch(err => {
-
-        // });
-      }
-
-    });
-    toTableModal.present();
-  }
-  presentTakeAwayModal(orders) {
-    let takeAwayModal = this.modalCtrl.create(TakeAwayPage, { orders: orders });
-    takeAwayModal.onDidDismiss(data => {
-      //console.log(data);
-      if (data) {
-        //this.updateOrder(data);
-        // let bill: OrderModel = new OrderModel();
-        // bill.servetype = "takeaway";
-        // bill.customer = data;
-        // bill.items = this.order;
-        // this.order = [];
-        // this.menusService.createBill(bill).then(data => {
-        //   this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
-        // }).catch(err => {
-
-        // });
-      }
-
-    });
-    takeAwayModal.present();
-  }
-
-  presentProductModal(item, result) {
-    let productModal = this.modalCtrl.create(ProductOrderPage, { item: item, result: result });
-    productModal.onDidDismiss(data => {
-      //console.log(data);
-      if (data) {
-        this.updateOrder(data);
-      }
-
-    });
-    productModal.present();
-  }
-
+  
+/**
+ * Modal of Add menu item
+ * @param index 
+ */
   presentAddMenuItemModal(index) {
     let opts: any = {
       enableBackdropDismiss: false
@@ -374,7 +400,10 @@ export class HomePage {
     });
     addItemModal.present();
   }
-
+/**
+ * Modal of Edit menu item
+ * @param index 
+ */
   presentEditMenuItemModal(index) {
     let opts: any = {
       enableBackdropDismiss: false

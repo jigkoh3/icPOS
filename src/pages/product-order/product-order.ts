@@ -226,4 +226,8 @@ export class ProductOrderPage {
     //console.log(option);
   }
 
+  dismiss(){
+    this.viewCtrl.dismiss();
+  }
+
 }

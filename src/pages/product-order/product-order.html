@@ -1,21 +1,26 @@
 <ion-header *ngIf="!isModeEdit">
 
   <ion-navbar padding>
+    
     <ion-buttons start *ngIf="step > 0" (click)="prev()">
       <button ion-button icon-only navbar-button>
         <ion-icon name="arrow-back"></ion-icon>{{ "PREV" | translate }}
       </button>
     </ion-buttons>
+
     <ion-buttons end *ngIf="step < steps.length - 1 && steps[step]._type!=='price' && steps[step].data._type!=='one'">
       <button ion-button clear navbar-button (click)="next()">
         {{ 'NEXT' | translate }}
       </button>
     </ion-buttons>
+    
+
     <ion-buttons end *ngIf="step === steps.length - 1">
       <button ion-button clear navbar-button (click)="add()">
         {{ 'ADD' | translate }}
       </button>
     </ion-buttons>
+    
     <ion-title title>{{item.name}}</ion-title>
 
   </ion-navbar>
@@ -198,3 +203,6 @@
     </ion-col>
   </ion-row>
 </ion-content>
+<ion-footer>
+    <button ion-button block (click)="dismiss()" color="danger">{{ 'CANCEL' | translate }}</button>
+  </ion-footer>

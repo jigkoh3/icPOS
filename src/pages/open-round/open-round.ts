@@ -26,4 +26,8 @@ export class OpenRoundPage {
     this.viewCtrl.dismiss(this.startmoney);
   }
 
+  dismiss(){
+    this.viewCtrl.dismiss();
+  }
+
 }

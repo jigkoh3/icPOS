@@ -26,7 +26,7 @@ export class RightSideOrderComponent {
   }
 
   ngDoCheck() {
-    console.log(this.order);
+    //console.log(this.order);
     this.takeAway = this.order.servetype === "takeaway";
     if (this.order && this.order.items) {
       this.order.total = _.sumBy(this.order.items, function (o) { return o.total * o.qty; })

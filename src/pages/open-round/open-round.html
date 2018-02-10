@@ -6,7 +6,12 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar padding>
+    <ion-buttons start (click)="dismiss()">
+      <button ion-button icon-only navbar-button>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>เริ่มรอบการขาย</ion-title>
   </ion-navbar>
 
@@ -18,11 +23,11 @@
     <ion-col col-12>
       <ion-item>
         <ion-label fixed>วงเงินสดเริ่มต้น</ion-label>
-        <ion-input  type="number" text-right [(ngModel)]="startmoney"></ion-input>
+        <ion-input type="number" text-right [(ngModel)]="startmoney"></ion-input>
       </ion-item>
     </ion-col>
   </ion-row>
 </ion-content>
 <ion-footer>
-  <button ion-button block (click)="openRound()" >เปิดรอบลิ้นชักเงิน</button>
+  <button ion-button block (click)="openRound()">เปิดรอบลิ้นชักเงิน</button>
 </ion-footer>
