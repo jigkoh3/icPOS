@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tokenNotExpired } from 'angular2-jwt';
+import { tokenNotExpired, JwtHelper } from 'angular2-jwt';
 import 'rxjs/add/operator/toPromise';
 import { Constants } from '../../app/app.contants';
 import { ToastController } from 'ionic-angular';
@@ -9,6 +9,7 @@ import { HandleError } from '../handleError';
 
 @Injectable()
 export class AuthProvider {
+  jwt: JwtHelper = new JwtHelper();
   constructor(
     private http: HttpClient,
     private handleErr: HandleError
@@ -16,11 +17,16 @@ export class AuthProvider {
 
   }
 
-  authenticated(): Promise<any> {
-    return new Promise((resolve, reject) => {
-      let token = window.localStorage.getItem('token');
-      resolve(tokenNotExpired(null, token));
-    });
+  authenticated() {
+    return tokenNotExpired();
+  }
+
+  Uesr(){
+    if(this.authenticated()){
+      return this.jwt.decodeToken(window.localStorage.getItem('token'))
+    }else{
+      return null;
+    }
   }
 
   login(credentials) {

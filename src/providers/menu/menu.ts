@@ -11,19 +11,26 @@ import { HandleError } from '../handleError';
 @Injectable()
 export class MenuProvider {
   public homeData: HomeModel;
-  constructor(private http: HttpClient, private handleErr: HandleError) {
+  constructor(private http: HttpClient, 
+    private auth : AuthProvider,
+    private handleErr: HandleError) {
 
   }
 
-  getMenus(shopno): Promise<HomeModel> {
-    let hearder = Constants.Header;
-    return this.http.get(Constants.API_URL + '/api/homes/' + shopno, { headers: hearder })
-      .toPromise()
-      .then(response => {
-        this.homeData = response as HomeModel;
-        return this.homeData;
-      })
-      .catch(err => this.handleError(err));
+  getMenus(): Promise<HomeModel> {
+    if (this.auth.authenticated()) {
+      let hearder = Constants.Header;
+      return this.http.get(Constants.API_URL + '/api/homes', { headers: hearder })
+        .toPromise()
+        .then(response => {
+          this.homeData = response as HomeModel;
+          return this.homeData;
+        })
+        .catch(err => this.handleError(err));
+    }else{
+      this.handleErr.notifyError("User is not Authorize");
+      return Promise.reject("User is not Authorize");
+    }
   }
 
   addMenu(menus: Array<MenuModel>): Promise<HomeModel> {

@@ -42,7 +42,7 @@ import { ToTablePage } from '../pages/to-table/to-table';
 import { TakeAwayPage } from '../pages/take-away/take-away';
 import { OpenRoundPage } from '../pages/open-round/open-round';
 import { GroupByPipe } from '../pipes/group-by/group-by';
-import { ListOfBillPage } from '../pages/list-of-bill/list-of-bill';
+import { ListOfBillPage, PopoverBranchPage } from '../pages/list-of-bill/list-of-bill';
 import { PaymentPage } from '../pages/payment/payment';
 import { EditMenuModalPage } from '../pages/edit-menu-modal/edit-menu-modal';
 import { DiscountModalPage } from '../pages/discount-modal/discount-modal';
@@ -77,6 +77,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     OpenbillSettingComponent,
     PrinterSettingComponent,
     PopoverPage,
+    PopoverBranchPage,
     PrinterSettingModalPage,
     ShopHistorySettingComponent,
     InternationalSettingComponent,
@@ -127,6 +128,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     OpenbillSettingComponent,
     PrinterSettingComponent,
     PopoverPage,
+    PopoverBranchPage,
     PrinterSettingModalPage,
     ShopHistorySettingComponent,
     InternationalSettingComponent,

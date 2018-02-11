@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, PopoverController } from 'ionic-angular';
 import { MenuModel } from '../../assets/models/menus.model';
 import { MainMorePage } from '../main-more/main-more';
 import { HomePage } from '../home/home';
@@ -27,25 +27,27 @@ export class ListOfBillPage {
   bills: Array<OrderModel>;
   tables: Array<TableModel> = [];
   zone: string;
+  branchs: Array<any>;
+  branchSelected: any;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private auth: AuthProvider,
     private menusService: MenuProvider,
     private orderService: OrderProvider,
-    private loading: LoadingProvider) {
+    private loading: LoadingProvider,
+    private popoverCtrl: PopoverController) {
     this.menuSelected = 'list';
-    this.auth.authenticated().then((data) => {
-      if (data) {
-        if (!this.menusService.homeData) {
-          this.getMenuData();
-        } else {
-          this.menus = menusService.homeData.menus;
-          this.bills = menusService.homeData.bills;
-          this.tables = menusService.homeData.tables;
-          this.zone = "all";
-        }
-      }
-    });
+    
+    this.branchs = this.auth.Uesr().shop.branchs;
+    this.branchSelected = this.branchs[0];
+    if (!this.menusService.homeData) {
+      this.getMenuData();
+    } else {
+      this.menus = menusService.homeData.menus;
+      this.bills = menusService.homeData.bills;
+      this.tables = menusService.homeData.tables;
+      this.zone = "all";
+    }
 
   }
 
@@ -70,7 +72,7 @@ export class ListOfBillPage {
   getMenuData() {
     this.loading.onLoading();
     setTimeout(() => {
-      this.menusService.getMenus('001').then(data => {
+      this.menusService.getMenus().then(data => {
         // console.log(data);
         this.menus = data.menus;
         this.bills = data.bills;
@@ -96,4 +98,36 @@ export class ListOfBillPage {
     }
   }
 
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverBranchPage, {branchs : this.branchs});
+    popover.onDidDismiss(data => {
+      if(data){
+        this.branchSelected = data;
+        console.log(this.branchSelected);
+      }
+    });
+    popover.present({
+      ev: myEvent
+    });
+  }
+
+}
+
+@Component({
+  template: `
+    <ion-list>
+      <ion-item  *ngFor="let item of items" (click)="selected(item)">{{ item.name }}</ion-item>
+    </ion-list>
+  `
+})
+export class PopoverBranchPage {
+  items: Array<any>;
+  constructor(public viewCtrl: ViewController, public navParams: NavParams) {
+    this.items = this.navParams.get('branchs');
+   }
+
+   selected(item) {
+    //  console.log(item);
+    this.viewCtrl.dismiss(item);
+  }
 }

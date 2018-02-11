@@ -26,15 +26,20 @@ export class MyApp {
         window.localStorage.setItem('language', data);
       });
     });
-    this.auth.authenticated().then((data) => {
-      if (data) {
-        this.rootPage = ListOfBillPage;
-      } else {
-        this.rootPage = PreLoginPage;
-      }
-    }).catch((err) => {
+    // this.auth.authenticated().then((data) => {
+    //   if (data) {
+    //     this.rootPage = ListOfBillPage;
+    //   } else {
+    //     this.rootPage = PreLoginPage;
+    //   }
+    // }).catch((err) => {
+    //   this.rootPage = PreLoginPage;
+    // });
+    if(this.auth.authenticated()){
+      this.rootPage = ListOfBillPage;
+    }else{
       this.rootPage = PreLoginPage;
-    });
+    }
   }
 }
 
