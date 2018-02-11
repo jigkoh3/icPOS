@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header *ngIf="branchs.length > 1">
   <ion-navbar padding>
     <!-- <ion-select select-option [(ngModel)]="branchSelected" interface="popover">
           <ion-option *ngFor="let branch of branchs" [value]="branch">
