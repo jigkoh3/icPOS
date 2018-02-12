@@ -7,11 +7,11 @@
 <ion-header>
 
   <ion-navbar padding>
-    <ion-title>addBranchModal</ion-title>
+    <ion-title>{{'ADDBRANCH' | translate}}</ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
-        <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->
-        <ion-icon name="md-close"></ion-icon>
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -20,4 +20,38 @@
 
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-12 col-lg-12>
+        <ion-item>
+          <ion-input type="text" placeholder="{{'BRANCHNAME' | translate}}" [(ngModel)]="branch.nameBranch"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="{{'BRANCHTEL' | translate}}" [(ngModel)]="branch.telBranch"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="{{'BRANCHADDRESS' | translate}}" [(ngModel)]="branch.addressBranch"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h3 text-center>Select Branch</h3>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 col-md-4 col-lg-4>
+        <ion-card text-center (click)="selectBranch(branchSelected)">
+          <ion-card-content>
+            {{branchSelected.name}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
+
+<ion-footer>
+  <button ion-button full (click)="saveBranch()">บันทึก</button>
+</ion-footer>
