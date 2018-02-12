@@ -46,78 +46,27 @@
     <ion-row *ngSwitchCase="'cashmanage'">จัดการเงินสด</ion-row>
     <ion-row *ngSwitchCase="'list'">รายการ</ion-row>
 
-    <ion-list  *ngSwitchCase="'setting'">
-        <button ion-item (click)="selectedItem('payment','PAYMENT')" [ngClass]="{'active-item' : itemSelected == 'payment'}">
-          <ion-icon name="cash"></ion-icon> {{'PAYMENT' | translate}}
-        </button>
-        <button ion-item (click)="selectedItem('openBill','OPEN_BILL')" [ngClass]="{'active-item' : itemSelected == 'openBill'}">
-          <ion-icon name="checkbox"></ion-icon> {{'OPEN_BILL' | translate}}
-        </button>
-        <button ion-item (click)="selectedItem('printer','PRINTER')" [ngClass]="{'active-item' : itemSelected == 'printer'}">
-          <ion-icon name="print"></ion-icon> {{'PRINTER' | translate}}
-        </button>
-        <button ion-item (click)="selectedItem('shopHistory','SHOP_HISTORY')" [ngClass]="{'active-item' : itemSelected == 'shopHistory'}">
-          <ion-icon name="home"></ion-icon> {{'SHOP_HISTORY' | translate}}
-        </button>
-        <button ion-item (click)="selectedItem('global','GLOBAL')" [ngClass]="{'active-item' : itemSelected == 'global'}">
-          <ion-icon name="globe"></ion-icon> {{'GLOBAL' | translate}}
-        </button>
-        <button ion-item (click)="selectedItem('more','MORE')" [ngClass]="{'active-item' : itemSelected == 'more'}">
-          <ion-icon name="more"></ion-icon> {{'MORE' | translate}}
-        </button>
-      </ion-list>
+    <ion-list *ngSwitchCase="'setting'">
+      <button ion-item (click)="selectedItem('payment','PAYMENT')" [ngClass]="{'active-item' : itemSelected == 'payment'}">
+        <ion-icon name="cash"></ion-icon> {{'PAYMENT' | translate}}
+      </button>
+      <button ion-item (click)="selectedItem('openBill','OPEN_BILL')" [ngClass]="{'active-item' : itemSelected == 'openBill'}">
+        <ion-icon name="checkbox"></ion-icon> {{'OPEN_BILL' | translate}}
+      </button>
+      <button ion-item (click)="selectedItem('printer','PRINTER')" [ngClass]="{'active-item' : itemSelected == 'printer'}">
+        <ion-icon name="print"></ion-icon> {{'PRINTER' | translate}}
+      </button>
+      <button ion-item (click)="selectedItem('shopHistory','SHOP_HISTORY')" [ngClass]="{'active-item' : itemSelected == 'shopHistory'}">
+        <ion-icon name="home"></ion-icon> {{'SHOP_HISTORY' | translate}}
+      </button>
+      <button ion-item (click)="selectedItem('global','GLOBAL')" [ngClass]="{'active-item' : itemSelected == 'global'}">
+        <ion-icon name="globe"></ion-icon> {{'GLOBAL' | translate}}
+      </button>
+      <button ion-item (click)="selectedItem('more','MORE')" [ngClass]="{'active-item' : itemSelected == 'more'}">
+        <ion-icon name="more"></ion-icon> {{'MORE' | translate}}
+      </button>
+    </ion-list>
   </div>
-
-
-
-
-
-
-  <!-- <ion-list>
-    <button ion-item>ประวัติการขาย</button>
-    <button ion-item>รายงาน</button>
-    <button ion-item>สินค้าคงคลัง</button>
-    <button ion-item>พนักงาน</button>
-    <button ion-item>จัดการเงินสด</button>
-    <button ion-item>รายการ</button>
-    <button ion-item>ตั้งค่า</button>
-  </ion-list> -->
-
-
-
-
-
-
-  <!-- <ion-row>
-    <ion-col col-6 col-md-4 col-lg-4 class="grid-col position-icon" (click)="selectedMenu('sellHistory','SELL_HISTORY')">
-      <img src="https://image.flaticon.com/icons/svg/32/32223.svg" width="124" height="124">
-      <h3>ประวัติการขาย</h3>
-    </ion-col>
-    <ion-col col-6 col-md-4 col-lg-4 class="grid-col position-icon" (click)="selectedMenu('report','REPORT')">
-      <img src="https://image.flaticon.com/icons/svg/18/18229.svg" width="124" height="124">
-      <h3>รายงาน</h3>
-    </ion-col>
-    <ion-col col-6 col-md-4 col-lg-4 class="grid-col position-icon" (click)="selectedMenu('stock','STOCK')">
-      <img src="https://image.flaticon.com/icons/svg/702/702455.svg" width="124" height="124">
-      <h3>สินค้าคงคลัง</h3>
-    </ion-col>
-    <ion-col col-6 col-md-4 col-lg-4 class="grid-col position-icon" (click)="selectedMenu('employee','EMPLOYEE')">
-      <img src="https://image.flaticon.com/icons/svg/554/554732.svg" width="124" height="124">
-      <h3>พนักงาน</h3>
-    </ion-col>
-    <ion-col col-6 col-md-4 col-lg-4 class="grid-col position-icon" (click)="selectedMenu('moneyManagemnet','MONEY_MANAGEMENT')">
-      <img src="https://image.flaticon.com/icons/svg/61/61584.svg" width="124" height="124">
-      <h3>จัดการเงินสด</h3>
-    </ion-col>
-    <ion-col col-6 col-md-4 col-lg-4 class="grid-col position-icon" (click)="selectedMenu('lists','LISTS')">
-      <img src="https://image.flaticon.com/icons/svg/149/149347.svg" width="124" height="124">
-      <h3>รายการ</h3>
-    </ion-col>
-    <ion-col col-6 col-md-4 col-lg-4 class="grid-col position-icon" (click)="selectedMenu('settings','SETTINGS')">
-      <img src="https://image.flaticon.com/icons/svg/126/126472.svg" width="124" height="124">
-      <h3>ตั้งค่า</h3>
-    </ion-col>
-  </ion-row> -->
 </ion-content>
 
 <footer [items]="menus" [menuSelected]="menuSelected" (itemSelected)="menuItemSelected($event)"></footer>
