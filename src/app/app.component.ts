@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ListOfBillPage } from '../pages/list-of-bill/list-of-bill';
 import { PreLoginPage } from '../pages/pre-login/pre-login';
 import { Constants } from './app.contants';
+import { MainMorePage } from '../pages/main-more/main-more';
 @Component({
   templateUrl: 'app.html'
 })
@@ -45,7 +46,7 @@ export class MyApp {
     if (this.auth.authenticated()) {
       this.branchs = this.auth.Uesr().shop.branchs;
       Constants.branchSelected = this.branchs[0];
-      this.rootPage = ListOfBillPage;
+      this.rootPage = MainMorePage;
     } else {
       this.rootPage = PreLoginPage;
     }
