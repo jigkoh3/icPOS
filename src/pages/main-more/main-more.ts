@@ -7,6 +7,7 @@ import { ItemModel, MenuModel } from '../../assets/models/menus.model';
 import { HomePage } from '../home/home';
 import { ListOfBillPage } from '../list-of-bill/list-of-bill';
 import { SettingsModalPage } from '../settings-modal/settings-modal';
+import { Constants } from '../../app/app.contants';
 
 
 @IonicPage()
@@ -19,9 +20,12 @@ export class MainMorePage {
   menuSelected: String;
   menus: Array<MenuModel>;
   private tabs: string = 'setting';
+  private branchSelected: any = {};
+
   constructor(private modalCtrl: ModalController, private menusService: MenuProvider, private loading: LoadingProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.menus = this.navParams.get('menus');
     this.menuSelected = 'more';
+    this.branchSelected = Constants.branchSelected;
   }
 
   ionViewDidLoad() {
