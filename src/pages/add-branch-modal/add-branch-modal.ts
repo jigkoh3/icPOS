@@ -41,7 +41,7 @@ export class AddBranchModalPage {
 
   selectBranch(e) {
     this.itemSelected = e.name;
-    this.branch.branchSelected = e;
+    this.branch.branchselect = e;
     // console.log(e);
   }
 
