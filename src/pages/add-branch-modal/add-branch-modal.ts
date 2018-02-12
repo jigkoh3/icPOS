@@ -1,3 +1,4 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Constants } from '../../app/app.contants';
@@ -15,11 +16,15 @@ import { Constants } from '../../app/app.contants';
   templateUrl: 'add-branch-modal.html',
 })
 export class AddBranchModalPage {
-  branchSelected: any;
+  branchs: Array<any>;
+  // branchSelected: any;
   branch: any = {};
+  itemSelected: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, ) {
-    this.branchSelected = Constants.branchSelected;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private auth: AuthProvider) {
+    // this.branchSelected = Constants.branchSelected;
+    this.branchs = this.auth.Uesr().shop.branchs;
+
   }
 
   ionViewDidLoad() {
@@ -28,7 +33,6 @@ export class AddBranchModalPage {
 
   saveBranch() {
     this.viewCtrl.dismiss(this.branch);
-    console.log(this.branch);
   }
 
   dismiss() {
@@ -36,7 +40,8 @@ export class AddBranchModalPage {
   }
 
   selectBranch(e) {
-    this.branch.branchSelected = e;
+    this.itemSelected = e.name;
+    this.branch.branchselect = e;
     // console.log(e);
   }
 

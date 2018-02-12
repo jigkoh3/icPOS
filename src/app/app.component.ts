@@ -63,9 +63,15 @@ export class MyApp {
   }
 
   addBranch() {
-    let addBranchModal = this.modalCtrl.create(AddBranchModalPage);
+    let opts: any = {
+      enableBackdropDismiss: false
+    };
+    
+    let addBranchModal = this.modalCtrl.create(AddBranchModalPage, {}, opts);
     addBranchModal.onDidDismiss(data => {
-      console.log(data);
+      if (data) {
+        console.log(data);
+      }
     });
     addBranchModal.present();
   }

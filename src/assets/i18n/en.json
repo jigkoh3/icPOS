@@ -121,5 +121,6 @@
   "BRANCHNAME": "Name",
   "ADDBRANCH": "Add Branch",
   "BRANCHTEL": "Tel",
-  "BRANCHADDRESS": "Address"
+  "BRANCHADDRESS": "Address",
+  "SELECT_BRANCH":"Select Branch"
 }

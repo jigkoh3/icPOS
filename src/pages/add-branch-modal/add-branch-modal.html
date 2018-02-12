@@ -10,8 +10,12 @@
     <ion-title>{{'ADDBRANCH' | translate}}</ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
-        <span ion-text color="primary" showWhen="ios">Cancel</span>
-        <ion-icon name="md-close" showWhen="android"></ion-icon>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="saveBranch()" [disabled]="!(branch.name && branch.tel && branch.address)">
+        <span>บันทึก</span>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -24,26 +28,28 @@
     <ion-row>
       <ion-col col-12 col-md-12 col-lg-12>
         <ion-item>
-          <ion-input type="text" placeholder="{{'BRANCHNAME' | translate}}" [(ngModel)]="branch.nameBranch"></ion-input>
+          <ion-input type="text" placeholder="{{'BRANCHNAME' | translate}}" [(ngModel)]="branch.name"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="text" placeholder="{{'BRANCHTEL' | translate}}" [(ngModel)]="branch.telBranch"></ion-input>
+          <ion-input type="text" placeholder="{{'BRANCHTEL' | translate}}" [(ngModel)]="branch.tel"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="text" placeholder="{{'BRANCHADDRESS' | translate}}" [(ngModel)]="branch.addressBranch"></ion-input>
+          <ion-input type="text" placeholder="{{'BRANCHADDRESS' | translate}}" [(ngModel)]="branch.address"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  <h3 text-center>Select Branch</h3>
+  <div class="strike" padding>
+    <span>{{'SELECT_BRANCH'| translate}}</span>
+  </div>
 
   <ion-grid>
     <ion-row>
-      <ion-col col-4 col-md-4 col-lg-4>
-        <ion-card text-center (click)="selectBranch(branchSelected)">
+      <ion-col col-4 col-md-4 col-lg-4 *ngFor="let branch of branchs">
+        <ion-card text-center (click)="selectBranch(branch)" [ngClass]="{'active-item' : itemSelected == branch.name}">
           <ion-card-content>
-            {{branchSelected.name}}
+            <label>{{branch.name}}</label>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -51,7 +57,3 @@
   </ion-grid>
 
 </ion-content>
-
-<ion-footer>
-  <button ion-button full (click)="saveBranch()">บันทึก</button>
-</ion-footer>
