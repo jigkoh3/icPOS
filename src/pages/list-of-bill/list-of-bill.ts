@@ -116,6 +116,7 @@ export class ListOfBillPage {
 
 @Component({
   template: `
+    <ion-searchbar></ion-searchbar>
     <ion-list>
       <ion-item  *ngFor="let item of items" (click)="selected(item)">{{ item.name }}</ion-item>
     </ion-list>
