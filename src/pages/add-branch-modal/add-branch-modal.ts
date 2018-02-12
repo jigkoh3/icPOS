@@ -17,12 +17,10 @@ import { Constants } from '../../app/app.contants';
 })
 export class AddBranchModalPage {
   branchs: Array<any>;
-  // branchSelected: any;
   branch: any = {};
   itemSelected: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private auth: AuthProvider) {
-    // this.branchSelected = Constants.branchSelected;
     this.branchs = this.auth.Uesr().shop.branchs;
 
   }
@@ -37,12 +35,6 @@ export class AddBranchModalPage {
 
   dismiss() {
     this.viewCtrl.dismiss();
-  }
-
-  selectBranch(e) {
-    this.itemSelected = e.name;
-    this.branch.branchselect = e;
-    // console.log(e);
   }
 
 }

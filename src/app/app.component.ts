@@ -44,9 +44,10 @@ export class MyApp {
     // });
 
     if (this.auth.authenticated()) {
-      this.branchs = this.auth.Uesr().shop.branchs;
-      Constants.branchSelected = this.branchs[0];
-      this.rootPage = MainMorePage;
+      Constants.branchs = this.auth.Uesr().shop.branchs;
+      Constants.branchSelected = Constants.branchs[0];
+      this.branchs = Constants.branchs;
+      this.rootPage = ListOfBillPage;
     } else {
       this.rootPage = PreLoginPage;
     }
@@ -66,10 +67,11 @@ export class MyApp {
     let opts: any = {
       enableBackdropDismiss: false
     };
-    
+
     let addBranchModal = this.modalCtrl.create(AddBranchModalPage, {}, opts);
     addBranchModal.onDidDismiss(data => {
       if (data) {
+        this.branchs.push(data);
         console.log(data);
       }
     });
