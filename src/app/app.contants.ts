@@ -18,5 +18,6 @@ export class Constants {
         header = header.append('Authorization', 'Bearer ' + window.localStorage.getItem('token'));
         return header;
     }
+    public static branchs: Array<any>;
     public static branchSelected: any;
 }
