@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start (click)="closeModal()">
+      <button ion-button icon-only navbar-button>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ title.name| translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <payment-setting *ngIf="title.type == 'payment'"></payment-setting>
+  <openbill-setting *ngIf="title.type == 'openBill'"></openbill-setting>
+  <printer-setting *ngIf="title.type == 'printer'"></printer-setting>
+  <shop-history-setting *ngIf="title.type == 'shopHistory'"></shop-history-setting>
+  <international-setting *ngIf="title.type == 'global'"></international-setting>
+  <other-setting *ngIf="title.type == 'more'"></other-setting>
+</ion-content>

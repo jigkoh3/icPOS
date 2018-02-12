@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { MoreLayoutPage } from '../more-layout/more-layout';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { MenuProvider } from '../../providers/menu/menu';
 import { ItemModel, MenuModel } from '../../assets/models/menus.model';
 import { HomePage } from '../home/home';
 import { ListOfBillPage } from '../list-of-bill/list-of-bill';
+import { SettingsModalPage } from '../settings-modal/settings-modal';
+import { Constants } from '../../app/app.contants';
 
 
 @IonicPage()
@@ -17,13 +19,30 @@ export class MainMorePage {
   menuItemsSelected: Array<ItemModel>;
   menuSelected: String;
   menus: Array<MenuModel>;
-  constructor(private menusService: MenuProvider, private loading: LoadingProvider, public navCtrl: NavController, public navParams: NavParams) {
+  private tabs: string = 'setting';
+  private branchSelected: any = {};
+
+  constructor(private modalCtrl: ModalController, private menusService: MenuProvider, private loading: LoadingProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.menus = this.navParams.get('menus');
     this.menuSelected = 'more';
+    this.branchSelected = Constants.branchSelected;
   }
 
   ionViewDidLoad() {
 
+  }
+
+  selectedItem(itemType, itemName) {
+    let opts: any = {
+      enableBackdropDismiss: false
+    };
+    let settingModal = this.modalCtrl.create(SettingsModalPage, { type: itemType, name: itemName }, opts);
+    settingModal.onDidDismiss(data => {
+      if (data) {
+        console.log(data);
+      }
+    });
+    settingModal.present();
   }
 
   selectedMenu(type, name) {

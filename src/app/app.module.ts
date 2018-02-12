@@ -55,6 +55,7 @@ import { EmployeeSideNavComponent } from '../components/employee-side-nav/employ
 import { CreateEmployeeModalPage } from '../pages/create-employee-modal/create-employee-modal';
 import { EmployeeDetailComponent } from '../components/employee-detail/employee-detail';
 import { HandleError } from '../providers/handleError';
+import { SettingsModalPage } from '../pages/settings-modal/settings-modal';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -103,7 +104,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     EmployeeSideNavComponent,
     CreateEmployeeModalPage,
     EmployeeDetailComponent,
-    AddBranchModalPage
+    AddBranchModalPage,
+    SettingsModalPage
   ],
   imports: [
     BrowserModule,
@@ -154,7 +156,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     EmployeeSideNavComponent,
     CreateEmployeeModalPage,
     EmployeeDetailComponent,
-    AddBranchModalPage
+    AddBranchModalPage,
+    SettingsModalPage
   ],
   providers: [
     StatusBar,
