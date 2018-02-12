@@ -1,14 +1,8 @@
-<ion-header *ngIf="branchs.length > 1">
+<ion-header *ngIf="branchs > 1">
   <ion-navbar padding>
-    <!-- <ion-select select-option [(ngModel)]="branchSelected" interface="popover">
-          <ion-option *ngFor="let branch of branchs" [value]="branch">
-            {{ branch.name }}
-          </ion-option>
-        </ion-select> -->
-    
     <ion-title>
       <button ion-button icon-only clear color="dark" (click)="presentPopover($event)">
-          {{branchSelected.name}} 
+        {{branchSelected.name}}
         <ion-icon name="arrow-dropdown"></ion-icon>
       </button>
     </ion-title>
