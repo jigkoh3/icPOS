@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SettingProvider } from '../../providers/setting/setting';
 
 
@@ -7,6 +7,7 @@ import { SettingProvider } from '../../providers/setting/setting';
   templateUrl: 'payment-setting.html'
 })
 export class PaymentSettingComponent {
+  @Input() payment : any;
   private paymentSettingData: any = {};
   private serviceCharge: any = {};
   private vat: any = {};

@@ -21,6 +21,7 @@ export class MainMorePage {
   menus: Array<MenuModel>;
   private tabs: string = 'setting';
   private branchSelected: any = {};
+  private settings: any = {};
 
   constructor(private modalCtrl: ModalController, private menusService: MenuProvider, private loading: LoadingProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.menus = this.navParams.get('menus');

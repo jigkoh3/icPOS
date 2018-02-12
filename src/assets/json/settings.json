@@ -1,0 +1,15 @@
+{
+    "payment": {
+        "vat": {
+            "isVat": true,
+            "taxID": "TX12345",
+            "registerNo": "RE12345"
+        },
+        "serviceCharge": {
+            "isServiceCharge": true,
+            "percent": 7,
+            "setProductPrice": "includeServiceCharge"
+        },
+        "round": "no"
+    }
+}
