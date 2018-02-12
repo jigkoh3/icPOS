@@ -29,7 +29,10 @@ export class MainMorePage {
   }
 
   selectedItem(itemType, itemName) {
-    let settingModal = this.modalCtrl.create(SettingsModalPage, { type: itemType, name: itemName });
+    let opts: any = {
+      enableBackdropDismiss: false
+    };
+    let settingModal = this.modalCtrl.create(SettingsModalPage, { type: itemType, name: itemName }, opts);
     settingModal.onDidDismiss(data => {
       if (data) {
         console.log(data);
