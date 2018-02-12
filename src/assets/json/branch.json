@@ -1,0 +1,13 @@
+{
+  "branchs": [{
+      "name": "branch of 1",
+      "tel": "0894445555",
+      "address": "88/7 lumlukka"
+    },
+    {
+      "name": "branch of 2",
+      "tel": "0894446666",
+      "address": "99/7 lumlukka"
+    }
+  ]
+}
