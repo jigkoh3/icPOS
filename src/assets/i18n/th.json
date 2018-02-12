@@ -120,5 +120,6 @@
   "BRANCHNAME": "ชื่อสาขา",
   "ADDBRANCH": "เพิ่มสาขา",
   "BRANCHTEL": "เบอร์โทรศัพท์",
-  "BRANCHADDRESS": "ที่อยู่สาขา"
+  "BRANCHADDRESS": "ที่อยู่สาขา",
+  "SELECT_BRANCH": "เลือกสาขา"
 }
