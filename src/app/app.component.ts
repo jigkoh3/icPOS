@@ -63,6 +63,9 @@ export class MyApp {
 
   addBranch() {
     let addBranchModal = this.modalCtrl.create(AddBranchModalPage);
+    addBranchModal.onDidDismiss(data => {
+      console.log(data);
+    });
     addBranchModal.present();
   }
 }

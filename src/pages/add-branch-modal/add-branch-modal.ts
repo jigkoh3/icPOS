@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Constants } from '../../app/app.contants';
 
 /**
  * Generated class for the AddBranchModalPage page.
@@ -14,16 +15,29 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'add-branch-modal.html',
 })
 export class AddBranchModalPage {
+  branchSelected: any;
+  branch: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, ) {
+    this.branchSelected = Constants.branchSelected;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddBranchModalPage');
   }
 
+  saveBranch() {
+    this.viewCtrl.dismiss(this.branch);
+    console.log(this.branch);
+  }
+
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  selectBranch(e) {
+    this.branch.branchSelected = e;
+    // console.log(e);
   }
 
 }
