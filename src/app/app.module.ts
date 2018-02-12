@@ -1,3 +1,4 @@
+import { AddBranchModalPage } from './../pages/add-branch-modal/add-branch-modal';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -101,7 +102,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     RegisterPage,
     EmployeeSideNavComponent,
     CreateEmployeeModalPage,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    AddBranchModalPage
   ],
   imports: [
     BrowserModule,
@@ -151,7 +153,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     RegisterPage,
     EmployeeSideNavComponent,
     CreateEmployeeModalPage,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    AddBranchModalPage
   ],
   providers: [
     StatusBar,

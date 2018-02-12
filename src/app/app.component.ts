@@ -1,7 +1,8 @@
+import { AddBranchModalPage } from './../pages/add-branch-modal/add-branch-modal';
 import { AuthProvider } from './../providers/auth/auth';
 import { HomePage } from './../pages/home/home';
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Events, Nav } from 'ionic-angular';
+import { Platform, Events, Nav, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService } from '@ngx-translate/core';
@@ -18,7 +19,7 @@ export class MyApp {
 
 
   branchs: Array<any>;
-  constructor(private events: Events, private translateService: TranslateService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthProvider) {
+  constructor(private events: Events, private translateService: TranslateService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthProvider, private modalCtrl: ModalController) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
@@ -58,6 +59,11 @@ export class MyApp {
     //this.nav.setRoot(page.component);
     Constants.branchSelected = page;
     console.log(Constants.branchSelected);
+  }
+
+  addBranch() {
+    let addBranchModal = this.modalCtrl.create(AddBranchModalPage);
+    addBranchModal.present();
   }
 }
 
