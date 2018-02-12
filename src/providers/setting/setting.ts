@@ -5,6 +5,7 @@ import { OpenbillSettingModel } from '../../assets/models/openbill_setting.model
 import { ShopHistoryModel } from '../../assets/models/shop_history_setting.model';
 import { Constants } from '../../app/app.contants';
 import { AuthProvider } from '../auth/auth';
+import { SettingsModel } from '../../assets/models/settings.model';
 
 @Injectable()
 export class SettingProvider {
@@ -12,6 +13,13 @@ export class SettingProvider {
 
     constructor(public http: HttpClient,private auth: AuthProvider) {
         this.hearder = Constants.Header;
+    }
+
+    getSettings(): Promise<SettingsModel> {
+        return this.http.get('./assets/json/settings.json')
+            .toPromise()
+            .then(response => response as SettingsModel)
+            .catch(this.handleError);
     }
 
     getEmployees(): Promise<any> {

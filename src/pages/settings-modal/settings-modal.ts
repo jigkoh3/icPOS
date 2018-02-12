@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { SettingsModel } from '../../assets/models/settings.model';
+import { SettingProvider } from '../../providers/setting/setting';
 
 @IonicPage()
 @Component({
@@ -8,14 +10,23 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class SettingsModalPage {
   private title: any = {};
+  private settings: SettingsModel;
 
-  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private settingService: SettingProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     this.title = this.navParams.data;
-
+    this.initSetting();
   }
 
   ionViewDidLoad() {
 
+  }
+
+  initSetting() {
+    this.settingService.getSettings().then(data => {
+      this.settings = data;
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
   closeModal() {

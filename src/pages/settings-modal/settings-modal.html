@@ -13,7 +13,7 @@
 
 
 <ion-content padding>
-  <payment-setting *ngIf="title.type == 'payment'"></payment-setting>
+  <payment-setting [payment]="settings ? settings.payment: {}" *ngIf="title.type == 'payment'"></payment-setting>
   <openbill-setting *ngIf="title.type == 'openBill'"></openbill-setting>
   <printer-setting *ngIf="title.type == 'printer'"></printer-setting>
   <shop-history-setting *ngIf="title.type == 'shopHistory'"></shop-history-setting>
