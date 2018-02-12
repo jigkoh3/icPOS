@@ -1,3 +1,4 @@
+import { Constants } from './../../app/app.contants';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, PopoverController } from 'ionic-angular';
 import { MenuModel } from '../../assets/models/menus.model';
@@ -27,7 +28,7 @@ export class ListOfBillPage {
   bills: Array<OrderModel>;
   tables: Array<TableModel> = [];
   zone: string;
-  branchs: Array<any>;
+  //branchs: Array<any>;
   branchSelected: any;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -37,9 +38,9 @@ export class ListOfBillPage {
     private loading: LoadingProvider,
     private popoverCtrl: PopoverController) {
     this.menuSelected = 'list';
-    
-    this.branchs = this.auth.Uesr().shop.branchs;
-    this.branchSelected = this.branchs[0];
+
+    //this.branchs = this.auth.Uesr().shop.branchs;
+    this.branchSelected = Constants.branchSelected;
     if (!this.menusService.homeData) {
       this.getMenuData();
     } else {
@@ -99,9 +100,9 @@ export class ListOfBillPage {
   }
 
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverBranchPage, {branchs : this.branchs});
+    let popover = this.popoverCtrl.create(PopoverBranchPage, { branchs: this.branchSelected });
     popover.onDidDismiss(data => {
-      if(data){
+      if (data) {
         this.branchSelected = data;
         console.log(this.branchSelected);
       }
@@ -124,9 +125,9 @@ export class PopoverBranchPage {
   items: Array<any>;
   constructor(public viewCtrl: ViewController, public navParams: NavParams) {
     this.items = this.navParams.get('branchs');
-   }
+  }
 
-   selected(item) {
+  selected(item) {
     //  console.log(item);
     this.viewCtrl.dismiss(item);
   }

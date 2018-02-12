@@ -1,11 +1,11 @@
 import { HttpHeaders } from "@angular/common/http";
 
 export class Constants {
-    public static get API_URL(): string { 
+    public static get API_URL(): string {
         //dev - local host
         //return 'http://localhost:3000'; 
         //dev - local heroku
-        return 'https://ic-pos-service-dev.herokuapp.com'; 
+        return 'https://ic-pos-service-dev.herokuapp.com';
         //test
         //return 'https://ic-pos-service-test.herokuapp.com';
         //production
@@ -18,4 +18,5 @@ export class Constants {
         header = header.append('Authorization', 'Bearer ' + window.localStorage.getItem('token'));
         return header;
     }
+    public static branchSelected: any;
 }

@@ -1,18 +1,23 @@
 import { AuthProvider } from './../providers/auth/auth';
 import { HomePage } from './../pages/home/home';
-import { Component } from '@angular/core';
-import { Platform, Events } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Events, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService } from '@ngx-translate/core';
 import { ListOfBillPage } from '../pages/list-of-bill/list-of-bill';
 import { PreLoginPage } from '../pages/pre-login/pre-login';
+import { Constants } from './app.contants';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  @ViewChild(Nav) nav: Nav;
+
   rootPage: any = ListOfBillPage;
 
+
+  branchs: Array<any>;
   constructor(private events: Events, private translateService: TranslateService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthProvider) {
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -35,11 +40,24 @@ export class MyApp {
     // }).catch((err) => {
     //   this.rootPage = PreLoginPage;
     // });
-    if(this.auth.authenticated()){
+
+    if (this.auth.authenticated()) {
+      this.branchs = this.auth.Uesr().shop.branchs;
+      Constants.branchSelected = this.branchs[0];
       this.rootPage = ListOfBillPage;
-    }else{
+    } else {
       this.rootPage = PreLoginPage;
     }
+
+
+  }
+
+  openPage(page) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    //this.nav.setRoot(page.component);
+    Constants.branchSelected = page;
+    console.log(Constants.branchSelected);
   }
 }
 

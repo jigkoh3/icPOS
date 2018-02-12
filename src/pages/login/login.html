@@ -12,7 +12,7 @@
       </ion-col>
       <ion-col col-6 col-md-6 col-lg-6>
         <div class="center">
-          <img src="../assets/imgs/logo_2.png" alt="image" width="264" height="264">
+          <img src="./assets/icon/logo.png" alt="image" width="264" height="264">
         </div>
         <ion-segment mode="md" [(ngModel)]="loginType">
           <ion-segment-button value="owner">
@@ -33,7 +33,7 @@
       <ion-col col-6 col-md-6 col-lg-6>
         <ion-item>
           <ion-label>TH +66</ion-label>
-          <ion-input type="number" placeholder="หมายเลขโทรศัพท์มือถือ" [(ngModel)]="mobile"></ion-input>
+          <ion-input type="text" placeholder="หมายเลขโทรศัพท์มือถือ หรือ อีเมล" [(ngModel)]="mobile"></ion-input>
         </ion-item>
         <button ion-button full [disabled]="!mobile" (click)="ownerLogin()">เข้าสู่ระบบ</button>
       </ion-col>
