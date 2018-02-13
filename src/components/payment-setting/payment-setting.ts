@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: 'payment-setting.html'
 })
 export class PaymentSettingComponent {
-  @Input() payment: any = {};
+  @Input() settings: any = {};
 
   constructor() {
     

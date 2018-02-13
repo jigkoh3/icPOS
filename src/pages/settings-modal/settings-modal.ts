@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { SettingsModel } from '../../assets/models/settings.model';
+import { SettingsModel, PaymentModel, VatModel } from '../../assets/models/settings.model';
 import { SettingProvider } from '../../providers/setting/setting';
+import { Constants } from '../../app/app.contants';
+import { ServiceChargeModel } from '../../assets/models/payment_setting.model';
 
 @IonicPage()
 @Component({
@@ -22,11 +24,22 @@ export class SettingsModalPage {
   }
 
   initSetting() {
-    this.settingService.getSettings().then(data => {
-      this.settings = data;
-    }).catch(err => {
-      console.log(err);
-    });
+    if (Constants.branchSelected) {
+      if (Constants.branchSelected.settings) {
+        this.settings = Constants.branchSelected.settings;
+      } else {
+        this.settings = new SettingsModel();
+        this.settings.payment = new PaymentModel();
+        this.settings.payment.vat = new VatModel();
+        this.settings.serviceCharge = new ServiceChargeModel();
+        this.settings.round = 'no';
+      }
+    }
+  }
+
+  saveSettings(){
+    Constants.branchSelected.settings = this.settings;
+    this.viewCtrl.dismiss(this.settings);
   }
 
   closeModal() {

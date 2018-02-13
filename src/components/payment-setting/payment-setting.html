@@ -1,32 +1,32 @@
-<ion-list *ngIf="payment">
+<ion-list>
 
-  <!-- <ion-item>
+  <ion-item>
     <ion-label>{{'VAT' | translate}}</ion-label>
-    <ion-toggle [(ngModel)]="vat.isVat" color="secondary"></ion-toggle>
+    <ion-toggle [(ngModel)]="settings.payment.vat.isVat" color="secondary"></ion-toggle>
   </ion-item>
-  <div>
+  <div *ngIf="settings.payment.vat.isVat">
     <ion-item>
       <ion-label>TAX ID</ion-label>
-      <ion-input type="text" placeholder="please fill" [(ngModel)]="vat.taxID"></ion-input>
+      <ion-input type="text" placeholder="please fill" [(ngModel)]="settings.payment.vat.taxID"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>REGISTER NO</ion-label>
-      <ion-input type="text" placeholder="please fill" [(ngModel)]="vat.registerNo"></ion-input>
+      <ion-input type="text" placeholder="please fill" [(ngModel)]="settings.payment.vat.registerNo"></ion-input>
     </ion-item>
   </div>
 
   <ion-item>
     <ion-label>{{'SERVICE_CHARGE' | translate}}</ion-label>
-    <ion-toggle [(ngModel)]="serviceCharge.isServiceCharge" color="secondary" (ngModelChange)="setViewServiceChargeForm($event)"></ion-toggle>
+    <ion-toggle [(ngModel)]="settings.serviceCharge.isServiceCharge" color="secondary"></ion-toggle>
   </ion-item>
   <div *ngIf="serviceChargeFromVisible">
     <ion-item>
       <ion-label>{{'PERCENT' | translate}}</ion-label>
-      <ion-input type="number" placeholder="please fill" [(ngModel)]="serviceCharge.percent"></ion-input>
+      <ion-input type="number" placeholder="please fill" [(ngModel)]="settings.serviceCharge.percent"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>{{'PRICING' | translate}}</ion-label>
-      <ion-select [(ngModel)]="serviceCharge.setProductPrice">
+      <ion-select [(ngModel)]="settings.serviceCharge.setProductPrice">
         <ion-option value="includeServiceCharge">{{'INCLUDE_SERVICE_CHARGE' | translate}}</ion-option>
         <ion-option value="splitServiceCharge">{{'SPLIT_SERVICE_CHARGE' | translate}}</ion-option>
       </ion-select>
@@ -35,11 +35,11 @@
 
   <ion-item>
     <ion-label>{{'ROUND' | translate}}</ion-label>
-    <ion-select [(ngModel)]="round">
+    <ion-select [(ngModel)]="settings.round">
       <ion-option value="no">{{'NO' | translate}}</ion-option>
       <ion-option value="roundNear">{{'ROUND_NEAR' | translate}}</ion-option>
       <ion-option value="roundUp">{{'ROUND_UP' | translate}}</ion-option>
       <ion-option value="roundDown">{{'ROUND_DOWN' | translate}}</ion-option>
     </ion-select>
-  </ion-item> -->
+  </ion-item>
 </ion-list>

@@ -7,14 +7,19 @@
       </button>
     </ion-buttons>
     <ion-title>{{ title.name| translate}}</ion-title>
+    <ion-buttons end (click)="saveSettings()">
+      <button ion-button icon-only navbar-button>
+        บันทึก
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <payment-setting [payment]="settings ? settings.payment: {}" *ngIf="title.type == 'payment'"></payment-setting>
-  <openbill-setting *ngIf="title.type == 'openBill'"></openbill-setting>
+  <payment-setting [settings]="settings" *ngIf="title.type == 'payment'"></payment-setting>
+  <openbill-setting [settings]="settings" *ngIf="title.type == 'openBill'"></openbill-setting>
   <printer-setting *ngIf="title.type == 'printer'"></printer-setting>
   <shop-history-setting *ngIf="title.type == 'shopHistory'"></shop-history-setting>
   <international-setting *ngIf="title.type == 'global'"></international-setting>
