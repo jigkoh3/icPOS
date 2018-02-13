@@ -1,7 +1,7 @@
 import { ProductModel } from "./product.model";
 
 export class OrderModel {
-    billno: string;
+    docno: string;
     opendate: Date;
     paiddate: Date;
     cancledate: Date;
@@ -17,6 +17,7 @@ export class OrderModel {
     vatamount: number;
     netamount: number;
     status: string; // "open", "paid", "cancle" 
+    branch:string;
 }
 
 export class RoundModel {

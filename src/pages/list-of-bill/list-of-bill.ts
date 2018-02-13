@@ -41,20 +41,21 @@ export class ListOfBillPage {
 
     //this.branchs = this.auth.Uesr().shop.branchs;
     this.branchSelected = Constants.branchSelected;
-    if (!this.menusService.homeData) {
-      this.getMenuData();
-    } else {
-      this.menus = menusService.homeData.menus;
-      this.bills = menusService.homeData.bills;
-      this.tables = menusService.homeData.tables;
-      this.zone = "all";
-    }
+    // if (!this.menusService.homeData) {
+    //   this.getMenuData();
+    // } else {
+    //   this.menus = menusService.homeData.menus;
+    //   this.bills = menusService.homeData.bills;
+    //   this.tables = menusService.homeData.tables;
+    //   this.zone = "all";
+    // }
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ListOfBillPage');
-    console.log(this.menusService.homeData);
+    // console.log('ionViewDidLoad ListOfBillPage');
+    // console.log(this.menusService.homeData);
+    this.getMenuData();
   }
 
   selecttab(key) {

@@ -306,17 +306,12 @@ export class HomePage {
     toTableModal.onDidDismiss(data => {
       //console.log(data);
       if (data) {
-        //this.updateOrder(data);
-        // let bill: OrderModel = new OrderModel();
-        // bill.servetype = "takeatable";
-        // bill.table = data;
-        // bill.items = this.order.i;
-        // this.order = [];
-        // this.menusService.createBill(bill).then(data => {
-        //   this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
-        // }).catch(err => {
+        this.order.customer = data;
+        this.orderService.createBill(this.order).then(data => {
+          this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
+        }).catch(err => {
 
-        // });
+        });
       }
 
     });
@@ -332,16 +327,8 @@ export class HomePage {
     takeAwayModal.onDidDismiss(data => {
       //console.log(data);
       if (data) {
-        //this.updateOrder(data);
-        // let bill: OrderModel = new OrderModel();
-        // bill.servetype = "takeaway";
-        // bill.customer = data;
-        // bill.items = this.order;
-        // this.order = [];
         this.order.customer = data;
-        this.menusService.createBill(this.order).then(data => {
-          this.orderService.order = new OrderModel();
-          this.orderService.order.items = [];
+        this.orderService.createBill(this.order).then(data => {
           this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
         }).catch(err => {
 
