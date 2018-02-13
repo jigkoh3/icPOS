@@ -11,7 +11,7 @@
         <ion-icon name="ios-add-circle-outline"></ion-icon> {{'ADDBRANCH' | translate}}
       </ion-item>
       
-      <button menuClose ion-item *ngFor="let branch of branchs" (click)="openPage(branch)">
+      <button menuClose ion-item *ngFor="let branch of branchs" (click)="selectBranch(branch)">
         {{branch.name}}
       </button>
     </ion-list>
