@@ -10,6 +10,8 @@ import { ListOfBillPage } from '../pages/list-of-bill/list-of-bill';
 import { PreLoginPage } from '../pages/pre-login/pre-login';
 import { Constants } from './app.contants';
 import { MainMorePage } from '../pages/main-more/main-more';
+import { ShopProvider } from '../providers/shop/shop';
+import { ShopModel } from '../assets/models/shop.model';
 @Component({
   templateUrl: 'app.html'
 })
@@ -18,9 +20,8 @@ export class MyApp {
 
   rootPage: any = ListOfBillPage;
 
-
   branchs: Array<any>;
-  constructor(private events: Events, private translateService: TranslateService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthProvider, private modalCtrl: ModalController) {
+  constructor(private events: Events, private translateService: TranslateService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthProvider, private modalCtrl: ModalController, private shopService: ShopProvider) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
@@ -68,10 +69,17 @@ export class MyApp {
     };
 
     let addBranchModal = this.modalCtrl.create(AddBranchModalPage, {}, opts);
+    let shopid = this.auth.Uesr().shop;
     addBranchModal.onDidDismiss(data => {
       if (data) {
-        this.branchs.push(data);
         console.log(data);
+        this.shopService.crateNewBranch(data, shopid._id).then((resp) => {
+          // console.log(resp);
+          this.branchs = resp.branchs;
+          // console.log(this.branchs);
+        }, (err) => {
+          console.log(err);
+        });
       }
     });
     addBranchModal.present();

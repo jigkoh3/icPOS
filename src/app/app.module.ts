@@ -56,6 +56,7 @@ import { CreateEmployeeModalPage } from '../pages/create-employee-modal/create-e
 import { EmployeeDetailComponent } from '../components/employee-detail/employee-detail';
 import { HandleError } from '../providers/handleError';
 import { SettingsModalPage } from '../pages/settings-modal/settings-modal';
+import { ShopProvider } from '../providers/shop/shop';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -168,7 +169,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MenuProvider,
     LoadingProvider,
     OrderProvider,
-    SettingProvider
+    SettingProvider,
+    ShopProvider
   ]
 })
 export class AppModule { }
