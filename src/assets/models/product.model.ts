@@ -1,4 +1,5 @@
 export class ProductModel {
+    _id: string;
     name: string;
     image: string;
     bgcoler: string;

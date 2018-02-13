@@ -37,13 +37,21 @@ export class OrderProvider {
   createBill(order: OrderModel): Promise<OrderModel> {
     if (this.auth.authenticated()) {
       let hearder = Constants.Header;
-     
+      
+     if(!order._id){
       order.docno = Date.now().toString();
       order.branch = Constants.branchSelected._id;
       return this.http.post(Constants.API_URL + '/api/bills', order, { headers: hearder })
         .toPromise()
         .then(response => response as any)
         .catch(err => this.handleError(err));
+     }else{
+      return this.http.put(Constants.API_URL + '/api/bills/' + order._id, order, { headers: hearder })
+        .toPromise()
+        .then(response => response as any)
+        .catch(err => this.handleError(err));
+     }
+      
     } else {
       this.handleErr.notifyError("User is not Authorize");
       return Promise.reject("User is not Authorize");
