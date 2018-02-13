@@ -8,6 +8,8 @@ import { HomePage } from '../home/home';
 import { ListOfBillPage } from '../list-of-bill/list-of-bill';
 import { SettingsModalPage } from '../settings-modal/settings-modal';
 import { Constants } from '../../app/app.contants';
+import { CreateEmployeeModalPage } from '../create-employee-modal/create-employee-modal';
+import { UsersModel } from '../../assets/models/users.model';
 
 
 @IonicPage()
@@ -19,6 +21,7 @@ export class MainMorePage {
   menuItemsSelected: Array<ItemModel>;
   menuSelected: String;
   menus: Array<MenuModel>;
+  users: Array<UsersModel> = [];
   private tabs: string = 'setting';
   private branchSelected: any = {};
   private settings: any = {};
@@ -31,6 +34,21 @@ export class MainMorePage {
 
   ionViewDidLoad() {
 
+  }
+
+  openCreateEmpModal() {
+    let opts: any = {
+      enableBackdropDismiss: false
+    };
+    let createEmpModal = this.modalCtrl.create(CreateEmployeeModalPage, {}, opts);
+    createEmpModal.onDidDismiss(data => {
+      if (data) {
+        data.branch = Constants.branchSelected;
+        this.users.push(data);
+        console.log(this.users);
+      }
+    });
+    createEmpModal.present();
   }
 
   selectedItem(itemType, itemName) {
