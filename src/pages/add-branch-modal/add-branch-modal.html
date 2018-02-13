@@ -45,16 +45,16 @@
   </div>
 
   <ion-row radio-group [(ngModel)]="branch.branch">
-    <ion-col col-6 col-md-4 col-lg-4 *ngFor="let branch of branchs">
+    <ion-col col-6 col-md-4 col-lg-4 *ngFor="let item of branchs">
       <ion-item no-lines color="light">
-        <ion-label>{{branch.name}}</ion-label>
-        <ion-radio value="{{branch.name}}" color="secondary"></ion-radio>
+        <ion-label>{{item.name}}</ion-label>
+        <ion-radio value="{{item.name}}" color="secondary"></ion-radio>
       </ion-item>
     </ion-col>
     <ion-col col-6 col-md-4 col-lg-4>
       <ion-item no-lines color="light">
         <ion-label>ระบุเอง</ion-label>
-        <ion-radio value="{{null}}" color="secondary"></ion-radio>
+        <ion-radio value="" color="secondary"></ion-radio>
       </ion-item>
     </ion-col>
   </ion-row>

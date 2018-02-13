@@ -22,7 +22,7 @@ export class AddBranchModalPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private auth: AuthProvider) {
     this.branchs = this.auth.Uesr().shop.branchs;
-
+    this.branch.branch = this.branchs.length > 0 ? this.branchs[0].name : '';
   }
 
   ionViewDidLoad() {
