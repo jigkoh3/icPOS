@@ -53,7 +53,8 @@ export class ListOfBillPage {
   }
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad ListOfBillPage');
+    console.log('ionViewDidLoad ListOfBillPage');
+    console.log(this.menusService.homeData);
   }
 
   selecttab(key) {
@@ -63,8 +64,11 @@ export class ListOfBillPage {
 
   gotoHome(bill: OrderModel) {
     if (bill) {
-      console.log(bill);
+      //console.log(bill);
       this.orderService.order = bill;
+    }else{
+      this.orderService.order = new OrderModel();
+      this.orderService.order.items = [];
     }
 
     this.navCtrl.setRoot(HomePage);

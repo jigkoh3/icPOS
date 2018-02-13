@@ -137,10 +137,10 @@ export class HomePage {
     item._type = "none";
     this.menuItemsSelected[index] = item;
   }
-/**
- * Save
- * @param e is table menu items example ของหวาน
- */
+  /**
+   * Save
+   * @param e is table menu items example ของหวาน
+   */
   savedMenu(e) {
     this.menus.push(e);
     this.menusService.addMenu(this.menus).then(data => {
@@ -216,19 +216,19 @@ export class HomePage {
     }
   }
 
-/**
- * Editing Order Item
- * @param item is editing order item
- */
+  /**
+   * Editing Order Item
+   * @param item is editing order item
+   */
   selectedOrderItem(item) {
     console.log(item);
     this.presentProductModal(item.product, item);
   }
 
-/**
- * Update Order Items
- * @param item is order item add to order
- */
+  /**
+   * Update Order Items
+   * @param item is order item add to order
+   */
   updateOrder(item) {
     //console.log(item);
     if (this.order.items) {
@@ -254,23 +254,23 @@ export class HomePage {
     }
     console.log(this.order);
   }
-/**
- * Save Bill
- * @param order
- */
+  /**
+   * Save Bill
+   * @param order
+   */
   orderSaved(order) {
     // console.log(orders);
-    // if (this.takeAway) {
-    //   this.presentTakeAwayModal(orders);
-    // } else {
-    //   //alert("เลือกโต๊ะ")
-    //   this.presentToTableModal(orders);
-    // }
+    if (this.order.servetype === "takeaway") {
+      this.presentTakeAwayModal(this.order);
+    } else {
+      //alert("เลือกโต๊ะ")
+      this.presentToTableModal(this.order);
+    }
   }
-/**
- * Paid Bill
- * @param order
- */
+  /**
+   * Paid Bill
+   * @param order
+   */
   orderPaid(orders) {
     // console.log(orders);
     this.presentToPaidModal(orders);
@@ -338,11 +338,14 @@ export class HomePage {
         // bill.customer = data;
         // bill.items = this.order;
         // this.order = [];
-        // this.menusService.createBill(bill).then(data => {
-        //   this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
-        // }).catch(err => {
+        this.order.customer = data;
+        this.menusService.createBill(this.order).then(data => {
+          this.orderService.order = new OrderModel();
+          this.orderService.order.items = [];
+          this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
+        }).catch(err => {
 
-        // });
+        });
       }
 
     });
@@ -378,11 +381,11 @@ export class HomePage {
     toPaidModal.present();
   }
 
-  
-/**
- * Modal of Add menu item
- * @param index 
- */
+
+  /**
+   * Modal of Add menu item
+   * @param index 
+   */
   presentAddMenuItemModal(index) {
     let opts: any = {
       enableBackdropDismiss: false
@@ -400,10 +403,10 @@ export class HomePage {
     });
     addItemModal.present();
   }
-/**
- * Modal of Edit menu item
- * @param index 
- */
+  /**
+   * Modal of Edit menu item
+   * @param index 
+   */
   presentEditMenuItemModal(index) {
     let opts: any = {
       enableBackdropDismiss: false
