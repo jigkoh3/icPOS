@@ -40,7 +40,7 @@ export class ListOfBillPage {
     this.menuSelected = 'list';
 
     //this.branchs = this.auth.Uesr().shop.branchs;
-    this.branchSelected = Constants.branchSelected;
+    // this.getBund();
     // if (!this.menusService.homeData) {
     //   this.getMenuData();
     // } else {
@@ -50,6 +50,11 @@ export class ListOfBillPage {
     //   this.zone = "all";
     // }
 
+  }
+
+  getBund() {
+    this.branchSelected = Constants.branchSelected;
+    return this.branchSelected.name;
   }
 
   ionViewDidLoad() {
@@ -67,7 +72,7 @@ export class ListOfBillPage {
     if (bill) {
       //console.log(bill);
       this.orderService.order = bill;
-    }else{
+    } else {
       this.orderService.order = new OrderModel();
       this.orderService.order.items = [];
     }
