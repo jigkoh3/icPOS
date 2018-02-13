@@ -10,8 +10,13 @@ export class CreateEmployeeModalPage {
   private userUnderOwner: any = {};
   private roles: string = 'manager';
   private confPassword: string;
+  private action: string;
 
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+    this.action = this.navParams.get('action');
+    if(this.action == 'edit'){
+      this.userUnderOwner = this.navParams.get('emp');
+    }
   }
 
   ionViewDidLoad() {

@@ -44,7 +44,7 @@
     <ion-row *ngSwitchCase="'stock'">สินค้าคงคลัง</ion-row>
     <ion-list *ngSwitchCase="'employee'">
       <p *ngIf="users.length <= 0">ยังไม่มีพนักงาน</p>
-      <ion-item-sliding *ngFor="let item of users">
+      <ion-item-sliding *ngFor="let item of users;let i = index">
         <ion-item>
           <ion-avatar item-start>
             <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png">
@@ -53,10 +53,10 @@
           <p>ตำแหน่ง {{item.roles[0]}}</p>
         </ion-item>
         <ion-item-options side="right">
-          <button ion-button expandable>
+          <button ion-button expandable (click)="editEmpModal(i,item)">
             <ion-icon name="create"></ion-icon>
           </button>
-          <button ion-button expandable color="danger">
+          <button ion-button expandable color="danger" (click)="deleteEmp(i)">
             <ion-icon name="trash"></ion-icon>
           </button>
         </ion-item-options>

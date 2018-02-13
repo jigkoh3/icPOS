@@ -55,12 +55,11 @@ export class MyApp {
 
   }
 
-  openPage(page) {
+  selectBranch(branch) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     //this.nav.setRoot(page.component);
-    Constants.branchSelected = page;
-    console.log(Constants.branchSelected);
+    Constants.branchSelected = branch;
   }
 
   addBranch() {
