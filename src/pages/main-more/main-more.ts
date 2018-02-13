@@ -36,11 +36,24 @@ export class MainMorePage {
 
   }
 
+  editEmpModal(id, emp) {
+    let opts: any = {
+      enableBackdropDismiss: false
+    };
+    let editEmpModal = this.modalCtrl.create(CreateEmployeeModalPage, { emp: emp, action: 'edit' }, opts);
+    editEmpModal.onDidDismiss(data => {
+      if (data) {
+        this.users[id] = data;
+      }
+    });
+    editEmpModal.present();
+  }
+
   openCreateEmpModal() {
     let opts: any = {
       enableBackdropDismiss: false
     };
-    let createEmpModal = this.modalCtrl.create(CreateEmployeeModalPage, {}, opts);
+    let createEmpModal = this.modalCtrl.create(CreateEmployeeModalPage, { action: 'create' }, opts);
     createEmpModal.onDidDismiss(data => {
       if (data) {
         data.branch = Constants.branchSelected;
