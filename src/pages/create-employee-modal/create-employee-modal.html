@@ -6,6 +6,11 @@
       </button>
     </ion-buttons>
     <ion-title>เพิ่มพนักงานใหม่</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="saveEmployee()">
+        บันทึก
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -51,7 +56,3 @@
     </ion-row>
   </ion-grid>
 </ion-content>
-
-<ion-footer class="pd">
-  <button ion-button full (click)="saveEmployee()">บันทึก</button>
-</ion-footer>
