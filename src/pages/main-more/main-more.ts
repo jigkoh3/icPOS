@@ -49,6 +49,10 @@ export class MainMorePage {
     editEmpModal.present();
   }
 
+  deleteEmp(id) {
+    this.users.splice(id, 1);
+  }
+
   openCreateEmpModal() {
     let opts: any = {
       enableBackdropDismiss: false
