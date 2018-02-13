@@ -244,12 +244,10 @@ export class HomePage {
 
 
       } else {
-        console.log("first order items");
         this.order.items.push(item);
       }
 
     } else {
-      // this.order = [];
       this.order.items.push(item);
     }
     console.log(this.order);

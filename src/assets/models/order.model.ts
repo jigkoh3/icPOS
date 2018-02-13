@@ -1,6 +1,7 @@
 import { ProductModel } from "./product.model";
 
 export class OrderModel {
+    _id:string;
     docno: string;
     opendate: Date;
     paiddate: Date;

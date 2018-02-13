@@ -28,6 +28,7 @@ export class ProductOrderPage {
     if (!this.result) {
       this.result = new OrderItemModel();
       this.result.product = new ProductModel();
+      this.result.product._id = this.item._id;
       this.result.product.name = this.item.name;
       this.result.product.category = this.item.category;
       this.result.product.description = this.item.description;
