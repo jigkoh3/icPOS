@@ -2,6 +2,7 @@ export class SettingsModel {
     payment: PaymentModel;
     serviceCharge: ServiceChargeModel;
     round: string;
+    openbill: OpenbillModel;
 }
 
 export class PaymentModel {
@@ -18,4 +19,12 @@ export class ServiceChargeModel {
     isServiceCharge: boolean;
     percent: number;
     setProductPrice: string;
+}
+
+export class OpenbillModel {
+    isOpenbill: boolean;
+    tableQty: number;
+    limitTime: number;
+    setNotification: boolean;
+    setTable: boolean;
 }

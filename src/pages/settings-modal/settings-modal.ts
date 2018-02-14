@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { SettingsModel, PaymentModel, VatModel } from '../../assets/models/settings.model';
+import { SettingsModel, PaymentModel, VatModel, OpenbillModel } from '../../assets/models/settings.model';
 import { SettingProvider } from '../../providers/setting/setting';
 import { Constants } from '../../app/app.contants';
 import { ServiceChargeModel } from '../../assets/models/payment_setting.model';
@@ -28,11 +28,15 @@ export class SettingsModalPage {
       if (Constants.branchSelected.settings) {
         this.settings = Constants.branchSelected.settings;
       } else {
+        console.log('pass new Object');
         this.settings = new SettingsModel();
         this.settings.payment = new PaymentModel();
         this.settings.payment.vat = new VatModel();
         this.settings.serviceCharge = new ServiceChargeModel();
         this.settings.round = 'no';
+
+        this.settings.openbill = new OpenbillModel();
+        console.log(this.settings.openbill);
       }
     }
   }
