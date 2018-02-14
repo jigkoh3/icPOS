@@ -22,6 +22,7 @@ export class OrderProvider {
     private handleErr: HandleError
   ) {
     this.order = new OrderModel();
+    this.order.servetype = "takeatable";
     this.order.items = [];
 
   }

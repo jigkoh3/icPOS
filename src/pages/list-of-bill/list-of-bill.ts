@@ -74,6 +74,7 @@ export class ListOfBillPage {
       this.orderService.order = bill;
     } else {
       this.orderService.order = new OrderModel();
+      this.orderService.order.servetype = "takeatable";
       this.orderService.order.items = [];
     }
 

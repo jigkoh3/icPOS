@@ -258,11 +258,32 @@ export class HomePage {
    */
   orderSaved(order) {
     // console.log(orders);
+
     if (this.order.servetype === "takeaway") {
-      this.presentTakeAwayModal(this.order);
+      if (!this.order.customer) {
+        this.presentTakeAwayModal(this.order);
+      } else {
+        this.loading.onLoading();
+        this.orderService.createBill(this.order).then(data => {
+          this.loading.dismiss();
+          this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
+        }).catch(err => {
+          this.loading.dismiss();
+        });
+      }
     } else {
       //alert("เลือกโต๊ะ")
-      this.presentToTableModal(this.order);
+      if (!this.order.table) {
+        this.presentToTableModal(this.order);
+      } else {
+        this.loading.onLoading();
+        this.orderService.createBill(this.order).then(data => {
+          this.loading.dismiss();
+          this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
+        }).catch(err => {
+          this.loading.dismiss();
+        });
+      }
     }
   }
   /**
@@ -304,11 +325,13 @@ export class HomePage {
     toTableModal.onDidDismiss(data => {
       //console.log(data);
       if (data) {
-        this.order.customer = data;
+        this.loading.onLoading();
+        this.order.table = data;
         this.orderService.createBill(this.order).then(data => {
+          this.loading.dismiss();
           this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
         }).catch(err => {
-
+          this.loading.dismiss();
         });
       }
 
@@ -325,11 +348,13 @@ export class HomePage {
     takeAwayModal.onDidDismiss(data => {
       //console.log(data);
       if (data) {
+        this.loading.onLoading();
         this.order.customer = data;
         this.orderService.createBill(this.order).then(data => {
+          this.loading.dismiss();
           this.navCtrl.setRoot(ListOfBillPage, { menus: this.menus });
         }).catch(err => {
-
+          this.loading.dismiss();
         });
       }
 
