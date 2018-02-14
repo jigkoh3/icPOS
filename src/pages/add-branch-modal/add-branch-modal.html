@@ -15,7 +15,7 @@
     </ion-buttons>
     <ion-buttons end>
       <button ion-button (click)="saveBranch()" [disabled]="!(branch.name && branch.tel && branch.address)">
-        <span>บันทึก</span>
+        <span>{{'SAVE' | translate}}</span>
       </button>
     </ion-buttons>
   </ion-navbar>

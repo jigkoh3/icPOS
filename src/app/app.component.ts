@@ -75,6 +75,8 @@ export class MyApp {
         console.log(data);
         this.shopService.crateNewBranch(data, shopid._id).then((resp) => {
           console.log(resp);
+          // Constants.branchs = resp.branchs;
+          // this.branchs = Constants.branchs;
         }, (err) => {
           console.log(err);
         });
