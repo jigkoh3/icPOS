@@ -29,11 +29,15 @@ export class MainMorePage {
   constructor(private modalCtrl: ModalController, private menusService: MenuProvider, private loading: LoadingProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.menus = this.navParams.get('menus');
     this.menuSelected = 'more';
-    this.branchSelected = Constants.branchSelected;
   }
 
   ionViewDidLoad() {
 
+  }
+
+  getBranchName(){
+    this.branchSelected = Constants.branchSelected;
+    return this.branchSelected.name;
   }
 
   editEmpModal(id, emp) {
