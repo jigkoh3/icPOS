@@ -74,9 +74,9 @@ export class MyApp {
       if (data) {
         console.log(data);
         this.shopService.crateNewBranch(data, shopid._id).then((resp) => {
-          // console.log(resp);
-          this.branchs = resp.branchs;
-          // console.log(this.branchs);
+          console.log(resp);
+          // Constants.branchs = resp.branchs;
+          // this.branchs = Constants.branchs;
         }, (err) => {
           console.log(err);
         });
