@@ -19,5 +19,5 @@ export class Constants {
         return header;
     }
     public static branchs: Array<any>;
-    public static branchSelected: any;
+    public static branchSelected: any = {};
 }
