@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <div *ngIf="settingType.type =='cashier'">
-    <ion-segment [(ngModel)]="cashierPrinter.type" color="secondary">
+    <ion-segment [(ngModel)]="settings.cashierPrinter.type" color="secondary">
       <ion-segment-button value="wifi">
         WIFI/LAN
       </ion-segment-button>
@@ -17,10 +17,10 @@
         {{'BLUE_TOOTH' | translate}}
       </ion-segment-button>
     </ion-segment>
-    <ion-list *ngIf="cashierPrinter.type =='wifi'" margin>
+    <ion-list *ngIf="settings.cashierPrinter.type =='wifi'" margin>
       <ion-item>
         <ion-label>{{'PRINTER_MODE' | translate}}</ion-label>
-        <ion-select [(ngModel)]="cashierPrinter.printerMode">
+        <ion-select [(ngModel)]="settings.cashierPrinter.printerMode">
           <ion-option value="58MM">{{'MODE' | translate}} 58MM</ion-option>
           <ion-option value="80MM">{{'MODE' | translate}} 80MM</ion-option>
           <ion-option value="STAR">STAR</ion-option>
@@ -29,17 +29,17 @@
       </ion-item>
       <ion-item>
         <ion-label>IP Address</ion-label>
-        <ion-input type="text" placeholder="192.168.1.80" [(ngModel)]="cashierPrinter.ipAddress"></ion-input>
+        <ion-input type="text" placeholder="192.168.1.80" [(ngModel)]="settings.cashierPrinter.ipAddress"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>{{'PORT' | translate}}</ion-label>
-        <ion-input type="number" placeholder="9100" [(ngModel)]="cashierPrinter.port"></ion-input>
+        <ion-input type="number" placeholder="9100" [(ngModel)]="settings.cashierPrinter.port"></ion-input>
       </ion-item>
     </ion-list>
-    <ion-list *ngIf="cashierPrinter.type =='bluetooth'" margin>
+    <ion-list *ngIf="settings.cashierPrinter.type =='bluetooth'" margin>
       <ion-item>
         <ion-label>{{'BLUE_TOOTH' | translate}}</ion-label>
-        <ion-toggle [(ngModel)]="cashierPrinter.isOnBluetooth" color="secondary"></ion-toggle>
+        <ion-toggle [(ngModel)]="settings.cashierPrinter.isOnBluetooth" color="secondary"></ion-toggle>
       </ion-item>
     </ion-list>
   </div>
