@@ -7,8 +7,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'printer-setting-modal.html',
 })
 export class PrinterSettingModalPage {
-  private cashierPrinter: any = {};
   private settingType: any = {};
+  private cashierPrinter: any = {};
   private kitchenPrinter: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

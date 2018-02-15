@@ -3,6 +3,7 @@ export class SettingsModel {
     serviceCharge: ServiceChargeModel;
     round: string;
     openbill: OpenbillModel;
+    cashierPrinter: CashierPrinterModel;
 }
 
 export class PaymentModel {
@@ -28,3 +29,12 @@ export class OpenbillModel {
     setNotification: boolean;
     setTable: boolean;
 }
+
+export class CashierPrinterModel {
+    type: string;
+    printerMode: string;
+    ipAddress: string;
+    port: number;
+    isOnBluetooth: boolean;
+}
+
