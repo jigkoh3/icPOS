@@ -4,6 +4,7 @@ export class SettingsModel {
     round: string;
     openbill: OpenbillModel;
     cashierPrinter: CashierPrinterModel;
+    kitchenPrinter: KitchenPrinterModel;
 }
 
 export class PaymentModel {
@@ -36,5 +37,13 @@ export class CashierPrinterModel {
     ipAddress: string;
     port: number;
     isOnBluetooth: boolean;
+}
+
+export class KitchenPrinterModel {
+    kitchenArea: string;
+    printerMode: string;
+    sound: boolean;
+    ipAddress: string;
+    port: number;
 }
 
