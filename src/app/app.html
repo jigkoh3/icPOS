@@ -7,12 +7,14 @@
 
   <ion-content>
     <ion-list>
-      <ion-item menuClose (click)="addBranch()">
+      <!-- <ion-item menuClose (click)="addBranch()">
         <ion-icon name="ios-add-circle-outline"></ion-icon> {{'ADDBRANCH' | translate}}
-      </ion-item>
-      
+      </ion-item> -->
       <button menuClose ion-item *ngFor="let branch of branchs" (click)="selectBranch(branch)">
-        {{branch.name}}
+        {{branch.name | translate}}
+      </button>
+      <button menuClose ion-item (click)="addBranch()">
+          <ion-icon name="ios-add-circle-outline"></ion-icon> {{'ADDBRANCH' | translate}}
       </button>
     </ion-list>
   </ion-content>

@@ -28,7 +28,6 @@ export class ListOfBillPage {
   bills: Array<OrderModel>;
   tables: Array<TableModel> = [];
   zone: string;
-  //branchs: Array<any>;
   branchSelected: any;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -58,8 +57,6 @@ export class ListOfBillPage {
   }
 
   ionViewDidLoad() {
-    // console.log('ionViewDidLoad ListOfBillPage');
-    // console.log(this.menusService.homeData);
     this.getMenuData();
   }
 
@@ -92,7 +89,6 @@ export class ListOfBillPage {
         this.zone = "all";
         this.loading.dismiss();
       }, err => {
-        // console.log(err);
         this.loading.dismiss();
       })
     }, 1000);

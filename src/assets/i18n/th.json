@@ -121,5 +121,6 @@
   "ADDBRANCH": "เพิ่มสาขา",
   "BRANCHTEL": "เบอร์โทรศัพท์",
   "BRANCHADDRESS": "ที่อยู่สาขา",
-  "SELECT_BRANCH": "เลือกนำเข้าข้อมูลเมนูจากสาขา"
+  "SELECT_BRANCH": "เลือกนำเข้าข้อมูลเมนูจากสาขา",
+  "First Branch" : "สาขาแรก"
 }
