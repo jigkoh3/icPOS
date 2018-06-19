@@ -21,7 +21,7 @@ export class MenuProvider {
     if (this.auth.authenticated()) {
       let hearder = Constants.Header;
       //let api_url = Constants.API_URL + '/api/homes';
-      let api_url = '../../assets/json/menus.json';
+      let api_url = './../assets/json/menus.json';
       return this.http.get(api_url, { headers: hearder })
         .toPromise()
         .then(response => {

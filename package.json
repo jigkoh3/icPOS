@@ -1,5 +1,5 @@
 {
-    "name": "icPOS",
+    "name": "iPOS",
     "version": "0.0.1",
     "author": "Ionic Framework Test",
     "homepage": "http://ionicframework.com/",
@@ -29,7 +29,7 @@
         "@types/lodash": "^4.14.96",
         "angular-sortablejs": "^2.5.1",
         "angular2-jwt": "^0.2.3",
-        "cordova-ios": "^4.5.4",
+        "cordova-ios": "^4.4.0",
         "cordova-plugin-device": "^1.1.7",
         "cordova-plugin-ionic-webview": "^1.2.1",
         "cordova-plugin-splashscreen": "^4.1.0",
